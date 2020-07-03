@@ -10,34 +10,50 @@ Hoja de Ruta
 - Nombre de aplicacion
 - numbre de equipo
 
+NOMBRE APP: TEAM_MANAGER
 
 MVP:
 Navbar: 
-	- Equipos
-	- Entrenamientos
-	- Opciones
+	1. Home (Landing page)
+    2. Equipos(Tablon anuncios para jugadores)
+	3. Entrenamientos
+	4. Opciones
 Entrenador
-- Equipos: info:
+2.  Equipos: info:
     - Equipos a los que entrena
     - Listado de jugadores
-- Entrenamientos: info
-    - Entrenamiento en blanco/ predefinido
-    - Boton añadir ejercicio
-- Opciones: 
+
+3.  Entrenamientos: info
+    _ si no hay nada creado (boton crea tu primer entrenamiento)
+
+    - Etrenamientos creados
+    - Entrnamientos no diseñados(Alerta amarilla)
+    ---------
+    - Entrenamiento en blanco
+    - Boton añadir entrenamiento
+
+    3.1Formulario Entranamiento:
+        - Calentamiento
+        - Parte Principal(1 o mas Ejercicios)
+        - Vuelta a la calma
+
+4. Opciones: 
     - Cambio contraseña
     - Foto de perfil
-Jugador
-- Entrenamientos:
+5. Jugador
+    6.Entrenamientos:
     - Lugar
     - Horario(dia y hora)
-- Partidos: 
+    7. Partidos: 
     - lugar
     - Horario (dia y hora de convocatoria)
+
 PAntallas:
+    - Landing page
+    8. Login
+    9. Register
     Entrenador
-    - Login
-    - Register
-    - Home
+    - Home (Equipos)
     - Entrenamientos
     - Equipos
     - Opciones
@@ -48,6 +64,11 @@ PAntallas:
     - Opciones
 
 Relaciones
+ - Equipo tiene muchos jugadores
+            muchos entrenadores
+
+ - equipo tiene entrenamientos
+ - entrenamientos tiene muchos ejecicios
 
 Base de datos
 Entrenadores:
@@ -55,14 +76,17 @@ Entrenadores:
 2. nombre
 3. apellido1
 4. apellido2
+5. email
+6. contraseña
 
 Equipos: 
 1. id_equipo
-2. nombre del equipo
+2. nombre del equipo(Unique)
 3. categoria
 4. dias de entrenamiento/partido
 5. jugadores
 6. id_entrenador
+7. id_entrenamiento
 
 jugadores:
 1. id_jugador
@@ -70,3 +94,21 @@ jugadores:
 3. nombre
 4. apellido1
 5. apellido2
+6. email
+7. contraseña
+** 8. dorsal
+** 9. posicion
+
+Entrenamientos:
+1. id_entrenamiento
+4. Fecha
+2. Tipo (SET ENUM Partido/Entrenamiento)
+3. Calentamiento
+5. PArte Principal
+6. Vuelta a la calma
+
+Ejercicio:
+1. id_ejercicio
+4. Nombre
+2. urlVideo
+3. Descripcion
