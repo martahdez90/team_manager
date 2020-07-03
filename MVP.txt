@@ -33,6 +33,20 @@ Jugador
 - Partidos: 
     - lugar
     - Horario (dia y hora de convocatoria)
+PAntallas:
+    Entrenador
+    - Login
+    - Register
+    - Home
+    - Entrenamientos
+    - Equipos
+    - Opciones
+
+    Jugador:
+    - Home(tablon anuncios)
+    - Calendario
+    - Opciones
+
 Relaciones
 
 Base de datos
