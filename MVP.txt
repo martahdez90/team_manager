@@ -1,0 +1,58 @@
+Hoja de Ruta
+
+- Definir MVP:
+	a. Paginas
+	b. Enlaces entre paginas
+	c. Usuarios
+	d. Base de datos
+	e.
+	f.
+- Nombre de aplicacion
+- numbre de equipo
+
+
+MVP:
+Navbar: 
+	- Equipos
+	- Entrenamientos
+	- Opciones
+Entrenador
+- Equipos: info:
+    - Equipos a los que entrena
+    - Listado de jugadores
+- Entrenamientos: info
+    - Entrenamiento en blanco/ predefinido
+    - Boton añadir ejercicio
+- Opciones: 
+    - Cambio contraseña
+    - Foto de perfil
+Jugador
+- Entrenamientos:
+    - Lugar
+    - Horario(dia y hora)
+- Partidos: 
+    - lugar
+    - Horario (dia y hora de convocatoria)
+Relaciones
+
+Base de datos
+Entrenadores:
+1. id_entrenador
+2. nombre
+3. apellido1
+4. apellido2
+
+Equipos: 
+1. id_equipo
+2. nombre del equipo
+3. categoria
+4. dias de entrenamiento/partido
+5. jugadores
+6. id_entrenador
+
+jugadores:
+1. id_jugador
+2. id_equipo
+3. nombre
+4. apellido1
+5. apellido2
