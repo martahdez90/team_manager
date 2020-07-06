@@ -1,3 +1,27 @@
+Resumen aplicacion:
+Team manager es una aplicación que permite a los entrenadores gestionar los entrenamientos y partidos de sus  equipos
+de forma facil y sencilla a traves de una interfaz intuitiva y facil de usar.
+
+Para ello, necesitamos registrarno o logearnos si ya tuvieramos un perfil y crear nuestro equipo o equipos. Una 
+vez dentro de la aplicacion para ver uestro equipo y sus jugadores iremos a la pestaña EQUIPOS. 
+
+Desde la pestaña ENTRENAMIENTOS podremos encontrar ideas para nuestros entrenamientos o crear nuestras propias sesiones, 
+asi como ver aquellas que ya hemos diseñado anteriormente. 
+
+Desde la pestaña CALENDARIO accedemos a los entrenamientos programados, viendo el dia, la hora y el lugar del entrenamiento.
+Asi, de un vistazo, tanto jugador como entrenador tendran de una forma rapida el horario de entrenamientos como de partidos.
+
+Por ultimo desde la pestaña AJUSTES podremos acceder a cambiar nuestra contraseña, email, datos personales, etc..
+
+Por su parte el jugador podra registrarse en el equipo desde su login particular. Una vez registrado en el equipo
+tendra la misma pestaña de calendario que el entrenador para ver los horarios y lugares de entrenamientos.
+Al jugador se aparacera otra pestaña PARTIDOS en la que le aparecera el partido del fin de semana con la direccion y
+la hora de convocatoria. 
+Tambien tendra la pestaña AJUSTES identica a la del entrenador
+
+
+
+
 Hoja de Ruta
 
 - Definir MVP:
