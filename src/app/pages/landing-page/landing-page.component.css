@@ -1,15 +1,29 @@
 
 .lyrics {
-    background-color: #3bb899;
+    background-color: #3BB899;
     font-family: ‘Roboto’, sans-serif;
-    color: #ffffff;
+    color: #FFFFFF;
 }
 
 .bodym {
+
     background-color: #3bb899;
+
     font-family: ‘Roboto’, sans-serif;
+    text-align: center;
+    margin-top: 0;
+    padding-top: 0;
 }
 
+.navbar {
+    background-color: #3BB899;
+    text-align: center;
+}
+
+#whiteLink {
+    color: white;
+}
+=======
 .jumbotron {
     background-color: white;
 }

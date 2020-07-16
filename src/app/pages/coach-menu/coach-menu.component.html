@@ -1,30 +1,27 @@
-<header>
-  <div class="pos-f-t">
-      <div class="collapse" id="navbarToggleExternalContent">
-          <div class="p-4">
-              <ul class="list-group list-group-flush">
-                  <li class="list-group-item"><a routerLink="/coach/myTeams" class="nav-item">Mis equipos</a></li>
-                  <li class="list-group-item"><a routerLink="/coach/myWorkouts" class="nav-item">Entrenamientos y partidos</a></li>
-                  <li class="list-group-item"><a routerLink="/coach/settings" class="nav-item">Ajustes</a></li>
-              </ul>
-          </div>
-      </div>
-      <nav class="navbar navbar-dark">
-          <button class="navbar-toggler" type="button" data-toggle="collapse"
-              data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
-              aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-          </button>
-          <ul class="navbar-nav">
-              <li class="nav-item active">
-                <button mat-button routerLink="/player/myCalendar" class="nav-item"><mat-icon >donut_large</mat-icon></button>
-              </li>
-          </ul>
-      </nav>
-  </div>
+<header class="lyrics">
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" id="whiteLink" routerLink="/coach/myTeams">Mis Equpos <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="whiteLink" routerLink="/coach/myWorkouts">Entrenamientos y Partidos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="whiteLink" routerLink="/coach/settings">Ajustes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="whiteLink" routerLink="/player/myCalendar">cambio de usuario</a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
 </header>
-
-
 
 
 <!-- 

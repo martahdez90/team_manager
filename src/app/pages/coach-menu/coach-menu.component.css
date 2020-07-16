@@ -1,56 +1,24 @@
-* {
-    font-family: 'Roboto', sans-serif;
-    font-size: 4vw;
-    line-height: 1;
-    color: gray
+.lyrics {
+    background-color: #00BFA5;
+    font-family: ‘Roboto’, sans-serif;
+    color: #FFFFFF;
 }
 
-body {
-    padding-top: 30px;
-}
-
-.list-group-item {
-    background-color:  #00bfa5;
-    opacity: 0.8;
-}
-
-.nav-item:link, .nav-item:visited, .nav-item:active {
-    text-decoration:none;
-    color:white;
+.bodym {
+    background-color: #00BFA5;
+    font-family: ‘Roboto’, sans-serif;
+    text-align: center;
+    margin-top: 0;
+    padding-top: 0;
 }
 
 .navbar {
-    overflow: hidden;
-    position: fixed;
-    z-index: 1;
-    width: 100%;
-    top: 0;
+    background-color: #00BFA5;
+    text-align: center;
 }
 
-.navbar, #navbarToggleExternalContent {
-    background-color:  #00bfa5;
-}
-
-section {
-    padding-bottom: 10%;
-    margin-top: 20px;
-}
-
-
-@media (min-width: 576px) {
-    * {
-        font-size: 1vw;
-        line-height: 1.5;
-    }
-    
-    
-   section {
-    padding-bottom: 2%;
-}
-}
-
-mat-icon {
-    color:white;
+#whiteLink {
+    color: white;
 }
 
 
