@@ -23,15 +23,28 @@
     background-color: #00BFA5;
     font-family: ‘Roboto’, sans-serif;
     color: #ffffff;
+    margin-left: 40%;
+    margin-right: 40%;
 }
 
-.pie-pagina {
-    background-color: whitesmoke;
-    text-align: center;
-    color: #00BFA5;
-    font-family: ‘Roboto’, sans-serif;
-    font-weight: 600;
-    text-align: center;
-    padding: 20px;
-    margin-top: 10px;
+.m-5 {
+    padding: 0px;
+    padding-left: 20%;
+}
+
+@media(max-width:769px) {
+    .m-5 {
+        padding-left: 0%;
+    }
+    .buttonR {
+        margin-left: 35%;
+        margin-right: 35%;
+    }
+}
+
+@media(max-width:789px) {
+    .buttonR {
+        margin-left: 35%;
+        margin-right: 25%;
+    }
 }
