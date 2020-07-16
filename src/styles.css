@@ -1,7 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-* {
-    font-family: 'Roboto', sans-serif;
-}
+
 body{
     background-color: rgb(213, 213, 213);
     /* background-color: #E0F2F1; */
