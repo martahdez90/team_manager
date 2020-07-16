@@ -1,0 +1,21 @@
+.lyrics {
+    background-color: #ffffff;
+    font-family: ‘Roboto’, sans-serif;
+    color: #00BFA5;
+}
+
+.bodym {
+    background-color: #ffffff;
+    font-family: ‘Roboto’, sans-serif;
+}
+
+.pie-pagina {
+    background-color: whitesmoke;
+    text-align: center;
+    color: #00BFA5;
+    font-family: ‘Roboto’, sans-serif;
+    font-weight: 600;
+    text-align: center;
+    padding: 20px;
+    margin-top: 17px;
+}

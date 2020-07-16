@@ -17,6 +17,7 @@ import { MyCoachComponent } from './pages/my-coach/my-coach.component';
 import { MySettingsComponent } from './pages/my-settings/my-settings.component';
 import { WhiteFooterComponent } from './pages/white-footer/white-footer.component';
 import { GreenFooterComponent } from './pages/green-footer/green-footer.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { GreenFooterComponent } from './pages/green-footer/green-footer.componen
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
