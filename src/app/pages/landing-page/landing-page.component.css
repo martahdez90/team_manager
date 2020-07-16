@@ -1,3 +1,4 @@
+
 .lyrics {
     background-color: #3bb899;
     font-family: ‘Roboto’, sans-serif;
@@ -5,7 +6,34 @@
 }
 
 .bodym {
-    background-color: #ffffff;
+    background-color: #3bb899;
     font-family: ‘Roboto’, sans-serif;
 }
 
+.jumbotron {
+    background-color: white;
+}
+
+.section1 {
+    padding: 3%;
+    background-color: #3bb899;
+    color: white;
+}
+
+.card {
+    background-color: #3bb899;
+    border: #3bb899;
+}
+.card-header {
+    font-size: 5vw;
+    background-color: #3bb899;
+    border-bottom: #3bb899;
+}
+.card-text {
+    font-size: 1vw;
+}
+
+.display-4 {
+    margin-left: 2vw;
+    margin-right: 2vw;
+}
