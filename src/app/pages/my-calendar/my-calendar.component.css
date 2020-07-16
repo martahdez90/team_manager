@@ -1,0 +1,17 @@
+* {
+    color: #00bfa5;
+}
+.example-card {
+    max-width: 25vw;
+    text-align: center;
+    margin-top: 5%;
+  }
+
+section {
+    display: flex;
+}
+
+.header {
+    display: inline;
+    
+}

@@ -4,7 +4,16 @@
 
 mat-sidenav-container {
     background-color: #e0f2f1;
+    position: relative;
 }
+mat-sidenav-content {
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 0;
+}
+
+
 
 button:focus, button:active:focus, button.active:focus {
     outline: none !important;
@@ -53,7 +62,7 @@ a {
 }
 
 #sidenav.menu-close {
-    width: 70px
+    width: 0px
 }
 
 #sidenav.menu-open {
@@ -92,10 +101,15 @@ mat-card-header {
     color: #00bfa5;
 }
 
+
 @media (max-width: 576px) {
     * {
         font-size: 4vw;
     }
+    #sidenav {
+        display: hide;
+    }
+    
 }
 
 
