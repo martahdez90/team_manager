@@ -5,8 +5,8 @@
 section{
     position: relative;
     padding: 3%;
+    background-color: whitesmoke;
 }
-
 
 .header {
     text-align: center;
@@ -15,8 +15,8 @@ section{
     color: white;
     padding-top: 2px;
     padding-bottom: 2px;
-    margin-top: 2%;
-    margin-bottom: 2%;
+    margin-top: 1%;
+    margin-bottom: 1%;
 }
 
 .card{
