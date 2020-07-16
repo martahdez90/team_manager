@@ -17,6 +17,15 @@ import { MyCoachComponent } from './pages/my-coach/my-coach.component';
 import { MySettingsComponent } from './pages/my-settings/my-settings.component';
 import { WhiteFooterComponent } from './pages/white-footer/white-footer.component';
 import { GreenFooterComponent } from './pages/green-footer/green-footer.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import {MatListModule} from '@angular/material/list';
+import {MatCardModule} from '@angular/material/card';
+import {MatIconModule} from '@angular/material/icon';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import { ToolbarComponent } from './pages/toolbar/toolbar.component';
+
 
 @NgModule({
   declarations: [
@@ -34,13 +43,26 @@ import { GreenFooterComponent } from './pages/green-footer/green-footer.componen
     MyCoachComponent,
     MySettingsComponent,
     WhiteFooterComponent,
-    GreenFooterComponent
+    GreenFooterComponent,
+    ToolbarComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatToolbarModule,
+    MatListModule,
+    MatCardModule,
+    MatIconModule,
+    MatSidenavModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+ 
+
+}
+

@@ -1,6 +1,61 @@
 <body>
+        <mat-toolbar id="mainToolbar" color="primary">
+                <mat-icon (click)="onToolbarMenuToggle()" id="toolbarMenu">menu</mat-icon>
+                <h1 class="header">Sportify</h1>
+                <span class="toolbar-spacer"></span>
+                <!-- <mat-icon
+                  class="toolbar-icon">
+                notifications</mat-icon> -->
+        </mat-toolbar>
 
-    
-    <router-outlet></router-outlet>
-    
+        <mat-sidenav-container id="sidenavContainer" fullscreen>
+                <mat-sidenav mode="side" #sidenav id="sidenav" [class.menu-open]="isMenuOpen"
+                        [class.menu-close]="!isMenuOpen" opened>
+
+                        <mat-list id="menus">
+                                <mat-card>
+                                        <mat-card-header>
+                                                <div mat-card-avatar class="avatar"></div>
+                                                <mat-card-title>Mi nombre</mat-card-title>
+                                                <mat-card-subtitle>Entrenador</mat-card-subtitle>
+                                        </mat-card-header>
+                                </mat-card>
+                                <mat-list-item>
+                                        <button class="menu-item" mat-flat-button>
+                                                <mat-icon color="primary">supervisor_account</mat-icon>
+                                                <a class="text-dark" routerLink="/coach/myTeams">Mis equipos</a>
+                                        </button>
+                                </mat-list-item>
+
+                                <mat-list-item>
+                                        <button class="menu-item" mat-flat-button>
+                                                <mat-icon color="primary">folder</mat-icon>
+                                                <a class="text-dark" routerLink="/coach/myWorkouts">Mi calendario</a>
+                                        </button>
+                                </mat-list-item>
+
+                                <mat-list-item>
+                                        <button class="menu-item" mat-flat-button>
+                                                <mat-icon color="primary">settings_application</mat-icon>
+                                                <a class="text-dark" routerLink="/coach/settings">Ajustes</a>
+                                        </button>
+                                </mat-list-item>
+
+                        </mat-list>
+                </mat-sidenav>
+
+                <!-- <mat-sidenav-content
+                [ngStyle]="{ 'margin-left.px': contentMargin }"
+                >
+                  <mat-selection-list class="dash-list">
+                    <h3>TO DO</h3>
+                    <mat-list-option *ngFor="let todo of task">
+                      {{todo}}
+                    </mat-list-option>
+                  </mat-selection-list> 
+                </mat-sidenav-content> -->
+                <router-outlet></router-outlet>
+
+        </mat-sidenav-container>
+
 </body>

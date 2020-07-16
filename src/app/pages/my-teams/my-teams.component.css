@@ -1,0 +1,52 @@
+* {
+    font-size: 1vw;
+    line-height: 1.5;
+}
+.ball {
+    font-size: 5vw;
+    color: #00bfa5;
+}
+
+section {
+    padding-bottom: 25vh;
+}
+.card-color {
+    padding: 2%;
+}
+
+.eye {
+    font-size: 20px;
+    color: #00bfa5;
+}
+
+.eye:hover {
+    font-size: 18px;
+}
+
+@media (max-width: 576px) {
+    * {
+        font-family: 'Roboto', sans-serif;
+        font-size: 4vw;
+    }
+    .ball {
+        color: #00bfa5;
+        font-size: 15vw;  
+    
+    }
+    
+    
+    .fa-eye {
+        color: #00bfa5;
+        font-size: vw;
+    }
+    
+    .fa-eye:hover {
+        font-size: 4vw;
+    }
+    
+    section {
+        padding-bottom: 20vh;
+    }
+
+
+}
