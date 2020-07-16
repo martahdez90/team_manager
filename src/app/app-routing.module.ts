@@ -26,7 +26,8 @@ const routes: Routes = [
   {path: 'player/myCalendar', component: MyCalendarComponent},
   {path: 'player/myPlayers', component: MyPlayersComponent},
   {path: 'player/myCoach', component: MyCoachComponent},
-  {path: 'player/settings', component: MySettingsComponent}
+  {path: 'player/settings', component: MySettingsComponent},
+  {path: '**',redirectTo: 'home'}
 ];
 
 @NgModule({
