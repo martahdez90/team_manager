@@ -30,12 +30,12 @@
             <br>
             <div class="checkbox mb-3">
                 <label>
-      <input type="checkbox" value="remember-me"> Recordarme
-    </label>
+                    <input type="checkbox" value="remember-me"> Recordarme
+                </label>
                 <br>
                 <br>
             </div>
-            <button type="button" class="btn buttonR" ro>Entrar</button>
+            <button type="button" class="btn buttonR" [routerLink]="['/coach/myTeams']" routerLinkActive="router-link-active" >Entrar</button>
         </form>
     
     </div>
@@ -47,3 +47,4 @@
 
 
 </body>
+<app-green-footer></app-green-footer>
