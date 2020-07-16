@@ -1,17 +1,17 @@
-* {
+/* * {
     font-family: 'Roboto', sans-serif;
     font-size: 4vw;
     line-height: 1;
-    color: gray
+    color: white;
 }
 
 body {
-    padding-top: 30px;
+    padding-top: 40px;
 }
 
 .list-group-item {
     background-color: #00bfa5;
-    opacity: 0.8;
+    opacity: 1;
 }
 
 .nav-item:link, .nav-item:visited, .nav-item:active {
@@ -39,6 +39,10 @@ mat-icon {
     color:white;
 }
 
+.navbar-toggler {
+    color: white;
+}
+
 
 @media (min-width: 576px) {
     * {
@@ -50,4 +54,36 @@ mat-icon {
    section {
     padding-bottom: 2%;
 }
+} */
+
+.lyrics {
+    background-color: #00BFA5;
+    font-family: ‘Roboto’, sans-serif;
+    color: #FFFFFF;
+    line-height: 1;
 }
+
+.bodym {
+    background-color: #00BFA5;
+    font-family: ‘Roboto’, sans-serif;
+    text-align: center;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.navbar {
+    background-color: #00BFA5;
+    text-align: center;
+}
+
+#whiteLink {
+    color: white;
+}
+
+@media (min-width: 576px) {
+    * {
+        font-size: 2vw;
+        line-height: 1.5;
+    }
+}
+

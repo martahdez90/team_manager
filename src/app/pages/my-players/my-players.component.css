@@ -1,11 +1,11 @@
 
 * {
-    font-size: 1vw;
+    font-size: 1.2vw;
     line-height: 1.5;
 }
 .mat-icon {
     color: #00bfa5;
-    font-size: 10vw;
+    font-size: 5vw;
 }
 
 section {
@@ -72,7 +72,7 @@ body {
     }
     mat-icon {
         color: #00bfa5;
-        font-size: 6vw;  
+        font-size: 8vw;  
     }
 } 
 
