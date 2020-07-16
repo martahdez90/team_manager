@@ -1,0 +1,34 @@
+
+#profile{
+    background-color:  #00BFA5;
+    font-size: 100px;
+    text-align: center;
+    color: white;
+}
+#profile-list{
+    color:rgb(75, 75, 75);
+    padding: 0%;
+    padding-left: 5%;
+    margin-top: 3%;
+}
+ul, div{
+    margin: 0;
+    padding:0
+}
+.fas{
+    color: red;
+    position: absolute;
+    right: 5%;
+}
+
+
+
+.list-group-item{
+    position: relative;
+}
+#info{
+    display: inline; 
+    position: absolute; 
+    right: 5%;
+    color: grey;
+}

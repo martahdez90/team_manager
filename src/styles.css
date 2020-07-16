@@ -1,9 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
-
-html,
-body {}
-
-body {
+* {
+    font-family: 'Roboto', sans-serif;
+}
+body{
+    background-color: rgb(213, 213, 213);
+    /* background-color: #E0F2F1; */
     margin: 0;
     font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+body { 
+  margin: 0; 
+  font-family: Roboto, "Helvetica Neue", sans-serif; 
