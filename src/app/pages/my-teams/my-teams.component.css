@@ -1,5 +1,5 @@
 * {
-    font-size: 1vw;
+    font-size: 1.5vw;
     line-height: 1.5;
 }
 .ball {
@@ -26,14 +26,13 @@ section {
 @media (max-width: 576px) {
     * {
         font-family: 'Roboto', sans-serif;
-        font-size: 4vw;
+        font-size: 4.5vw;
     }
     .ball {
         color: #00bfa5;
         font-size: 15vw;  
     
     }
-    
     
     .fa-eye {
         color: #00bfa5;

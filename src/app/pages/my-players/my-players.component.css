@@ -3,9 +3,9 @@
     font-size: 1vw;
     line-height: 1.5;
 }
-.fa-user {
+.mat-icon {
     color: #00bfa5;
-    font-size: 2vw;
+    font-size: 10vw;
 }
 
 section {
@@ -70,7 +70,7 @@ body {
         line-height: 1;
         color: gray
     }
-    .fa-user {
+    mat-icon {
         color: #00bfa5;
         font-size: 6vw;  
     }

@@ -1,10 +1,13 @@
 
+section {
+    background-color: whitesmoke;
+}
 #profile{
-    background-color:  #00BFA5;
     font-size: 100px;
     text-align: center;
-    color: white;
+    color: #00BFA5;
 }
+
 #profile-list{
     color:rgb(75, 75, 75);
     padding: 0%;
@@ -20,8 +23,6 @@ ul, div{
     position: absolute;
     right: 5%;
 }
-
-
 
 .list-group-item{
     position: relative;
