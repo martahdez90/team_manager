@@ -1,0 +1,57 @@
+*{
+    font-size: 2.2vw;
+}
+section{
+    position: relative;
+    padding: 3%;
+}
+.card{
+    border: #00BFA5;
+    max-width: 50rem;
+    margin: auto;
+}
+
+.card-footer, #date{
+    background-color: #00BFA5;
+    color: white;
+
+    position: relative;
+}
+#dropdown{
+    border-radius: 30px;
+    border:none;
+    color: white;
+    background: none
+}
+#trash{
+    position: absolute;
+    top: 20%;
+    right: 5%;
+    color: grey
+}
+#new-ex{
+    max-width: 50%;
+    margin: auto;
+ }
+#card-bg2{
+    border: none;
+    background-color: #00BFA5;
+    color: white;
+}
+
+
+
+
+@media(max-width: 769px){
+    *{
+        font-size: 6vw;
+    }
+}
+@media(min-width: 769px){
+    section{
+        display: flex;
+    }
+    .card{
+        margin: 1%
+    }
+}

@@ -1,4 +1,5 @@
 <body>
+
         <mat-toolbar id="mainToolbar" color="primary">
                 <mat-icon (click)="onToolbarMenuToggle()" id="toolbarMenu">menu</mat-icon>
                 <h1 class="header">Sportify</h1>
@@ -76,12 +77,14 @@
                 </mat-sidenav>
 
                 <mat-sidenav-content style="margin: 0;">
-
+                <router-outlet></router-outlet>
                 </mat-sidenav-content>
 
 
 
 
         </mat-sidenav-container>
-        <router-outlet></router-outlet>
+        
 </body>
+
+

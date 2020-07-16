@@ -1,0 +1,27 @@
+.lyrics {
+    background-color: #ffffff;
+    font-family: ‘Roboto’, sans-serif;
+    color: #00BFA5;
+}
+
+.buttonR {
+    background-color: #00BFA5;
+    font-family: ‘Roboto’, sans-serif;
+    color: #ffffff;
+}
+
+.bodym {
+    background-color: #ffffff;
+    font-family: ‘Roboto’, sans-serif;
+}
+
+.m-5 {
+    padding: 5%;
+}
+
+@media(min-width:769px) {
+    .m-5 {
+        padding-right: 25%;
+        padding-left: 25%;
+    }
+}

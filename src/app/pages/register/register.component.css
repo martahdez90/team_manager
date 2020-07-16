@@ -1,0 +1,50 @@
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+@media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+    }
+}
+
+.lyrics {
+    background-color: #ffffff;
+    font-family: ‘Roboto’, sans-serif;
+    color: #00BFA5;
+}
+
+.buttonR {
+    background-color: #00BFA5;
+    font-family: ‘Roboto’, sans-serif;
+    color: #ffffff;
+    margin-left: 40%;
+    margin-right: 40%;
+}
+
+.m-5 {
+    padding: 0px;
+    padding-left: 20%;
+}
+
+@media(max-width:769px) {
+    .m-5 {
+        padding-left: 0%;
+    }
+    .buttonR {
+        margin-left: 35%;
+        margin-right: 35%;
+    }
+}
+
+@media(max-width:789px) {
+    .buttonR {
+        margin-left: 35%;
+        margin-right: 25%;
+    }
+}
