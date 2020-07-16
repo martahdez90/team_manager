@@ -1,13 +1,42 @@
+<header>
+  <div class="pos-f-t">
+      <div class="collapse" id="navbarToggleExternalContent">
+          <div class="p-4">
+              <ul class="list-group list-group-flush">
+                  <li class="list-group-item"><a routerLink="/coach/myTeams" class="nav-item">Mis equipos</a></li>
+                  <li class="list-group-item"><a routerLink="/coach/myWorkouts" class="nav-item">Entrenamientos y partidos</a></li>
+                  <li class="list-group-item"><a routerLink="/coach/settings" class="nav-item">Ajustes</a></li>
+              </ul>
+          </div>
+      </div>
+      <nav class="navbar navbar-dark">
+          <button class="navbar-toggler" type="button" data-toggle="collapse"
+              data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+              aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <ul class="navbar-nav">
+              <li class="nav-item active">
+                <button mat-button routerLink="/player/myCalendar" class="nav-item"><mat-icon >donut_large</mat-icon></button>
+              </li>
+          </ul>
+      </nav>
+  </div>
+</header>
 
+
+
+
+<!-- 
 <mat-toolbar id="mainToolbar" color="primary">
   <mat-icon
     (click)="onToolbarMenuToggle()"
     id="toolbarMenu">menu</mat-icon>
   <h1 class="header">Mis equipos</h1>
   <span class="toolbar-spacer"></span>
-  <!-- <mat-icon
+  <mat-icon
     class="toolbar-icon">
-  notifications</mat-icon> -->
+  notifications</mat-icon>
 </mat-toolbar>
 
 <mat-sidenav-container
@@ -59,15 +88,8 @@
     </mat-list>
   </mat-sidenav>
 
-  <!-- <mat-sidenav-content
-  [ngStyle]="{ 'margin-left.px': contentMargin }"
-  >
-    <mat-selection-list class="dash-list">
-      <h3>TO DO</h3>
-      <mat-list-option *ngFor="let todo of task">
-        {{todo}}
-      </mat-list-option>
-    </mat-selection-list> 
-  </mat-sidenav-content> -->
+  <mat-sidenav-content></mat-sidenav-content>
+
 </mat-sidenav-container>
 
+ -->
