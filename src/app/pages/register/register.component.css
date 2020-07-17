@@ -17,8 +17,16 @@
     background-color: #ffffff;
     font-family: ‘Roboto’, sans-serif;
     color: #00BFA5;
+    height: 100vh;
 }
-
+.lyrics2 {
+    background-color: #00BFA5;
+    font-family: ‘Roboto’, sans-serif;
+    color: #ffffff;
+}
+#whiteLink {
+    color: white;
+}
 .buttonR {
     background-color: #00BFA5;
     font-family: ‘Roboto’, sans-serif;
@@ -26,7 +34,9 @@
     margin-left: 40%;
     margin-right: 40%;
 }
-
+select{
+    border: none;
+}
 .m-5 {
     padding: 0px;
     padding-left: 20%;

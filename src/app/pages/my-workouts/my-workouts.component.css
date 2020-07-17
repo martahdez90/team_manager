@@ -3,13 +3,12 @@
 }
 section{
     position: relative;
-    padding: 3%;
+    padding: 5%;
 }
 .card{
     border: #00BFA5;
     max-width: 50rem;
     margin: auto;
-
 }
 
 .card-footer, #date{
@@ -21,7 +20,7 @@ section{
 #edit{
     position: absolute;
     top: 20%;
-    right: 15%;
+    right: 10%;
 }
 #trash{
     position: absolute;
@@ -36,9 +35,9 @@ section{
 }
 .btn-down .material-icons{
     position: fixed;
-    bottom: 15px;
+    bottom: 10%;
     right: 15px;
-    font-size:48px;
+    font-size: 5vw;
     color: #00BFA5;
     border-radius: 100%;
     background-color: whitesmoke;
@@ -49,7 +48,10 @@ section{
 
 @media(max-width: 769px){
     *{
-        font-size: 6vw;
+        font-size: 3.5vw;
+    }
+    .btn-down .material-icons{
+        font-size: 40px;
     }
 }
 @media(min-width: 769px){
@@ -58,5 +60,8 @@ section{
     }
     .card{
         margin: 1%
+    }
+    .btn-down .material-icons{
+        font-size: 45px;
     }
 }
