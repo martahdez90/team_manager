@@ -1,39 +1,48 @@
-<!doctype html>
-<html lang="en">
+<header class="lyrics2">
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                    <a class="nav-link" id="whiteLink" routerLink="/register">Register 
+                        <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="whiteLink" routerLink="/login">LogIn</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="whiteLink" routerLink="/home">About Us</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <title>Checkout example · Bootstrap</title>
-</head>
-
-<body class="bg-light lyrics ">
+<div class="bg-light lyrics">
     <div class="py-5 text-center">
-        <img class="d-block mx-auto mb-4" src="../assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+        <!-- <img class="d-block mx-auto mb-4" src="../assets/brand/bootstrap-solid.svg" alt="" width="72" height="72"> -->
         <h2>SPORTIFY</h2>
-
     </div>
     <div class="m-5">
         <div class="container">
 
-
             <div class="row">
-
                 <div class="col-md-8 order-md-1">
-
                     <form class="needs-validation" novalidate>
                         <div class="row">
                             <div class="col-md-6 mb-3">
                                 <label for="firstName">Nombre</label>
-                                <input type="text" class="form-control" id="firstName" placeholder="nombre" value="" required>
+                                <input type="text" class="form-control" id="firstName" placeholder="Nombre" value="" required>
                                 <div class="invalid-feedback">
                                     Se requiere un nombre válido
                                 </div>
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label for="lastName">Apellidos</label>
-                                <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
+                                <input type="text" class="form-control" id="lastName" placeholder="Apellido" value="" required>
                                 <div class="invalid-feedback">
                                     Se requiere un apellido válido
                                 </div>
@@ -41,12 +50,12 @@
                         </div>
 
                         <div class="mb-3">
-                            <label for="telephone">teléfono</label>
+                            <label for="telephone">Teléfono</label>
                             <div class="input-group">
                                 <div class="input-group-prepend">
 
                                 </div>
-                                <input type="text" class="form-control" id="telephone" placeholder="teléfono" required>
+                                <input type="text" class="form-control" id="telephone" placeholder="Teléfono" required>
                                 <div class="invalid-feedback" style="width: 100%;">
                                     Se requiere un teléfono
                                 </div>
@@ -55,7 +64,7 @@
 
                         <div class="mb-3">
                             <label for="email">Email <span class="text-muted">*</span></label>
-                            <input type="email" class="form-control" id="email" placeholder="you@example.com">
+                            <input type="email" class="form-control" id="Email" placeholder="you@example.com">
                             <div class="invalid-feedback">
                                 Por favor inserte un email válido
                             </div>
@@ -63,27 +72,28 @@
 
                         <div class="mb-3">
                             <label for="password">Contraseña</label>
-                            <input type="text" class="form-control" id="password" placeholder="contraseña" required>
+                            <input type="text" class="form-control" id="password" placeholder="Pontraseña" required>
                             <div class="invalid-feedback">
                                 Por favor inserte la contraseña
                             </div>
                         </div>
 
-                        <div class="mb-3">
-                            <label for="type">type of user <span class="text-muted"></span></label>
-                            <input type="text" class="form-control" id="type" placeholder=" Entrenador o  Jugador">
+                        <div class="mb-3" style="text-align: center;">
+                            <label for="type">Tipo de usuario <span class="text-muted"></span></label>
+                            <br>
+                            <select id="slect" id="dropdown">
+                                <option value="null" selected disabled>Selecciona uno</option>
+                                <option value="entrenador">Entrenador</option>
+                                <option value="jugador">Jugador</option>
+                            </select>
                         </div>
                         <hr class="mb-4">
                         <button type="button" class="btn buttonR " >Registrarme</button>
                     </form>
                 </div>
             </div>
-
-
         </div>
     </div>
+</div>
 
-
-</body>
-
-</html>
+<app-green-footer></app-green-footer>
