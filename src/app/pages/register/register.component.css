@@ -13,44 +13,42 @@
     }
 }
 
+#sportify{
+    color: white;
+    font-weight: 900;
+}
+
 .lyrics {
     background-color: #ffffff;
-    font-family: ‘Roboto’, sans-serif;
     color: #00BFA5;
-    height: 100vh;
+    padding-bottom: 6vh;
 }
-.lyrics2 {
+.header {
     background-color: #00BFA5;
-    font-family: ‘Roboto’, sans-serif;
     color: #ffffff;
+    text-align: center;
 }
 #whiteLink {
     color: white;
 }
-.buttonR {
+.btn {
     background-color: #00BFA5;
-    font-family: ‘Roboto’, sans-serif;
     color: #ffffff;
-    margin-left: 40%;
-    margin-right: 40%;
 }
 select{
     border: none;
 }
-.m-5 {
-    padding: 0px;
-    padding-left: 20%;
+.container {
+    padding: 5%;
+    padding-left: 21%;
 }
 
-@media(max-width:769px) {
-    .m-5 {
-        padding-left: 0%;
-    }
-    .buttonR {
-        margin-left: 35%;
-        margin-right: 35%;
+@media(max-width:767px) {
+    .container {
+        padding-left: 4%;
     }
 }
+
 
 @media(max-width:789px) {
     .buttonR {

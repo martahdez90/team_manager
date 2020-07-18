@@ -1,5 +1,5 @@
 *{
-    font-size: 1.5vw;
+    font-size: 1.7vw;
 }
 section{
     position: relative;
@@ -39,11 +39,9 @@ section{
 }
 
 
-
-
 @media(max-width: 769px){
     *{
-        font-size: 6vw;
+        font-size: 3.5vw;
     }
 }
 @media(min-width: 769px){
