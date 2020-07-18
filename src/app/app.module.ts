@@ -27,6 +27,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import { ToolbarComponent } from './pages/toolbar/toolbar.component';
 import { MyGamesComponent } from './pages/my-games/my-games.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
