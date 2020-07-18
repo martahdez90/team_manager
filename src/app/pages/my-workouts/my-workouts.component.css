@@ -1,5 +1,5 @@
 *{
-    font-size: 2.2vw;
+    font-size: 1.7vw;
 }
 section{
     position: relative;
@@ -28,6 +28,14 @@ section{
     right: 5%;
     color: grey
 }
+#ver{
+    color: white;
+    position: absolute;
+    top: 20%;
+    right: 3%;
+    border: solid;
+    border-color: white;
+}
 .btn-down{
     position: relative;
     margin: auto;
@@ -42,8 +50,6 @@ section{
     border-radius: 100%;
     background-color: whitesmoke;
 }
-
-
 
 
 @media(max-width: 769px){

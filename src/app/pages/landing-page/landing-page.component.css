@@ -1,14 +1,17 @@
+#sportify{
+    color: white;
+    font-weight: 900;
+}
+
+
 .lyrics {
     background-color: #3BB899;
-    font-family: ‘Roboto’, sans-serif;
- /*    color: #FFFFFF; */
-    color: black;
+    color: #FFFFFF;
     text-align: center;
 }
 
 .bodym {
     background-color: #3bb899;
-    font-family: ‘Roboto’, sans-serif;
     text-align: center;
 }
 

@@ -1,10 +1,17 @@
+#sportify{
+    color: white;
+    font-weight: 900;
+}
+
+
 .lyrics {
     background-color: #ffffff;
     color: #00BFA5;
     height: 100vh;
 }
-.lyrics2 {
+.header {
     background-color: #00BFA5;
+    text-align: center;
 }
 #whiteLink {
     color: white;
@@ -17,7 +24,8 @@
 }
 
 .m-5 {
-    padding: 5%;
+    margin:0;
+    padding: 1%;
 }
 
 @media(min-width:769px) {
