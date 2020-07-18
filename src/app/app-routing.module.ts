@@ -10,6 +10,7 @@ import { MySettingsComponent } from './pages/my-settings/my-settings.component';
 import { MyCalendarComponent } from './pages/my-calendar/my-calendar.component';
 import { MyPlayersComponent } from './pages/my-players/my-players.component';
 import { MyCoachComponent } from './pages/my-coach/my-coach.component';
+import { MyGamesComponent } from './pages/my-games/my-games.component';
 
 
 const routes: Routes = [
@@ -22,6 +23,7 @@ const routes: Routes = [
   {path: 'coach/myWorkouts', component: MyWorkoutsComponent },
   {path: 'coach/myExercises', component: MyExercisesComponent},
   {path: 'coach/settings', component: MySettingsComponent},
+  {path: 'coach/myGames', component: MyGamesComponent},
   // player
   {path: 'player/myCalendar', component: MyCalendarComponent},
   {path: 'player/myPlayers', component: MyPlayersComponent},
