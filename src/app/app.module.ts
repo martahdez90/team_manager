@@ -25,6 +25,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatIconModule} from '@angular/material/icon';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { ToolbarComponent } from './pages/toolbar/toolbar.component';
+import { LandingHeaderComponent } from './pages/landing-header/landing-header.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { ToolbarComponent } from './pages/toolbar/toolbar.component';
     MySettingsComponent,
     WhiteFooterComponent,
     GreenFooterComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    LandingHeaderComponent
   ],
   imports: [
     BrowserModule,
