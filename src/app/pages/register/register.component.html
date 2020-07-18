@@ -1,4 +1,5 @@
-<header class="lyrics">
+
+<header class="header">
     <nav class="navbar navbar-expand-lg navbar-light">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -9,10 +10,8 @@
                 <li class="nav-item active">
                     <a class="nav-link" id="sportify" routerLink="/home">Sportify</a> 
                 </li>
-
                 <li class="nav-item active">
-                    <a class="nav-link" id="whiteLink" routerLink="/register">Register 
-                        <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" id="whiteLink" routerLink="/register">Register</a>
                 </li>
 
                 <li class="nav-item">
@@ -31,12 +30,19 @@
     <div class="py-5 text-center">
         <h2>SPORTIFY</h2>
     </div>
-    <div class="m-5">
         <div class="container">
-
             <div class="row">
                 <div class="col-md-8 order-md-1">
                     <form class="needs-validation" novalidate>
+                        <div class="mb-3" style="text-align: center;">
+                            <label for="type">Tipo de usuario <span class="text-muted"></span></label>
+                            <br>
+                            <select id="slect" id="dropdown">
+                                <option value="null" selected disabled>Selecciona uno</option>
+                                <option value="entrenador">Entrenador</option>
+                                <option value="jugador">Jugador</option>
+                            </select>
+                        </div>
                         <div class="row">
                             <div class="col-md-6 mb-3">
                                 <label for="firstName">Nombre</label>
@@ -47,7 +53,7 @@
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label for="lastName">Apellidos</label>
-                                <input type="text" class="form-control" id="lastName" placeholder="Apellido" value="" required>
+                                <input type="text" class="form-control" id="lastName" placeholder="Apellidos" value="" required>
                                 <div class="invalid-feedback">
                                     Se requiere un apellido válido
                                 </div>
@@ -82,23 +88,14 @@
                                 Por favor inserte la contraseña
                             </div>
                         </div>
-
-                        <div class="mb-3" style="text-align: center;">
-                            <label for="type">Tipo de usuario <span class="text-muted"></span></label>
-                            <br>
-                            <select id="slect" id="dropdown">
-                                <option value="null" selected disabled>Selecciona uno</option>
-                                <option value="entrenador">Entrenador</option>
-                                <option value="jugador">Jugador</option>
-                            </select>
-                        </div>
                         <hr class="mb-4">
-                        <button type="button" class="btn buttonR " >Registrarme</button>
+                        <div style="text-align: center;">
+                            <button type="button" class="btn">Registrarme</button>
+                        </div>
                     </form>
                 </div>
             </div>
         </div>
-    </div>
 </div>
 
 <app-green-footer></app-green-footer>

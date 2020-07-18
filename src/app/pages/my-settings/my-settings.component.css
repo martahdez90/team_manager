@@ -1,34 +1,50 @@
-
-#profile{
-    background-color:  #00BFA5;
+#profile {
+    background-color: #00BFA5;
     font-size: 100px;
     text-align: center;
     color: white;
 }
-#profile-list{
-    color:rgb(75, 75, 75);
+
+#profile-list {
+    color: rgb(75, 75, 75);
     padding: 0%;
     padding-left: 5%;
     margin-top: 3%;
 }
-ul, div{
+
+ul,
+div {
     margin: 0;
-    padding:0
+    padding: 0
 }
-.fas{
+
+.fas {
     color: red;
     position: absolute;
     right: 5%;
 }
 
-
-
-.list-group-item{
+.list-group-item {
     position: relative;
 }
-#info{
-    display: inline; 
-    position: absolute; 
+
+#info {
+    display: inline;
+    position: absolute;
     right: 5%;
     color: grey;
+}
+
+.buttonR {
+    background-color: #00BFA5;
+    font-family: ‘Roboto’, sans-serif;
+    color: #ffffff;
+}
+
+@media(min-width:787px) {
+    .list-group {
+        position: relative;
+        margin-left: 20%;
+        margin-right: 20%;
+    }
 }

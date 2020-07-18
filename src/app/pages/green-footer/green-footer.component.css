@@ -1,7 +1,8 @@
 footer{
+    margin: auto;
+    padding: 0;
     position: absolute;
     bottom: 0;
-    z-index: 2;
     height: 6vh;
     width: 100%;
     font-size: 3vh;
@@ -10,6 +11,5 @@ footer{
     background-color: #00bfa5;
     color: white;
     text-shadow: 2px;
-    margin: auto;
-    padding: 0;
+
 }

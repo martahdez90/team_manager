@@ -25,6 +25,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatIconModule} from '@angular/material/icon';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { ToolbarComponent } from './pages/toolbar/toolbar.component';
+import { MyGamesComponent } from './pages/my-games/my-games.component';
 
 
 @NgModule({
@@ -44,8 +45,8 @@ import { ToolbarComponent } from './pages/toolbar/toolbar.component';
     MySettingsComponent,
     WhiteFooterComponent,
     GreenFooterComponent,
-    ToolbarComponent
-  
+    ToolbarComponent,
+    MyGamesComponent
   ],
   imports: [
     BrowserModule,
