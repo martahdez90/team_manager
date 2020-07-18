@@ -7,6 +7,32 @@
     color: #00bfa5;
 }
 
+.form-group {
+    font-size: small;
+}
+
+button {
+    background-color: #00bfa5;
+    border: #00bfa5;
+}
+
+button:active, button:focus {
+    background-color: #009688;
+    border: #009688;
+}
+
+.newPlayer {
+    text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+label {
+    color: #00bfa5;
+    font-weight: 500;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
 section {
     padding-bottom: 25vh;
 }
@@ -23,10 +49,25 @@ section {
     font-size: 18px;
 }
 
-@media (max-width: 576px) {
+.btn-down{
+    position: relative;
+    margin: auto;
+    padding: 12px;
+}
+.btn-down .material-icons{
+    position: fixed;
+    bottom: 10%;
+    right: 15px;
+    font-size: 5vw;
+    color: #00BFA5;
+    border-radius: 100%;
+    background-color: whitesmoke;
+}
+
+@media (max-width: 400px) {
     * {
         font-family: 'Roboto', sans-serif;
-        font-size: 4.5vw;
+        font-size: medium;
     }
     .ball {
         color: #00bfa5;
@@ -42,10 +83,17 @@ section {
     .fa-eye:hover {
         font-size: 4vw;
     }
+    .btn-down .material-icons{
+        font-size: 40px;
+    }
     
     section {
         padding-bottom: 20vh;
     }
+}
 
-
+@media(min-width: 769px){
+    .btn-down .material-icons{
+        font-size: 45px;
+    }
 }
