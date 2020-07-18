@@ -26,6 +26,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { ToolbarComponent } from './pages/toolbar/toolbar.component';
 import { MyGamesComponent } from './pages/my-games/my-games.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 
 @NgModule({
@@ -51,7 +52,6 @@ import { MyGamesComponent } from './pages/my-games/my-games.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-
     BrowserAnimationsModule,
     MatButtonModule,
     MatToolbarModule,
@@ -59,7 +59,8 @@ import { MyGamesComponent } from './pages/my-games/my-games.component';
     MatCardModule,
     MatIconModule,
     MatSidenavModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -56,6 +56,10 @@ mat-icon {
 }
 } */
 
+* {
+    font-size: medium;
+}
+
 .lyrics {
     background-color: #00BFA5;
     font-family: ‘Roboto’, sans-serif;
@@ -82,7 +86,6 @@ mat-icon {
 
 @media (min-width: 576px) {
     * {
-        font-size: 2vw;
         line-height: 1.5;
     }
 }

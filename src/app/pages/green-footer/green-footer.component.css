@@ -1,7 +1,8 @@
 footer{
     margin: auto;
+    margin-top: 5%;
     padding: 0;
-    position: absolute;
+    position: absolute bottom;
     bottom: 0;
     height: 6vh;
     width: 100%;
