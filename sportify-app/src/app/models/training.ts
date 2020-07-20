@@ -7,6 +7,7 @@ export class Training {
     constructor (name: string, date: Date, location: string, description: string) {
         this.training_id;
         this.name = name;
+        this.date = date
         this.location = location;
         this.description = description;
    } 

@@ -12,8 +12,10 @@ export class MyGamesComponent implements OnInit {
                   new Match(new Date(2020, 6, 1), 'Londres', 'Comntario para probar'),
                   new Match(new Date(2020, 6, 1), 'Londres', 'Comntario para probar'),
                   new Match(new Date(2020, 6, 1), 'Londres', 'Comntario para probar')]
-  constructor() { }
-
+  constructor() {}
+  newGame(){
+    this.games.push(new Match(new Date(), 'Lugar', 'Añade tu comentario'))
+  }
   ngOnInit(): void {
   }
 

@@ -9,10 +9,10 @@
                 <i class='far fa-trash-alt' id="trash"></i>
             </div>
             <div class="card-header bg-transparent">
-                {{game.comment}}
+                {{game.name}}
             </div>
             <div class="card-body">
-            <p class="card-text">Mejorar la resistencia con ejercicios de 15 minutos.</p>
+            <p class="card-text">{{game.description}}</p>
             </div>
             <div class="card-footer">
                 {{game.location}}
@@ -42,7 +42,7 @@
 </div> -->
 
 <div class="btn-down">
-    <i class="material-icons">add_circle</i>
+    <i class="material-icons" (click)='newWorkout()'>add_circle</i>
 </div>
 
 <app-green-footer></app-green-footer>
