@@ -1,0 +1,46 @@
+# See http:/sportify-app//sportify-app/help.github.com/sportify-app/ignore-files/sportify-app/ for more about ignoring files.
+
+# compiled output
+/sportify-app/dist
+/sportify-app/tmp
+/sportify-app/out-tsc
+# Only exists if Bazel was run
+/sportify-app/bazel-out
+
+# dependencies
+/sportify-app/node_modules
+
+# profiling files
+chrome-profiler-events*.json
+speed-measure-plugin*.json
+
+# IDEs and editors
+/sportify-app/.idea
+.project
+.classpath
+.c9/sportify-app/
+*.launch
+.settings/sportify-app/
+*.sublime-workspace
+
+# IDE - VSCode
+.vscode/sportify-app/*
+!.vscode/sportify-app/settings.json
+!.vscode/sportify-app/tasks.json
+!.vscode/sportify-app/launch.json
+!.vscode/sportify-app/extensions.json
+.history/sportify-app/*
+
+# misc
+/sportify-app/.sass-cache
+/sportify-app/connect.lock
+/sportify-app/coverage
+/sportify-app/libpeerconnection.log
+npm-debug.log
+yarn-error.log
+testem.log
+/sportify-app/typings
+
+# System Files
+.DS_Store
+Thumbs.db
