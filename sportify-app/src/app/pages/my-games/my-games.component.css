@@ -2,14 +2,9 @@
     font-size: 1.7vw;
 }
 
-section {
-    position: relative;
-    padding: 5%;
-}
-
 .card {
     border: #00BFA5;
-    max-width: 50rem;
+    max-width: 80rem;
     margin: auto;
 }
 

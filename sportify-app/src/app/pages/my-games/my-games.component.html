@@ -2,38 +2,24 @@
 
 
 <section id="training-card">
-
-    <div class="card mb-3">
-        <div class="card-header" id="date">
-            17/09/2020
-            <i class="far fa-edit" id="edit" routerLink="/coach/myExercises"></i>
-            <i class='far fa-trash-alt' id="trash"></i>
-        </div>
-        <div class="card-header bg-transparent">
-            Partidos
-        </div>
-
-        <div class="card-body">
+    <div class="card-color d-flex align-content-center flex-wrap mx-auto pb-4">
+        <div class="card mr-4 ml-5 mt-4 mb-1 p-1 pb-1" *ngFor="let game of games;">
+            <div class="card-header" id="date">
+                {{game.date.getDate()}}/{{game.date.getMonth()}}/{{game.date.getFullYear()}}
+                <i class="far fa-edit" id="edit" routerLink="/coach/myExercises"></i>
+                <i class='far fa-trash-alt' id="trash"></i>
+            </div>
+            <div class="card-header bg-transparent">
+                {{game.comment}}
+            </div>
+            <div class="card-body">
             <p class="card-text">Mejorar la resistencia con ejercicios de 15 minutos.</p>
+            </div>
+            <div class="card-footer">
+                {{game.location}}
+                <a class="badge badge-pill text-right" routerLink="/coach/myExercises">Ver</a>
+            </div>
         </div>
-        <div class="card-footer">
-            Parque el Retiro
-        </div>
-
-    </div>
-
-
-    <div class="card mb-3">
-        <div class="card-header" id="date">
-            Fecha
-            <i class="far fa-edit" id="edit" routerLink="/coach/myExercises"></i>
-            <i class='far fa-trash-alt' id="trash"></i>
-        </div>
-        <div class="card-header" id="title">Card title</div>
-        <div class="card-body">
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-        <div class="card-footer">Footer</div>
     </div>
 </section>
 

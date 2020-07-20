@@ -20,13 +20,13 @@ const routes: Routes = [
   {path: 'register', component: RegisterComponent},
   // coach
   {path: 'coach/myTeams', component: MyTeamsComponent},
+  {path: 'coach/myPlayers', component: MyPlayersComponent},
   {path: 'coach/myWorkouts', component: MyWorkoutsComponent },
   {path: 'coach/myExercises', component: MyExercisesComponent},
   {path: 'coach/settings', component: MySettingsComponent},
   {path: 'coach/myGames', component: MyGamesComponent},
   // player
   {path: 'player/myCalendar', component: MyCalendarComponent},
-  {path: 'coach/myPlayers', component: MyPlayersComponent},
   {path: 'player/myCoach', component: MyCoachComponent},
   {path: 'player/settings', component: MySettingsComponent},
   {path: '**',redirectTo: 'home'}
