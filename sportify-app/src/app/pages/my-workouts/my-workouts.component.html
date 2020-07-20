@@ -1,39 +1,45 @@
 <app-coach-menu></app-coach-menu>
 
 <section id="training-card">
-    <div class="card mb-3">
-        <div class="card-header" id="date">
-            17/09/2020
-            <i class="far fa-edit" id="edit" routerLink="/coach/myExercises"></i>
-            <i class='far fa-trash-alt' id="trash"></i>
-        </div>
-        <div class="card-header bg-transparent">
-            Entrenamiento de resistencia
-        </div>
-        <div class="card-body">
-          <p class="card-text">Mejorar la resistencia con ejercicios de 15 minutos.</p>
-        </div>
-        <div class="card-footer">
-            Parque el Retiro
-            <a class="badge badge-pill text-right" id="ver" routerLink="/coach/myExercises">Ver</a>
-        </div>
-    </div>
-    <div class="card mb-3" >
-        <div class="card-header" id="date">
-            Fecha
-            <i class="far fa-edit" id="edit" routerLink="/coach/myExercises"></i>
-            <i class='far fa-trash-alt' id="trash"></i>
-        </div>
-        <div class="card-header" id="title">Card title</div>
-        <div class="card-body">
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-        <div class="card-footer">
-            Footer
-            <a class="badge badge-pill text-right" id="ver" routerLink="/coach/myExercises">Ver</a>
+    <div class="card-color d-flex align-content-center flex-wrap mx-auto pb-4">
+        <div class="card mr-4 ml-5 mt-4 mb-1 p-1 pb-1" *ngFor="let game of games;">
+            <div class="card-header" id="date">
+                {{game.date.getDate()}}/{{game.date.getMonth()}}/{{game.date.getFullYear()}}
+                <i class="far fa-edit" id="edit" routerLink="/coach/myExercises"></i>
+                <i class='far fa-trash-alt' id="trash"></i>
+            </div>
+            <div class="card-header bg-transparent">
+                {{game.comment}}
+            </div>
+            <div class="card-body">
+            <p class="card-text">Mejorar la resistencia con ejercicios de 15 minutos.</p>
+            </div>
+            <div class="card-footer">
+                {{game.location}}
+                <a class="badge badge-pill text-right" routerLink="/coach/myExercises">Ver</a>
+            </div>
         </div>
     </div>
 </section>
+<!-- <div class="card-color d-flex align-content-center flex-wrap mx-auto pb-4">
+    <div class="card playerInfo mr-4 ml-5 mt-4 mb-1 p-1 pb-1 team" id="team2">
+        <div class="card-header" id="date">
+            Alcorcón CF
+            <mat-icon class="close">delete</mat-icon>
+        </div>
+        <div class="card-body row">
+            <div class="col-4">
+                <i class="fa fa-soccer-ball-o ball"></i>
+            </div>
+            <div class="col-7 infoTeam">
+                <p class="card-text">Alevines</p>
+            </div>
+        </div>
+        <div class="card-footer">
+            <mat-icon class="eye" routerLink="/coach/myPlayers">remove_red_eye</mat-icon>
+        </div>
+    </div>
+</div> -->
 
 <div class="btn-down">
     <i class="material-icons">add_circle</i>
