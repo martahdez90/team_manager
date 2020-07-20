@@ -28,14 +28,7 @@ section{
     right: 5%;
     color: grey
 }
-#ver{
-    color: white;
-    position: absolute;
-    top: 20%;
-    right: 3%;
-    border: solid;
-    border-color: white;
-}
+
 .btn-down{
     position: relative;
     margin: auto;
