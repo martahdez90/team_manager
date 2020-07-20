@@ -34,10 +34,24 @@ label {
     padding-top: 5px;
 }
 section {
-    padding-bottom: 25vh;
+    padding-bottom: 15vh;
 }
-.card-color {
-    padding: 2%;
+.card-header {
+    background-color: #00bfa5;
+    color: white;
+}
+
+#edit{
+    position: absolute;
+    top: 10%;
+    right: 12%;
+    color: white;
+}
+#trash{
+    position: absolute;
+    top: 10%;
+    right: 5%;
+    color: white;
 }
 
 .eye {
