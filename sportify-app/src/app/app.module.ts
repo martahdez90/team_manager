@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
@@ -26,7 +25,8 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { ToolbarComponent } from './pages/toolbar/toolbar.component';
 import { MyGamesComponent } from './pages/my-games/my-games.component';
-import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { HttpClientModule } from "@angular/common/http";
 
 
 @NgModule({
@@ -60,7 +60,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     MatIconModule,
     MatSidenavModule,
     BrowserAnimationsModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

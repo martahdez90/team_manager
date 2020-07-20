@@ -7,10 +7,6 @@
     color: #00bfa5;
 }
 
-.form-group {
-    font-size: small;
-}
-
 button {
     background-color: #00bfa5;
     border: #00bfa5;
@@ -21,11 +17,6 @@ button:active, button:focus {
     border: #009688;
 }
 
-.newPlayer {
-    text-align: center;
-    padding-left: 20px;
-    padding-right: 20px;
-}
 
 label {
     color: #00bfa5;
@@ -40,13 +31,36 @@ section {
     padding: 2%;
 }
 
+.playerInfo{
+    width: 300px;
+}
+
 .eye {
     font-size: 20px;
-    color: #00bfa5;
+    color: white;
+    position: absolute;
+    bottom: 5%;
+    right: 3%;
 }
 
 .eye:hover {
     font-size: 18px;
+}
+
+.card-footer, .card-header {
+    background-color: #00bfa5;
+    max-width: 100%;
+    padding-top: 20px;
+    color: white;
+    font-weight: bold;
+}
+
+.close {
+    color: white;
+    font-weight: bold;
+    position: absolute;
+    top: 10%;
+    right: 3%;
 }
 
 .btn-down{
@@ -64,6 +78,15 @@ section {
     background-color: whitesmoke;
 }
 
+.newPlayer {
+    text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: small;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
 @media (max-width: 400px) {
     * {
         font-family: 'Roboto', sans-serif;
@@ -71,7 +94,7 @@ section {
     }
     .ball {
         color: #00bfa5;
-        font-size: 15vw;  
+        font-size: 10vw;  
     
     }
     
@@ -95,5 +118,13 @@ section {
 @media(min-width: 769px){
     .btn-down .material-icons{
         font-size: 45px;
+    }
+    .newPlayer {
+        text-align: center;
+        padding-left: 20px;
+        padding-right: 20px;
+        font-size: small;
+        margin-left: 25%;
+        margin-right: 25%
     }
 }

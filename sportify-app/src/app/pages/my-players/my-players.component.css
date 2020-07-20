@@ -1,5 +1,5 @@
 * {
-    font-size: medium;
+    font-size: 1.7;
     line-height: 1.5;
     color: gray;
 }
@@ -31,21 +31,43 @@ body {
     font-size: 1vw;
 }
 
-.player {
-    color: #00bfa5;
+.card-header {
+    background-color: #00bfa5;
+    color: white;
     font-weight: bold;
 }
 
-.btn-down{
+#edit{
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    color: white;
+}
+#trash{
+    position: absolute;
+    top: 10%;
+    right: 5%;
+    color: white
+}
+#ver{
+    color: white;
+    position: absolute;
+    top: 20%;
+    right: 3%;
+    border: solid;
+    border-color: white;
+}
+
+.btn-up{
     position: relative;
     margin: auto;
     padding: 12px;
 }
-.btn-down .material-icons{
+.btn-up .more{
     position: fixed;
-    bottom: 10%;
+    top: 10%;
     right: 15px;
-    font-size: 5vw;
+    font-size: 6vw;
     color: #00BFA5;
     border-radius: 100%;
     background-color: whitesmoke;
@@ -59,17 +81,24 @@ body {
     * {
         font-family: 'Roboto', sans-serif;
         font-size: 4vw;
-        line-height: 1;
+        line-height: 1.5;
         color: gray
     }
-    mat-icon {
-        color: #00bfa5;
+    .more {
+        color: #00bfa5; 
         font-size: 8vw;  
+    }
+    #trash{
+        position: absolute;
+        top: 10%;
+        right: 5%;
+        color: white;
+        font-size: medium;
     }
 } 
 
 @media(min-width: 769px){
-    .btn-down .material-icons{
+    .btn-up .more {
         font-size: 45px;
     }
 }

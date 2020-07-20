@@ -26,7 +26,7 @@ const routes: Routes = [
   {path: 'coach/myGames', component: MyGamesComponent},
   // player
   {path: 'player/myCalendar', component: MyCalendarComponent},
-  {path: 'player/myPlayers', component: MyPlayersComponent},
+  {path: 'coach/myPlayers', component: MyPlayersComponent},
   {path: 'player/myCoach', component: MyCoachComponent},
   {path: 'player/settings', component: MySettingsComponent},
   {path: '**',redirectTo: 'home'}
