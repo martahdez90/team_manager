@@ -9,14 +9,15 @@ export class UserService {
 
   private url = "http://localhost:3000/Users";
   public user: User;
+  
   constructor(private http: HttpClient) { }
 
   getUser(id: number) {
     return this.http.get(this.url + "/" + id)
   }
-  getUsers() {
+  /* getUsers() {
     return this.http.get(this.url)
-  }
+  } */
   postUser(newUser: User) {
     return this.http.post(this.url, newUser)
   }

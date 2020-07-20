@@ -8,7 +8,10 @@ import { Exercise  } from "../models/exercise";
 export class ExerciseService {
 
   private url = "http://localhost:3000/exercises";
-  public Exercise: Exercise;
+  
+  public Exercises: Exercise[];
+
+
   constructor(private http: HttpClient) { }
 
   getExercise(id: number) {
