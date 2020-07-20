@@ -8,6 +8,7 @@ section{
 .card{
     border: #00BFA5;
     max-width: 50rem;
+    min-width: 25rem;
     margin: auto;
 }
 
