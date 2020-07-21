@@ -6,12 +6,12 @@ import { Match } from "../models/match";
   providedIn: 'root'
 })
 export class MatchServiceService {
-  private url = "http://localhost:3000/match"
+  private url = "http://localhost:3025/match"
   constructor(private http: HttpClient) { }
 
 
-  getMatches(){
-    return this.http.get(this.url)
+  getMatches(id){
+    return this.http.get(this.url +"/" +id)
   }
 
   postMatch(newMatch: Match){
