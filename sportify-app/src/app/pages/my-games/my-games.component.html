@@ -3,20 +3,20 @@
 
 <section id="training-card">
     <div class="card-color d-flex align-content-center flex-wrap mx-auto pb-4">
-        <div class="card mr-4 ml-5 mt-4 mb-1 p-1 pb-1" *ngFor="let game of games;">
+        <div class="card mr-4 ml-5 mt-4 mb-1 p-1 pb-1" *ngFor="let e of dataBase;">
             <div class="card-header" id="date">
-                {{game.date.getDate()}}/{{game.date.getMonth()}}/{{game.date.getFullYear()}}
+                {{e.date}}
                 <i class="far fa-edit" id="edit" routerLink="/coach/myExercises"></i>
                 <i class='far fa-trash-alt' id="trash"></i>
             </div>
             <div class="card-header bg-transparent">
-                {{game.comment}}
+                {{e.comments}}
             </div>
             <div class="card-body">
             <p class="card-text">Mejorar la resistencia con ejercicios de 15 minutos.</p>
             </div>
             <div class="card-footer">
-                {{game.location}}
+                {{e.location}}
                 <a class="badge badge-pill text-right" routerLink="/coach/myExercises">Ver</a>
             </div>
         </div>
@@ -24,7 +24,7 @@
 </section>
 
 <div class="btn-down">
-    <i class="material-icons" (click)='newGame()'>add_circle</i>
+    <i class="material-icons" (click)='obtenerPartidos()'>add_circle</i>
 </div>
 
 
