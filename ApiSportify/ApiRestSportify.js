@@ -18,8 +18,8 @@ const { request } = require("http");
 const app = express();
 let cors = require('cors');
 
-app.listen("3000", () => {
-    console.log("Server started on port 3000");
+app.listen("3025", () => {
+    console.log("Server started on port 3025");
   });
   
 
@@ -374,4 +374,3 @@ app.delete("/exercise", function(request, response) {
     });
 
 });
-app.listen(3025);

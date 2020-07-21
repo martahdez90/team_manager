@@ -14,14 +14,14 @@ export class MyGamesComponent implements OnInit {
                   new Match(new Date(2020, 6, 1), 'Londres', 'Comntario para probar')]
   public dataBase: object
   constructor(private matchService: MatchServiceService) {}
-  newGame(){
-    this.games.push(new Match(new Date(), 'Lugar', 'Añade tu comentario'))
-  }
+  // newGame(){
+  //   this.games.push(new Match(new Date(), 'Lugar', 'Añade tu comentario'))
+  // }
 
   ngOnInit(): void {
-    (this.matchService.getMatches(2).subscribe(data=>{
-      this.dataBase = data 
-    }))
+    // (this.matchService.getMatches(2).subscribe(data=>{
+    //   this.dataBase = data 
+    // }))
   }
 }
 
