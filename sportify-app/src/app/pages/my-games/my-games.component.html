@@ -5,7 +5,7 @@
     <div class="card-color d-flex align-content-center flex-wrap mx-auto pb-4">
         <div class="card mr-4 ml-5 mt-4 mb-1 p-1 pb-1" *ngFor="let e of dataBase;">
             <div class="card-header" id="date">
-                {{e.date}}
+                {{e.date | date}}
                 <i class="far fa-edit" id="edit" routerLink="/coach/myExercises"></i>
                 <i class='far fa-trash-alt' id="trash"></i>
             </div>
