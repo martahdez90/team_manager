@@ -20,11 +20,11 @@
 
 .lyrics {
     background-color: #ffffff;
-    color: #00BFA5;
+    color: #00bfa5;
     padding-bottom: 6vh;
 }
 .header {
-    background-color: #00BFA5;
+    background-color: #00bfa5;
     color: #ffffff;
     text-align: center;
 }
@@ -32,7 +32,7 @@
     color: white;
 }
 .btn {
-    background-color: #00BFA5;
+    background-color: #00bfa5;
     color: #ffffff;
 }
 select{
@@ -41,6 +41,27 @@ select{
 .container {
     padding: 5%;
     padding-left: 21%;
+}
+
+.ng-valid[required], .ng-valid.required  {
+    border-left: 5px solid #00BFA5; /* green */
+  }
+  
+  .ng-invalid:not(form)  {
+    border-left: 5px solid #a94442; /* red */
+  }
+
+  .invalid-feedback {
+    color: red
+}
+
+.wrong {
+    color: #a94442;
+    font-size: small;
+}
+
+.correcto {
+    text-align: center;
 }
 
 @media(max-width:767px) {
