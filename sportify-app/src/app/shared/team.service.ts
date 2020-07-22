@@ -6,7 +6,7 @@ import { Team } from "../models/team";
   providedIn: 'root'
 })
 export class TeamService {
-  private url = "http://localhost:3025/team"
+  private url = "http://localhost:3025/teams"
   constructor(private http: HttpClient) { }
 
   getTeams(){

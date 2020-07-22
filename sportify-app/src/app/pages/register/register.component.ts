@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { User } from '../../models/user'
 import { UserService } from '../../shared/user-service.service';
 
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -15,8 +16,9 @@ import { UserService } from '../../shared/user-service.service';
   
 export class RegisterComponent implements OnInit {
   public user = new User;
-
   public rols: String[] = ["entrenador", "jugador"]
+  public submitted = false;
+
   constructor(private apiService: UserService) { 
     this.user
   }
@@ -28,6 +30,7 @@ export class RegisterComponent implements OnInit {
     this.apiService.postUser(this.user).subscribe((data) => {
       console.log(data); 
     })
+    this.submitted = true;
   }
 
   ngOnInit(): void {
