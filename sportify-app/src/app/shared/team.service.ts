@@ -6,16 +6,17 @@ import { Team } from "../models/team";
   providedIn: 'root'
 })
 export class TeamService {
-
   private url = "http://localhost:3025/teams"
-
   constructor(private http: HttpClient) { }
 
-  getTeams(){
-    return this.http.get(this.url)
+  getTeams(id:number){
+    console.log(id);
+    return this.http.get(this.url +"/" + id )
   }
   postTeam(newTeam: Team){
+    
     return this.http.post(this.url, newTeam)
+
   }
   putTeam(changes: Team){
     return this.http.post(this.url, changes)
