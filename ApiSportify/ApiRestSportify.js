@@ -31,7 +31,7 @@ app.use(cors());
 
 app.post("/users/register", function(request, response) {
     let params = [request.body.name, request.body.lastName, request.body.password, request.body.rol, request.body.email, request.body.phone];
-    let sql = "INSERT INTO user(`user_id`, `name`, `lastName`, `password`, `rol`,`email`, `phone`) VALUES (NULL, ?, ?, ?, ?, ?, ?)";
+    let sql = "INSERT INTO users(`user_id`, `name`, `lastName`, `password`, `rol`,`email`, `phone`) VALUES (NULL, ?, ?, ?, ?, ?, ?)";
     connection.query(sql, params, function(err, resultado) {
         if (err) {
             console.log(err);
@@ -45,7 +45,7 @@ app.post("/users/register", function(request, response) {
 
 app.get("/users/:user_id", function(request, response) {
     let params = [request.params.user_id];
-    let sql = "SELECT * FROM user WHERE user_id = ?";
+    let sql = "SELECT * FROM users WHERE user_id = ?";
     connection.query(sql, params, function(err, resultado) {
         if (err) {
             console.log(err);
@@ -58,7 +58,7 @@ app.get("/users/:user_id", function(request, response) {
 
 app.put("/users", function(request, response) {
     let params = [request.body.name, request.body.lastName, request.body.password, request.body.rol, request.body.email, request.body.phone, request.body.user_id];
-    let sql = "UPDATE user SET name =?, lastName = ?, password =?, rol =?, email = ?, phone = ?  WHERE user_id = ?";
+    let sql = "UPDATE users SET name =?, lastName = ?, password =?, rol =?, email = ?, phone = ?  WHERE user_id = ?";
 
     connection.query(sql, params, function(err, resultado) {
         if (err) {
