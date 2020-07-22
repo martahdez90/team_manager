@@ -27,6 +27,9 @@ import { ToolbarComponent } from './pages/toolbar/toolbar.component';
 import { MyGamesComponent } from './pages/my-games/my-games.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { HttpClientModule } from "@angular/common/http";
+import { TrainingsPlayerComponent } from './pages/trainings-player/trainings-player.component';
+import { MatchesPlayerComponent } from './pages/matches-player/matches-player.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms'
 
 
 @NgModule({
@@ -47,7 +50,9 @@ import { HttpClientModule } from "@angular/common/http";
     WhiteFooterComponent,
     GreenFooterComponent,
     ToolbarComponent,
-    MyGamesComponent
+    MyGamesComponent,
+    TrainingsPlayerComponent,
+    MatchesPlayerComponent,
   ],
   imports: [
     BrowserModule,
@@ -61,7 +66,9 @@ import { HttpClientModule } from "@angular/common/http";
     MatSidenavModule,
     BrowserAnimationsModule,
     MatFormFieldModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

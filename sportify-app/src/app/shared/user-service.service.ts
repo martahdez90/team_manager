@@ -19,7 +19,7 @@ export class UserService {
     return this.http.get(this.url)
   } */
   postUser(newUser: User) {
-    return this.http.post(this.url, newUser)
+    return this.http.post(this.url + "/register", newUser)
   }
   putUser(newUser: User) {
     return this.http.put(this.url, newUser)

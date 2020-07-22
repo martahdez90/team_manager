@@ -11,6 +11,8 @@ import { MyCalendarComponent } from './pages/my-calendar/my-calendar.component';
 import { MyPlayersComponent } from './pages/my-players/my-players.component';
 import { MyCoachComponent } from './pages/my-coach/my-coach.component';
 import { MyGamesComponent } from './pages/my-games/my-games.component';
+import { TrainingsPlayerComponent } from "./pages/trainings-player/trainings-player.component";
+import { MatchesPlayerComponent } from "./pages/matches-player/matches-player.component";
 
 
 const routes: Routes = [
@@ -26,7 +28,8 @@ const routes: Routes = [
   {path: 'coach/settings', component: MySettingsComponent},
   {path: 'coach/myGames', component: MyGamesComponent},
   // player
-  {path: 'player/myCalendar', component: MyCalendarComponent},
+  {path: 'player/myTrainings', component: TrainingsPlayerComponent },
+  {path: 'player/myMatches', component: MatchesPlayerComponent},
   {path: 'player/myCoach', component: MyCoachComponent},
   {path: 'player/settings', component: MySettingsComponent},
   {path: '**',redirectTo: 'home'}
