@@ -1,5 +1,6 @@
 * {
     font-size: 1.7vw;
+    margin: 0;
 }
 
 .card {
@@ -37,39 +38,16 @@
     border-color: white;
 }
 
-.btn-down {
-    position: relative;
-    margin: auto;
-    padding: 12px;
-}
 
-.btn-down .material-icons {
-    position: fixed;
-    bottom: 10%;
-    right: 15px;
-    font-size: 5vw;
-    color: #00BFA5;
-    border-radius: 100%;
-    background-color: whitesmoke;
-}
 
 @media(max-width: 769px) {
     * {
         font-size: 3.5vw;
-    }
-    .btn-down .material-icons {
-        font-size: 40px;
     }
 }
 
 @media(min-width: 769px) {
     section {
         display: flex;
-    }
-    .card {
-        margin: 1%
-    }
-    .btn-down .material-icons {
-        font-size: 45px;
     }
 }

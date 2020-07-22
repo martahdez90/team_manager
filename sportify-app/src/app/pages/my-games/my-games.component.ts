@@ -8,14 +8,18 @@ import { Match } from "../../models/match";
   styleUrls: ['./my-games.component.css']
 })
 export class MyGamesComponent implements OnInit {
-  public games = [new Match(new Date(2020, 7, 15), 'Madird', 'No olvideis traer la equipacion'),
-                  new Match(new Date(2020, 6, 1), 'Londres', 'Comntario para probar'),
-                  new Match(new Date(2020, 6, 1), 'Londres', 'Comntario para probar'),
-                  new Match(new Date(2020, 6, 1), 'Londres', 'Comntario para probar')]
+
   public dataBase: object
   constructor(private matchService: MatchServiceService) {}
-  newGame(){
-    this.games.push(new Match(new Date(), 'Lugar', 'Añade tu comentario'))
+
+  newGame(date: HTMLInputElement, location: HTMLInputElement, comments: HTMLInputElement){
+    console.log(comments.value)
+    let newMatch = new Match(null,date.value, location.value ,comments.value)
+    console.log(newMatch)
+
+    this.matchService.postMatch(newMatch).subscribe(data =>{
+      console.log(data)
+    })
   }
 
   ngOnInit(): void {
