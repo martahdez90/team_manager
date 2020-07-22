@@ -15,7 +15,15 @@ export class MatchServiceService {
   }
 
   postMatch(newMatch: Match){
-    return this.http.post(this.url, newMatch)
+    const options = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+      }),
+      body: {
+        team_id: 2,
+      },
+    };
+    return this.http.post(this.url, newMatch, options)
   }
 
   putMatch(changes: Match){
@@ -23,7 +31,7 @@ export class MatchServiceService {
   }
 
   detelMatch(id: number){
-        const options = {
+    const options = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
       }),

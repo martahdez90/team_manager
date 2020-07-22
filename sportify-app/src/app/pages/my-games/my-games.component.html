@@ -1,6 +1,5 @@
 <app-coach-menu></app-coach-menu>
 
-
 <section id="training-card">
     <div class="card-color d-flex align-content-center flex-wrap mx-auto pb-4">
         <div class="card mr-4 ml-5 mt-4 mb-1 p-1 pb-1" *ngFor="let e of dataBase;">
@@ -17,18 +16,27 @@
             </div>
             <div class="card-footer">
                 {{e.location}}
-                <a class="badge badge-pill text-right" routerLink="/coach/myExercises">Ver</a>
+                <a class="badge badge-pill text-right" id="ver" routerLink="/coach/myExercises">Ver</a>
             </div>
         </div>
     </div>
 </section>
 
-<div class="btn-down">
-    <!-- <i class="material-icons" (click)='obtenerPartidos()'>add_circle</i> -->
-    <i class="material-icons">add_circle</i>
+<div class="card newPlayer mt-4 mb-1 mb-1 p-1 pb-1 team">
+    <div class="form-group">
+        <label for="my-input font-weight-bold">Nuevo partido</label>
+        <input #location class="form-control" type="text" name="" placeholder="Lugar" required>
+    </div>
+    <div class="form-group">
+        <label for="my-input font-weight-bold">Fecha</label>
+        <input #date class="form-control" type="date" name="" placeholder="Fecha" required>
+    </div>
+    <div class="form-group">
+        <label for="my-input font-weight-bold">Comentario</label>
+        <input #comments class="form-control" type="text" name="" placeholder="No olvideis la segunsda equipacion" required>
+    </div>
+    <button type="submit" class="btn btn-primary mb-2" (click) = 'newGame(date,location,comments)'>Añadir equipo</button>
+
 </div>
-
-
-
 
 <app-green-footer></app-green-footer>
