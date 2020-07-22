@@ -39,9 +39,8 @@
                         <select class="form-control" id="dropdown" #rol="ngModel" [(ngModel)]="user.rol" required
                             name="rol">
                             <option value="" selected disabled>Selecciona uno</option>
-                            <!-- <option #rol="ngModel" [(ngModel)]="user.rol">Entrenador</option>
-                            <option #rol="ngModel" [(ngModel)]="user.rol">Jugador</option> -->
-                            <option *ngFor="let rol of rols" [value]="rol">{{rol}}</option>
+                            <option #rol="ngModel" [(ngModel)]="user.rol" value="coach">Entrenador</option>
+                            <option #rol="ngModel" [(ngModel)]="user.rol" value="player">Jugador</option>
                         </select>
                     </div>
                     <div class="row">
