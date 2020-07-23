@@ -2,111 +2,22 @@
 
 <section>
     <div class="card-color d-flex align-content-center flex-wrap mx-auto pb-4">
-        <div class="card playerInfo mr-4 ml-5 mt-4 mb-1 mb-1 p-1 pb-1 team" id="team2">
+        <div *ngFor="  let player of dataBase; let i = index" class="card playerInfo mr-4 ml-5 mt-4 mb-1 mb-1 p-1 pb-1 team" id="team2">
             <div class="card-header" id="date">
-                Mario Rodriguez
-                <i class='far fa-trash-alt' id="trash"></i>
+                {{player.name}} {{player.lastName}}
+                <i class='far fa-trash-alt' id="trash" (click)="deletePlayers(dataBase[i].user_id)"></i>
             </div>
             <div class="card-body row">
                 <div class="col-3">
-                    	<mat-icon> person_pin</mat-icon>
+                    <mat-icon> person_pin</mat-icon>
                 </div>
                 <div class="col-9 infoPlayer">
-                    <p class="card-text"> <strong>Email:</strong> mariorod@yahoo.es</p>
-                    <p class="card-text"><strong>Mvl: </strong> 656 56 55 96</p>
+                    <p class="card-text"> <strong>Email: </strong> {{player.email}}</p>
+                    <p class="card-text"><strong>Mvl: </strong> {{player.phone}}</p>
                 </div>
             </div>
         </div>
-        <div class="card playerInfo mr-4 ml-5 mt-4 mb-1 mb-1 p-1 pb-1 team" id="team2">
-            <div class="card-header" id="date">
-                Mario Rodriguez
-                <i class='far fa-trash-alt' id="trash"></i>
-            </div>
-            <div class="card-body row">
-                <div class="col-3">
-                    	<mat-icon> person_pin</mat-icon>
-                </div>
-                <div class="col-9 infoPlayer">
-                    <p class="card-text"> <strong>Email:</strong> mariorod@yahoo.es</p>
-                    <p class="card-text"><strong>Mvl: </strong> 656 56 55 96</p>
-                </div>
-            </div>
-        </div>
-        <div class="card playerInfo mr-4 ml-5 mt-4 mb-1 mb-1 p-1 pb-1 team" id="team2">
-            <div class="card-header" id="date">
-                Mario Rodriguez
-                <i class='far fa-trash-alt' id="trash"></i>
-            </div>
-            <div class="card-body row">
-                <div class="col-3">
-                    	<mat-icon> person_pin</mat-icon>
-                </div>
-                <div class="col-9 infoPlayer">
-                    <p class="card-text"> <strong>Email:</strong> mariorod@yahoo.es</p>
-                    <p class="card-text"><strong>Mvl: </strong> 656 56 55 96</p>
-                </div>
-            </div>
-        </div>
-        <div class="card playerInfo mr-4 ml-5 mt-4 mb-1 mb-1 p-1 pb-1 team" id="team2">
-            <div class="card-header" id="date">
-                Mario Rodriguez
-                <i class='far fa-trash-alt' id="trash"></i>
-            </div>
-            <div class="card-body row">
-                <div class="col-3">
-                    	<mat-icon> person_pin</mat-icon>
-                </div>
-                <div class="col-9 infoPlayer">
-                    <p class="card-text"> <strong>Email:</strong> mariorod@yahoo.es</p>
-                    <p class="card-text"><strong>Mvl: </strong> 656 56 55 96</p>
-                </div>
-            </div>
-        </div>
-        <div class="card playerInfo mr-4 ml-5 mt-4 mb-1 mb-1 p-1 pb-1 team" id="team2">
-            <div class="card-header" id="date">
-                Mario Rodriguez
-                <i class='far fa-trash-alt' id="trash"></i>
-            </div>
-            <div class="card-body row">
-                <div class="col-3">
-                    	<mat-icon> person_pin</mat-icon>
-                </div>
-                <div class="col-9 infoPlayer">
-                    <p class="card-text"> <strong>Email:</strong> mariorod@yahoo.es</p>
-                    <p class="card-text"><strong>Mvl: </strong> 656 56 55 96</p>
-                </div>
-            </div>
-        </div>
-        <div class="card playerInfo mr-4 ml-5 mt-4 mb-1 mb-1 p-1 pb-1 team" id="team2">
-            <div class="card-header" id="date">
-                Mario Rodriguez
-                <i class='far fa-trash-alt' id="trash"></i>
-            </div>
-            <div class="card-body row">
-                <div class="col-3">
-                    	<mat-icon> person_pin</mat-icon>
-                </div>
-                <div class="col-9 infoPlayer">
-                    <p class="card-text"> <strong>Email:</strong> mariorod@yahoo.es</p>
-                    <p class="card-text"><strong>Mvl: </strong> 656 56 55 96</p>
-                </div>
-            </div>
-        </div>
-        <div class="card playerInfo mr-4 ml-5 mt-4 mb-1 mb-1 p-1 pb-1 team" id="team2">
-            <div class="card-header" id="date">
-                Mario Rodriguez
-                <i class='far fa-trash-alt' id="trash"></i>
-            </div>
-            <div class="card-body row">
-                <div class="col-3">
-                    	<mat-icon> person_pin</mat-icon>
-                </div>
-                <div class="col-9 infoPlayer">
-                    <p class="card-text"> <strong>Email:</strong> mariorod@yahoo.es</p>
-                    <p class="card-text"><strong>Mvl: </strong> 656 56 55 96</p>
-                </div>
-            </div>
-        </div>
+
         <div class="btn-up">
             <i class="material-icons more">add_circle</i>
         </div>
