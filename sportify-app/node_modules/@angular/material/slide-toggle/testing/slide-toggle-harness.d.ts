@@ -41,8 +41,6 @@ export declare class MatSlideToggleHarness extends ComponentHarness {
     focus(): Promise<void>;
     /** Blurs the slide-toggle. */
     blur(): Promise<void>;
-    /** Whether the slide-toggle is focused. */
-    isFocused(): Promise<boolean>;
     /** Toggle the checked state of the slide-toggle. */
     toggle(): Promise<void>;
     /**

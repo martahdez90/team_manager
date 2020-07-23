@@ -374,30 +374,3 @@ app.delete("/exercise", function(request, response) {
     });
 
 });
-
-
-// end point players
-app.get("/users/teamPlayers/:team_id", function(request, response) {
-    let params = [request.params.team_id];
-    let sql = "SELECT users.name, users.lastName, users.email, users.phone, users.user_id FROM users INNER JOIN user_teams ON (users.user_id = user_teams.user_id) WHERE( user_teams.team_id = ? AND users.rol = 'player')"
-    connection.query(sql, params, function(err, resultado) {
-        if (err) {
-            console.log(err);
-        } else {
-            console.log("usuarios que sean jugadores del equipo seleccionado");
-            response.send(resultado);
-        }
-    });
-});
-app.delete("/users/teamPlayers/", function(request, response) {
-    let params = [request.body.user_id];
-    let sql = "DELETE FROM user_teams  WHERE user_id = ?";
-    connection.query(sql, params, function(err, resultado) {
-        if (err) {
-            console.log(err);
-        } else {
-            console.log("eliminar jugador de equipo");
-            response.send(resultado);
-        }
-    });
-});
