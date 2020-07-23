@@ -1,7 +1,7 @@
 <app-coach-menu></app-coach-menu>
 <section>
     <div class="card-color d-flex align-content-center flex-wrap mx-auto pb-4">
-        <div *ngFor="let team of teams" class="card playerInfo mr-4 ml-5 mt-4 mb-1 p-1 pb-1 team" id="team2">
+        <div *ngFor="let team of dataBase" class="card playerInfo mr-4 ml-5 mt-4 mb-1 p-1 pb-1 team" id="team2">
             <div class="card-header">
                 {{team.name}}
                 <mat-icon class="close">delete</mat-icon>
@@ -19,7 +19,6 @@
             </div>
         </div>
     </div>
-
     <div class="card newPlayer mt-4 mb-1 mb-1 p-1 pb-1 team">
         <div class="form-group">
             <label for="my-input font-weight-bold">Nombre del nuevo equipo</label>
@@ -29,8 +28,7 @@
             <label for="my-input font-weight-bold">Categoría</label>
             <input #category id="my-input" class="form-control" type="text" name="" placeholder="categoría" required>
         </div>
-        <button type="submit" class="btn btn-primary mb-2" (click) = 'newTeam(name, category)'>Añadir equipo</button>
+        <button type="submit" class="btn btn-primary mb-2" (click)='addTeams(name, category)'>Añadir equipo</button>
     </div>
 </section>
-
 <app-green-footer></app-green-footer>

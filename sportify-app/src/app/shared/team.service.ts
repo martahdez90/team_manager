@@ -11,8 +11,8 @@ export class TeamService {
 
   constructor(private http: HttpClient) { }
 
-  getTeams(){
-    return this.http.get(this.url)
+  getTeams(id: number){
+    return this.http.get(this.url + "/" + id)
   }
   postTeam(newTeam: Team){
     return this.http.post(this.url, newTeam)
