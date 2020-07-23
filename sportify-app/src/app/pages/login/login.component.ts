@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from 'src/app/shared/login.service';
-import { Router, ActivatedRoute, Params } from '@angular/router'
+import { Router, ActivatedRoute } from '@angular/router'
 
 
 @Component({
@@ -17,19 +17,7 @@ export class LoginComponent implements OnInit {
       email: email.value,
       password: password.value
     }
-    /* this.loginService.login(form).subscribe(data => {
-      this.loginService.userLoged = data[0]
-      console.log(this.loginService.userLoged)
-      if (this.loginService.userLoged.rol == 'player') {
-        this.router.navigate(['/player/myMatches'])
-        console.log("redirigiendo a jugador")
-      } else if (this.loginService.userLoged.rol == 'coach') {
-        console.log("redirigiendo a coach")
-        this.router.navigate(['/coach/myTeams'])
-      } else if (this.loginService.userLoged.rol == 'null'){
-        alert("inicio de sesión incorrecto")
-      }
-    }) */
+   
     this.loginService.login(form).subscribe(data => {
       this.loginService.userLoged = data[0]
       console.log(this.loginService.userLoged);
