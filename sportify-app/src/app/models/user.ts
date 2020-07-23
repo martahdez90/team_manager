@@ -10,7 +10,7 @@ export class User {
     public lastName: string;
     public email: string;
     public phone: number;
-    public userId: number;
+    public user_id: number;
 
     constructor() {
 

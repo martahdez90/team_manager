@@ -15,7 +15,7 @@ export class MyWorkoutsComponent implements OnInit {
   constructor(private loginService: LoginService) { }
 
   newWorkout(){
-    console.log(this.loginService.userLoged)
+    console.log(this.loginService.userLoged.user_id)
     this.games.push(new Training('Entreno de prueba' ,new Date(2050, 6, 1), 'Hawai', 'Comntario para probar'))
   }
 

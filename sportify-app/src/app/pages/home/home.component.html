@@ -1,0 +1,9 @@
+<section>
+    <div>
+        BIENVENIDO A SPORTIFY
+    </div>
+    <p *ngIf="this.loginService.userLoged.rol === null" > Es coach menu</p>
+    <p #elseBlock> Es player menu</p>
+
+    <button (click)="continue()" >Continuar</button>
+</section>
