@@ -7,7 +7,7 @@ import { Exercise  } from "../models/exercise";
 })
 export class ExerciseService {
 
-  private url = "http://localhost:3025/exercises";
+  private url = "http://localhost:3025/exercise";
   
   public Exercises: Exercise[];
 

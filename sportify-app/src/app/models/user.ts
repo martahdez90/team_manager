@@ -1,8 +1,3 @@
-/* enum Rol {
-    coach = "coach",
-    player = "player"
-} */
-
 export class User {
     public rol: string;
     public password: string;
