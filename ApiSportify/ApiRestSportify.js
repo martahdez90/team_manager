@@ -301,15 +301,12 @@ app.delete("/match", function (request, response) {
 
 
 
-app.get("/exercise/:user_id", function (request, response) {
-    let params = [request.params.user_id]
-    let sql = "SELECT t7.name, t7.description, t7.url, t7.type FROM exercise AS t7 INNER JOIN users AS t1 " +
-        "INNER JOIN user_teams AS t2 ON (t1.user_id = t2.user_id) " +
-        "INNER JOIN team AS t3 ON ( t2.team_id = t3.team_id) " +
-        "INNER JOIN  training_team AS t4 ON (t3.team_id = t4.team_id) " +
-        "INNER JOIN training AS t5 ON (t4.training_id = t5.training_id) " +
-        "INNER JOIN training_exercises AS t6 ON (t5.training_id = t6.training_id) " +
-        "WHERE t1.user_id = ?";
+app.get("/exercise/:team_id", function (request, response) {
+    let params = [request.params.team_id]
+    let sql = `SELECT exercise.* FROM exercise 
+    INNER JOIN training_exercises ON training_exercises.exercise_id = exercise.exercise_id 
+    INNER JOIN training ON training.training_id = training_exercises.training_id 
+    WHERE training.training_id = 2`;
 
     connection.query(sql, params, function (err, resultado) {
         if (err) {

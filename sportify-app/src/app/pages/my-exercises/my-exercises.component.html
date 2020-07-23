@@ -1,11 +1,11 @@
 <app-coach-menu></app-coach-menu>
 
 <section id="training-card">
-    <div class="card mb-3" *ngFor="let ex of dataBase; let i = index">
+    <div *ngFor="let ex of dataBase; let i = index" class="card mb-3">
         <div class="card-header" id="date">
             Tipo: 
             {{ex.type}}
-            <i class='far fa-trash-alt' id="trash" (click)="deleteExercise(dataBase[i].exercise_id)"></i>
+            <i class='far fa-trash-alt' id="trash" (click)="deleteEx(dataBase[i].exercise_id)"></i>
         </div>
         <div class="card-header bg-transparent">
             {{ex.name}}
@@ -14,10 +14,9 @@
           <p class="card-text">{{ex.description}}</p>
         </div>
         <div class="card-footer">
-            <a href="{{ex.url}}">{{ex.url}}</a>
+            <a href="{{ex.url}}">Ver video</a>
         </div>
     </div>
-
 
     <div class="card mb-3">
         <div class="card-header" id="date">
@@ -39,11 +38,9 @@
     </div>
 </section>
 <div class="card mb-3" id="new-ex">
-    <button (click)="postExercise(type, description, url, name)" class="btn" id="card-bg2">
+    <button (click)="postEx(type, description, url, name)" class="btn" id="card-bg2">
         Nuevo ejercicio
     </button>
 </div>
-
-
 
 <app-green-footer></app-green-footer>
