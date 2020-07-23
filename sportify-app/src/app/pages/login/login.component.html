@@ -32,7 +32,7 @@
 <div class="text-center lyrics">
 
     <div class="text-center register">
-        <form #loginForm="ngForm" class="form-signin m-5" (ngSubmit)="login(registerForm)">
+        <form #loginForm="ngForm" class="form-signin m-5" (ngSubmit)="login(loginForm)">
             <h1 class="h3 mb-3 font-weight-normal">Sportify</h1>
             <br>
             <input type="email" id="inputEmail" class="form-control " placeholder="Email" autofocus [(ngModel)]="user.email" required name="email">
@@ -47,8 +47,8 @@
                 <br>
                 <br>
             </div> -->
-            <button type="button" class="btn buttonR" type="submit">Entrar</button>
-            <button type="button" class="btn buttonR" [routerLink]="['/coach/myTeams']" routerLinkActive="router-link-active" >Cambiar usuario</button>
+            <button type="submit" class="btn buttonR" [disabled]="!loginForm.valid">Entrar</button>
+            <button type="button" class="btn buttonR" [routerLink]="['/coach/myTeams']" routerLinkActive="router-link-active" >Entrar a capon</button>
         </form>
     
     </div>
