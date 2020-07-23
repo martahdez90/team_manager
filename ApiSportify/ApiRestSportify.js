@@ -369,6 +369,7 @@ app.delete("/exercise", function (request, response) {
 });
 
 
+
 // end point players
 
 app.get("/users/teamPlayers/:team_id", function (request, response) {
@@ -385,11 +386,9 @@ app.get("/users/teamPlayers/:team_id", function (request, response) {
 });
 
 
-app.delete("/users/teamPlayers/", function (request, response) {
-
+app.delete("/users/teamPlayers/", function (request, response) {  
     let params = [request.body.user_id];
     let sql = "DELETE FROM user_teams  WHERE user_id = ?";
-
     connection.query(sql, params, function (err, resultado) {
         if (err) {
             console.log(err);
