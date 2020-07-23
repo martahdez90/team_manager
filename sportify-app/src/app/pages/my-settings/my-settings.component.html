@@ -8,22 +8,22 @@
 <div>
     <ul class="list-group list-group-flush">
         <li class="list-group-item">Tipo usuario
-            <p id="info">Coach</p>
+            <p id="info">{{userLoged.rol}}</p>
         </li>
         <li class="list-group-item">Nombre
-            <p contenteditable="true" id="info">Alejandro</p>
+            <p contenteditable="true" id="info">{{userLoged.name}}</p>
         </li>
         <li class="list-group-item">Apellido
-            <p contenteditable="true" id="info">Manzanares</p>
+            <p contenteditable="true" id="info">{{userLoged.lastName}}</p>
         </li>
         <li class="list-group-item">Mail
-            <p contenteditable="true" id="info">alex@mail.com</p>
+            <p contenteditable="true" id="info">{{userLoged.email}}</p>
         </li>
         <li class="list-group-item">Telefono
-            <p contenteditable="true" id="info">333-666-999</p>
+            <p contenteditable="true" id="info">{{userLoged.phone}}</p>
         </li>
         <li class="list-group-item">Cambiar contraseña</li>
-        <li class="list-group-item">Cerrar sesion <i class="fas fa-power-off"></i></li>
+        <li class="list-group-item" (click)="logOut()">Cerrar sesion <i class="fas fa-power-off" (click)="logOut()"></i></li>
     </ul>
     <div class="text-center"><button type="button" class="btn buttonR ">Actualizar</button></div>
 

@@ -16,4 +16,11 @@ export class LoginService {
     return this.http.post(this.url, data)
   }
 
+  logOut(){
+    let data = [
+      {email: '', password: ''}
+    ]
+    return this.http.post(this.url, data)
+  }
+
 }
