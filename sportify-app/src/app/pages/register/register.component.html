@@ -79,7 +79,7 @@
                             #email="ngModel" [(ngModel)]="user.email" required name="email"
                             [ngClass]="{'is-invalid': registerForm.submitted && email.invalid}">
                         <div *ngIf="email.touched && email.invalid" class="wrong">
-                            <div *ngIf="email.errors.required">Debe insertar un email valido</div>
+                            <div *ngIf="email.errors.required">Debe insertar un email</div>
                         </div>
                     </div>
                     <div class="mb-3">
@@ -99,7 +99,8 @@
                     </div>
                 </form>
             </div>
-            <div class="col-md-8 order-md-1 correcto" [hidden]="!submitted">
+            <!-- <div class="col-md-8 order-md-1 correcto" [hidden]="!submitted"> -->
+                <div class="col-md-8 order-md-1 correcto" *ngIf="hidden"></div>
                 <h3 class="text-dark">Su registro se ha realizado correctamente</h3>
                 <p class="text-dark">¡Ya puede iniciar sesión con sus datos!</p>
             </div>

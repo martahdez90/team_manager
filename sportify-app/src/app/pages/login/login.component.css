@@ -28,6 +28,27 @@
     padding: 1%;
 }
 
+.ng-valid[required], .ng-valid.required  {
+    border-left: 5px solid #00BFA5; /* green */
+  }
+  
+  .ng-invalid:not(form)  {
+    border-left: 5px solid #a94442; /* red */
+  }
+
+  .invalid-feedback {
+    color: red
+}
+
+.wrong {
+    color: #a94442;
+    font-size: small;
+}
+
+.correcto {
+    text-align: center;
+}
+
 @media(min-width:769px) {
     .m-5 {
         padding-right: 25%;

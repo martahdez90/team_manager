@@ -31,8 +31,8 @@
 <div class="text-center lyrics">
     <div class="text-center register">
         <form class="form-signin m-5">
-            <img class="mb-4" src="balon.jpg" alt="" width="72" height="72">
-            <h1 class="h3 mb-3 font-weight-normal">Sportify</h1>
+        
+            <h1 class="h3 mb-3 font-weight-normal">Iniciar sesión</h1>
             <br>
 
             <input #email type="email" id="inputEmail" class="form-control " placeholder="Email" required autofocus>
@@ -48,7 +48,9 @@
                 <br>
                 <br>
             </div>
-            <button type="button" class="btn buttonR" (click)="logIn(email, password)" routerLink="/user/welcome" >Entrar</button>
+            <!-- <button type="button" class="btn buttonR" (click)="logIn(email, password)" routerLink="/user/welcome" >Entrar</button> <br><br> -->
+            <button type="button" class="btn buttonR" (click)="logIn(email, password)" >Entrar</button>
+            <br><br>
         </form>
     </div>
 </div>
