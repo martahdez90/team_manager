@@ -7,11 +7,10 @@
  */
 import { AfterContentChecked, OnInit, QueryList, ElementRef } from '@angular/core';
 import { MatGridTile } from './grid-tile';
-import { TileStyleTarget } from './tile-styler';
 import { Directionality } from '@angular/cdk/bidi';
 import { NumberInput } from '@angular/cdk/coercion';
 import { MatGridListBase } from './grid-list-base';
-export declare class MatGridList implements MatGridListBase, OnInit, AfterContentChecked, TileStyleTarget {
+export declare class MatGridList implements MatGridListBase, OnInit, AfterContentChecked {
     private _element;
     private _dir;
     /** Number of columns being rendered. */

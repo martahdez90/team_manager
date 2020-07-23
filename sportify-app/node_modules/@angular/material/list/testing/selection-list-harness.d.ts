@@ -58,8 +58,6 @@ export declare class MatListOptionHarness extends MatListItemHarnessBase {
     focus(): Promise<void>;
     /** Blurs the list option. */
     blur(): Promise<void>;
-    /** Whether the list option is focused. */
-    isFocused(): Promise<boolean>;
     /** Toggles the checked state of the checkbox. */
     toggle(): Promise<void>;
     /**
