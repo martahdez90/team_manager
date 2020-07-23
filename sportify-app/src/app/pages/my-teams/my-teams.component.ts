@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Team } from "../../models/team"
 import { TeamService } from 'src/app/shared/team.service';
+import { LoginService } from 'src/app/shared/login.service';
 @Component({
   selector: 'app-my-teams',
   templateUrl: './my-teams.component.html',
@@ -8,15 +9,9 @@ import { TeamService } from 'src/app/shared/team.service';
 })
 export class MyTeamsComponent implements OnInit {
   public dataBase: object;
-  public team:Team;
-  public teams = [new Team('Distrito Olimpico', 'Senior'),
-                new Team('Alcobendas', 'Cadete'),
-                new Team('Cabanillas', 'Junior')]
-  constructor(private teamService:TeamService ) { }
+
+  constructor(private teamService:TeamService, private loginService: LoginService ) { }
   
-  newTeam(name: HTMLInputElement, category: HTMLInputElement){
-    this.teams.push(new Team(name.value, category.value))
-  }
   getTeams(id:number)
   {
     this.teamService.getTeams(id).subscribe(data=>
