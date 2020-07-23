@@ -7,7 +7,6 @@ import { MyTeamsComponent } from './pages/my-teams/my-teams.component';
 import { MyWorkoutsComponent } from './pages/my-workouts/my-workouts.component';
 import { MyExercisesComponent } from './pages/my-exercises/my-exercises.component';
 import { MySettingsComponent } from './pages/my-settings/my-settings.component';
-import { MyCalendarComponent } from './pages/my-calendar/my-calendar.component';
 import { MyPlayersComponent } from './pages/my-players/my-players.component';
 import { MyCoachComponent } from './pages/my-coach/my-coach.component';
 import { MyGamesComponent } from './pages/my-games/my-games.component';

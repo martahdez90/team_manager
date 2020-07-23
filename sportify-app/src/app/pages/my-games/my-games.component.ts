@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatchServiceService } from "../../shared/match.service";
 import { Match } from "../../models/match";
+import { LoginService } from 'src/app/shared/login.service';
 
 @Component({
   selector: 'app-my-games',
@@ -10,7 +11,7 @@ import { Match } from "../../models/match";
 export class MyGamesComponent implements OnInit {
 
   public dataBase: object
-  constructor(private matchService: MatchServiceService) {}
+  constructor(private matchService: MatchServiceService, private loginService: LoginService) {}
 
   newGame(date: HTMLInputElement, location: HTMLInputElement, comments: HTMLInputElement){
     console.log(comments.value)

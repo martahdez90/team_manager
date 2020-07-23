@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Training } from "../../models/training";
+import { LoginService } from 'src/app/shared/login.service';
 
 @Component({
   selector: 'app-my-workouts',
@@ -11,13 +12,15 @@ export class MyWorkoutsComponent implements OnInit {
                   new Training('Entreno de prueba 4' ,new Date(2020, 6, 1), 'Londres', 'Comntario para probar'),
                   new Training('Entreno de prueba 6' ,new Date(2020, 6, 1), 'Londres', 'Comntario para probar')]
                   
-  constructor() { }
+  constructor(private loginService: LoginService) { }
 
   newWorkout(){
+    console.log(this.loginService.userLoged)
     this.games.push(new Training('Entreno de prueba' ,new Date(2050, 6, 1), 'Hawai', 'Comntario para probar'))
   }
 
   ngOnInit(): void {
+    
   }
 
 }
