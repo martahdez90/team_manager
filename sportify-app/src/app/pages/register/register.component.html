@@ -31,79 +31,84 @@
     </div> -->
     <div class="container">
         <div class="row">
-            <div class="col-md-8 order-md-1" [hidden]="submitted">
-                <form #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm)">
-                    <div class="mb-3 form-group" style="text-align: center;">
-                        <label for="type">Tipo de usuario <span class="text-muted"></span></label>
-                        <br>
-                        <select class="form-control" id="dropdown" #rol="ngModel" [(ngModel)]="user.rol" required
-                            name="rol">
-                            <option value="" selected disabled>Selecciona uno</option>
-                            <option #rol="ngModel" [(ngModel)]="user.rol" value="coach">Entrenador</option>
-                            <option #rol="ngModel" [(ngModel)]="user.rol" value="player">Jugador</option>
-                        </select>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6 mb-3">
-                            <label for="firstName">Nombre</label>
-                            <input type="text" class="form-control" id="firstName" placeholder="Nombre" #name="ngModel"
-                                [(ngModel)]="user.name" required pattern="[a-zA-Z]+" name="name">
-                            <span *ngIf="name.touched && name.invalid" class="wrong">
-                                <div *ngIf="phone.errors.required">El nombre es obligatorio</div>
-                            </span>
+            <div class="col-md-8 order-md-1 correcto" *ngIf="registrado; else noRegistrado">
+                <div class="col-md-8 order-md-1 correcto">
+                    <h3 class="text-dark">Su registro se ha realizado correctamente</h3>
+                    <p class="text-dark">¡Ya puede iniciar sesión con sus datos!</p>
+                </div>
+            </div>
+            <ng-template #noRegistrado>
+                <div class="col-md-8 order-md-1">
+                    <form #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm)">
+                        <div class="mb-3 form-group" style="text-align: center;">
+                            <label for="type">Tipo de usuario <span class="text-muted"></span></label>
+                            <br>
+                            <select class="form-control" id="dropdown" #rol="ngModel" [(ngModel)]="user.rol" required
+                                name="rol">
+                                <option value="" selected disabled>Selecciona uno</option>
+                                <option #rol="ngModel" [(ngModel)]="user.rol" value="coach">Entrenador</option>
+                                <option #rol="ngModel" [(ngModel)]="user.rol" value="player">Jugador</option>
+                            </select>
                         </div>
-                        <div class="col-md-6 mb-3">
-                            <label for="lastName">Apellidos</label>
-                            <input type="text" class="form-control" id="lastName" placeholder="Apellidos"
-                                #lastName="ngModel" [(ngModel)]="user.lastName" required pattern="[a-zA-Z]+"  name="lastName">
-                            <span *ngIf="lastName.touched && !lastName.valid" class="wrong">
-                                El apellido es obligatorio
-                            </span>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="firstName">Nombre</label>
+                                <input type="text" class="form-control" id="firstName" placeholder="Nombre"
+                                    #name="ngModel" [(ngModel)]="user.name" required pattern="[a-zA-Z]+" name="name">
+                                <span *ngIf="name.touched && name.invalid" class="wrong">
+                                    <div *ngIf="phone.errors.required">El nombre es obligatorio</div>
+                                </span>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="lastName">Apellidos</label>
+                                <input type="text" class="form-control" id="lastName" placeholder="Apellidos"
+                                    #lastName="ngModel" [(ngModel)]="user.lastName" required pattern="[a-zA-Z]+"
+                                    name="lastName">
+                                <span *ngIf="lastName.touched && !lastName.valid" class="wrong">
+                                    El apellido es obligatorio
+                                </span>
+                            </div>
                         </div>
-                    </div>
-                    <div class="mb-3">
-                        <label for="telephone">Teléfono</label>
-                        <!-- <div class="input-group-prepend">
+                        <div class="mb-3">
+                            <label for="telephone">Teléfono</label>
+                            <!-- <div class="input-group-prepend">
                             </div> -->
-                        <input type="tel" class="form-control" id="telephone" placeholder="Teléfono" #phone="ngModel"
-                            [(ngModel)]="user.phone" required name="phone" minlength="9">
-                        <div *ngIf="phone.touched && phone.invalid" class="wrong">
-                            <div *ngIf="phone.errors.required">Debe insertar un telefono</div>
-                            <div *ngIf="phone.errors.minlength">Su teléfono debe tener almenos 9 caracteres
+                            <input type="tel" class="form-control" id="telephone" placeholder="Teléfono"
+                                #phone="ngModel" [(ngModel)]="user.phone" required name="phone" minlength="9">
+                            <div *ngIf="phone.touched && phone.invalid" class="wrong">
+                                <div *ngIf="phone.errors.required">Debe insertar un telefono</div>
+                                <div *ngIf="phone.errors.minlength">Su teléfono debe tener almenos 9 caracteres
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="mb-3">
-                        <label for="email">Email <span class="text-muted"></span></label>
-                        <input type="email" class="form-control" id="Email" placeholder="you@example.com"
-                            #email="ngModel" [(ngModel)]="user.email" required name="email"
-                            [ngClass]="{'is-invalid': registerForm.submitted && email.invalid}">
-                        <div *ngIf="email.touched && email.invalid" class="wrong">
-                            <div *ngIf="email.errors.required">Debe insertar un email</div>
-                        </div>
-                    </div>
-                    <div class="mb-3">
-                        <label for="password">Contraseña</label>
-                        <input type="password" class="form-control" id="password" placeholder="Contraseña"
-                            #password="ngModel" [(ngModel)]="user.password" required name="password" minlength="6">
-                        <div *ngIf="password.touched && password.invalid" class="wrong">
-                            <div *ngIf="password.errors.required">Debe insertar una contraseña</div>
-                            <div *ngIf="password.errors.minlength">Su contraseña debe tener almenos 6 caracteres
+                        <div class="mb-3">
+                            <label for="email">Email <span class="text-muted"></span></label>
+                            <input type="email" class="form-control" id="Email" placeholder="you@example.com"
+                                #email="ngModel" [(ngModel)]="user.email" required name="email"
+                                [ngClass]="{'is-invalid': registerForm.submitted && email.invalid}">
+                            <div *ngIf="email.touched && email.invalid" class="wrong">
+                                <div *ngIf="email.errors.required">Debe insertar un email</div>
                             </div>
                         </div>
-                    </div>
+                        <div class="mb-3">
+                            <label for="password">Contraseña</label>
+                            <input type="password" class="form-control" id="password" placeholder="Contraseña"
+                                #password="ngModel" [(ngModel)]="user.password" required name="password" minlength="6">
+                            <div *ngIf="password.touched && password.invalid" class="wrong">
+                                <div *ngIf="password.errors.required">Debe insertar una contraseña</div>
+                                <div *ngIf="password.errors.minlength">Su contraseña debe tener almenos 6 caracteres
+                                </div>
+                            </div>
+                        </div>
 
-                    <hr class="mb-4">
-                    <div style="text-align: center;">
-                        <button type="submit" [disabled]="!registerForm.valid" class="btn">Registrarme</button>
-                    </div>
-                </form>
-            </div>
-            <!-- <div class="col-md-8 order-md-1 correcto" [hidden]="!submitted"> -->
-                <div class="col-md-8 order-md-1 correcto" *ngIf="hidden"></div>
-                <h3 class="text-dark">Su registro se ha realizado correctamente</h3>
-                <p class="text-dark">¡Ya puede iniciar sesión con sus datos!</p>
-            </div>
+                        <hr class="mb-4">
+                        <div style="text-align: center;">
+                            <button type="submit" [disabled]="!registerForm.valid" class="btn">Registrarme</button>
+                        </div>
+                    </form>
+                </div>
+            </ng-template>
+
         </div>
     </div>
 

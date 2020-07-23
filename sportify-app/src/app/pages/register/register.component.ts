@@ -17,8 +17,8 @@ import { UserService } from '../../shared/user-service.service';
 export class RegisterComponent implements OnInit {
   public user = new User;
   public rols: String[] = ["entrenador", "jugador"]
-  public submitted: boolean;
-  public hidden = true;
+
+  public registrado = false;
 
   constructor(private apiService: UserService) { 
     this.user
@@ -31,7 +31,7 @@ export class RegisterComponent implements OnInit {
     this.apiService.postUser(this.user).subscribe((data) => {
       console.log(data); 
     })
-    this.submitted = true;
+    this.registrado = true;
   }
 
   ngOnInit(): void {
