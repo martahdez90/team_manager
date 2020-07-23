@@ -7,15 +7,16 @@ import { Exercise  } from "../models/exercise";
 })
 export class ExerciseService {
 
-  private url = "http://localhost:3025/exercises";
+  private url = "http://localhost:3025/exercise";
   
   public Exercises: Exercise[];
 
 
   constructor(private http: HttpClient) { }
 
-  getExercise(id: number) {
-    return this.http.get(this.url + "/" + id)
+  getExercise(team_id: number) {
+    console.log("team" + team_id)
+    return this.http.get(this.url + "/" + team_id)
   }
   getExercises() {
     return this.http.get(this.url)
@@ -32,7 +33,7 @@ export class ExerciseService {
         'Content-Type': 'application/json',
       }), 
       body: {
-        id: id,
+        exercise_id: id,
       }
     }
     return this.http.delete(this.url, options)
