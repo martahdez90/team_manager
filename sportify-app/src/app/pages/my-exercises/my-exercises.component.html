@@ -1,25 +1,20 @@
 <app-coach-menu></app-coach-menu>
 
 <section id="training-card">
-    <div class="card mb-3">
+    <div class="card mb-3" *ngFor="let ex of dataBase; let i = index">
         <div class="card-header" id="date">
             Tipo: 
-            <select id="cars" name="cars" id="dropdown">
-                <option value="null" selected disabled>Selecciona uno</option>
-                <option value="calentamiento">Calentamiento</option>
-                <option value="partePrncipal">Parte principal</option>
-                <option value="vueltaCalma">Vuelta a la calma</option>
-            </select>
-            <i class='far fa-trash-alt' id="trash"></i>
+            {{ex.type}}
+            <i class='far fa-trash-alt' id="trash" (click)="deleteExercise(dataBase[i].exercise_id)"></i>
         </div>
         <div class="card-header bg-transparent">
-            Titulo Ejercicio
+            {{ex.name}}
         </div>
         <div class="card-body">
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <p class="card-text">{{ex.description}}</p>
         </div>
         <div class="card-footer">
-            URL Video, web, references
+            <a href="{{ex.url}}">{{ex.url}}</a>
         </div>
     </div>
 
@@ -27,27 +22,24 @@
     <div class="card mb-3">
         <div class="card-header" id="date">
             Tipo: 
-            <select id="cars" name="cars" id="dropdown">
-                <option value="null" selected disabled>Selecciona uno</option>
-                <option value="calentamiento">Calentamiento</option>
-                <option value="partePrncipal">Parte principal</option>
-                <option value="vueltaCalma">Vuelta a la calma</option>
+            <select #type id="cars" name="cars" id="dropdown">
+                <option *ngFor="let option of options" value = "{{option.value}}">{{option.name}}</option>
             </select>
             <i class='far fa-trash-alt' id="trash"></i>
         </div>
         <div class="card-header bg-transparent">
-            Titulo Ejercicio
+            <input type="text" #name placeholder="Titulo del ejercicio">
         </div>
         <div class="card-body">
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <input #description class="card-text" placeholder="Describe el ejercicio">
         </div>
         <div class="card-footer">
-            URL Video, web, references
+            <input type="text" #url placeholder="Añade una url si la tienes">
         </div>
     </div>
 </section>
 <div class="card mb-3" id="new-ex">
-    <button class="btn" id="card-bg2" routerLink="/coach/myWorkouts">
+    <button (click)="postExercise(type, description, url, name)" class="btn" id="card-bg2">
         Nuevo ejercicio
     </button>
 </div>

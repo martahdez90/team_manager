@@ -21,6 +21,7 @@ export class LoginComponent implements OnInit {
     this.loginService.login(form).subscribe(data => {
       this.loginService.userLoged = data[0]
       console.log(this.loginService.userLoged);
+
       switch (this.loginService.userLoged.rol) {
         case 'player':
           this.router.navigate(['/player/myMatches']);
