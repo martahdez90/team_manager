@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from 'src/app/shared/login.service';
 import { MatchServiceService } from "../../shared/match.service";
-import { Match } from "../../models/match";
+
 
 @Component({
   selector: 'app-matches-player',
