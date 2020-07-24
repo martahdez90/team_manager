@@ -2,6 +2,12 @@
     font-size: medium;
 }
 
+a:hover, a:active {
+    border-top: 4px solid #ffffff;
+  border-bottom: 4px solid #ffffff;
+  padding: 6px 0; 
+}
+
 .lyrics {
     background-color: #00BFA5;
     font-family: ‘Roboto’, sans-serif;
