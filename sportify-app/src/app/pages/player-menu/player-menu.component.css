@@ -1,64 +1,17 @@
-/* * {
-    font-family: 'Roboto', sans-serif;
-    font-size: 4vw;
-    line-height: 1;
-    color: white;
-}
-
-body {
-    padding-top: 40px;
-}
-
-.list-group-item {
-    background-color: #00bfa5;
-    opacity: 1;
-}
-
-.nav-item:link, .nav-item:visited, .nav-item:active {
-    text-decoration:none;
-    color:white;
-}
-
-.navbar {
-    overflow: hidden;
-    position: fixed;
-    z-index: 1;
-    width: 100%;
-    top: 0;
-}
-
-.navbar, #navbarToggleExternalContent {
-    background-color:  #00bfa5;
-}
-
-section {
-    padding-bottom: 10%;
-    margin-top: 20px;
-}
-mat-icon {
-    color:white;
-}
-
-.navbar-toggler {
-    color: white;
-}
-
-
-@media (min-width: 576px) {
-    * {
-        font-size: 1vw;
-        line-height: 1.5;
-    }
-    
-    
-   section {
-    padding-bottom: 2%;
-}
-} */
 
 * {
     font-size: medium;
 }
+
+a:hover, a:active {
+    border-top: 4px solid #ffffff;
+  border-bottom: 4px solid #ffffff;
+  padding: 6px 0; 
+}
+
+
+
+
 
 .lyrics {
     background-color: #00BFA5;
