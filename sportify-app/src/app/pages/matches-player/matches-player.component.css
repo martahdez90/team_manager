@@ -1,3 +1,4 @@
+
 *{
     font-size: medium;
 }
@@ -14,9 +15,9 @@
     font-size: x-large;
 }
 
-#training-card{
+.card{
     border: #00BFA5;
-    width: 200px;
+    max-width: 50rem;
     margin: auto;
 }
 

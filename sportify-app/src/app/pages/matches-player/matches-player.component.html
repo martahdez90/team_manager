@@ -4,8 +4,8 @@
         <h2 class="col-12 header">Próximos partidos</h2>
     </div>
     <section id="entrenamientos">
-        <div id="training-card" class="card-color d-flex align-content-center flex-wrap mx-auto pb-4" *ngFor="let m of dataBase;">
-            <div class="card mb-3">
+        <div id="training-card" class="card-color d-flex align-content-center flex-wrap mx-auto pb-4">
+            <div class="card mb-3" *ngFor="let m of dataBase;" >
                 <div class="card-header" id="date">
                     <strong>{{m.date | date}}</strong> <br>
                     <i class="fas fa-trophy"></i>
@@ -21,6 +21,5 @@
         </div>
     </section>
 </div>
-
 
 <app-green-footer></app-green-footer>

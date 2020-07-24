@@ -69,6 +69,10 @@
   .featurette-divider {
     margin: 5rem 0; /* Space out the Bootstrap <hr> more */
   }
+
+  .featurette-divider2 {
+    margin: 2rem 0; /* Space out the Bootstrap <hr> more */
+  }
   
   .featurette-heading {
     font-weight: 300;
@@ -95,12 +99,6 @@
   
   .overflow-hidden { overflow: hidden; }
 
-.lyrics {
-    background-color: #00bfa5;
-    font-family: ‘Roboto’, sans-serif;
-    color: black;
-    text-align: center;
-}
 
 #sportify{
     color: white;
@@ -128,6 +126,18 @@
 #whiteLink {
     color: white;
 } 
+
+.circle {
+  border-radius: 60%;
+  width: 200px;
+  margin: auto;
+  display: block;
+}
+
+#about {
+  text-align: center;
+}
+
 @media (min-width: 62em) {
     .featurette-heading {
       margin-top: 7rem;
