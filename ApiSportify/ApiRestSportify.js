@@ -228,7 +228,7 @@ app.delete("/training", function (request, response) {
 
 app.get("/match/:user_id", function (request, response) {
     let params = [request.params.user_id];
-    let sql = "SELECT t5.date, t5.location, t5.comments FROM matches AS t5 " +
+    let sql = "SELECT t5.date, t5.location, t5.comments, t5.rival FROM matches AS t5 " +
         "INNER JOIN users AS t1 INNER JOIN user_teams t2 ON (t1.user_id = t2. user_id) " +
         "INNER JOIN team AS t3 ON (t2.team_id = t3.team_id) " +
         "INNER JOIN matches_teams AS t4 ON (t3.team_id = t4.team_id) " +
@@ -244,6 +244,8 @@ app.get("/match/:user_id", function (request, response) {
     });
 
 })
+
+/* SELECT matches.date, matches.location, matches.comments FROM matches AS matches INNER JOIN users AS users INNER JOIN user_teams AS user_teams ON (users.user_id = users. user_id) INNER JOIN team AS team ON (user_teams.team_id = user_teams.team_id) INNER JOIN matches_teams AS matches_teams ON (team.team_id = matches_teams.team_id) WHERE users.user_id = 2 */
 
 app.post("/match", function (request, response) {
     let params = [request.body.date, request.body.location, request.body.comments];
