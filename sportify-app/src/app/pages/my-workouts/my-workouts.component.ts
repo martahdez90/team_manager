@@ -11,17 +11,12 @@ import { TrainingService } from 'src/app/shared/training-service.service';
 export class MyWorkoutsComponent implements OnInit {
 
  public training :Training;
- dataBase:Object;
-  public games = [new Training('Entreno de 2' ,new Date(2020, 7, 15), 'Madird', 'Comntario de prueba'),
-                  new Training('Entreno de prueba 4' ,new Date(2020, 6, 1), 'Londres', 'Comntario para probar'),
-                  new Training('Entreno de prueba 6' ,new Date(2020, 6, 1), 'Londres', 'Comntario para probar')]
+  public dataBase:Object;
+  
                   
   constructor(private loginService: LoginService, private trainingService: TrainingService) { }
 
-  newWorkout(){
-    console.log(this.loginService.userLoged.user_id)
-    this.games.push(new Training('Entreno de prueba' ,new Date(2050, 6, 1), 'Hawai', 'Comntario para probar'))
-  }
+ 
 
   getTrainings()
   {
@@ -33,15 +28,16 @@ export class MyWorkoutsComponent implements OnInit {
 
   getTraining(id:number)
   {
+    this.loginService.team_id= id;
     this.trainingService.getTraining(id).subscribe((data)=>
     {
       this.dataBase=data;
     });
   };
 
- addTraining(newTraining:Training)
+ addTraining(name:HTMLInputElement, date:HTMLInputElement, location:HTMLInputElement, description:HTMLInputElement)
   {
-      this.trainingService.postTraining(newTraining).subscribe((data)=>
+      this.trainingService.postTraining(new Training(name.value,date.value,location.value,description.value)).subscribe((data)=>
       {
         console.log(data);
       });

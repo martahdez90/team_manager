@@ -1,4 +1,43 @@
 <app-coach-menu></app-coach-menu>
+<!-- put workouts -->
+
+<div class="modal fade" id="postTraining" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Crea tu nuevo ejercicio</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+            </div>
+            <div class="modal-body">
+                <div class="card mb-3">
+                    <div class="card-header" id="date">
+                        <input type="text" id="url" #name placeholder="nombre">
+                    </div>
+                    <div class="card-header bg-transparent">
+                        <input type="date" #date placeholder="añade fecha">
+                    </div>
+                    <div class="card-body">
+                        <input #location class="card-text" placeholder="location">
+                    </div>
+                    <div class="card-footer">
+                        <input type="text" id="url" #description placeholder="description">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button class="btn" id="card-bg2" (click)="addTraining(name, date, location, description)" data-dismiss="modal" aria-label="Close">Crear</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
 
 <section id="training-card">
     <div class="card-color d-flex align-content-center flex-wrap mx-auto pb-4">
@@ -21,28 +60,10 @@
         </div>
     </div>
 </section>
-<!-- <div class="card-color d-flex align-content-center flex-wrap mx-auto pb-4">
-    <div class="card playerInfo mr-4 ml-5 mt-4 mb-1 p-1 pb-1 team" id="team2">
-        <div class="card-header" id="date">
-            Alcorcón CF
-            <mat-icon class="close">delete</mat-icon>
-        </div>
-        <div class="card-body row">
-            <div class="col-4">
-                <i class="fa fa-soccer-ball-o ball"></i>
-            </div>
-            <div class="col-7 infoTeam">
-                <p class="card-text">Alevines</p>
-            </div>
-        </div>
-        <div class="card-footer">
-            <mat-icon class="eye" routerLink="/coach/myPlayers">remove_red_eye</mat-icon>
-        </div>
-    </div>
-</div> -->
+
 
 <div class="btn-down">
-    <i class="material-icons" (click)='newWorkout()'>add_circle</i>
+    <i class="material-icons" data-toggle="modal" data-target="#postTraining">add_circle</i>
 </div>
 
 <app-green-footer></app-green-footer>

@@ -13,7 +13,7 @@ import { Training } from 'src/app/models/training';
 })
 export class TrainingsPlayerComponent implements OnInit {
   public training: Training;;
-   public dataBase:Object;
+   public dataBase: object;
 
 
   constructor(private loginService: LoginService,  private trainingService:TrainingService)
@@ -65,7 +65,7 @@ export class TrainingsPlayerComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.trainingService.getTraining(this.id).subscribe(data => {
+    this.trainingService.getTraining(this.loginService.team_id).subscribe(data => {
       this.dataBase = data
       console.log(this.dataBase)
     })
