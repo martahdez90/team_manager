@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from 'src/app/shared/login.service';
+import { MatchServiceService } from "../../shared/match.service";
+
 
 @Component({
   selector: 'app-matches-player',
@@ -7,10 +9,17 @@ import { LoginService } from 'src/app/shared/login.service';
   styleUrls: ['./matches-player.component.css']
 })
 export class MatchesPlayerComponent implements OnInit {
-
-  constructor(private loginService: LoginService) { }
+  public id = this.loginService.userLoged.user_id
+  public dataBase: object
+    
+  constructor(private loginService: LoginService, private matchService: MatchServiceService,) { }
 
   ngOnInit(): void {
+    this.matchService.getMatches(this.id).subscribe(data => {
+      this.dataBase = data
+      console.log(this.dataBase)
+    })
   }
 
 }
+

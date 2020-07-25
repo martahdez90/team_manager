@@ -1,45 +1,64 @@
+input{
+    border: none;
+    background: transparent;
+    width: 100%;
+}
+input#url::placeholder {
+    color: white;
+}
 #profile {
     background-color: #00BFA5;
     font-size: 100px;
     text-align: center;
     color: white;
 }
-
 #profile-list {
     color: rgb(75, 75, 75);
     padding: 0%;
     padding-left: 5%;
     margin-top: 3%;
 }
-
 ul,
-div {
+div#div {
     margin: 0;
     padding: 0
 }
-
 .fas {
     color: red;
     position: absolute;
     right: 5%;
 }
-
 .list-group-item {
     position: relative;
 }
-
 #info {
     display: inline;
     position: absolute;
     right: 5%;
     color: grey;
 }
-
 .buttonR {
     background-color: #00BFA5;
     font-family: ‘Roboto’, sans-serif;
-    color: #ffffff;
+    color: #FFFFFF;
 }
+#card-bg2{
+    border: none;
+    background-color: #00BFA5;
+    color: white;
+}
+.card{
+    border: #00BFA5;
+    max-width: 50rem;
+    margin: auto;
+}
+
+.card-footer, #date{
+    background-color: #00BFA5;
+    color: white;
+    position: relative;
+}
+
 
 @media(min-width:787px) {
     .list-group {

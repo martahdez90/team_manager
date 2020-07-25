@@ -1,53 +1,21 @@
 <app-player-menu></app-player-menu>
-
-
 <div>
     <div class="header row">
         <h2 class="col-12 header">Próximos entrenamientos</h2>
     </div>
     <section id="entrenamientos">
-        <div id="training-card">
-            <div class="card mb-3">
+        <div id="training-card" class="card-color d-flex align-content-center flex-wrap mx-auto pb-4">
+            <div class="card mb-3" *ngFor="let t of dataBase;">
                 <div class="card-header" id="date">
-                    <strong>Martes 17 septiembre</strong> <br>
-                    16.00
+                    <strong>{{t.date | date}}</strong> <br>
                     <i class="fas fa-tshirt" id="shirt"></i>
                 </div>
                 <div class="card-body">
-                    <p class="card-text">No olvideis traer la equipación</p>
+                    <p class="card-text"><strong>{{t.name}}</strong></p>
+                    <p class="card-text">{{t.description}}</p>
                 </div>
                 <div class="card-footer">
-                    Polideportivo Las Nieves
-                </div>
-            </div>
-        </div>
-        <div id="training-card">
-            <div class="card mb-3">
-                <div class="card-header" id="date">
-                    <strong>Jueves 19 septiembre</strong> <br>
-                    16.00
-                    <i class="fas fa-tshirt" id="shirt"></i>
-                </div>
-                <div class="card-body">
-                    <p class="card-text">No olvideis traer la equipación</p>
-                </div>
-                <div class="card-footer">
-                    Polideportivo Las Nieves
-                </div>
-            </div>
-        </div>
-        <div id="training-card">
-            <div class="card mb-3">
-                <div class="card-header" id="date">
-                    <strong>Martes 17 septiembre</strong> <br>
-                    16.00
-                    <i class="fas fa-tshirt" id="shirt"></i>
-                </div>
-                <div class="card-body">
-                    <p class="card-text">No olvideis traer la equipación</p>
-                </div>
-                <div class="card-footer">
-                    Polideportivo Las Nieves
+                    {{t.location}}
                 </div>
             </div>
         </div>

@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from 'src/app/shared/login.service';
+
 import { TrainingService } from 'src/app/shared/training-service.service';
 import { Training } from 'src/app/models/training';
+
+
 
 @Component({
   selector: 'app-trainings-player',
@@ -10,7 +13,8 @@ import { Training } from 'src/app/models/training';
 })
 export class TrainingsPlayerComponent implements OnInit {
   public training: Training;;
- dataBase:Object;
+   public dataBase:Object;
+
 
   constructor(private loginService: LoginService,  private trainingService:TrainingService)
    { }
@@ -59,7 +63,12 @@ export class TrainingsPlayerComponent implements OnInit {
 
    
 
+
   ngOnInit(): void {
+    this.trainingService.getTraining(this.id).subscribe(data => {
+      this.dataBase = data
+      console.log(this.dataBase)
+    })
+  }
   }
 
-}

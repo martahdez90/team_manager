@@ -11,7 +11,8 @@ import { Exercise } from 'src/app/models/exercise';
 })
 export class MyExercisesComponent implements OnInit {
 
-  public dataBase:object
+  public dataBase: object
+  public modals: object
   public options = [
     {name: 'Selecciona uno', value: 'null'},
     {name: 'Calentamiento', value:'warmUp'},
@@ -25,31 +26,32 @@ export class MyExercisesComponent implements OnInit {
     let newEx = new Exercise(name.value, description.value, url.value, type.value)
     console.log(newEx);
     
-    this.exerciseService.postExercise(newEx).subscribe(data=>{
+    this.exService.postExercise(newEx).subscribe(data=>{
       console.log(data)
     })
   }
 
-  putExercise(type: HTMLInputElement ,description: HTMLInputElement ,url: HTMLInputElement ,name: HTMLInputElement ){
+  public putEx(type: HTMLInputElement ,description: HTMLInputElement ,url: HTMLInputElement ,name: HTMLInputElement ){
     let newEx = new Exercise(name.value, description.value, url.value, type.value)
     console.log(newEx);
     
-    this.exerciseService.putExercise(newEx).subscribe(data=>{
+    this.exService.putExercise(newEx).subscribe(data=>{
       console.log(data)
     })
   }
 
   deleteEx(ex_id: number){
     console.log(ex_id)
-    this.exerciseService.deleteExercise(ex_id).subscribe(data=>{
+    this.exService.deleteExercise(ex_id).subscribe(data=>{
       console.log(data)
     })
   }
 
   ngOnInit(): void {
-    this.exerciseService.getExercise(2).subscribe(data =>{
+    this.exService.getExercise(2).subscribe(data =>{
       console.log(data)
       this.dataBase = data
+      this.modals = data
     })
   }
 

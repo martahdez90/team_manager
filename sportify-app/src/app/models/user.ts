@@ -7,8 +7,7 @@ export class User {
     public phone: number;
     public user_id: number;
 
-    constructor() {
-
-    }
+    constructor() {}
+    
 }
 

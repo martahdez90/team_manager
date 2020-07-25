@@ -5,6 +5,14 @@ section{
     position: relative;
     padding: 3%;
 }
+input{
+    border: none;
+    background: transparent;
+    width: 100%;
+}
+input#url::placeholder {
+    color: white;
+}
 .card{
     border: #00BFA5;
     max-width: 50rem;

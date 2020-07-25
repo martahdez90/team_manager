@@ -21,14 +21,12 @@ export class LoginComponent implements OnInit {
     this.loginService.login(form).subscribe(data => {
       this.loginService.userLoged = data[0]
       console.log(this.loginService.userLoged);
-
+      //Redirigir a jugador o entrenador
       switch (this.loginService.userLoged.rol) {
         case 'player':
           this.router.navigate(['/player/myMatches']);
-          console.log("redirigiendo a jugador");
           break;
         case 'coach':
-          console.log("redirigiendo a coach")
           this.router.navigate(['/coach/myTeams'])  
               break;
         default:
