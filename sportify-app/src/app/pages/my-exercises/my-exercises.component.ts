@@ -44,6 +44,7 @@ export class MyExercisesComponent implements OnInit {
     console.log(ex_id)
     this.exService.deleteExercise(ex_id).subscribe(data=>{
       console.log(data)
+
     })
   }
 
