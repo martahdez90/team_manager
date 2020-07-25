@@ -11,7 +11,8 @@ import { Exercise } from 'src/app/models/exercise';
 })
 export class MyExercisesComponent implements OnInit {
 
-  public dataBase:object
+  public dataBase: object
+  public modals: object
   public options = [
     {name: 'Selecciona uno', value: 'null'},
     {name: 'Calentamiento', value:'warmUp'},
@@ -30,7 +31,7 @@ export class MyExercisesComponent implements OnInit {
     })
   }
 
-  putExercise(type: HTMLInputElement ,description: HTMLInputElement ,url: HTMLInputElement ,name: HTMLInputElement ){
+  public putEx(type: HTMLInputElement ,description: HTMLInputElement ,url: HTMLInputElement ,name: HTMLInputElement ){
     let newEx = new Exercise(name.value, description.value, url.value, type.value)
     console.log(newEx);
     
@@ -50,6 +51,7 @@ export class MyExercisesComponent implements OnInit {
     this.exService.getExercise(2).subscribe(data =>{
       console.log(data)
       this.dataBase = data
+      this.modals = data
     })
   }
 
