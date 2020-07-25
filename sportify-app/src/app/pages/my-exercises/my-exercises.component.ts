@@ -42,17 +42,13 @@ export class MyExercisesComponent implements OnInit {
 
   deleteEx(ex_id: number){
     console.log(ex_id)
-    // this.exService.deleteExercise(ex_id).subscribe(data=>{
-    //   console.log(data)
-    // })
-  }
-
-  ngOnInit(): void {
-    this.exService.getExercise(2).subscribe(data =>{
+    this.exService.deleteExercise(ex_id).subscribe(data=>{
       console.log(data)
       this.dataBase = data
       this.modals = data
     })
   }
-
+  ngOnInit(){
+    
+  }
 }
