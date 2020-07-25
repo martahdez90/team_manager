@@ -7,7 +7,7 @@ import { Training } from "../models/training";
 })
 export class TrainingService {
 
-  private url = "http://localhost:3025/trainings";
+  private url = "http://localhost:3025/training";
   public Trainings: Training[];
   
   constructor(private http: HttpClient) { }

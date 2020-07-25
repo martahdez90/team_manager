@@ -17,10 +17,10 @@ import { UserService } from '../../shared/user-service.service';
 export class RegisterComponent implements OnInit {
   public user = new User;
   public rols: String[] = ["entrenador", "jugador"]
-
+  public password2: string;
   public registrado = false;
 
-  constructor(private apiService: UserService) { 
+  constructor(private apiService: UserService) {
     this.user
   }
 
@@ -29,13 +29,13 @@ export class RegisterComponent implements OnInit {
   onSubmit(form) {
     console.log(form.value);
     this.apiService.postUser(this.user).subscribe((data) => {
-      console.log(data); 
+      console.log(data);
     })
     this.registrado = true;
   }
 
   ngOnInit(): void {
-  
-  }
 
+  }
+  
 }

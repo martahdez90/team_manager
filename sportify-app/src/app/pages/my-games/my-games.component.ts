@@ -24,9 +24,9 @@ export class MyGamesComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    (this.matchService.getMatches(2).subscribe(data=>{
-      this.dataBase = data 
-    }))
+    this.matchService.getMatches(2).subscribe(data=>{
+      this.dataBase = data
+    })
   }
 }
 
