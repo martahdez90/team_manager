@@ -26,7 +26,7 @@ export class UserService {
         'Content-Type': 'application/json',
       }), 
       body: {
-        id: id,
+        user_id: id,
       }
     }
     return this.http.delete(this.url, options)
