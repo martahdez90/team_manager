@@ -5,13 +5,15 @@
     color: #5a5a5a;
   }
 
-/* .container {
-    max-width: 960px;
+/*   .header.link {
+    transition: all 300ms;
+  } */
+
+  .header-link:hover, .header.link:active {
+    border-top: 3px solid #ffffff;
+  border-bottom: 3px solid #ffffff;
+  padding: 4px 0; 
   }
-     */
-  /*
-   * Dummy devices (replace them with your own or something else entirely!)
-   */
   
   .product-device {
     position: absolute;
@@ -94,8 +96,6 @@
     background-repeat: no-repeat; 
     background-size: cover; 
   }
-  
-  
   
   .overflow-hidden { overflow: hidden; }
 
