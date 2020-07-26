@@ -1,8 +1,3 @@
-* {
-    font-size: 1.7vw;
-}
-
-
 .header {
     text-align: center;
     margin: auto;
@@ -18,76 +13,67 @@
 section {
     padding: 5%;
 }
-
-.card {
+input#url::placeholder {
+    color: white;
+}
+#profile {
+    background-color: #00BFA5;
+    font-size: 100px;
+    text-align: center;
+    color: white;
+}
+#profile-list {
+    color: rgb(75, 75, 75);
+    padding: 0%;
+    padding-left: 5%;
+    margin-top: 3%;
+}
+ul,
+div#div {
+    margin: 0;
+    padding: 0
+}
+.fas {
+    color: red;
+    position: absolute;
+    right: 5%;
+}
+.list-group-item {
+    position: relative;
+}
+#info {
+    display: inline;
+    position: absolute;
+    right: 5%;
+    color: grey;
+}
+.buttonR {
+    background-color: #00BFA5;
+    font-family: ‘Roboto’, sans-serif;
+    color: #FFFFFF;
+}
+#card-bg2{
+    border: none;
+    background-color: #00BFA5;
+    color: white;
+}
+.card{
     border: #00BFA5;
     max-width: 50rem;
-    min-width: 25rem;
     margin: auto;
 }
 
-.card-footer,
-#date {
+.card-footer, #date{
     background-color: #00BFA5;
     color: white;
     position: relative;
 }
 
-#edit {
-    position: absolute;
-    top: 20%;
-    right: 10%;
-}
 
-#trash {
-    position: absolute;
-    top: 20%;
-    right: 5%;
-    color: grey
-}
-
-#ver {
-    color: white;
-    position: absolute;
-    top: 20%;
-    right: 3%;
-    border: solid;
-    border-color: white;
-}
-
-.btn-down {
-    position: relative;
-    margin: auto;
-    padding: 12px;
-}
-
-.btn-down .material-icons {
-    position: fixed;
-    bottom: 10%;
-    right: 15px;
-    font-size: 5vw;
-    color: #00BFA5;
-    border-radius: 100%;
-    background-color: whitesmoke;
-}
-
-@media(max-width: 769px) {
-    * {
-        font-size: 3.5vw;
-    }
-    .btn-down .material-icons {
-        font-size: 40px;
-    }
-}
-
-@media(min-width: 769px) {
-    section {
-        display: flex;
-    }
-    .card {
-        margin: 1%
-    }
-    .btn-down .material-icons {
-        font-size: 45px;
+@media(min-width:787px) {
+    .list-group {
+        position: relative;
+        margin-left: 20%;
+        margin-right: 20%;
     }
 }

@@ -8,19 +8,19 @@ export class UserService {
   private url = "http://localhost:3025/users";
   public user: User;
   constructor(private http: HttpClient) { }
-  getUser(id: number) {
+  public getUser(id: number) {
     return this.http.get(this.url + "/" + id)
   }
   /* getUsers() {
     return this.http.get(this.url)
   } */
-  postUser(newUser: User) {
+  public postUser(newUser: User) {
     return this.http.post(this.url + "/register", newUser)
   }
-  putUser(newUser: User) {
+  public putUser(newUser: User) {
     return this.http.put(this.url, newUser)
   }
-  deleteUser(id: number) {
+  public deleteUser(id: number) {
     let options = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
@@ -31,11 +31,11 @@ export class UserService {
     }
     return this.http.delete(this.url, options)
   }
-  getPlayer(id: number)
+  public getPlayer(id: number)
   {
    return this.http.get(this.url + "/teamPlayers" +"/" + id)
   }
-  deletePlayer(id:number)
+  public deletePlayer(id:number)
   {
     let options =
     {
@@ -45,5 +45,8 @@ export class UserService {
       body:{user_id:id}
     }
     return this.http.delete(this.url +"/teamPlayers", options)
+  }
+  public getCoach(team_id){
+    return this.http.get(this.url + "/coach/" + team_id)
   }
 }
