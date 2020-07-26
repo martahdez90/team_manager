@@ -4,6 +4,19 @@
     color: gray;
 }
 
+
+.header {
+    text-align: center;
+    margin: auto;
+    background-color: #00BFA5;
+    color: white;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    margin-top: 0%;
+    margin-bottom: 0%;
+    font-size: x-large;
+}
+
 .mat-icon {
     color: #00bfa5;
     font-size: 3rem;

@@ -1,8 +1,4 @@
 
-*{
-    font-size: medium;
-}
-
 .header {
     text-align: center;
     margin: auto;
@@ -10,14 +6,14 @@
     color: white;
     padding-top: 2px;
     padding-bottom: 2px;
-    margin-top: 1%;
-    margin-bottom: 1%;
+    margin-top: 0%;
+    margin-bottom: 0%;
     font-size: x-large;
 }
 
 .card{
     border: #00BFA5;
-    max-width: 50rem;
+    width: 300px;
     margin: auto;
 }
 
