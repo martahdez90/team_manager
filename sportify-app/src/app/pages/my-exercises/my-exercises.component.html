@@ -47,7 +47,7 @@
         <div class="card-header" id="date">
             Tipo: 
             {{ex.type}}
-            <i class="far fa-edit" id="edit" data-toggle="modal" data-target="#editExercise"></i>
+            <i class="far fa-edit" id="edit" data-toggle="modal" data-target="#editExercise" (click)="getExData(database[i])"></i>
             <i class='far fa-trash-alt' id="trash" (click)="deleteEx(dataBase[i].exercise_id)"></i>
         </div>
         <div class="card-header bg-transparent">
@@ -64,7 +64,7 @@
             <div class="modal-dialog modal-dialog-centered" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLongTitle">Crea tu nuevo ejercicio</h5>
+                  <h5 class="modal-title" id="exampleModalLongTitle">Edicion ejercicio</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
@@ -76,16 +76,15 @@
                             <select #type id="cars" name="cars" id="dropdown">
                                 <option *ngFor="let option of options" value = "{{option.value}}">{{option.name}}</option>
                             </select>
-                            <i class='far fa-trash-alt' id="trash" (click)="deleteEx(modals[i].exercise_id)"></i>
                         </div>
                         <div class="card-header bg-transparent">
-                            <input #name type="text"  placeholder="{{ex.name}}">
+                            <input #name type="text"  placeholder="{{getExData.name}}">
                         </div>
                         <div class="card-body">
-                            <input #description class="card-text" placeholder="{{ex.description}}">
+                            <input #description class="card-text" placeholder="{{getExData.description}}">
                         </div>
                         <div class="card-footer">
-                            <input  #url type="text" id="url" placeholder="{{ex.url}}">
+                            <input  #url type="text" id="url" placeholder="{{getExData.url}}">
                         </div>
                     </div>
                 </div>
