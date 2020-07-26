@@ -30,7 +30,9 @@ import { HttpClientModule } from "@angular/common/http";
 import { TrainingsPlayerComponent } from './pages/trainings-player/trainings-player.component';
 import { MatchesPlayerComponent } from './pages/matches-player/matches-player.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { HomeComponent } from './pages/home/home.component'
+import { HomeComponent } from './pages/home/home.component';
+import { LandingMenuComponent } from './pages/landing-menu/landing-menu.component';
+
 
 
 @NgModule({
@@ -55,6 +57,8 @@ import { HomeComponent } from './pages/home/home.component'
     TrainingsPlayerComponent,
     MatchesPlayerComponent,
     HomeComponent,
+    LandingMenuComponent,
+   
   ],
   imports: [
     BrowserModule,
