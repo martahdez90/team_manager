@@ -12,6 +12,7 @@ import { Exercise } from 'src/app/models/exercise';
 export class MyExercisesComponent implements OnInit {
 
   public dataBase: object
+  public putData: object
   public modals: object
   public options = [
     {name: 'Selecciona uno', value: 'null'},
@@ -46,6 +47,10 @@ export class MyExercisesComponent implements OnInit {
       console.log(data)
 
     })
+  }
+
+  public getExData(data: object){
+    this.putData = data
   }
 
   ngOnInit(): void {
