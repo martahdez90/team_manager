@@ -10,10 +10,8 @@
     font-size: x-large;
 }
 
-input{
-    border: none;
-    background: transparent;
-    width: 100%;
+section {
+    padding: 5%;
 }
 input#url::placeholder {
     color: white;
