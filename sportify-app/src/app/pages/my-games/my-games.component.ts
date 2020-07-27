@@ -24,7 +24,7 @@ export class MyGamesComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.matchService.getMatches(2).subscribe(data=>{
+    this.matchService.getMatches(this.loginService.userLoged.user_id).subscribe(data=>{
       this.dataBase = data
     })
   }

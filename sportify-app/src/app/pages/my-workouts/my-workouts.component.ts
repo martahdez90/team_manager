@@ -11,7 +11,7 @@ import { TrainingService } from 'src/app/shared/training-service.service';
 export class MyWorkoutsComponent implements OnInit {
 
  public training :Training;
-  public dataBase:Object;
+  public dataBase:object;
   
                   
   constructor(private loginService: LoginService, private trainingService: TrainingService) { }
@@ -64,6 +64,11 @@ export class MyWorkoutsComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this.trainingService.getTraining(1).subscribe((data)=>
+    {
+      console.log(data);
+      this.dataBase=data;
+    });
     
   }
 

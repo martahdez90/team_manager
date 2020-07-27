@@ -10,6 +10,7 @@ import { LoginService } from 'src/app/shared/login.service';
 export class MyPlayersComponent implements OnInit {
     public dataBase:object;
     public user:User;
+    public players: object[];
   constructor(private UserService: UserService, private loginService: LoginService) {}
     getPlayers(id:number)
     {
@@ -18,17 +19,26 @@ export class MyPlayersComponent implements OnInit {
         this.dataBase= data;
       })
     }
-    deletePlayers(id:number)
+    deletePlayers(index:number)
     {
-      console.log(id)
-      this.UserService.deletePlayer(id).subscribe((data)=>
+      console.log(index)
+      this.UserService.deletePlayer(index).subscribe((data)=>
       {
-        console.log(data)
+       
+        this.UserService.getPlayer(2).subscribe((data)=>
+      {
+      
+        this.dataBase= data;
+      })
+  
+
+        console.log(this.players)
       })
     }
   ngOnInit(): void {
     this.UserService.getPlayer(2).subscribe((data)=>
       {
+        
         this.dataBase= data;
       })
   }
