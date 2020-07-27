@@ -21,12 +21,13 @@ export class TeamService {
     return this.http.post(this.url, changes)
   }
   deleteTeam(id: number){
+    console.log(id)
     const options = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
       }),
       body: {
-        id: id,
+        team_id: id,
       },
     };
     return this.http.delete(this.url, options)

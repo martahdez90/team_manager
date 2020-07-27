@@ -30,7 +30,7 @@ export class TrainingService {
         'Content-Type': 'application/json',
       }), 
       body: {
-        id: id,
+        training_id: id,
       }
     }
     return this.http.delete(this.url, options)
