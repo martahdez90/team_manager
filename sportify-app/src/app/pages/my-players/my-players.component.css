@@ -1,6 +1,4 @@
 * {
-    font-size: 1.7;
-    line-height: 1.5;
     color: gray;
 }
 
@@ -17,9 +15,11 @@
     font-size: x-large;
 }
 
-.mat-icon {
+.fa-user {
     color: #00bfa5;
-    font-size: 3rem;
+    font-size: 2rem;
+    position: absolute;
+    top: 30%;
 }
 
 section {
@@ -56,12 +56,7 @@ body {
     right: 10%;
     color: white;
 }
-#trash{
-    position: absolute;
-    top: 10%;
-    right: 5%;
-    color: white
-}
+
 #ver{
     color: white;
     position: absolute;
@@ -86,6 +81,60 @@ body {
     background-color: whitesmoke;
 }
 
+/* desde aqui  */
+.playerInfo{
+    width: 300px;
+}
+.newT, .new {
+    background-color: #00bfa5;
+    border: #00bfa5;
+    width: 20vw;
+    color: white;
+    margin-left: 45vw;
+}
+
+.new:active, .new:hover {
+    background-color: #126e62;
+    border: #126e62;
+}
+
+.modal-title {
+    margin: auto;
+    color: #00bfa5;
+    font-size: medium;
+}
+
+.card-header, .card {
+    border-color: #00bfa5;
+}
+
+
+.card-footer, .card-header {
+    background-color: #00bfa5;
+    max-width: 100%;
+    padding-top: 20px;
+    color: white;
+    font-weight: bold;
+}
+
+.close {
+    color:  #00bfa5;
+    font-weight: bold;
+    position: absolute;
+    top: 2%;
+    right: 3%;
+    z-index: 1;
+}
+
+.fa-trash-alt {
+    color: white;
+    position: absolute;
+    top: 12%;
+    right: 4%;
+    z-index: 1;
+}
+
+
 @media (max-width: 576px) {
     section {
         padding-bottom: 10%;
@@ -96,6 +145,10 @@ body {
         font-size: 4vw;
         line-height: 1.5;
         color: gray
+    }
+
+    .header {
+        margin-top: 0;
     }
     .more {
         color: #00bfa5; 

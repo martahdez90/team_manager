@@ -1,7 +1,6 @@
 <app-coach-menu></app-coach-menu>
 
 <section>
-
     <div class="modal fade" id="postplayers" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -44,24 +43,26 @@
                 class="card playerInfo mr-4 ml-5 mt-4 mb-1 mb-1 p-1 pb-1 team" id="team2">
                 <div class="card-header" id="date">
                     {{player.name}} {{player.lastName}}
-                    <i class='far fa-trash-alt' id="trash" (click)="deletePlayers(dataBase[i].user_id)"></i>
+                    <i class='fas fa-trash-alt'(click)="deletePlayers(dataBase[i].user_id)"></i>
                 </div>
                 <div class="card-body row">
                     <div class="col-3">
-                        <mat-icon> person_pin</mat-icon>
+                        <i class='fas fa-user'></i>
                     </div>
                     <div class="col-9 infoPlayer">
                         <p class="card-text"> <strong>Email: </strong> {{player.email}}</p>
-                        <p class="card-text"><strong>Mvl: </strong> {{player.phone}}</p>
+                        <label for="email"><strong>Mvl: </strong></label><br>
+                        <p class="card-text"> {{player.phone}}</p>
                     </div>
                 </div>
             </div>
-            <div class="btn-up">
-                <i class="material-icons more">add_circle</i>
-            </div>
         </div>
     </div>
-
+    <div class="newTeam">
+        <button class="btn newT mb-5" id="card-bg2" data-toggle="modal" data-target="#exampleModalCenter">
+            Nuevo equipo
+        </button>
+    </div>
 
 
 </section>
