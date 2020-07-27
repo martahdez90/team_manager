@@ -155,7 +155,7 @@ app.delete("/teams", function(request, response) {
 app.get("/training/:user_id", function(request, response) {
     let params = [request.params.user_id]
         // "INNER JOIN training AS t5 ON (t4.training_id = t5.training_id) "
-    let sql = "SELECT training.* FROM training INNER JOIN training_team ON training_team.training_id = training.training_id INNER JOIN team ON team.team_id = training_team.team_id INNER JOIN user_teams ON user_teams.team_id = team.team_id INNER JOIN users ON users.user_id = user_teams.user_id WHERE users.user_id = 3";
+    let sql = "SELECT training.* FROM training INNER JOIN training_team ON training_team.training_id = training.training_id INNER JOIN team ON team.team_id = training_team.team_id INNER JOIN user_teams ON user_teams.team_id = team.team_id INNER JOIN users ON users.user_id = user_teams.user_id WHERE users.user_id = ?";
 
     connection.query(sql, params, function(err, resultado) {
         if (err) {

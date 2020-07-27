@@ -1,7 +1,6 @@
-* {
-    line-height: 1.5;
+section {
+    height: 80vh;
 }
-
 
 .header {
     text-align: center;
@@ -20,16 +19,28 @@
     color: #00bfa5;
 }
 
-button {
+.newT, .new {
     background-color: #00bfa5;
     border: #00bfa5;
+    width: 20vw;
+    color: white;
+    margin-left: 45vw;
 }
 
-button:active, button:focus {
-    background-color: #009688;
-    border: #009688;
+.new:active, .new:hover {
+    background-color: #126e62;
+    border: #126e62;
 }
 
+.modal-title {
+    margin: auto;
+    color: #00bfa5;
+    font-size: medium;
+}
+
+.card-header, .card {
+    border-color: transparent;
+}
 
 label {
     color: #00bfa5;
@@ -37,9 +48,9 @@ label {
     padding-bottom: 5px;
     padding-top: 5px;
 }
-section {
+/* section {
     padding-bottom: 25vh;
-}
+} */
 .card-color {
     padding: 2%;
 }
@@ -69,11 +80,19 @@ section {
 }
 
 .close {
-    color: white;
+    color:  #00bfa5;
     font-weight: bold;
     position: absolute;
-    top: 10%;
+    top: 2%;
     right: 3%;
+    z-index: 1;
+}
+
+.fa-trash-alt {
+    color: white;
+    position: absolute;
+    top: 12%;
+    right: 4%;
     z-index: 1;
 }
 
@@ -101,11 +120,8 @@ section {
     margin-right: 10%;
 }
 
+
 @media (max-width: 400px) {
-    * {
-        font-family: 'Roboto', sans-serif;
-        font-size: medium;
-    }
     .ball {
         color: #00bfa5;
         font-size: 10vw;  
@@ -127,12 +143,14 @@ section {
     section {
         padding-bottom: 20vh;
     }
+
+    .newT{
+        width: 70vw;
+        margin-left: 15vw;
+    }
 }
 
 @media(min-width: 769px){
-    .btn-down .material-icons{
-        font-size: 45px;
-    }
     .newPlayer {
         text-align: center;
         padding-left: 20px;
@@ -140,5 +158,9 @@ section {
         font-size: small;
         margin-left: 25%;
         margin-right: 25%
+    }
+
+    .newTeam {
+        margin-top: 20vh;
     }
 }
