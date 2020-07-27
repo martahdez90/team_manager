@@ -1,8 +1,8 @@
 <app-coach-menu></app-coach-menu>
 
 <section>
-    <div class="modal fade" id="postplayers" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-        aria-hidden="true">
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+    aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -13,25 +13,24 @@
                 </div>
                 <div class="modal-body">
                     <div class="card mb-3">
-                        <div class="card-header" id="date">
-                            <label for="email">email</label><br>
+                        <div class="card-header bg-transparent" id="date">
+                            <label for="email">email:</label><br>
                             <input type="email" id="url" #email placeholder="email">
                         </div>
                         <div class="card-header bg-transparent">
-                            <input type="date" #phone placeholder="telefono">
+                            <label for="phone">móvil:</label><br>
+                            <input type="tel" #phone placeholder="telefono">
                         </div>
 
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                    <button class="btn" id="card-bg2" (click)="getPlayers(2)" data-dismiss="modal"
+                    <button class="btn new" (click)="getPlayers(2)" data-dismiss="modal"
                         aria-label="Close">Crear</button>
                 </div>
             </div>
         </div>
     </div>
-
 
     <div class="header row">
         <h2 class="col-12 header">Mis jugadores</h2>
@@ -59,8 +58,8 @@
         </div>
     </div>
     <div class="newTeam">
-        <button class="btn newT mb-5" id="card-bg2" data-toggle="modal" data-target="#exampleModalCenter">
-            Nuevo equipo
+        <button class="btn newJ mb-5" id="card-bg2" data-toggle="modal" data-target="#exampleModalCenter">
+            Nuevo jugador
         </button>
     </div>
 

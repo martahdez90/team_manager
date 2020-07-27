@@ -50,13 +50,15 @@
     border-color: white;
 }
 
-.btn {
+.btn {  
     background-color: #00bfa5;
     border: #00bfa5;
     width: 20vw;
     color: white;
     margin: auto;
+    margin-top: 10vh;
 }
+
 
 
 
