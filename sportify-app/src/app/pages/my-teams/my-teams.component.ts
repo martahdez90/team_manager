@@ -12,15 +12,7 @@ export class MyTeamsComponent implements OnInit {
 
   constructor(private teamService:TeamService, private loginService: LoginService ) { }
   
-  getTeams(id:number)
-  {
-    this.loginService.userLoged.user_id=id
-    this.teamService.getTeams(id).subscribe(data=>
-      {
-        this.dataBase= data;
-      });
-      console.log(this.dataBase);
-  }
+  
   addTeams(name:HTMLInputElement, category:HTMLInputElement){
     let newTeam=new Team(name.value, category.value);
     newTeam.user_id=this.loginService.userLoged.user_id;

@@ -3,11 +3,14 @@ export class Match {
     public date: string
     public location: string
     public comments: string
+    public rival:string
+    public team_id:number
 
-    constructor(match_id: number,date: string, location: string, comments: string){
-        this.match_id = match_id
+    constructor(date: string, comments: string, rival:string, location: string){
+       
         this.date = date
         this.location = location
         this.comments = comments
+        this.rival= rival
     }
 }

@@ -2,43 +2,115 @@
 <div class="header row">
     <h2 class="col-12 header">Mis partidos</h2>
 </div>
+
+<!--modal nuevo partido-->
+
+
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Crea partido</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+            </div>
+            <div class="modal-body">
+                <div class="card mb-3">
+                    <select #team>
+                        <option  *ngFor=" let team of teams" value="{{team.team_id}}">
+                            {{team.name}}
+                        </option>
+                    </select>
+
+                    <div class="card-header bg-transparent">
+                        <input type="date" #date>
+                    </div>
+                    <div class="card-body">
+                        <input #comments class="card-text" placeholder="coments">
+                    </div>
+                    <div class="card-body">
+                        <input #rival class="card-text" placeholder="rival">
+                    </div>
+                    <div class="card-body">
+                        <input #location class="card-text" placeholder="location">
+                    </div>
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button data-dismiss="modal" aria-label="Close" class="btn" id="card-bg2" (click)="newGame(date,comments,rival, location, team)">Guardar cambios</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <section id="training-card">
     <div class="card-color d-flex align-content-center flex-wrap mx-auto pb-4">
-        <div class="card mr-4 ml-5 mt-4 mb-1 p-1 pb-1" *ngFor="let e of dataBase;">
+        <div class="card mr-4 ml-5 mt-4 mb-1 p-1 pb-1" *ngFor="let e of dataBase; let i= index">
             <div class="card-header" id="date">
                 {{e.date | date}}
-                <i class="far fa-edit" id="edit" routerLink="/coach/myExercises"></i>
-                <i class='far fa-trash-alt' id="trash"></i>
+                <i class="far fa-edit" id="edit" (click)="getGame(dataBase[i])" data-toggle="modal" data-target="#putGame"></i>
+                <i class='far fa-trash-alt' (click)="deleteGame(dataBase[i].match_id)" id="trash"></i>
             </div>
             <div class="card-header bg-transparent">
                 {{e.comments}}
             </div>
             <div class="card-body">
-            <p class="card-text">Mejorar la resistencia con ejercicios de 15 minutos.</p>
+                <p class="card-text">{{e.rival}}</p>
             </div>
             <div class="card-footer">
                 {{e.location}}
-                <a class="badge badge-pill text-right" id="ver" routerLink="/coach/myExercises">Ver</a>
             </div>
         </div>
     </div>
 </section>
+<div class="card mb-3" id="new-ex">
+    <button class="btn" id="card-bg2" data-toggle="modal" data-target="#exampleModalCenter">
+        Nuevo partido
+    </button>
+</div>
 
-<div class="card newPlayer mt-4 mb-1 mb-1 p-1 pb-1 team">
-    <div class="form-group">
-        <label for="my-input font-weight-bold">Nuevo partido</label>
-        <input #location class="form-control" type="text" name="" placeholder="Lugar" required>
-    </div>
-    <div class="form-group">
-        <label for="my-input font-weight-bold">Fecha</label>
-        <input #date class="form-control" type="date" name="" placeholder="Fecha" required>
-    </div>
-    <div class="form-group">
-        <label for="my-input font-weight-bold">Comentario</label>
-        <input #comments class="form-control" type="text" name="" placeholder="No olvideis la segunsda equipacion" required>
-    </div>
-    <button type="submit" class="btn btn-primary mb-2" (click) = 'newGame(date,location,comments)'>Añadir equipo</button>
+<div class="modal fade" id="putGame" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">actualizar partido</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+            </div>
+            <div class="modal-body">
+                <div class="card mb-3">
+                    <select #team2>
+                        <option  *ngFor=" let team of teams" value="{{team.team_id}}">
+                            {{team.name}}
+                        </option>
+                    </select>
 
+                    <div class="card-header bg-transparent">
+                        <input type="date" #date2>
+                    </div>
+                    <div class="card-body">
+                        <input #comments2 class="card-text" placeholder="{{game.comments}}">
+
+                    </div>
+                    <div class="card-body">
+                        <input #rival2 class="card-text" placeholder="{{game.rival}}">
+                    </div>
+                    <div class="card-body">
+                        <input #location2 class="card-text" placeholder="{{game.location}}">
+                    </div>
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button data-dismiss="modal" aria-label="Close" class="btn" id="card-bg2" (click)="putGame(date2,comments2,rival2, location2, team2)">Actualizar</button>
+            </div>
+        </div>
+    </div>
 </div>
 
 <app-green-footer></app-green-footer>
