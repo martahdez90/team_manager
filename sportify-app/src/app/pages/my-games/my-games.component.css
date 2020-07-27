@@ -17,6 +17,7 @@
 .card {
     border: #00BFA5;
     max-width: 50rem;
+    min-width: 30rem;
     margin: auto;
 }
 
@@ -48,8 +49,6 @@
     border: solid;
     border-color: white;
 }
-
-
 
 @media(max-width: 769px) {
     * {
