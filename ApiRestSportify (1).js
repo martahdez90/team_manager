@@ -390,6 +390,7 @@ app.post("/users/teamPlayers", function(request, response) {
         if (err) {
             console.log(err);
         } else {
+            console.log(resultado)
             let param1 = [resultado.insertId, request.body.team_id];
             let sql1 = "INSERT INTO user_teams(user_id, team_id) VALUES(?, ?) ";
             connection.query(sql1, param1, function(err, res) {
