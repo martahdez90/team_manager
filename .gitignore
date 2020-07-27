@@ -9,6 +9,7 @@
 
 # dependencies
 /sportify-app/node_modules
+/sportify-app/node_modules/__ngcc_entry_points__.json
 
 # profiling files
 chrome-profiler-events*.json

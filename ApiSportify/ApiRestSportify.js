@@ -14,7 +14,6 @@ connection.connect(function (error) {
 });
 const express = require("express");
 const bodyParser = require('body-parser');
-const { request } = require("http");
 const app = express();
 let cors = require('cors');
 
@@ -27,7 +26,8 @@ app.use(cors());
 
 app.post("/users/register", function (request, response) {
     let params = [request.body.name, request.body.lastName, request.body.password, request.body.rol, request.body.email, request.body.phone];
-    let sql = "INSERT INTO users(`user_id`, `name`, `lastName`, `password`, `rol`,`email`, `phone`) VALUES (NULL, ?, ?, ?, ?, ?, ?)";
+    let sql = "INSERT INTO users(`user_id`, `name`, `lastName`, `password`, `rol`,`email`, `phone`) "+
+    "VALUES (NULL, ?, ?, ?, ?, ?, ?)";
     connection.query(sql, params, function (err, resultado) {
         if (err) {
             console.log(err);
@@ -66,7 +66,6 @@ app.put("/users", function (request, response) {
     });
 });
 
-// DELETE FROM user WHERE user_id = ? DELETE FROM user_teams WHERE user_id = ? 
 app.delete("/users", function (request, response) {
     let params = [request.body.user_id];
     let sql = "DELETE FROM users WHERE user_id = ?;"
@@ -409,6 +408,24 @@ app.post("/users/login", function (request, response) {
     });
 })
 
-app.listen("3025", () => {
-    console.log("Server started on port 3025");
-});
+app.get("/users/coach/:id", function(request, response){
+    let params = [request.params.id]
+    let sql = `SELECT users.* FROM users
+    INNER JOIN user_teams ON user_teams.user_id = users.user_id
+    INNER JOIN team ON user_teams.team_id = team.team_id
+    WHERE team.team_id = ? AND users.rol = 'coach'`
+    connection.query(sql, params, function (err, res) {
+        if(err){
+            console.log(err)
+            response.send(err)
+        } else {
+            console.log(params)
+            response.send(res)
+        }
+      })
+} )
+
+app.listen(3025)
+// app.listen("3025", () => {
+//     console.log("Server started on port 3025");
+// });

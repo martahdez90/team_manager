@@ -3,10 +3,16 @@
 }
 
 a:hover, a:active {
-    border-top: 4px solid #ffffff;
-  border-bottom: 4px solid #ffffff;
-  padding: 6px 0; 
+    border-top: 3px solid #ffffff;
+  border-bottom: 3px solid #ffffff;
+  padding: 4px 0; 
 }
+
+.active-link {
+    border-top: 3px solid #ffffff;
+    border-bottom: 3px solid #ffffff;
+    padding: 4px 0; 
+  }
 
 .lyrics {
     background-color: #00BFA5;
@@ -31,77 +37,3 @@ a:hover, a:active {
     color: white;
 }
 
-
-/* .mat-icon {
-    font-size: 25px;
- }
-
-.header {
-    color: white;
-}
-
-#toolbarMenu, .toolbar-icon {
-    color: white;
-}
-
-#toolbarMenu {
-    cursor: pointer;
-    margin-right: 20px;
-}
-#mainToolbar .toolbar-spacer {
-    flex: 1 1 auto;
-}
-
-.toolbar-spacer {
-    margin-left:40%;
-}
-
-#mainToolbar .toolbar-icon {
-    cursor: pointer;
-    margin: 0 8px;
-}
-
-#sidenavContainer {
-    margin-top: 64px;
-}
-
-#sidenav {
-    width: 240px;
-}
-
-#sidenav.menu-close {
-    width: 70px
-}
-
-#sidenav.menu-open {
-    width: 240px
-}
-
-#sidenav .avatar {
-    background-image: url('http://i.pravatar.cc/300');
-    background-size: cover;
-}
-
-#sidenav .mat-list-item-content {
-    padding: 0;
-}
-
-#sidenav .menu-item {
-    width: 100%;
-    border-radius: 0;
-    text-align: left;
-    padding: 10px;
-}
-
-#sidenav .menu-item:hover {
-  background: #eee;
-}
-#sidenav .menu-item mat-icon {
-    margin-right: 20px;
-    margin-left: 12px;
-}
-
-.dash-list h3 {
-    padding: 12px;
-}
- */
