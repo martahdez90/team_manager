@@ -14,6 +14,7 @@ export class MyTeamsComponent implements OnInit {
   
   getTeams(id:number)
   {
+    this.loginService.userLoged.user_id=id
     this.teamService.getTeams(id).subscribe(data=>
       {
         this.dataBase= data;
@@ -37,13 +38,14 @@ export class MyTeamsComponent implements OnInit {
   }
   deleteTeam(id:number)
   {
+    this.loginService.team_id=id
     this.teamService.deleteTeam(id).subscribe((data)=>
     {
       console.log(data)
     })
   }
   ngOnInit(): void {
-    this.teamService.getTeams(2).subscribe(data=>
+    this.teamService.getTeams(this.loginService.userLoged.user_id).subscribe(data=>
       {
         this.dataBase= data;
       });

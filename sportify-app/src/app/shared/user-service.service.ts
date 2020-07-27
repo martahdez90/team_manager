@@ -35,7 +35,16 @@ export class UserService {
   {
    return this.http.get(this.url + "/teamPlayers" +"/" + id)
   }
+
+
+  // postPlayers(newPlayers:User)
+  // {
+  //   return this.http.post(this.url + "/teamPlayers" + newPlayers)
+  // }
+  deletePlayer(id:number)
+
   public deletePlayer(id:number)
+
   {
     let options =
     {

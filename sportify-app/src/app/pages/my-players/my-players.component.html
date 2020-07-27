@@ -1,7 +1,41 @@
 <app-coach-menu></app-coach-menu>
+
+
+<!-- post players -->
+
+<div class="modal fade" id="postplayers" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">añadir jugador</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+            </div>
+            <div class="modal-body">
+                <div class="card mb-3">
+                    <div class="card-header" id="date">
+                        <input type="email" id="url" #email placeholder="email">
+                    </div>
+                    <div class="card-header bg-transparent">
+                        <input type="date" #phone placeholder="telefono">
+                    </div>
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button class="btn" id="card-bg2" (click)="getPlayers(2)" data-dismiss="modal" aria-label="Close">Crear</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <div class="header row">
     <h2 class="col-12 header">Mis jugadores</h2>
 </div>
+
 <section>
     <div class="card-color d-flex align-content-center flex-wrap mx-auto pb-4">
         <div *ngFor="  let player of dataBase; let i = index" class="card playerInfo mr-4 ml-5 mt-4 mb-1 mb-1 p-1 pb-1 team" id="team2">
