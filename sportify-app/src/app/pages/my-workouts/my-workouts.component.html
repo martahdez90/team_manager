@@ -8,7 +8,12 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Crea tu nuevo ejercicio</h5>
+                <select name="team" #id>
+                    <option *ngFor ="let team of teams"value=" {{team.team_id}} ">
+                        {{team.name}}
+                    </option>
+                </select>
+                <h5 class="modal-title" id="exampleModalLongTitle">Crea tu nuevo entrenamiento</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -16,7 +21,7 @@
             <div class="modal-body">
                 <div class="card mb-3">
                     <div class="card-header" id="date">
-                        <input type="text" id="url" #name placeholder="nombre">
+                        <input type="text" id="nombre" #name placeholder="nombre">
                     </div>
                     <div class="card-header bg-transparent">
                         <input type="date" #date placeholder="añade fecha">
@@ -25,13 +30,13 @@
                         <input #location class="card-text" placeholder="location">
                     </div>
                     <div class="card-footer">
-                        <input type="text" id="url" #description placeholder="description">
+                        <input type="text" id="description" #description placeholder="description">
                     </div>
                 </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                <button class="btn" id="card-bg2" (click)="addTraining(name, date, location, description)" data-dismiss="modal" aria-label="Close">Crear</button>
+                <button class="btn" id="card-bg2" (click)="addTraining(name, date, location, description, id)" data-dismiss="modal" aria-label="Close">Crear</button>
             </div>
         </div>
     </div>
@@ -44,11 +49,11 @@
 
 <section id="training-card">
     <div class="card-color d-flex align-content-center flex-wrap mx-auto pb-4">
-        <div class="card mr-4 ml-5 mt-4 mb-1 p-1 pb-1" *ngFor="let game of dataBase;">
+        <div class="card mr-4 ml-5 mt-4 mb-1 p-1 pb-1" *ngFor="let game of dataBase; let i = index">
             <div class="card-header" id="date">
                 {{game.date | date}}
-                <i class="far fa-edit" id="edit" routerLink="/coach/myExercises"></i>
-                <i class='far fa-trash-alt' id="trash"></i>
+                <i class="far fa-edit" id="edit" (click)="saveTraining(dataBase[i])" routerLink="/coach/myExercises"></i>
+                <i class='far fa-trash-alt' id="trash" (click)="deleteTraining(dataBase[i].training_id)"></i>
             </div>
             <div class="card-header bg-transparent">
                 {{game.name}}
@@ -65,8 +70,10 @@
 </section>
 
 
-<div class="btn-down">
-    <i class="material-icons" data-toggle="modal" data-target="#postTraining">add_circle</i>
+<div class="card mb-3" id="new-ex">
+    <button class="btn" id="card-bg2" data-toggle="modal" data-target="#postTraining">
+        Nuevo entrenamiento
+    </button>
 </div>
 
 <app-green-footer></app-green-footer>

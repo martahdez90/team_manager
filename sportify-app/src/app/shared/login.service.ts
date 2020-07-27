@@ -10,6 +10,7 @@ export class LoginService {
   private url = "http://localhost:3025/users/login"
   public userLoged: User
   public team_id :number
+  public training_id:number
 
   constructor(private http: HttpClient) { }
 

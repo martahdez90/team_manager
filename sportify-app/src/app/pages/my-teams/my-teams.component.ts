@@ -21,12 +21,18 @@ export class MyTeamsComponent implements OnInit {
       });
       console.log(this.dataBase);
   }
-  addTeams(name:string, category:string){
-    let newTeam=new Team(name, category);
-   ;
-    this.teamService.postTeam(newTeam).subscribe((data)=>
+  addTeams(name:HTMLInputElement, category:HTMLInputElement){
+    let newTeam=new Team(name.value, category.value);
+    newTeam.user_id=this.loginService.userLoged.user_id;
+
+   this.teamService.postTeam(newTeam).subscribe((data)=>
     {
-      console.log(data);
+      console.log(data)
+      this.teamService.getTeams(this.loginService.userLoged.user_id).subscribe((data)=>
+      {
+         console.log(data)
+        this.dataBase = data
+      })
     });
   };
   UpdateTeam(changes:Team)
@@ -38,10 +44,17 @@ export class MyTeamsComponent implements OnInit {
   }
   deleteTeam(id:number)
   {
-    this.loginService.team_id=id
+   
+    console.log(id)
     this.teamService.deleteTeam(id).subscribe((data)=>
     {
-      console.log(data)
+      console.log(data);
+      this.teamService.getTeams(this.loginService.userLoged.user_id).subscribe((data)=>
+      {
+        console.log(data);
+           this.dataBase= data;
+      })
+     
     })
   }
   ngOnInit(): void {
