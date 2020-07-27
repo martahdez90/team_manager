@@ -17,7 +17,6 @@ const bodyParser = require('body-parser');
 const app = express();
 let cors = require('cors');
 
-
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cors());
@@ -98,6 +97,7 @@ app.get("/teams/:user_id", function(request, response) {
         }
     });
 });
+
 // ERROR
 app.post("/teams", function(request, response) {
     let params = [request.body.name, request.body.category]
@@ -120,7 +120,6 @@ app.post("/teams", function(request, response) {
             });
         }
     });
-
 });
 
 app.put("/teams", function(request, response) {
@@ -172,7 +171,6 @@ app.post("/training", function(request, response) {
     let params = [request.body.name, request.body.date, request.body.location, request.body.description];
     let sql = "INSERT INTO training(`training_id`, `name`, `date`, `location`, `description`)  VALUES(NULL, ?, ?, ?, ?) "
 
-
     connection.query(sql, params, function(err, resultado) {
         if (err) {
             console.log(err);
@@ -189,7 +187,6 @@ app.post("/training", function(request, response) {
         }
     });
 });
-
 
 app.put("/training", function(request, response) {
     let params = [request.body.name, request.body.date, request.body.location, request.body.description, request.body.training_id]
@@ -260,7 +257,6 @@ app.post("/match", function(request, response) {
     });
 });
 
-
 app.put("/match", function(request, response) {
     let params = [request.body.date, request.body.comments, request.body.rival, request.body.location, request.body.match_id];
     let sql = "UPDATE matches SET  date = ?, comments = ?, rival = ?, location = ? WHERE match_id = ?";
@@ -290,10 +286,7 @@ app.delete("/match", function(request, response) {
 
 });
 
-
 // END POINT   EXERCISE
-
-
 
 app.get("/exercise/:training_id", function(request, response) {
     let params = [request.params.training_id]
@@ -425,7 +418,29 @@ app.get("/users/coach/:id", function(request, response) {
     })
 })
 
+// Add player to team
 
+app.post("/users/teamPlayers", function (request, response){
+    let params = [request.body.email, request.body.phone]
+    let sql = "SELECT user_id FROM users WHERE email = ? AND  phone = ?"
+    connection.query(sql, params, function (err, res) {
+        if(err){
+            response.send(err)
+        } else{
+            let id = res[0].user_id
+            let params1 = [id, request.body.team_id]
+            let sql2 = "INSERT INTO user_teams (user_id, team_id) VALUES (?, ?)"
+            connection.query(sql2, params1, function (err, res) {
+                if(err){
+                    response.send(err)
+                } else{
+                    response.send(res)
+                }
+            })
+        }
+    })
+
+});
 app.listen("3025", () => {
     console.log("Server started on port 3025");
 });

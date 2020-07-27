@@ -12,34 +12,45 @@ export class MyPlayersComponent implements OnInit {
     public user:User;
     public players: object[];
   constructor(private UserService: UserService, private loginService: LoginService) {}
-    getPlayers(id:number)
+    public getPlayers(id:number)
     {
       this.UserService.getPlayer(id).subscribe((data)=>
       {
         this.dataBase= data;
       })
     }
-    deletePlayers(index:number)
+
+    public deletePlayers(index:number)
     {
       console.log(index)
       this.UserService.deletePlayer(index).subscribe((data)=>
       {
-       
-        this.UserService.getPlayer(2).subscribe((data)=>
-      {
-      
-        this.dataBase= data;
+        this.UserService.getPlayer(this.loginService.team_id).subscribe((data)=>
+        {
+          this.dataBase= data;
+        })
       })
-  
+    }
 
-        console.log(this.players)
+    public addPlayer(email: HTMLInputElement, phone: HTMLInputElement){
+      console.log(this.loginService.team_id)
+      let playerData = {
+        email: email.value,
+        phone: phone.value,
+        team_id: this.loginService.team_id
+      }
+      this.UserService.postNewPlayer(playerData).subscribe((data)=>{
+        console.log(data)
+        this.UserService.getPlayer(this.loginService.team_id).subscribe((data)=>
+        {
+          this.dataBase = data;
+        })
       })
     }
   ngOnInit(): void {
-    this.UserService.getPlayer(2).subscribe((data)=>
+    this.UserService.getPlayer(this.loginService.team_id).subscribe((data)=>
       {
-        
-        this.dataBase= data;
+        this.dataBase = data;
       })
   }
 }
