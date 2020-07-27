@@ -1,17 +1,3 @@
-.bd-placeholder-img {
-    font-size: 1.125rem;
-    text-anchor: middle;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
-
-@media (min-width: 768px) {
-    .bd-placeholder-img-lg {
-        font-size: 3.5rem;
-    }
-}
 
 #sportify{
     color: white;
@@ -19,15 +5,23 @@
 }
 
 .lyrics {
-    background-color: #ffffff;
-    color: #00bfa5;
-    padding-bottom: 6vh;
+    background-image: url(../../../assets/register.jpg);
+    background-size: cover;
+    color: #00BFA5;
+    height: 90vh;
+    margin-top: 73px;
 }
-.header {
-    background-color: #00bfa5;
-    color: #ffffff;
+
+.formulario {
+    background-color: white;
+    border-style: solid;
+    border-color: #00bfa5;
+    border-width: thin;
+    border-radius: 5%;
     text-align: center;
+    padding: 20px;
 }
+
 #whiteLink {
     color: white;
 }
@@ -35,12 +29,13 @@
     background-color: #00bfa5;
     color: #ffffff;
 }
-select{
-    border: none;
-}
-.container {
+
+.register {
     padding: 5%;
-    padding-left: 21%;
+    padding-left: 5%;
+    background-color: transparent;
+    max-width: 500px;
+    margin: auto;
 }
 
 .ng-valid[required], .ng-valid.required  {
@@ -68,12 +63,39 @@ select{
     .container {
         padding-left: 4%;
     }
-}
-
-
-@media(max-width:789px) {
-    .buttonR {
+.buttonR {
         margin-left: 35%;
         margin-right: 25%;
+    }
+    .formulario {
+        background-color: white;
+        margin-left: 10px;
+        margin-right: 10px;
+        border-style: solid;
+        border-color: #00bfa5;
+        border-width: thin;
+        border-radius: 5%;
+        text-align: center;
+        padding: 20px;
+    }
+    .lyrics {
+        height: 100vh;
+    }
+}
+
+    
+
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+@media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+        font-size: 3.5rem;
     }
 }
