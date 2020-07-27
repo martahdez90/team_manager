@@ -156,10 +156,10 @@ app.delete("/teams", function(request, response) {
 app.get("/training/:team_id", function(request, response) {
     let params = [request.params.team_id]
         // "INNER JOIN training AS t5 ON (t4.training_id = t5.training_id) "
-    let sql = "SELECT t3.name, t3.date, t3.location, t3.description FROM training AS t3 " +
-        "INNER JOIN team AS t1 " +
-        "INNER JOIN training_team AS t2 ON (t1.team_id = t2.team_id) " +
-        "WHERE t1.team_id = ?";
+    let sql = "SELECT t3.* FROM training AS t3 " +
+        "INNER JOIN training_team AS t2 ON (t3.training_id = t2.training_id)" +
+        "INNER JOIN team AS t1 ON (t1.team_id  = t2.team_id)" +
+        "WHERE t1.team_id =1"
 
     connection.query(sql, params, function(err, resultado) {
         if (err) {
@@ -171,7 +171,6 @@ app.get("/training/:team_id", function(request, response) {
     });
 
 });
-
 app.post("/training", function(request, response) {
     let params = [request.body.name, request.body.date, request.body.location, request.body.description];
     let sql = "INSERT INTO training(`training_id`, `name`, `date`, `location`, `description`)  VALUES(NULL, ?, ?, ?, ?) "
@@ -368,4 +367,71 @@ app.delete("/exercise", function(request, response) {
     });
 
 });
+
+
+// end point players
+
+app.get("/users/teamPlayers/:team_id", function(request, response) {
+    let params = [request.params.team_id];
+    let sql = "SELECT users.name, users.lastName, users.email, users.phone, users.user_id FROM users INNER JOIN user_teams ON (users.user_id = user_teams.user_id) WHERE( user_teams.team_id = ? AND users.rol = 'player')"
+    connection.query(sql, params, function(err, resultado) {
+        if (err) {
+            console.log(err);
+        } else {
+            console.log("usuarios que sean jugadores del equipo seleccionado");
+            response.send(resultado);
+        }
+    });
+});
+app.post("/users/teamPlayers", function(request, response) {
+    let params = [request.body.phone, request.body.email]
+    let sql = "SELECT * FROM users WHERE phone= ? AND email = ?"
+    connection.query(sql, params, function(err, resultado) {
+        if (err) {
+            console.log(err);
+        } else {
+            let param1 = [resultado.insertId, request.body.team_id];
+            let sql1 = "INSERT INTO user_teams(user_id, team_id) VALUES(?, ?) ";
+            connection.query(sql1, param1, function(err, res) {
+                if (err) {
+                    response.send(err)
+                } else {
+                    response.send(res)
+                }
+            })
+
+        }
+    });
+})
+
+
+
+app.delete("/users/teamPlayers/", function(request, response) {
+
+    let params = [request.body.user_id];
+    let sql = "DELETE FROM user_teams  WHERE user_id = ?";
+
+    connection.query(sql, params, function(err, resultado) {
+        if (err) {
+            console.log(err);
+        } else {
+            console.log("eliminar jugador de equipo");
+            response.send(resultado);
+        }
+    });
+});
+
+app.post("/users/login", function(request, response) {
+    let params = [request.body.password, request.body.email]
+    let sql = "SELECT * FROM users WHERE password = ? AND email = ?"
+    connection.query(sql, params, function(err, resultado) {
+        if (err) {
+            console.log(err);
+        } else {
+            console.log("jugador logeado");
+            response.send(resultado);
+        }
+    });
+})
+
 app.listen(3025);

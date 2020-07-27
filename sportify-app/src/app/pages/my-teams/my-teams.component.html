@@ -1,10 +1,10 @@
 <app-coach-menu></app-coach-menu>
 <section>
     <div class="card-color d-flex align-content-center flex-wrap mx-auto pb-4">
-        <div *ngFor="let team of dataBase" class="card playerInfo mr-4 ml-5 mt-4 mb-1 p-1 pb-1 team" id="team2">
+        <div *ngFor="let team of dataBase; let i = index" class="card playerInfo mr-4 ml-5 mt-4 mb-1 p-1 pb-1 team" id="team2">
             <div class="card-header">
                 {{team.name}}
-                <mat-icon class="close">delete</mat-icon>
+                <mat-icon class="close" (click)="deleteTeam(dataBase[i].team_id)">delete</mat-icon>
             </div>
             <div class="card-body row">
                 <div class="col-4">
