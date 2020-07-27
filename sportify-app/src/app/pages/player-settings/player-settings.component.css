@@ -1,3 +1,4 @@
+
 .header {
     text-align: center;
     margin: auto;
@@ -10,8 +11,10 @@
     font-size: x-large;
 }
 
-section {
-    padding: 5%;
+input{
+    border: none;
+    background: transparent;
+    width: 100%;
 }
 input#url::placeholder {
     color: white;
@@ -31,8 +34,7 @@ input#url::placeholder {
 ul,
 div#div {
     margin: 0;
-    padding: 0;
-    margin-bottom: 60px;
+    padding: 0
 }
 .fas {
     color: red;

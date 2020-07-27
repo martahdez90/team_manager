@@ -13,6 +13,7 @@ import { MyGamesComponent } from './pages/my-games/my-games.component';
 import { TrainingsPlayerComponent } from "./pages/trainings-player/trainings-player.component";
 import { MatchesPlayerComponent } from "./pages/matches-player/matches-player.component";
 import { HomeComponent } from './pages/home/home.component';
+import { PlayerSettingsComponent } from './pages/player-settings/player-settings.component';
 
 
 const routes: Routes = [
@@ -31,7 +32,7 @@ const routes: Routes = [
   {path: 'player/myTrainings', component: TrainingsPlayerComponent },
   {path: 'player/myMatches', component: MatchesPlayerComponent},
   {path: 'player/myCoach', component: MyCoachComponent},
-  {path: 'player/settings', component: MySettingsComponent},
+  {path: 'player/settings', component: PlayerSettingsComponent},
   {path: 'user/welcome', component: HomeComponent},
   {path: '**',redirectTo: 'home'}
 ];
