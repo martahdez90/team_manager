@@ -11,6 +11,9 @@
     font-size: x-large;
 }
 
+#entrenamientos {
+    margin-top: 20px;
+}
 .card{
     border: #00BFA5;
     width: 300px;
@@ -20,9 +23,9 @@
 .card-footer, #date{
     background-color: #00BFA5;
     color: white;
-
     position: relative;
 }
+
 #dropdown{
     border-radius: 30px;
     border:none;
@@ -52,7 +55,7 @@
     background-color: #00BFA5;
     color: white;
 }
-
+/* 
 @media(max-width: 769px){
     *{
         font-size: medium;
@@ -75,4 +78,4 @@
         margin-top: 2%;
         margin-bottom: 2%;
     }
-}
+} */

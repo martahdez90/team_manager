@@ -17,10 +17,10 @@ input#url::placeholder {
     color: white;
 }
 #profile {
-    background-color: #00BFA5;
+    background-color: white;
     font-size: 100px;
     text-align: center;
-    color: white;
+    color: #00BFA5;
 }
 #profile-list {
     color: rgb(75, 75, 75);
@@ -32,7 +32,7 @@ ul,
 div#div {
     margin: 0;
     padding: 0;
-    margin-bottom: 60px;
+    margin-bottom: 80px;
 }
 .fas {
     color: red;
@@ -76,5 +76,12 @@ div#div {
         position: relative;
         margin-left: 20%;
         margin-right: 20%;
+    }
+}
+
+
+@media(max-width:400px) {
+    div#div {
+        margin-bottom: 23vh;
     }
 }

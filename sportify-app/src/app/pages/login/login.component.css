@@ -3,12 +3,28 @@
     font-weight: 900;
 }
 
-
 .lyrics {
-    background-color: #ffffff;
+    background-image: url(../../../assets/login.jpg);
+    background-size: cover;
     color: #00BFA5;
-    height: 100vh;
+    height: 83vh;
+    margin-top: 73px;
 }
+
+.white {
+    padding: 20px;
+    background-color: transparent;
+}
+
+.register {
+    background-color: white;
+    border-radius: 5%;
+    margin-left: 25vw;
+    width: 50vw;
+    filter: grayscale(0%);
+}
+
+
 .header {
     background-color: #00BFA5;
     text-align: center;
@@ -53,5 +69,19 @@
     .m-5 {
         padding-right: 25%;
         padding-left: 25%;
+    }
+}
+
+@media(max-width:500px) {
+    .register {
+        background-color: white;
+        border-radius: 5%;
+        margin-left: 5vw;
+        width: 90vw;
+    }
+
+    .lyrics {
+        margin-top: 55px;
+        height: 93vh;
     }
 }
