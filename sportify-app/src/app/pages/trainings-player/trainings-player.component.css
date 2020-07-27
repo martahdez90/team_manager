@@ -10,9 +10,13 @@
     margin-bottom: 0%;
     font-size: x-large;
 }
+
+#entrenamientos {
+    margin-top: 20px;
+}
 .card{
     border: #00BFA5;
-    max-width: 50rem;
+    width: 300px;
     margin: auto;
 }
 

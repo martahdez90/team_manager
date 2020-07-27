@@ -1,0 +1,66 @@
+<app-player-menu></app-player-menu>
+
+<div class="modal fade" id="putSettings" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Crea tu nuevo ejercicio</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <div class="card mb-3">
+                <div class="card-header" id="date">
+                    <input type="text" id="url" #name placeholder="{{userLoged.name}}">
+                </div>
+                <div class="card-header bg-transparent">
+                    <input type="text" #lastName placeholder="{{userLoged.lastName}}">
+                </div>
+                <div class="card-body">
+                    <input #email class="card-text" placeholder="{{userLoged.email}}">
+                </div>
+                <div class="card-footer">
+                    <input type="text" id="url" #phone placeholder="{{userLoged.phone}}">
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+          <button class="btn" id="card-bg2" (click)="putUser(name, lastName, email, phone)" data-dismiss="modal" aria-label="Close">Guardar cambios</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <section>
+      <div id="profile">
+          <i class="fa fa-user-circle" id="user"></i>
+      </div>
+  </section>
+  <div id="div">
+      <ul class="list-group list-group-flush">
+          <li class="list-group-item">Tipo usuario
+              <p id="info">{{userLoged.rol}}</p>
+          </li>
+          <li class="list-group-item">Nombre
+              <p contenteditable="true" id="info">{{userLoged.name}}</p>
+          </li>
+          <li class="list-group-item">Apellido
+              <p contenteditable="true" id="info">{{userLoged.lastName}}</p>
+          </li>
+          <li class="list-group-item">Mail
+              <p contenteditable="true" id="info">{{userLoged.email}}</p>
+          </li>
+          <li class="list-group-item">Telefono
+              <p contenteditable="true" id="info">{{userLoged.phone}}</p>
+          </li>
+          <li class="list-group-item">Cambiar contraseña</li>
+          <li class="list-group-item" (click)="logOut()">Cerrar sesion <i class="fas fa-power-off" (click)="logOut()"></i></li>
+          <li class="list-group-item" (click)="deleteUser()">Eliminar mi cuenta <i class="fas fa-user-slash" (click)="deleteUser()"></i></li>
+      </ul>
+      <div class="text-center"><button type="button" class="btn buttonR" data-toggle="modal" data-target="#putSettings">Actualizar</button></div>
+  </div>
+  
+  
+  <app-green-footer></app-green-footer>

@@ -32,6 +32,7 @@ import { MatchesPlayerComponent } from './pages/matches-player/matches-player.co
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HomeComponent } from './pages/home/home.component';
 import { LandingMenuComponent } from './pages/landing-menu/landing-menu.component';
+import { PlayerSettingsComponent } from './pages/player-settings/player-settings.component';
 
 
 
@@ -58,6 +59,7 @@ import { LandingMenuComponent } from './pages/landing-menu/landing-menu.componen
     MatchesPlayerComponent,
     HomeComponent,
     LandingMenuComponent,
+    PlayerSettingsComponent,
    
   ],
   imports: [
