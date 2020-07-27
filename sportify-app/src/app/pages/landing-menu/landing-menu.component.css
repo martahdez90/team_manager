@@ -1,0 +1,40 @@
+/*   .header.link {
+    transition: all 300ms;
+  } */
+
+  .header-link:hover, .header.link:active {
+    border-top: 3px solid #ffffff;
+  border-bottom: 3px solid #ffffff;
+  }
+
+  #sportify{
+    color: white;
+    font-weight: 900;
+}
+
+.lyrics {
+    background-color: #3BB899;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.nav-item {
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.navbar {
+    background-color: #00bfa5;
+    text-align: center;
+}
+
+#whiteLink {
+    color: white;
+} 
+
+.active-link {
+  border-top: 3px solid #ffffff;
+  border-bottom: 3px solid #ffffff; 
+}

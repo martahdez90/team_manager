@@ -50,10 +50,20 @@ export class MySettingsComponent implements OnInit {
   
   public logOut(){
     this.loginService.logOut().subscribe(data=>{
+      console.log(data)
       this.loginService.userLoged = null
       this.router.navigate(['/login']);
       console.log("redirigiendo al login");
       })
+  }
+
+  public deleteUser(){
+    this.userService.deleteUser(this.loginService.userLoged.user_id).subscribe(data=>{
+      console.log(data)
+      this.loginService.userLoged = null
+      this.router.navigate(['/login']);
+      console.log("redirigiendo al login");
+    })
   }
 
   ngOnInit(): void {
