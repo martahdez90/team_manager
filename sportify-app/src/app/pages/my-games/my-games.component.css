@@ -50,6 +50,16 @@
     border-color: white;
 }
 
+.btn {
+    background-color: #00bfa5;
+    border: #00bfa5;
+    width: 20vw;
+    color: white;
+    margin: auto;
+}
+
+
+
 @media(max-width: 769px) {
     * {
         font-size: 3.5vw;
@@ -57,7 +67,7 @@
 }
 
 @media(min-width: 769px) {
-    section {
+    #training-card {
         display: flex;
     }
 }
