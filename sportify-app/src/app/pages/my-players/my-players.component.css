@@ -85,12 +85,22 @@ body {
 .playerInfo{
     width: 300px;
 }
-.newT, .new {
+.new {
     background-color: #00bfa5;
     border: #00bfa5;
     width: 20vw;
     color: white;
     margin-left: 45vw;
+    margin-top: 10vh;
+}
+
+.newJ {
+    background-color: #00bfa5;
+    border: #00bfa5;
+    width: 20vw;
+    color: white;
+    margin-left: 45vw;
+    margin-top: 5vh;
 }
 
 .new:active, .new:hover {
@@ -105,8 +115,9 @@ body {
 }
 
 .card-header, .card {
-    border-color: #00bfa5;
+    border-color: transparent;
 }
+
 
 
 .card-footer, .card-header {
@@ -160,6 +171,7 @@ body {
         right: 5%;
         color: white;
         font-size: medium;
+        font-size: small;
     }
 } 
 
