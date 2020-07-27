@@ -4,6 +4,7 @@ export class Exercise {
     public description: string
     public url: string
     public type: string
+    public training_id:number
 
     constructor (name: string, description: string, url: string, type: string) {
         this.exercise_id;

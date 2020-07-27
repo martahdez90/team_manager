@@ -55,6 +55,8 @@ export class UserService {
     }
     return this.http.delete(this.url +"/teamPlayers", options)
   }
+
+  
   public getCoach(team_id){
     return this.http.get(this.url + "/coach/" + team_id)
   }

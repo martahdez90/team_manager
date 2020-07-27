@@ -1,5 +1,6 @@
 export class Training {
     public training_id: number
+    public team_id: number
    
     public name: string
     public date: string
