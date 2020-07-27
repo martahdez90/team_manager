@@ -49,6 +49,41 @@
     border-color: white;
 }
 
+.playerInfo{
+    width: 300px;
+}
+.new {
+    background-color: #00bfa5;
+    border: #00bfa5;
+    width: 20vw;
+    color: white;
+    margin-left: 45vw;
+    margin-top: 10vh;
+}
+
+.newJ {
+    background-color: #00bfa5;
+    border: #00bfa5;
+    width: 20vw;
+    color: white;
+    margin-left: 45vw;
+    margin-top: 5vh;
+}
+
+.new:active, .new:hover {
+    background-color: #126e62;
+    border: #126e62;
+}
+
+.modal-title {
+    margin: auto;
+    color: #00bfa5;
+    font-size: medium;
+}
+
+.card-header, .card {
+    border-color: transparent;
+}
 
 
 @media(max-width: 769px) {

@@ -2,43 +2,69 @@
 <div class="header row">
     <h2 class="col-12 header">Mis partidos</h2>
 </div>
-<section id="training-card">
-    <div class="card-color d-flex align-content-center flex-wrap mx-auto pb-4">
-        <div class="card mr-4 ml-5 mt-4 mb-1 p-1 pb-1" *ngFor="let e of dataBase;">
-            <div class="card-header" id="date">
-                {{e.date | date}}
-                <i class="far fa-edit" id="edit" routerLink="/coach/myExercises"></i>
-                <i class='far fa-trash-alt' id="trash"></i>
-            </div>
-            <div class="card-header bg-transparent">
-                {{e.comments}}
-            </div>
-            <div class="card-body">
-            <p class="card-text">Mejorar la resistencia con ejercicios de 15 minutos.</p>
-            </div>
-            <div class="card-footer">
-                {{e.location}}
-                <a class="badge badge-pill text-right" id="ver" routerLink="/coach/myExercises">Ver</a>
+
+<section>
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Nuevo partido</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="card mb-3">
+                        <div class="card-body bg-transparent">
+                            <label for="location">Nombre de equipo</label><br>
+                            <input #location class="form-control" type="text" name="" placeholder="Lugar" required>
+                        </div>
+                        <div class="card-body">
+                            <label for="my-input font-weight-bold">Fecha</label>
+                            <input #date class="form-control" type="date" name="" placeholder="Fecha" required>
+                        </div>
+                        <div class="card-body">
+                            <label for="my-input font-weight-bold">Comentario</label>
+                            <input #comments class="form-control" type="text" name=""
+                                placeholder="No olvideis la segunda equipacion" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button data-dismiss="modal" type="submit" class="btn btn-primary mb-2 new" (click)='newGame(date,location,comments)'>Añadir</button>
+                </div>
             </div>
         </div>
     </div>
+    <div id="training-card">
+        <div class="card-color d-flex align-content-center flex-wrap mx-auto pb-4">
+            <div class="card mr-4 ml-5 mt-4 mb-1 p-1 pb-1" *ngFor="let e of dataBase;">
+                <div class="card-header" id="date">
+                    {{e.date | date}}
+                    <i class="far fa-edit" id="edit" routerLink="/coach/myExercises"></i>
+                    <i class='far fa-trash-alt' id="trash"></i>
+                </div>
+                <div class="card-header bg-transparent">
+                    {{e.comments}}
+                </div>
+                <div class="card-body">
+                    <p class="card-text">Mejorar la resistencia con ejercicios de 15 minutos.</p>
+                </div>
+                <div class="card-footer">
+                    {{e.location}}
+                    <a class="badge badge-pill text-right" id="ver" routerLink="/coach/myExercises">Ver</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="newTeam">
+        <button class="btn newJ mb-5" id="card-bg2" data-toggle="modal" data-target="#exampleModalCenter">
+            Nuevo partido
+        </button>
+    </div>
+
 </section>
 
-<div class="card newPlayer mt-4 mb-1 mb-1 p-1 pb-1 team">
-    <div class="form-group">
-        <label for="my-input font-weight-bold">Nuevo partido</label>
-        <input #location class="form-control" type="text" name="" placeholder="Lugar" required>
-    </div>
-    <div class="form-group">
-        <label for="my-input font-weight-bold">Fecha</label>
-        <input #date class="form-control" type="date" name="" placeholder="Fecha" required>
-    </div>
-    <div class="form-group">
-        <label for="my-input font-weight-bold">Comentario</label>
-        <input #comments class="form-control" type="text" name="" placeholder="No olvideis la segunsda equipacion" required>
-    </div>
-    <button type="submit" class="btn btn-primary mb-2" (click) = 'newGame(date,location,comments)'>Añadir equipo</button>
-
-</div>
 
 <app-green-footer></app-green-footer>
