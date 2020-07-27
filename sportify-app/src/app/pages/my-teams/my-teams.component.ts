@@ -22,7 +22,7 @@ export class MyTeamsComponent implements OnInit {
       console.log(data)
       this.teamService.getTeams(this.loginService.userLoged.user_id).subscribe((data)=>
       {
-         console.log(data)
+        console.log(data)
         this.dataBase = data
       })
     });
@@ -48,6 +48,9 @@ export class MyTeamsComponent implements OnInit {
       })
      
     })
+  }
+  saveTeam(id: number){
+    this.loginService.team_id = id
   }
   ngOnInit(): void {
     this.teamService.getTeams(this.loginService.userLoged.user_id).subscribe(data=>
