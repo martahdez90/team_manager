@@ -33,7 +33,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HomeComponent } from './pages/home/home.component';
 import { LandingMenuComponent } from './pages/landing-menu/landing-menu.component';
 import { PlayerSettingsComponent } from './pages/player-settings/player-settings.component';
-
+//validadores npm i ng-validate-equal
+import { ValidateEqualModule } from 'ng-validate-equal';
 
 
 @NgModule({
@@ -76,7 +77,8 @@ import { PlayerSettingsComponent } from './pages/player-settings/player-settings
     MatFormFieldModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ValidateEqualModule
   ],
   providers: [],
   bootstrap: [AppComponent]
