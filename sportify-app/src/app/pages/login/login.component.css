@@ -19,9 +19,8 @@
 .register {
     background-color: white;
     border-radius: 5%;
-    margin-left: 25vw;
-    width: 50vw;
-    filter: grayscale(0%);
+    margin: auto;
+    width: 30vw;
 }
 
 
@@ -39,9 +38,9 @@
     color: #ffffff;
 }
 
-.m-5 {
-    margin:0;
-    padding: 1%;
+.form-signin {
+    padding: 5%;
+    margin: 2%;
 }
 
 .ng-valid[required], .ng-valid.required  {
@@ -65,14 +64,21 @@
     text-align: center;
 }
 
-@media(min-width:769px) {
-    .m-5 {
-        padding-right: 25%;
-        padding-left: 25%;
+@media(max-width:1030px) {
+    .register {
+        background-color: white;
+        border-radius: 5%;
+        margin-left: 10vw;
+        width: 80vw;
+    }
+
+    .lyrics {
+        margin-top: 55px;
+        height: 93vh;
     }
 }
 
-@media(max-width:500px) {
+@media(max-width:650px) {
     .register {
         background-color: white;
         border-radius: 5%;

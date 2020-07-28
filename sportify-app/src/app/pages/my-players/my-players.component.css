@@ -2,6 +2,10 @@
     color: gray;
 }
 
+section {
+    height: 80vh;
+}
+
 
 .header {
     text-align: center;
@@ -22,9 +26,6 @@
     top: 30%;
 }
 
-section {
-padding-bottom: 2%;
-}
 
 body {
     padding-top: 20px;
@@ -33,6 +34,15 @@ body {
 .list-group-item {
     background-color: #00bfa5;
     opacity: 0.8;
+}
+
+input {
+    border:none;
+}
+
+
+label {
+    color: #00bfa5;
 }
 
 .nav-item:link, .nav-item:visited, .nav-item:active {
@@ -97,9 +107,9 @@ body {
 .newJ {
     background-color: #00bfa5;
     border: #00bfa5;
-    width: 20vw;
+    width: 80vw;
     color: white;
-    margin-left: 45vw;
+    margin-left: 10vw;
     margin-top: 5vh;
 }
 
@@ -147,14 +157,10 @@ body {
 
 
 @media (max-width: 576px) {
-    section {
-        padding-bottom: 10%;
-        margin-top: 20px;
-    }
+  
     * {
         font-family: 'Roboto', sans-serif;
         font-size: 4vw;
-        line-height: 1.5;
         color: gray
     }
 
@@ -173,7 +179,11 @@ body {
         font-size: medium;
         font-size: small;
     }
-} 
+    
+    section {
+        height: 90vh;
+    }
+}
 
 @media(min-width: 769px){
     .btn-up .more {
