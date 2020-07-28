@@ -1,5 +1,5 @@
-* {
-    margin: 0;
+section {
+    height: 80vh;
 }
 
 .header {
@@ -16,9 +16,12 @@
 
 .card {
     border: #00BFA5;
-    max-width: 50rem;
-    min-width: 30rem;
+    width: 300px;
     margin: auto;
+}
+
+.playerInfo{
+    width: 300px;
 }
 
 .card-footer,
@@ -50,26 +53,72 @@
     border-color: white;
 }
 
-.btn {  
+
+.new {
     background-color: #00bfa5;
     border: #00bfa5;
     width: 20vw;
     color: white;
-    margin: auto;
+    margin-left: 45vw;
     margin-top: 10vh;
 }
+.newT {
+    background-color: #00bfa5;
+    border: #00bfa5;
+    width: 20vw;
+    color: white;
+   margin: auto;
+    margin-top: 5vh;
+}
+
+.team {
+    margin-left: 10vw;
+    margin-right: 10vw;
+    margin-top: 20px;
+}
 
 
 
+@media (max-width: 576px) {
+    section {
+        padding-bottom: 10%;
+        margin-top: 20px;
+    }
+     body {
+         width: 100vw;
+         margin: 0;
+     }
 
-@media(max-width: 769px) {
     * {
-        font-size: 3.5vw;
+        font-family: 'Roboto', sans-serif;
+        font-size: 4vw;
+        color: gray
     }
-}
 
-@media(min-width: 769px) {
-    #training-card {
-        display: flex;
+    .header {
+        margin-top: 0;
     }
-}
+   
+    #trash{
+        position: absolute;
+        top: 10%;
+        right: 5%;
+        color: white;
+        font-size: medium;
+    }
+
+    .newT {
+        width: 60vw;
+        margin-left: 20vw;
+    }
+
+    .new {
+        width: 60vw;
+        margin-left: 20vw;
+    }
+
+    .modalB {
+        height: 10vh;
+    }
+
+} 
