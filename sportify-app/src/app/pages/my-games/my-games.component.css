@@ -14,6 +14,14 @@ section {
     font-size: x-large;
 }
 
+label {
+    color: #00BFA5;
+}
+
+input {
+    border:none;
+}
+
 .card {
     border: #00BFA5;
     width: 300px;
