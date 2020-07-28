@@ -56,7 +56,7 @@
             <div class="card-header" id="date">
                 {{e.date | date}}
                 <i class="far fa-edit" id="edit" (click)="getGame(dataBase[i])" data-toggle="modal" data-target="#putGame"></i>
-                <i class='far fa-trash-alt' (click)="deleteGame(dataBase[i].match_id)" id="trash"></i>
+                <i class='fas fa-trash-alt' (click)="deleteGame(dataBase[i].match_id)" id="trash"></i>
             </div>
             <div class="card-body bg-transparent">
                 {{e.comments}}

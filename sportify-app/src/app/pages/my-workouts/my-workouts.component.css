@@ -1,6 +1,4 @@
-section {
-    height: 80vh;
-}
+
 .header {
     text-align: center;
     margin: auto;
@@ -11,48 +9,43 @@ section {
     margin-top: 0%;
     margin-bottom: 0%;
     font-size: x-large;
+    width: 100vw;
 }
 
-.card{
-    border: #00BFA5;
-    max-width: 50rem;
-    min-width: 25rem;
-    margin: auto;
-}
 
-.card-footer, #date{
-    background-color: #00BFA5;
+.card-footer, .card-header{
+    background-color: #00bfa5;
+    max-width: 100%;
+    padding-top: 20px;
     color: white;
+    font-weight: bold;
+}
 
-    position: relative;
-}
-#edit{
+.close {
+    color:  #00bfa5;
+    font-weight: bold;
     position: absolute;
-    top: 25%;
-    right: 10%;
+    top: 2%;
+    right: 3%;
+    z-index: 1;
 }
-#trash {
+
+.fa-trash-alt {
     color: white;
     position: absolute;
-    top: 25%;
+    top: 8%;
     right: 4%;
     z-index: 1;
 }
 
-.btn-down{
-    position: relative;
-    margin: auto;
-    padding: 12px;
+.fa-edit {
+    color: white;
+    position: absolute;
+    top: 8%;
+    right: 10%;
+    z-index: 1;
 }
-.btn-down .material-icons{
-    position: fixed;
-    bottom: 10%;
-    right: 15px;
-    font-size: 5vw;
-    color: #00BFA5;
-    border-radius: 100%;
-    background-color: whitesmoke;
-}
+
 
 .team {
     margin-left: 10vw;
@@ -60,10 +53,12 @@ section {
     margin-top: 20px;
 }
 
-/* desde aqui  */
+
 .playerInfo{
     width: 300px;
 }
+
+/* botones */
 .new {
     background-color: #00bfa5;
     border: #00bfa5;
@@ -87,57 +82,27 @@ section {
     border: #126e62;
 }
 
-.modal-title {
-    margin: auto;
+.modal-title, label {
     color: #00bfa5;
     font-size: medium;
 }
 
 .card-header, .card {
     border-color: transparent;
-}
+} 
 
-
-
-.card-footer, .card-header {
-    background-color: #00bfa5;
-    max-width: 100%;
-    padding-top: 20px;
+.badge-pill {
     color: white;
-    font-weight: bold;
-}
-
-.close {
-    color:  #00bfa5;
-    font-weight: bold;
+    border-style: solid;
+    border-color: white;
     position: absolute;
-    top: 2%;
-    right: 3%;
-    z-index: 1;
+    bottom: 8%;
+    right: 10%;
 }
-
-.fa-trash-alt {
-    color: white;
-    position: absolute;
-    top: 12%;
-    right: 4%;
-    z-index: 1;
-}
-
-.newT {
-    background-color: #00bfa5;
-    border: #00bfa5;
-    width: 20vw;
-    color: white;
-    margin-left: 15vw;
-    margin-top: 5vh;
-}
-
 
 @media (max-width: 576px) {
     section {
-        padding-bottom: 10%;
-        margin-top: 20px;
+        padding-bottom: 20vh;
     }
      body {
          width: 100vw;
@@ -145,33 +110,24 @@ section {
      }
 
     * {
-        font-family: 'Roboto', sans-serif;
-        font-size: 4vw;
-        line-height: 1.5;
+        font-size: small;
         color: gray
     }
-
-    .header {
-        margin-top: 0;
+    .playerInfo {
+        margin-left: 5vw;
     }
-   
-    #trash{
-        position: absolute;
-        top: 10%;
-        right: 5%;
-        color: white;
-        font-size: medium;
-    }
-
-    .newT {
-        width: 60vw;
-        margin-left: 20vw;
+    .newJ {
+        width: 50vw;
+        margin-left: 25vw;
     }
 
 } 
 
-@media(min-width: 769px){
+@media(min-width: 1000px){
     .btn-up .more {
         font-size: 45px;
     }
+    section {
+    height: 80vh;
 }
+} 
