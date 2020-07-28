@@ -13,9 +13,8 @@ import { TrainingService } from 'src/app/shared/training-service.service';
 export class MyExercisesComponent implements OnInit {
 
   public dataBase: object
-  public putData: object
-  public modals: object
   public trainings: object
+  public exercise: Exercise
   public options = [
     {name: 'Selecciona uno', value: 'null'},
     {name: 'Calentamiento', value:'warmUp'},
@@ -23,20 +22,24 @@ export class MyExercisesComponent implements OnInit {
     {name: 'Vuelta a la calma', value:'coolDown'}
   ]
 
-  constructor(private loginService: LoginService, private exService: ExerciseService, private trainingService:TrainingService) { }
+  constructor(private loginService: LoginService, private exService: ExerciseService, private trainingService:TrainingService) { 
+    this.exercise = new Exercise("","","","")
+  }
+
+  public getExData(exercise: Exercise){
+    this.exercise = exercise
+    console.log(this.exercise)
+  }
 
   public postEx(type: HTMLInputElement ,description: HTMLInputElement ,url: HTMLInputElement ,name: HTMLInputElement,){
     let newEx = new Exercise(name.value, description.value, url.value, type.value)
     newEx.training_id= this.loginService.training_id;
-    console.log(newEx);
-    
+
     this.exService.postExercise(newEx).subscribe(data=>{
       this.exService.getExercise(this.loginService.training_id).subscribe(data =>{
         console.log(data)
         this.dataBase = data
-        this.modals = data
       })
-      
     })
   }
 
@@ -46,6 +49,10 @@ export class MyExercisesComponent implements OnInit {
     
     this.exService.putExercise(newEx).subscribe(data=>{
       console.log(data)
+      this.exService.getExercise(this.loginService.training_id).subscribe(data =>{
+        console.log(data)
+        this.dataBase = data
+      })
     })
   }
 
@@ -55,25 +62,17 @@ export class MyExercisesComponent implements OnInit {
       this.exService.getExercise(this.loginService.training_id).subscribe(data =>{
         console.log(data)
         this.dataBase = data
-        this.modals = data
       })
-     
-
     })
-  }
-
-  public getExData(data: object){
-    this.putData = data
   }
 
   ngOnInit(): void {
     this.exService.getExercise(this.loginService.training_id).subscribe(data =>{
       console.log(data)
       this.dataBase = data
-      this.modals = data
     })
-    this.trainingService.getTraining(this.loginService.training_id).subscribe((data)=>
-    {
+
+    this.trainingService.getTraining(this.loginService.training_id).subscribe((data)=>{
       this.trainings= data;
     })
   }

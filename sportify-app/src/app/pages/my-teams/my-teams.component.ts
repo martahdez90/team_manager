@@ -9,8 +9,13 @@ import { LoginService } from 'src/app/shared/login.service';
 })
 export class MyTeamsComponent implements OnInit {
   public dataBase: object;
+  public team1:Team
 
-  constructor(private teamService:TeamService, private loginService: LoginService ) { }
+  constructor(private teamService:TeamService, private loginService: LoginService )
+   {
+     this.team1=new Team("","");
+   
+  }
   
   
   addTeams(name:HTMLInputElement, category:HTMLInputElement){
@@ -27,11 +32,26 @@ export class MyTeamsComponent implements OnInit {
       })
     });
   };
-  UpdateTeam(changes:Team)
+
+  getTeam(team1:Team)
   {
-    this.teamService.putTeam(changes).subscribe((data)=>
+    this.team1=team1
+    console.log(team1);
+  }
+  UpdateTeam(name:HTMLInputElement, category:HTMLInputElement)
+  {
+    console.log(this.team1)
+    let newTeam = new Team(name.value, category.value)
+    newTeam.team_id=this.team1.team_id;
+    console.log(newTeam)
+   
+    this.teamService.putTeam(newTeam).subscribe((data)=>
     {
-      console.log(data)
+      this.teamService.getTeams(this.loginService.userLoged.user_id).subscribe(data=>
+        {
+          this.dataBase= data;
+        });
+      
     })
   }
   deleteTeam(id:number)

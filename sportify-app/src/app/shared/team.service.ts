@@ -18,7 +18,7 @@ export class TeamService {
     return this.http.post(this.url, newTeam)
   }
   putTeam(changes: Team){
-    return this.http.post(this.url, changes)
+    return this.http.put(this.url, changes)
   }
   deleteTeam(id: number){
     console.log(id)
