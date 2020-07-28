@@ -19,6 +19,10 @@ section {
     color: #00bfa5;
 }
 
+input {
+    border:none;
+}
+
 .new {
     background-color: #00bfa5;
     border: #00bfa5;
@@ -49,6 +53,8 @@ section {
 .card-header, .card {
     border-color: transparent;
 }
+
+
 
 label {
     color: #00bfa5;
