@@ -46,11 +46,13 @@
                             <i class="fa fa-soccer-ball-o ball"></i>
                         </div>
                         <div class="col-7 infoTeam">
-                            <p class="card-text">{{team.category}}</p>
+                            <p class="cursor" (click)="saveTeam(dataBase[i].team_id)" routerLink="/coach/myPlayers">Jugadores <mat-icon class="eye" routerLink="/coach/myPlayers" (click)="saveTeam(dataBase[i].team_id)">remove_red_eye</mat-icon></p>
+                            <p class="cursor" (click)="saveTeam(dataBase[i].team_id)" routerLink="/coach/myWorkouts">Entrenamientos</p>
+                            <p class="cursor" (click)="saveTeam(dataBase[i].team_id)" routerLink="/coach/myGames">Partidos</p>
                         </div>
                     </div>
                     <div class="card-footer">
-                        <mat-icon class="eye" routerLink="/coach/myPlayers" (click)="saveTeam(dataBase[i].team_id)">remove_red_eye</mat-icon>
+                        <p class="card-text">{{team.category}}</p>
                     </div>
                 </div>
             </div>

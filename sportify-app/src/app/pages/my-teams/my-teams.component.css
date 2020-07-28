@@ -19,6 +19,12 @@
 input {
     border:none;
 }
+.cursor{
+    cursor: pointer;
+}
+.cursor:hover{
+    color:#00bfa5
+}
 
 .new {
     background-color: #00bfa5;
