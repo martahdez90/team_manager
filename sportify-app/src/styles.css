@@ -13,3 +13,15 @@ body {
 }
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.fa-trash-alt {
+    cursor:pointer;
+}
+
+.fa-edit {
+    cursor:pointer;
+}
+
+.fa-eye {
+    cursor:pointer;
+}

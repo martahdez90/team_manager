@@ -40,6 +40,7 @@ div#div {
     color: red;
     position: absolute;
     right: 5%;
+    cursor:pointer;
 }
 .list-group-item {
     position: relative;
@@ -71,6 +72,21 @@ div#div {
     color: white;
     position: relative;
 }
+
+
+/* modal de cerrar sesión */
+
+.modal-title {
+    color: #00bfa5;
+    font-size: medium;
+}
+
+.btn-modal {
+        background-color: #00bfa5;
+        border: #00bfa5;
+        width: 20vw;
+        color: white;
+    }
 
 
 @media(min-width:787px) {

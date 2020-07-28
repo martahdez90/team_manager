@@ -2,10 +2,6 @@
     color: gray;
 }
 
-section {
-    height: 80vh;
-}
-
 
 .header {
     text-align: center;
@@ -154,6 +150,11 @@ label {
     z-index: 1;
 }
 
+.card-footer {
+    background-color: #00bfa5;
+    padding: 5px;
+}
+
 
 @media (max-width: 576px) {
   
@@ -178,9 +179,7 @@ label {
         font-size: small;
     }
     
-    section {
-        height: 90vh;
-    }
+    
     .newJ{
         width: 50vw;
         margin-left: 25vw;
@@ -192,5 +191,9 @@ label {
     .btn-up .more {
         font-size: 45px;
     }
+    section {
+        height: 80vh;
+    }
+    
 }
 

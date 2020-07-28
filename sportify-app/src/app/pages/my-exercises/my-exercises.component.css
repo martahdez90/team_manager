@@ -1,5 +1,5 @@
 *{
-    font-size: 1.7vw;
+    font-size: medium;
 }
 
 
@@ -29,7 +29,7 @@ input#url::placeholder {
 }
 .card{
     border: #00BFA5;
-    max-width: 50rem;
+    width: 300px;
     margin: auto;
 }
 
@@ -44,12 +44,33 @@ input#url::placeholder {
     color: white;
     background: none
 }
-#trash{
+.fa-trash-alt {
+    color: white;
     position: absolute;
     top: 20%;
-    right: 5%;
-    color: grey
+    right: 4%;
+    z-index: 1;
+    cursor:pointer;
 }
+
+.fa-edit {
+    color: white;
+    position: absolute;
+    top: 20%;
+    right: 10%;
+    z-index: 1;
+    cursor:pointer;
+}
+
+.link {
+    color: white;
+    text-decoration: none;
+}
+
+.link:hover {
+    color: gray;
+}
+
 #new-ex{
     max-width: 50%;
     margin: auto;
@@ -63,7 +84,7 @@ input#url::placeholder {
 
 @media(max-width: 769px){
     *{
-        font-size: 3.5vw;
+        font-size: small;
     }
 }
 @media(min-width: 769px){

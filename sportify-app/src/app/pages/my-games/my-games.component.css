@@ -45,20 +45,21 @@ input {
     right: 10%;
 }
 
-#trash {
-    position: absolute;
-    top: 20%;
-    right: 5%;
-    color: grey
-}
-
-#ver {
+.fa-trash-alt {
     color: white;
     position: absolute;
     top: 20%;
-    right: 3%;
-    border: solid;
-    border-color: white;
+    right: 4%;
+    z-index: 1;
+}
+
+
+.fa-edit {
+    color: white;
+    position: absolute;
+    top: 20%;
+    right: 15%;
+    z-index: 1;
 }
 
 
@@ -105,14 +106,7 @@ input {
     .header {
         margin-top: 0;
     }
-   
-    #trash{
-        position: absolute;
-        top: 10%;
-        right: 5%;
-        color: white;
-        font-size: medium;
-    }
+
 
     .newT {
         width: 60vw;
