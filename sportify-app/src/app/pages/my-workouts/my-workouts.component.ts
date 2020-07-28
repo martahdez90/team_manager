@@ -11,16 +11,27 @@ import { TeamService } from 'src/app/shared/team.service';
 })
 export class MyWorkoutsComponent implements OnInit {
 
- public training :Training;
-  public dataBase:object;
-  public teams:object;
+  public edit: Training;
+  public dataBase: object;
+  public teams: object;
   
                   
-  constructor(private loginService: LoginService, private trainingService: TrainingService, private teamService: TeamService) { }
+  constructor(private loginService: LoginService, private trainingService: TrainingService, private teamService: TeamService) {
+    this.edit = new Training("", "", "", "")
+   }
 
- 
+  public getTraining(train: Training){
+    this.edit = train
+    console.log(this.edit)
+  }
 
-  getTrainings()
+  public saveTraining(id:Training)
+  {
+    console.log(id)
+    this.loginService.training_id= id.training_id;
+  }
+
+  public getTrainings()
   {
     this.trainingService.getTrainings().subscribe((data)=>
     {
@@ -28,16 +39,16 @@ export class MyWorkoutsComponent implements OnInit {
     });
   };
 
-  getTraining(id:number)
-  {
-    this.loginService.team_id= id;
-    this.trainingService.getTraining(id).subscribe((data)=>
-    {
-      this.dataBase=data;
-    });
-  };
+  // getTraining(id:number)
+  // {
+  //   this.loginService.team_id= id;
+  //   this.trainingService.getTraining(id).subscribe((data)=>
+  //   {
+  //     this.dataBase=data;
+  //   });
+  // };
 
- addTraining(name:HTMLInputElement, date:HTMLInputElement, location:HTMLInputElement, description:HTMLInputElement, team_id:HTMLInputElement)
+  public addTraining(name:HTMLInputElement, date:HTMLInputElement, location:HTMLInputElement, description:HTMLInputElement, team_id:HTMLInputElement)
   {
     console.log(team_id.value)
     let newTraining=new Training(name.value,date.value,location.value,description.value);
@@ -54,39 +65,33 @@ export class MyWorkoutsComponent implements OnInit {
       });
   };
 
-  UpdateTraining(newTraining:Training)
+  public putTraining(name:HTMLInputElement, date:HTMLInputElement, location:HTMLInputElement, description:HTMLInputElement, team_id:HTMLInputElement)
   {
+    let newTraining = new Training(name.value, date.value, location.value, description.value)
+    newTraining.training_id = this.edit.training_id
     this.trainingService.putTraining(newTraining).subscribe((data)=>
     {
       console.log(data);
+      this.trainingService.getTraining(this.loginService.userLoged.user_id).subscribe((data)=>
+      {
+        console.log(data);
+        this.dataBase=data;
+      });
     });
   };
 
-  deleteTraining(id:number)
+  public deleteTraining(id:number)
   {
     this.trainingService.deleteTraining(id).subscribe((data)=>
     {
       console.log(data)
       this.trainingService.getTraining(this.loginService.userLoged.user_id).subscribe((data)=>
-    {
-      console.log(data);
-      this.dataBase=data;
-    });
-      
-     
+      {
+        console.log(data);
+        this.dataBase=data;
+      });
     });
   };
-
-  saveTraining(id:Training)
-  {
-    console.log(id)
-    this.loginService.training_id= id.training_id;
-    
-  }
-
-  
-
-
 
   ngOnInit(): void {
     this.trainingService.getTraining(this.loginService.userLoged.user_id).subscribe((data)=>
