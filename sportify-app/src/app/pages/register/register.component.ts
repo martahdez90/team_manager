@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../../models/user'
 import { UserService } from '../../shared/user-service.service';
+import { FormGroup } from '@angular/forms';
 
 
 @Component({
@@ -17,7 +18,6 @@ import { UserService } from '../../shared/user-service.service';
 export class RegisterComponent implements OnInit {
   public user = new User;
   public rols: String[] = ["entrenador", "jugador"]
-  public password2: string;
   public registrado = false;
 
   constructor(private apiService: UserService) {
@@ -33,6 +33,8 @@ export class RegisterComponent implements OnInit {
     })
     this.registrado = true;
   }
+
+
 
   ngOnInit(): void {
 
