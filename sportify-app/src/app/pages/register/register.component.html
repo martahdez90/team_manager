@@ -3,20 +3,23 @@
 <div class="bg-light lyrics">
     <div class="white"></div>
     <div class="container text-center register">
-        <div class="row formulario">
+        <form class="row formulario">
             <div class="col-md-12 order-md-1 mb-3">
-                <strong>REGISTRO</strong> 
+                <strong>REGISTRO</strong>
             </div>
             <div class="col-12 order-md-1 correcto" *ngIf="registrado; else noRegistrado">
-                <div class="col-12 order-md-1 correcto">
-                    <h3 class="text-dark">Su registro se ha realizado correctamente</h3>
-                    <p class="text-dark">¡Ya puede iniciar sesión con sus datos!</p>
-                </div>
+                <div class="alert alert-success" role="alert" #registrado>
+                    <button type="button" class="close" routerLink="/login">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    <h4 class="alert-heading">Enhorabuena!</h4>
+                   <p>Su registro se ha realizado con éxito</p> 
+                  </div>
             </div>
             <ng-template #noRegistrado>
                 <div class="col-12 order-md-1">
-                    <form #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm)">
-                        <div class="mb-3 form-group" style="text-align: center;">
+                    <form #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm)" class="text-left">
+                        <div class="mb-3 form-group">
                             <label for="type">Tipo de usuario <span class="text-muted"></span></label>
                             <br>
                             <select class="form-control" id="dropdown" #rol="ngModel" [(ngModel)]="user.rol" required
@@ -76,6 +79,17 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="mb-3">
+                            <label for="password2">Confirmar contraseña</label>
+                            <input type="password" class="form-control" id="password2" placeholder="Contraseña"
+                                #password2="ngModel" [(ngModel)]="user.password2" ngValidateEqual="password"
+                                name="password2"
+                                [ngClass]="{'wrong': (password2.dirty || password2.touched) && password2.invalid}"
+                                required>
+                            <div *ngIf="password2.hasError('notEqual') && password.valid" class="wrong">Las contraseñas
+                                deben ser iguales</div>
+
+                        </div>
                         <div style="text-align: center;">
                             <button type="submit" [disabled]="!registerForm.valid" class="btn">Registrarme</button>
                         </div>
@@ -83,9 +97,11 @@
                 </div>
             </ng-template>
 
-        </div>
+        </form>
+        
     </div>
-
-
+    
+</div>
+    
 
     <app-green-footer></app-green-footer>
