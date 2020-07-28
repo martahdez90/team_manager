@@ -45,14 +45,11 @@
 
 
 
-
-
-
 <section id="training-card">
     <div *ngFor="let ex of dataBase; let i = index" class="card mb-3">
         <div class="card-header" id="date">
             Tipo: {{ex.type}}
-            <i class="far fa-edit" id="edit" data-toggle="modal" data-target="#editExercise" (click)="getExData(database[i])"></i>
+            <i class="far fa-edit" id="edit" data-toggle="modal" data-target="#editExercise" (click)="getExData(ex)"></i>
             <i class='far fa-trash-alt' id="trash" (click)="deleteEx(dataBase[i].exercise_id)"></i>
         </div>
         <div class="card-header bg-transparent">
@@ -83,19 +80,19 @@
                             </select>
                             </div>
                             <div class="card-header bg-transparent">
-                                <input #name type="text" placeholder="{{getExData.name}}">
+                                <input #name type="text" placeholder="{{exercise.name}}">
                             </div>
                             <div class="card-body">
-                                <input #description class="card-text" placeholder="{{getExData.description}}">
+                                <input #description class="card-text" placeholder="{{exercise.description}}">
                             </div>
                             <div class="card-footer">
-                                <input #url type="text" id="url" placeholder="{{getExData.url}}">
+                                <input #url type="text" id="url" placeholder="{{exercise.url}}">
                             </div>
                         </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                        <button class="btn" id="card-bg2" (click)="postEx(type, description, url, name)">Guardar cambios</button>
+                        <button class="btn" id="card-bg2" (click)="putEx(type, description, url, name)">Guardar cambios</button>
                     </div>
                 </div>
             </div>
