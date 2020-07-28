@@ -18,6 +18,7 @@ Sportify-app:
         npm install bootstrap
         npm i @angular/material
         npm i jquery
+        npm i ng-validate-equal
 
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
