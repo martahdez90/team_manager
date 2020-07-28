@@ -1,7 +1,9 @@
 <app-coach-menu></app-coach-menu>
+<div class="header row">
+    <h2 class="col-12 header">Mis entrenamientos</h2>
+</div>
 
-<!-- put workouts -->
-
+<!-- post workouts -->
 
 <section>
     <div class="modal fade" id="postTraining" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
@@ -40,47 +42,48 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-
-    <div>
-        <div class="header row">
-            <h2 class="col-12 header">Mis entrenamientos</h2>
-        </div>
-        <!-- contenido -->
-        <div>
-            <div class="card-color d-flex align-content-center flex-wrap mx-auto pb-4">
-                <div class="card playerInfo mr-4 ml-5 mt-4 mb-1 p-1 pb-1"
-                    *ngFor="let training of dataBase; let i = index">
-                    <div class="card-header" id="date">
-                        {{training.date | date}}
-                        <i class="far fa-edit" id="edit" data-toggle="modal" data-target="#putTraining"
-                            (click)="getTraining(training)"></i>
-                        <i class='fas fa-trash-alt' id="trash" (click)="deleteTraining(dataBase[i].training_id)"></i>
-                    </div>
-                    <div class="card-body bg-transparent">
-                        {{training.name}}
-                    </div>
-                    <div class="card-body">
-                        <p class="card-text">{{training.description}}</p>
-                    </div>
-                    <div class="card-footer">
-                        {{training.location}}
-                        <a class="badge badge-pill text-right" routerLink="/coach/myExercises"
-                            (click)="saveTraining(dataBase[i])">Ver</a>
-                    </div>
+                <div class="modal-footer">
+                    <button class="btn new" id="card-bg2"
+                        (click)="addTraining(name, date, location, description, id)" data-dismiss="modal"
+                        aria-label="Close">Actualizar</button>
                 </div>
             </div>
         </div>
-
-        <div class="card mb-3" id="new-ex">
-            <button class="btn newT mb-5" id="card-bg2" data-toggle="modal" data-target="#postTraining">
-                Nuevo entrenamiento
-            </button>
-        </div>
-
     </div>
+<!-- contenido -->
+    <div>
+        <div class="card-color d-flex align-content-center flex-wrap mx-auto pb-4">
+            <div class="card playerInfo mr-4 ml-5 mt-4 mb-1 p-1 pb-1" *ngFor="let training of dataBase; let i = index">
+                <div class="card-header" id="date">
+                    {{training.date | date}}
+                    <i class="far fa-edit" id="edit" data-toggle="modal" data-target="#putTraining"
+                        (click)="getTraining(training)"></i>
+                    <i class='fas fa-trash-alt' id="trash" (click)="deleteTraining(dataBase[i].training_id)"></i>
+                </div>
+                <div class="card-body bg-transparent">
+                    {{training.name}}
+                </div>
+                <div class="card-body">
+                    <p class="card-text">{{training.description}}</p>
+                </div>
+                <div class="card-footer">
+                    {{training.location}}
+                    <a class="badge badge-pill text-right" routerLink="/coach/myExercises"
+                        (click)="saveTraining(dataBase[i])">Ver</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card mb-3" id="new-ex">
+        <button class="btn newJ mb-5" id="card-bg2" data-toggle="modal" data-target="#postTraining">
+            Nuevo entrenamiento
+        </button>
+    </div>
+    
+
+
+
 
     <!-- modal editar entrenamiento -->
     <div class="modal fade" id="putTraining" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"

@@ -21,7 +21,7 @@
                         <select #type id="cars" name="cars" id="dropdown">
                         <option *ngFor="let option of options" value = "{{option.value}}">{{option.name}}</option>
                     </select>
-                        <i class='far fa-trash-alt' id="trash"></i>
+                        <i class='fas fa-trash-alt' id="trash"></i>
                     </div>
 
                     <div class="card-header bg-transparent">
@@ -59,7 +59,7 @@
             <p class="card-text">{{ex.description}}</p>
         </div>
         <div class="card-footer">
-            <a href="{{ex.url}}">Ver video</a>
+            <a class="link" href="{{ex.url}}" target="_blank">Ver video</a>
         </div>
         <!-- Modal put ejercicio -->
         <div class="modal fade" id="editExercise" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
