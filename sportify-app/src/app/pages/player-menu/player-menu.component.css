@@ -1,27 +1,23 @@
-
 * {
     font-size: medium;
-}
-
-a {
-    transition: all 300ms;
 }
 
 a:hover, a:active {
     border-top: 3px solid #ffffff;
   border-bottom: 3px solid #ffffff;
+  padding: 4px 0; 
 }
 
 .active-link {
     border-top: 3px solid #ffffff;
     border-bottom: 3px solid #ffffff;
+    padding: 4px 0; 
   }
 
 .lyrics {
     background-color: #00BFA5;
     font-family: ‘Roboto’, sans-serif;
     color: #FFFFFF;
-    line-height: 1;
 }
 
 .bodym {
@@ -39,11 +35,5 @@ a:hover, a:active {
 
 #whiteLink {
     color: white;
-}
-
-@media (min-width: 576px) {
-    * {
-        line-height: 1.5;
-    }
 }
 

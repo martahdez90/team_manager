@@ -1,3 +1,9 @@
+section {
+    height: 80vh;
+    margin-top: 50px;
+    background-color: violet;
+}
+
 
 .header {
     text-align: center;
@@ -55,7 +61,7 @@
     background-color: #00BFA5;
     color: white;
 }
-/* 
+
 @media(max-width: 769px){
     *{
         font-size: medium;
@@ -68,7 +74,9 @@
     }
 }
 @media(min-width: 769px){
-    section{
+    section {
+        padding-bottom: 10%;
+        margin-top: 20px;
         display: flex;
     }
     .card{
@@ -78,4 +86,4 @@
         margin-top: 2%;
         margin-bottom: 2%;
     }
-} */
+}
