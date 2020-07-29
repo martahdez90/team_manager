@@ -312,10 +312,7 @@ app.delete("/match", function(request, response) {
 
 app.get("/exercise/:training_id", function(request, response) {
     let params = [request.params.training_id]
-    let sql = "SELECT exercise.* FROM exercise " +
-        "INNER JOIN training_exercises ON (training_exercises.exercise_id = exercise.exercise_id)" +
-        "INNER JOIN training ON (training.training_id = training_exercises.training_id)" +
-        "WHERE training.training_id = ?";
+    let sql = "SELECT exercise.* FROM exercise INNER JOIN training_exercises ON(training_exercises.exercise_id = exercise.exercise_id) INNER JOIN training ON (training.training_id = training_exercises.training_id) WHERE training.training_id = ?"
 
     connection.query(sql, params, function(err, resultado) {
         if (err) {

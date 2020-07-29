@@ -3,9 +3,8 @@
     <h2 class="col-12 header">Mis entrenamientos</h2>
 </div>
 
-<!-- post workouts -->
-
 <section>
+    <!-- post workouts -->
     <div class="modal fade" id="postTraining" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
@@ -59,21 +58,16 @@
                 </div>
                 <div class="card-footer">
                     {{training.location}}
-                    <a class="badge badge-pill text-right" routerLink="/coach/myExercises" (click)="saveTraining(dataBase[i])">Ver</a>
+                    <a class="badge badge-pill text-right" routerLink="/coach/myExercises" (click)="saveTraining(dataBase[i].training_id)">Ver</a>
                 </div>
             </div>
         </div>
     </div>
-
     <div class="card mb-3" id="new-ex">
         <button class="btn newJ mb-5" id="card-bg2" data-toggle="modal" data-target="#postTraining">
             Nuevo entrenamiento
         </button>
     </div>
-
-
-
-
 
     <!-- modal editar entrenamiento -->
     <div class="modal fade" id="putTraining" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">

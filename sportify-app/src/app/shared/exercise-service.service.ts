@@ -14,9 +14,8 @@ export class ExerciseService {
 
   constructor(private http: HttpClient) { }
 
-  getExercise(team_id: number) {
-    console.log("team" + team_id)
-    return this.http.get(this.url + "/" + team_id)
+  getExercise(training_id: number) {
+    return this.http.get(this.url + "/" + training_id)
   }
   getExercises() {
     return this.http.get(this.url)
