@@ -1,11 +1,12 @@
 <app-player-menu></app-player-menu>
-<div>
-    <div class="header row">
-        <h2 class="col-12 header">Próximos partidos</h2>
+
+<section>
+    <div class="header">
+        <h2>Próximos partidos</h2>
     </div>
-    <section id="entrenamientos">
+    <div id="entrenamientos">
         <div id="training-card" class="card-color d-flex align-content-center flex-wrap mx-auto pb-4">
-            <div class="card mb-3 mt-3" *ngFor="let m of dataBase;" >
+            <div class="card mb-3 mt-3" *ngFor="let m of dataBase;">
                 <div class="card-header" id="date">
                     <strong>{{m.date | date}}</strong> <br>
                     <i class="fas fa-trophy"></i>
@@ -19,7 +20,12 @@
                 </div>
             </div>
         </div>
-    </section>
-</div>
+    </div>
+
+</section>
+
+   
+
+
 
 <app-green-footer></app-green-footer>

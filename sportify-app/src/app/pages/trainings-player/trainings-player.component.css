@@ -1,4 +1,3 @@
-
 .header {
     text-align: center;
     margin: auto;
@@ -9,6 +8,12 @@
     margin-top: 0%;
     margin-bottom: 0%;
     font-size: x-large;
+}
+
+section {
+    height: 80vh;
+    margin-top: 50px;
+    margin-bottom: 10vh;
 }
 
 #entrenamientos {
@@ -68,8 +73,10 @@
     }
 }
 @media(min-width: 769px){
-    section{
-        display: flex;
+    section {
+        padding-bottom: 10%;
+        margin-top: 50px;
+        margin-bottom: 10vh;
     }
     .card{
         margin: 1%

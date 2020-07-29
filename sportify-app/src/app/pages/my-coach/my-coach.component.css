@@ -11,11 +11,15 @@
 }
 
 section {
-    padding: 5%;
+    height: 80vh;
+    margin-top: 50px;
+    margin-bottom: 10vh;
 }
+
 input#url::placeholder {
     color: white;
 }
+
 #profile {
     background-color: white;
     font-size: 100px;
@@ -80,7 +84,12 @@ div#div {
 }
 
 
-@media(max-width:400px) {
+@media(max-width:576px) {
+    section {
+        padding-bottom: 10%;
+        margin-top: 50px;
+        margin-bottom: 10vh;
+    }
     div#div {
         margin-bottom: 23vh;
     }

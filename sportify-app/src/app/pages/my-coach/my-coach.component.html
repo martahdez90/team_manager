@@ -1,29 +1,33 @@
-<app-player-menu></app-player-menu>
+<app-player-menu></app-player-menu> 
 
-<div class="header row">
-    <h2 class="col-12 header">Mi entrenador</h2>
-</div>
 <section>
+    <div class="header">
+        <h2>Mi entrenador</h2>
+    </div>
+
     <div id="profile">
         <i class="fa fa-user-circle" id="user"></i>
     </div>
+
+    <div id="div">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Nombre
+                <p contenteditable="true" id="info">{{coach.name}}</p>
+            </li>
+            <li class="list-group-item">Apellido
+                <p contenteditable="true" id="info">{{coach.lastName}}</p>
+            </li>
+            <li class="list-group-item">Mail
+                <p contenteditable="true" id="info">{{coach.email}}</p>
+            </li>
+            <li class="list-group-item">Telefono
+                <p contenteditable="true" id="info">{{coach.phone}}</p>
+            </li>
+        </ul>
+    </div>
 </section>
-<div id="div">
-    <ul class="list-group list-group-flush">
-        <li class="list-group-item">Nombre
-            <p contenteditable="true" id="info">{{coach.name}}</p>
-        </li>
-        <li class="list-group-item">Apellido
-            <p contenteditable="true" id="info">{{coach.lastName}}</p>
-        </li>
-        <li class="list-group-item">Mail
-            <p contenteditable="true" id="info">{{coach.email}}</p>
-        </li>
-        <li class="list-group-item">Telefono
-            <p contenteditable="true" id="info">{{coach.phone}}</p>
-        </li>
-    </ul>
-</div>
+
+
 
 
 <app-green-footer></app-green-footer>
