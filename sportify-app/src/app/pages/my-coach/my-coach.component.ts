@@ -13,8 +13,12 @@ export class MyCoachComponent implements OnInit {
 
   constructor(private loginService: LoginService, private userService: UserService) { }
 
+  
+
   ngOnInit(): void {
-    this.userService.getCoach(1).subscribe(data=>{
+    console.log('empieza my Coach')
+    console.log(this.loginService.userLoged.user_id)
+    this.userService.getCoach(this.loginService.userLoged.user_id).subscribe(data=>{
       console.log(data)
       this.coach = data[0]
     })
