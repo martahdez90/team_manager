@@ -33,14 +33,13 @@ export class MyGamesComponent implements OnInit {
     console.log(newMatch)
 
     this.matchService.putMatch(newMatch).subscribe(data =>{
-      this.matchService.getMatches(1).subscribe(data=>{
+      this.matchService.getMatches(this.loginService.team_id).subscribe(data=>{
         this.dataBase = data
   
       })
     })
   }
   
-
   newGame(date: HTMLInputElement, location: HTMLInputElement, comments: HTMLInputElement, rival:HTMLInputElement, team_id:HTMLInputElement)
   {
     
@@ -49,7 +48,8 @@ export class MyGamesComponent implements OnInit {
     console.log(newMatch)
 
     this.matchService.postMatch(newMatch).subscribe(data =>{
-      this.matchService.getMatches(1).subscribe(data=>{
+      console.log(data)
+      this.matchService.getMatches(this.loginService.team_id).subscribe(data=>{
         this.dataBase = data
   
       })
@@ -62,14 +62,14 @@ export class MyGamesComponent implements OnInit {
     this.matchService.detelMatch(id).subscribe((data)=>
     {
       console.log(data)
-      this.matchService.getMatches(1).subscribe(data=>{
+      this.matchService.getMatches(this.loginService.team_id).subscribe(data=>{
         this.dataBase = data
       })
     })
   }
 
   ngOnInit(): void {
-    this.matchService.getMatches(1).subscribe(data=>{
+    this.matchService.getMatches(this.loginService.team_id).subscribe(data=>{
       this.dataBase = data
 
     })
