@@ -10,11 +10,6 @@ import { FormGroup } from '@angular/forms';
   styleUrls: ['./register.component.css']
 })
 
-/* enum Rol {
-  coach = "coach",
-  player = "player"
-} */
-  
 export class RegisterComponent implements OnInit {
   public user = new User;
   public rols: String[] = ["entrenador", "jugador"]
@@ -24,17 +19,16 @@ export class RegisterComponent implements OnInit {
     this.user
   }
 
-  // (rol: Rol, password: string, name: string, lastName: string, email: string, phone: number) 
-
   onSubmit(form) {
     console.log(form.value);
     this.apiService.postUser(this.user).subscribe((data) => {
       console.log(data);
+      if(data[0].email === this.user.email){
+        alert(data)
+      }
     })
     this.registrado = true;
   }
-
-
 
   ngOnInit(): void {
 
