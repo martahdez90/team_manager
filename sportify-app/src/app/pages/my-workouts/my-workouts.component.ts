@@ -25,10 +25,11 @@ export class MyWorkoutsComponent implements OnInit {
     console.log(this.edit)
   }
 
-  public saveTraining(id:Training)
+  public saveTraining(training_id:number)
   {
-    console.log(id)
-    this.loginService.training_id= id.training_id;
+    console.log('entranmiento guardado')
+    console.log(training_id)
+    this.loginService.training_id= training_id;
   }
 
   public addTraining(name:HTMLInputElement, date:HTMLInputElement, location:HTMLInputElement, description:HTMLInputElement, )

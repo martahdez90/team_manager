@@ -13,7 +13,6 @@ import { TrainingService } from 'src/app/shared/training-service.service';
 export class MyExercisesComponent implements OnInit {
 
   public dataBase: object
-  public trainings: object
   public exercise: Exercise
   public options = [
     {name: 'Selecciona uno', value: 'null'},
@@ -36,6 +35,7 @@ export class MyExercisesComponent implements OnInit {
     newEx.training_id= this.loginService.training_id;
 
     this.exService.postExercise(newEx).subscribe(data=>{
+      console.log(data)
       this.exService.getExercise(this.loginService.training_id).subscribe(data =>{
         console.log(data)
         this.dataBase = data
@@ -48,28 +48,31 @@ export class MyExercisesComponent implements OnInit {
     let newEx = new Exercise(name.value, description.value, url.value, type.value)
     newEx.exercise_id= this.exercise.exercise_id;
 
-    if(name.value===""){newEx.name =this.exercise.name};
-
-    if(description.value===""){newEx.description=this.exercise.description};
-
-    if( url.value ===""){newEx.url= this.exercise.url};
-
-    if( type.value ===""){newEx.type = this.exercise.type};
-    console.log(newEx);
+    if(name.value===""){
+      newEx.name =this.exercise.name
+    };
+    if(description.value===""){
+      newEx.description=this.exercise.description
+    };
+    if( url.value ===""){
+      newEx.url= this.exercise.url
+    };
+    if( type.value ===""){
+      newEx.type = this.exercise.type
+    };
+    console.log('newEx= ' + newEx);
     
     this.exService.putExercise(newEx).subscribe(data=>{
       console.log("datos del put")
       console.log(data)
-
-
-      this.exService.getExercise(this.loginService.team_id).subscribe(data =>{
+      this.exService.getExercise(this.loginService.training_id).subscribe(data =>{
         console.log(data)
         this.dataBase = data
       })
     })
   }
 
-  deleteEx(ex_id: number){
+  public deleteEx(ex_id: number){
     console.log(ex_id)
     this.exService.deleteExercise(ex_id).subscribe(data=>{
       this.exService.getExercise(this.loginService.training_id).subscribe(data =>{
@@ -80,14 +83,9 @@ export class MyExercisesComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.exService.getExercise(this.loginService.team_id).subscribe(data =>{
+    this.exService.getExercise(this.loginService.training_id).subscribe(data =>{
       console.log(data)
       this.dataBase = data
     })
-
-    this.trainingService.getTraining(this.loginService.training_id).subscribe((data)=>{
-      this.trainings= data;
-    })
   }
-
 }
