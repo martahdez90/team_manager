@@ -10,35 +10,51 @@ import Swal from 'sweetalert2';
   styleUrls: ['./my-players.component.css']
 })
 export class MyPlayersComponent implements OnInit {
-  public dataBase:object;
-  public user:User;
+  public dataBase: object;
+  public user: User;
   public players: object[];
-  public alert :string
+  public alert: string
 
-  constructor(private UserService: UserService, private loginService: LoginService) {}
+  constructor(private UserService: UserService, private loginService: LoginService) { }
 
-  public deletePlayers(index:number)
-  {
-    console.log(index)
-    this.UserService.deletePlayer(index).subscribe((data)=>
-    {
-      this.UserService.getPlayer(this.loginService.team_id).subscribe((data)=>
-      {
-        this.dataBase= data;
-      })
+  public deletePlayers(index: number) {
+    Swal.fire({
+      title: '¿Estás seguro?',
+      text: "¡No podrás recuperarlo!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#00bfa5',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'borrar'
+    }).then((result) => {
+      if (result.value) {
+        console.log(index)
+        this.UserService.deletePlayer(index).subscribe((data) => {
+          console.log(data);
+          this.UserService.getPlayer(this.loginService.team_id).subscribe((data) => {
+            this.dataBase = data;
+            Swal.fire({
+              title: '¡Eliminado!',
+              text: 'Tu jugador ha sido borrado',
+              icon: 'success',
+              confirmButtonColor: '#00bfa5'
+            })
+          })
+        })
+      }
     })
   }
 
-  public addPlayer(email: HTMLInputElement, phone: HTMLInputElement){
+  public addPlayer(email: HTMLInputElement, phone: HTMLInputElement) {
     let playerData = {
       email: email.value,
       phone: phone.value,
       team_id: this.loginService.team_id
     }
 
-    this.UserService.postNewPlayer(playerData).subscribe((data)=>{
+    this.UserService.postNewPlayer(playerData).subscribe((data) => {
       console.log(data)
-      if(data[0] === undefined){
+      if (data[0] === undefined) {
         Swal.fire({
           icon: 'error',
           title: 'Oops...',
@@ -46,20 +62,18 @@ export class MyPlayersComponent implements OnInit {
           footer: 'Compruebe los campos',
           confirmButtonText: 'ok',
           confirmButtonColor: '#00bfa5'
-        }) 
+        })
       }
-      else{
-        this.UserService.getPlayer(this.loginService.team_id).subscribe((data)=>
-        {
+      else {
+        this.UserService.getPlayer(this.loginService.team_id).subscribe((data) => {
           this.dataBase = data;
         })
       }
     })
   }
   ngOnInit(): void {
-    this.UserService.getPlayer(this.loginService.team_id).subscribe((data)=>
-      {
-        this.dataBase = data;
-      })
+    this.UserService.getPlayer(this.loginService.team_id).subscribe((data) => {
+      this.dataBase = data;
+    })
   }
 }
