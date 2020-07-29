@@ -1,4 +1,7 @@
-<app-coach-menu></app-coach-menu>
+<html>
+<app-coach-menu>
+
+</app-coach-menu>
 <div class="header row">
     <h2 class="col-12 header">Mis partidos</h2>
 </div>
@@ -7,117 +10,119 @@
 <!--modal nuevo partido-->
 
 <section>
-  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Nuevo partido</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Nuevo partido</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
-            </div>
-            <div class="modal-body">
-                <div class="card mb-3">
-                    <select #team class="team">
+                </div>
+                <div class="modal-body">
+                    <div class="card mb-3">
+                        <select #team class="team">
                         <option  *ngFor=" let team of teams" value="{{team.team_id}}">
                             {{team.name}}
                         </option>
                     </select>
-                    <div class="card-body bg-transparent modalB">
-                        <label for="date">Fecha:</label><br>
-                        <input type="date" #date>
-                    </div>
-                    <div class="card-body bg-transparent modalB">
-                        <label for="comments">Comentarios:</label><br>
-                        <input #comments class="card-text" placeholder="comentarios">
-                    </div>
-                    <div class="card-body modalB">
-                        <label for="rival">Rival:</label><br>
-                        <input #rival class="card-text" placeholder="rival">
-                    </div>
-                    <div class="card-body modalB">
-                        <label for="location">Lugar:</label><br>
-                        <input #location class="card-text" placeholder="lugar">
-                    </div>
+                        <div class="card-body bg-transparent modalB">
+                            <label for="date">Fecha:</label><br>
+                            <input type="date" #date>
+                        </div>
+                        <div class="card-body bg-transparent modalB">
+                            <label for="comments">Comentarios:</label><br>
+                            <input #comments class="card-text" placeholder="comentarios">
+                        </div>
+                        <div class="card-body modalB">
+                            <label for="rival">Rival:</label><br>
+                            <input #rival class="card-text" placeholder="rival">
+                        </div>
+                        <div class="card-body modalB">
+                            <label for="location">Lugar:</label><br>
+                            <input #location class="card-text" placeholder="lugar">
+                        </div>
 
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button> -->
+                    <button data-dismiss="modal" aria-label="Close" class="btn new" id="card-bg2" (click)="newGame(date,comments,rival, location, team)">Guardar</button>
                 </div>
             </div>
-            <div class="modal-footer">
-                <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button> -->
-                <button data-dismiss="modal" aria-label="Close" class="btn new" id="card-bg2" (click)="newGame(date,comments,rival, location, team)">Guardar</button>
-            </div>
         </div>
     </div>
-</div>
 
-<div id="training-card">
-    <div class="card-color d-flex align-content-center flex-wrap mx-auto pb-4 playerInfo">
-        <div class="card mt-4 mb-1 pb-1" *ngFor="let e of dataBase; let i= index">
-            <div class="card-header" id="date">
-                {{e.date | date}}
-                <i class="far fa-edit" id="edit" (click)="getGame(dataBase[i])" data-toggle="modal" data-target="#putGame"></i>
-                <i class='fas fa-trash-alt' (click)="deleteGame(dataBase[i].match_id)" id="trash"></i>
-            </div>
-            <div class="card-body bg-transparent">
-                {{e.comments}}
-            </div>
-            <div class="card-body">
-                <p class="card-text">{{e.rival}}</p>
-            </div>
-            <div class="card-footer">
-                {{e.location}}
+    <div id="training-card">
+        <div class="card-color d-flex align-content-center flex-wrap mx-auto pb-4 playerInfo">
+            <div class="card mt-4 mb-1 pb-1" *ngFor="let e of dataBase; let i= index">
+                <div class="card-header" id="date">
+                    {{e.date | date}}
+                    <i class="far fa-edit" id="edit" (click)="getGame(dataBase[i])" data-toggle="modal" data-target="#putGame"></i>
+                    <i class='fas fa-trash-alt' (click)="deleteGame(dataBase[i].match_id)" id="trash"></i>
+                </div>
+                <div class="card-body bg-transparent">
+                    {{e.comments}}
+                </div>
+                <div class="card-body">
+                    <p class="card-text">{{e.rival}}</p>
+                </div>
+                <div class="card-footer">
+                    {{e.location}}
+                </div>
             </div>
         </div>
     </div>
-</div>
-<div class="card mb-3" id="new-ex">
-    <button class="btn newT" id="card-bg2" data-toggle="modal" data-target="#exampleModalCenter">
+    <div class="card mb-3" id="new-ex">
+        <button class="btn newT" id="card-bg2" data-toggle="modal" data-target="#exampleModalCenter">
         Nuevo partido
     </button>
-</div>
+    </div>
 
-<div class="modal fade" id="putGame" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">actualizar partido</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    <div class="modal fade" id="putGame" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">actualizar partido</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
-            </div>
-            <div class="modal-body">
-                <div class="card mb-3">
-                    <select #team2>
+                </div>
+                <div class="modal-body">
+                    <div class="card mb-3">
+                        <select #team2>
                         <option  *ngFor=" let team of teams" value="{{team.team_id}}">
                             {{team.name}}
                         </option>
                     </select>
 
-                    <div class="card-header bg-transparent">
-                        <input type="date" #date2>
-                    </div>
-                    <div class="card-body">
-                        <input #comments2 class="card-text" placeholder="{{game.comments}}">
+                        <div class="card-header bg-transparent">
+                            <input type="date" #date2>
+                        </div>
+                        <div class="card-body">
+                            <input #comments2 class="card-text" placeholder="{{game.comments}}">
+
+                        </div>
+                        <div class="card-body">
+                            <input #rival2 class="card-text" placeholder="{{game.rival}}">
+                        </div>
+                        <div class="card-body">
+                            <input #location2 class="card-text" placeholder="{{game.location}}">
+                        </div>
 
                     </div>
-                    <div class="card-body">
-                        <input #rival2 class="card-text" placeholder="{{game.rival}}">
-                    </div>
-                    <div class="card-body">
-                        <input #location2 class="card-text" placeholder="{{game.location}}">
-                    </div>
-
                 </div>
-            </div>
-            <div class="modal-footer">
-                <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button> -->
-                <button data-dismiss="modal" aria-label="Close" class="btn new" id="card-bg2" (click)="putGame(date2,comments2,rival2, location2, team2)">Actualizar</button>
+                <div class="modal-footer">
+                    <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button> -->
+                    <button data-dismiss="modal" aria-label="Close" class="btn new" id="card-bg2" (click)="putGame(date2,comments2,rival2, location2, team2)">Actualizar</button>
+                </div>
             </div>
         </div>
     </div>
-</div>  
 </section>
 
 
 
 <app-green-footer></app-green-footer>
+
+</html>
