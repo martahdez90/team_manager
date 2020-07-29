@@ -1,7 +1,9 @@
 * {
     color: gray;
 }
-
+section{
+    min-height: 100vh;
+}
 
 .header {
     text-align: center;
