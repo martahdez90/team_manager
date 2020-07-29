@@ -153,8 +153,12 @@ app.delete("/teams", function(request, response) {
 
 app.get("/training/:user_id", function(request, response) {
     let params = [request.params.user_id]
-        // "INNER JOIN training AS t5 ON (t4.training_id = t5.training_id) "
-    let sql = "SELECT training.* FROM training INNER JOIN training_team ON training_team.training_id = training.training_id INNER JOIN team ON team.team_id = training_team.team_id INNER JOIN user_teams ON user_teams.team_id = team.team_id INNER JOIN users ON users.user_id = user_teams.user_id WHERE users.user_id = ?";
+    let sql = "SELECT training.* FROM training "+
+    "INNER JOIN training_team ON training_team.training_id = training.training_id "+
+    "INNER JOIN team ON team.team_id = training_team.team_id "+
+    "INNER JOIN user_teams ON user_teams.team_id = team.team_id "+
+    "INNER JOIN users ON users.user_id = user_teams.user_id "+
+    "WHERE users.user_id = ?";
 
     connection.query(sql, params, function(err, resultado) {
         if (err) {
@@ -169,8 +173,10 @@ app.get("/training/:user_id", function(request, response) {
 
 app.get("/training/coach/:team_id", function(request, response) {
     let params = [request.params.team_id]
-        // "INNER JOIN training AS t5 ON (t4.training_id = t5.training_id) "
-    let sql = "SELECT training.* FROM `training` INNER JOIN training_team ON(training_team.training_id = training.training_id) INNER JOIN team ON(team.team_id = training_team.team_id) WHERE team.team_id= ?";
+    let sql = "SELECT training.* FROM `training` "+
+    "INNER JOIN training_team ON(training_team.training_id = training.training_id) "+
+    "INNER JOIN team ON(team.team_id = training_team.team_id) "+
+    "WHERE team.team_id= ?";
 
     connection.query(sql, params, function(err, resultado) {
         if (err) {
@@ -185,7 +191,8 @@ app.get("/training/coach/:team_id", function(request, response) {
 
 app.post("/training", function(request, response) {
     let params = [request.body.name, request.body.date, request.body.location, request.body.description];
-    let sql = "INSERT INTO training(`training_id`, `name`, `date`, `location`, `description`)  VALUES(NULL, ?, ?, ?, ?) "
+    let sql = "INSERT INTO training(`training_id`, `name`, `date`, `location`, `description`)  "+
+    "VALUES(NULL, ?, ?, ?, ?) "
 
     connection.query(sql, params, function(err, resultado) {
         if (err) {
@@ -206,7 +213,8 @@ app.post("/training", function(request, response) {
 
 app.put("/training", function(request, response) {
     let params = [request.body.name, request.body.date, request.body.location, request.body.description, request.body.training_id]
-    let sql = "UPDATE training SET name = ?, date = ?, location = ?, description = ? WHERE training_id = ?";
+    let sql = "UPDATE training SET name = ?, date = ?, location = ?, description = ? "+
+    "WHERE training_id = ?";
     connection.query(sql, params, function(err, resultado) {
         if (err) {
             console.log(err);
@@ -216,9 +224,6 @@ app.put("/training", function(request, response) {
         }
     });
 });
-
-
-
 
 app.delete("/training", function(request, response) {
     let params = [request.body.training_id];
@@ -239,7 +244,8 @@ app.delete("/training", function(request, response) {
 app.get("/match/:team_id", function(request, response) {
     let params = [request.params.team_id];
     let sql = "SELECT t3.* FROM matches AS t3 " +
-        "INNER JOIN matches_teams AS t2 on (t3.match_id = t2.match_id) INNER JOIN team  AS t1 ON (t2.team_id = t1.team_id) " +
+        "INNER JOIN matches_teams AS t2 on (t3.match_id = t2.match_id) "+
+        "INNER JOIN team  AS t1 ON (t2.team_id = t1.team_id) " +
         "WHERE t1.team_id = ?";
 
     connection.query(sql, params, function(err, resultado) {
@@ -253,11 +259,10 @@ app.get("/match/:team_id", function(request, response) {
 
 })
 
-/* SELECT matches.date, matches.location, matches.comments FROM matches AS matches INNER JOIN users AS users INNER JOIN user_teams AS user_teams ON (users.user_id = users. user_id) INNER JOIN team AS team ON (user_teams.team_id = user_teams.team_id) INNER JOIN matches_teams AS matches_teams ON (team.team_id = matches_teams.team_id) WHERE users.user_id = 2 */
-
 app.post("/match", function(request, response) {
     let params = [request.body.date, request.body.comments, request.body.rival, request.body.location];
-    let sql = "INSERT INTO matches( `match_id`, `date`,`comments`,`rival`,`location`)  VALUES(NULL, ?, ?, ?, ?) "
+    let sql = "INSERT INTO matches( `match_id`, `date`,`comments`,`rival`,`location`)  "+
+    "VALUES(NULL, ?, ?, ?, ?) "
 
     connection.query(sql, params, function(err, resultado) {
         if (err) {
@@ -314,7 +319,6 @@ app.get("/exercise/:training_id", function(request, response) {
         "INNER JOIN training ON (training.training_id = training_exercises.training_id)" +
         "WHERE training.training_id = ?";
 
-
     connection.query(sql, params, function(err, resultado) {
         if (err) {
             console.log(err);
@@ -326,10 +330,10 @@ app.get("/exercise/:training_id", function(request, response) {
     });
 });
 
-
 app.post("/exercise", function(request, response) {
     let params = [request.body.name, request.body.description, request.body.url, request.body.type];
-    let sql = "INSERT INTO exercise( `exercise_id`, `name`, `description`, `url`, `type`)  VALUES(NULL, ?, ?, ?, ?) "
+    let sql = "INSERT INTO exercise( `exercise_id`, `name`, `description`, `url`, `type`)  "+
+    "VALUES(NULL, ?, ?, ?, ?) "
     connection.query(sql, params, function(err, resultado) {
         if (err) {
             console.log(err);
@@ -347,7 +351,6 @@ app.post("/exercise", function(request, response) {
     });
 });
 
-
 app.put("/exercise", function(request, response) {
     let params = [request.body.name, request.body.description, request.body.url, request.body.type, request.body.exercise_id]
     let sql = "UPDATE exercise SET name = ?, description = ?, url = ?, type = ? WHERE exercise_id = ?";
@@ -359,7 +362,6 @@ app.put("/exercise", function(request, response) {
         }
     });
 });
-
 
 app.delete("/exercise", function(request, response) {
     let params = [request.body.exercise_id];
@@ -376,13 +378,13 @@ app.delete("/exercise", function(request, response) {
 
 });
 
-
-
 // end point players
 
 app.get("/users/teamPlayers/:team_id", function(request, response) {
     let params = [request.params.team_id];
-    let sql = "SELECT users.name, users.lastName, users.email, users.phone, users.user_id FROM users INNER JOIN user_teams ON (users.user_id = user_teams.user_id) WHERE( user_teams.team_id = ? AND users.rol = 'player')"
+    let sql = "SELECT users.name, users.lastName, users.email, users.phone, users.user_id FROM users "+
+    "INNER JOIN user_teams ON (users.user_id = user_teams.user_id) "+
+    "WHERE( user_teams.team_id = ? AND users.rol = 'player')"
     connection.query(sql, params, function(err, resultado) {
         if (err) {
             console.log(err);
@@ -392,7 +394,6 @@ app.get("/users/teamPlayers/:team_id", function(request, response) {
         }
     });
 });
-
 
 app.delete("/users/teamPlayers/", function(request, response) {
     let params = [request.body.user_id];
@@ -443,16 +444,12 @@ app.post("/users/teamPlayers", function(request, response) {
     let params = [request.body.email, request.body.phone]
     let sql = "SELECT user_id FROM users WHERE email = ? AND  phone = ?"
     connection.query(sql, params, function(err, res) {
-
-
         if (err) {
             response.send(err)
-
         } else if (res.length === 0) {
             response.send(res)
         } else {
             let id = res[0].user_id;
-
             let params1 = [id, request.body.team_id]
             let sql2 = "INSERT INTO user_teams (user_id, team_id) VALUES (?, ?)"
             connection.query(sql2, params1, function(err, res) {
@@ -464,8 +461,8 @@ app.post("/users/teamPlayers", function(request, response) {
             })
         }
     })
-
 });
+
 app.listen("3025", () => {
     console.log("Server started on port 3025");
 });
