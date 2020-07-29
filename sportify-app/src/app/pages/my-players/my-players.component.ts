@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/shared/user-service.service';
 import { User } from 'src/app/models/user';
 import { LoginService } from 'src/app/shared/login.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-my-players',
@@ -38,7 +39,14 @@ export class MyPlayersComponent implements OnInit {
     this.UserService.postNewPlayer(playerData).subscribe((data)=>{
       console.log(data)
       if(data[0] === undefined){
-        alert( "jugador no encontrado")  
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Jugador no encontrado',
+          footer: 'Compruebe los campos',
+          confirmButtonText: 'ok',
+          confirmButtonColor: '#00bfa5'
+        }) 
       }
       else{
         this.UserService.getPlayer(this.loginService.team_id).subscribe((data)=>
