@@ -31,33 +31,16 @@ export class MyWorkoutsComponent implements OnInit {
     this.loginService.training_id= id.training_id;
   }
 
-  public getTrainings()
+  public addTraining(name:HTMLInputElement, date:HTMLInputElement, location:HTMLInputElement, description:HTMLInputElement, )
   {
-    this.trainingService.getTrainings().subscribe((data)=>
-    {
-      this.dataBase=data;
-    });
-  };
-
-  // getTraining(id:number)
-  // {
-  //   this.loginService.team_id= id;
-  //   this.trainingService.getTraining(id).subscribe((data)=>
-  //   {
-  //     this.dataBase=data;
-  //   });
-  // };
-
-  public addTraining(name:HTMLInputElement, date:HTMLInputElement, location:HTMLInputElement, description:HTMLInputElement, team_id:HTMLInputElement)
-  {
-    console.log(team_id.value)
     let newTraining=new Training(name.value,date.value,location.value,description.value);
-    newTraining.team_id= Number(team_id.value);
+    newTraining.team_id= this.loginService.team_id;
     console.log(newTraining);
       this.trainingService.postTraining(newTraining).subscribe((data)=>
       {
-        this.trainingService.getTraining(this.loginService.userLoged.user_id).subscribe((data)=>
-        {;
+        console.log(data)
+        this.trainingService.getTeamTraining(this.loginService.team_id).subscribe((data)=>
+        {
           console.log(data);
           this.dataBase= data
         })
@@ -65,14 +48,32 @@ export class MyWorkoutsComponent implements OnInit {
       });
   };
 
-  public putTraining(name:HTMLInputElement, date:HTMLInputElement, location:HTMLInputElement, description:HTMLInputElement, team_id:HTMLInputElement)
+  public putTraining(name:HTMLInputElement, date:HTMLInputElement, location:HTMLInputElement, description:HTMLInputElement)
   {
     let newTraining = new Training(name.value, date.value, location.value, description.value)
     newTraining.training_id = this.edit.training_id
+
+    if( name.value === "" )
+    {
+      newTraining.name = this.edit.name;
+    }
+    if(date.value ==="" )
+    {
+      newTraining.date = this.edit.date;
+    }
+    if(location.value === "" )
+    {
+      newTraining.location = this.edit.location;
+    }
+    if(description.value === "" )
+    {
+      newTraining.description =this.edit.description;
+    }
     this.trainingService.putTraining(newTraining).subscribe((data)=>
     {
+      
       console.log(data);
-      this.trainingService.getTraining(this.loginService.userLoged.user_id).subscribe((data)=>
+      this.trainingService.getTeamTraining(this.loginService.userLoged.user_id).subscribe((data)=>
       {
         console.log(data);
         this.dataBase=data;
@@ -85,7 +86,7 @@ export class MyWorkoutsComponent implements OnInit {
     this.trainingService.deleteTraining(id).subscribe((data)=>
     {
       console.log(data)
-      this.trainingService.getTraining(this.loginService.userLoged.user_id).subscribe((data)=>
+      this.trainingService.getTeamTraining(this.loginService.userLoged.user_id).subscribe((data)=>
       {
         console.log(data);
         this.dataBase=data;
@@ -94,16 +95,16 @@ export class MyWorkoutsComponent implements OnInit {
   };
 
   ngOnInit(): void {
-    this.trainingService.getTraining(this.loginService.userLoged.user_id).subscribe((data)=>
+    this.trainingService.getTeamTraining(this.loginService.team_id).subscribe((data)=>
     {
       console.log(data);
       this.dataBase=data;
     });
 
-    this.teamService.getTeams(this.loginService.userLoged.user_id).subscribe((data)=>
-    {
-      this.teams=data;
-    })
+    // this.teamService.getTeams(this.loginService.userLoged.user_id).subscribe((data)=>
+    // {
+    //   this.teams=data;
+    // })
     
   }
 
