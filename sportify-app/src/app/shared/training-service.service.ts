@@ -15,6 +15,11 @@ export class TrainingService {
   getTraining(id: number) {
     return this.http.get(this.url + "/" + id)
   }
+  getTeamTraining(team_id:number)
+  {
+     return this.http.get(this.url +"/coach"+ "/" + team_id)
+
+  }
   getTrainings() {
     return this.http.get(this.url)
   }

@@ -44,12 +44,25 @@ export class MyExercisesComponent implements OnInit {
   }
 
   public putEx(type: HTMLInputElement ,description: HTMLInputElement ,url: HTMLInputElement ,name: HTMLInputElement ){
+
     let newEx = new Exercise(name.value, description.value, url.value, type.value)
+    newEx.exercise_id= this.exercise.exercise_id;
+
+    if(name.value===""){newEx.name =this.exercise.name};
+
+    if(description.value===""){newEx.description=this.exercise.description};
+
+    if( url.value ===""){newEx.url= this.exercise.url};
+
+    if( type.value ===""){newEx.type = this.exercise.type};
     console.log(newEx);
     
     this.exService.putExercise(newEx).subscribe(data=>{
+      console.log("datos del put")
       console.log(data)
-      this.exService.getExercise(this.loginService.training_id).subscribe(data =>{
+
+
+      this.exService.getExercise(this.loginService.team_id).subscribe(data =>{
         console.log(data)
         this.dataBase = data
       })
@@ -67,7 +80,7 @@ export class MyExercisesComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.exService.getExercise(this.loginService.training_id).subscribe(data =>{
+    this.exService.getExercise(this.loginService.team_id).subscribe(data =>{
       console.log(data)
       this.dataBase = data
     })

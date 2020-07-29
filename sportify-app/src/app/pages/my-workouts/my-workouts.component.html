@@ -6,8 +6,7 @@
 <!-- post workouts -->
 
 <section>
-    <div class="modal fade" id="postTraining" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-        aria-hidden="true">
+    <div class="modal fade" id="postTraining" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -16,12 +15,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <select name="team" #id class="team">
-                    <h2>Equipo:</h2><br>
-                    <option *ngFor="let team of teams" value=" {{team.team_id}}" id="equipo">
-                        {{team.name}}
-                    </option>
-                </select>
+
                 <div class="modal-body">
                     <div class="mb-3">
                         <div class="card-body bg-transparent" id="email">
@@ -43,21 +37,18 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button class="btn new" id="card-bg2"
-                        (click)="addTraining(name, date, location, description, id)" data-dismiss="modal"
-                        aria-label="Close">Actualizar</button>
+                    <button class="btn new" id="card-bg2" (click)="addTraining(name, date, location, description)" data-dismiss="modal" aria-label="Close">Actualizar</button>
                 </div>
             </div>
         </div>
     </div>
-<!-- contenido -->
+    <!-- contenido -->
     <div>
         <div class="card-color d-flex align-content-center flex-wrap mx-auto pb-4">
             <div class="card playerInfo mr-4 ml-5 mt-4 mb-1 p-1 pb-1" *ngFor="let training of dataBase; let i = index">
                 <div class="card-header" id="date">
                     {{training.date | date}}
-                    <i class="far fa-edit" id="edit" data-toggle="modal" data-target="#putTraining"
-                        (click)="getTraining(training)"></i>
+                    <i class="far fa-edit" id="edit" data-toggle="modal" data-target="#putTraining" (click)="getTraining(training)"></i>
                     <i class='fas fa-trash-alt' id="trash" (click)="deleteTraining(dataBase[i].training_id)"></i>
                 </div>
                 <div class="card-body bg-transparent">
@@ -68,8 +59,7 @@
                 </div>
                 <div class="card-footer">
                     {{training.location}}
-                    <a class="badge badge-pill text-right" routerLink="/coach/myExercises"
-                        (click)="saveTraining(dataBase[i])">Ver</a>
+                    <a class="badge badge-pill text-right" routerLink="/coach/myExercises" (click)="saveTraining(dataBase[i])">Ver</a>
                 </div>
             </div>
         </div>
@@ -80,14 +70,13 @@
             Nuevo entrenamiento
         </button>
     </div>
-    
+
 
 
 
 
     <!-- modal editar entrenamiento -->
-    <div class="modal fade" id="putTraining" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-        aria-hidden="true">
+    <div class="modal fade" id="putTraining" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -96,12 +85,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <select name="team" #id1 class="team">
-                    <h2>Equipo:</h2><br>
-                    <option *ngFor="let team of teams" value=" {{team.team_id}}" id="equipo">
-                        {{team.name}}
-                    </option>
-                </select>
+
                 <div class="modal-body">
                     <div class="mb-3">
                         <div class="card-body bg-transparent" id="email">
@@ -123,9 +107,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button class="btn new" id="card-bg2"
-                        (click)="putTraining(name1, date1, location1, description1, id1)" data-dismiss="modal"
-                        aria-label="Close">Actualizar</button>
+                    <button class="btn new" id="card-bg2" (click)="putTraining(name1, date1, location1, description1)" data-dismiss="modal" aria-label="Close">Actualizar</button>
                 </div>
             </div>
         </div>

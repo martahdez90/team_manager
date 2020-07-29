@@ -167,6 +167,22 @@ app.get("/training/:user_id", function(request, response) {
 
 });
 
+app.get("/training/coach/:team_id", function(request, response) {
+    let params = [request.params.team_id]
+        // "INNER JOIN training AS t5 ON (t4.training_id = t5.training_id) "
+    let sql = "SELECT training.* FROM `training` INNER JOIN training_team ON(training_team.training_id = training.training_id) INNER JOIN team ON(team.team_id = training_team.team_id) WHERE team.team_id= ?";
+
+    connection.query(sql, params, function(err, resultado) {
+        if (err) {
+            console.log(err);
+        } else {
+            console.log("entrenamientos del usuario");
+            response.send(resultado);
+        }
+    });
+
+});
+
 app.post("/training", function(request, response) {
     let params = [request.body.name, request.body.date, request.body.location, request.body.description];
     let sql = "INSERT INTO training(`training_id`, `name`, `date`, `location`, `description`)  VALUES(NULL, ?, ?, ?, ?) "
@@ -200,6 +216,9 @@ app.put("/training", function(request, response) {
         }
     });
 });
+
+
+
 
 app.delete("/training", function(request, response) {
     let params = [request.body.training_id];
@@ -420,20 +439,26 @@ app.get("/users/coach/:id", function(request, response) {
 
 // Add player to team
 
-app.post("/users/teamPlayers", function (request, response){
+app.post("/users/teamPlayers", function(request, response) {
     let params = [request.body.email, request.body.phone]
     let sql = "SELECT user_id FROM users WHERE email = ? AND  phone = ?"
-    connection.query(sql, params, function (err, res) {
-        if(err){
+    connection.query(sql, params, function(err, res) {
+
+
+        if (err) {
             response.send(err)
-        } else{
-            let id = res[0].user_id
+
+        } else if (res.length === 0) {
+            response.send(res)
+        } else {
+            let id = res[0].user_id;
+
             let params1 = [id, request.body.team_id]
             let sql2 = "INSERT INTO user_teams (user_id, team_id) VALUES (?, ?)"
-            connection.query(sql2, params1, function (err, res) {
-                if(err){
+            connection.query(sql2, params1, function(err, res) {
+                if (err) {
                     response.send(err)
-                } else{
+                } else {
                     response.send(res)
                 }
             })
