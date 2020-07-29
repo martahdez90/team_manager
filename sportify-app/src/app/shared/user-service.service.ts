@@ -8,6 +8,7 @@ export class UserService {
   private url = "http://localhost:3025/users";
   public user: User;
   constructor(private http: HttpClient) { }
+  
   public getUser(id: number) {
     return this.http.get(this.url + "/" + id)
   }

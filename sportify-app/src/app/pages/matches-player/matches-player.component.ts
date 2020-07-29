@@ -9,15 +9,16 @@ import { MatchServiceService } from "../../shared/match.service";
   styleUrls: ['./matches-player.component.css']
 })
 export class MatchesPlayerComponent implements OnInit {
-  public id = this.loginService.userLoged.user_id
+
   public dataBase: object
     
-  constructor(private loginService: LoginService, private matchService: MatchServiceService,) { }
+  constructor(private loginService: LoginService, private matchService: MatchServiceService) { }
 
   ngOnInit(): void {
-    this.matchService.getMatches(this.id).subscribe(data => {
+    console.log(this.loginService.userLoged.user_id)
+    this.matchService.getPlayerMatches(this.loginService.userLoged.user_id).subscribe(data => {
+      console.log(data)
       this.dataBase = data
-      console.log(this.dataBase)
     })
   }
 

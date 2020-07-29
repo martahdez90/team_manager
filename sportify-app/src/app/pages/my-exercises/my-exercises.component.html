@@ -80,24 +80,24 @@
                 <div class="card mb-3">
                     <div class="card-header" id="date">
                         Tipo:
-                        <select #type id="cars" name="cars" id="dropdown">
+                        <select #type1 id="cars" name="cars" id="dropdown">
                         <option *ngFor="let option of options" value = "{{option.value}}">{{option.name}}</option>
                     </select>
                     </div>
                     <div class="card-header bg-transparent">
-                        <input #name type="text" placeholder="{{exercise.name}}">
+                        <input #name1 type="text" placeholder="{{exercise.name}}">
                     </div>
                     <div class="card-body">
-                        <input #description class="card-text" placeholder="{{exercise.description}}">
+                        <input #description1 class="card-text" placeholder="{{exercise.description}}">
                     </div>
                     <div class="card-footer">
-                        <input #url type="text" placeholder="{{exercise.url}}">
+                        <input #url1 type="text" placeholder="{{exercise.url}}">
                     </div>
                 </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                <button class="btn" id="card-bg2" (click)="putEx(type, description, url, name)" data-dismiss="modal">Guardar cambios</button>
+                <button class="btn" id="card-bg2" (click)="putEx(type1, description1, url1, name1)" data-dismiss="modal">Guardar cambios</button>
             </div>
         </div>
     </div>

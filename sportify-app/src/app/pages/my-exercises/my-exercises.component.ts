@@ -46,7 +46,9 @@ export class MyExercisesComponent implements OnInit {
   public putEx(type: HTMLInputElement, description: HTMLInputElement, url: HTMLInputElement, name: HTMLInputElement) {
 
     let newEx = new Exercise(name.value, description.value, url.value, type.value)
-    newEx.exercise_id = this.exercise.exercise_id;
+
+    newEx.exercise_id= this.exercise.exercise_id;
+    console.log(type.value)
 
     if (name.value === "") {
       newEx.name = this.exercise.name
@@ -57,12 +59,14 @@ export class MyExercisesComponent implements OnInit {
     if (url.value === "") {
       newEx.url = this.exercise.url
     };
-    if (type.value === "") {
+
+    if( type.value === null){
       newEx.type = this.exercise.type
     };
-    console.log('newEx= ' + newEx);
-
-    this.exService.putExercise(newEx).subscribe(data => {
+    console.log('newEx=');
+    console.log(newEx);
+    
+    this.exService.putExercise(newEx).subscribe(data=>{
       console.log("datos del put")
       console.log(data)
       this.exService.getExercise(this.loginService.training_id).subscribe(data => {
