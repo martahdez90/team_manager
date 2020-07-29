@@ -1,4 +1,6 @@
-
+section{
+    min-height: 100vh;
+}
 .header {
     text-align: center;
     margin: auto;
@@ -127,7 +129,4 @@
     .btn-up .more {
         font-size: 45px;
     }
-    section {
-    height: 80vh;
-}
 } 

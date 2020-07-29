@@ -1,4 +1,6 @@
-
+section{
+    min-height: 100vh;
+}
 .header {
     text-align: center;
     margin: auto;
@@ -63,9 +65,6 @@ label {
     padding-bottom: 5px;
     padding-top: 5px;
 }
-/* section {
-    padding-bottom: 25vh;
-} */
 
 .playerInfo{
     width: 300px;
