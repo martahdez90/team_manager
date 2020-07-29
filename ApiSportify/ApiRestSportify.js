@@ -98,7 +98,6 @@ app.get("/teams/:user_id", function(request, response) {
     });
 });
 
-// ERROR
 app.post("/teams", function(request, response) {
     let params = [request.body.name, request.body.category]
         // let params1 = [request.body.user_id, resultado.insertId]
@@ -256,7 +255,6 @@ app.get("/match/:team_id", function(request, response) {
             response.send(resultado);
         }
     });
-
 })
 
 app.post("/match", function(request, response) {

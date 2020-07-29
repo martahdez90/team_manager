@@ -9,56 +9,45 @@ import { LoginService } from 'src/app/shared/login.service';
   styleUrls: ['./my-players.component.css']
 })
 export class MyPlayersComponent implements OnInit {
-    public dataBase:object;
-    public user:User;
-    public players: object[];
-    public alert :string
+  public dataBase:object;
+  public user:User;
+  public players: object[];
+  public alert :string
+
   constructor(private UserService: UserService, private loginService: LoginService) {}
-    public getPlayers(id:number)
+
+  public deletePlayers(index:number)
+  {
+    console.log(index)
+    this.UserService.deletePlayer(index).subscribe((data)=>
     {
-      this.UserService.getPlayer(id).subscribe((data)=>
+      this.UserService.getPlayer(this.loginService.team_id).subscribe((data)=>
       {
         this.dataBase= data;
       })
+    })
+  }
+
+  public addPlayer(email: HTMLInputElement, phone: HTMLInputElement){
+    let playerData = {
+      email: email.value,
+      phone: phone.value,
+      team_id: this.loginService.team_id
     }
 
-    public deletePlayers(index:number)
-    {
-      console.log(index)
-      this.UserService.deletePlayer(index).subscribe((data)=>
-      {
-        this.UserService.getPlayer(this.loginService.team_id).subscribe((data)=>
-        {
-          this.dataBase= data;
-        })
-      })
-    }
-
-    public addPlayer(email: HTMLInputElement, phone: HTMLInputElement){
-      console.log(this.loginService.team_id)
-      let playerData = {
-        email: email.value,
-        phone: phone.value,
-        team_id: this.loginService.team_id
+    this.UserService.postNewPlayer(playerData).subscribe((data)=>{
+      console.log(data)
+      if(data[0] === undefined){
+        alert( "jugador no encontrado")  
       }
-      this.UserService.postNewPlayer(playerData).subscribe((data)=>{
-        console.log(data)
-        if(data[0] === undefined)
-        {
-          alert( "jugador no encontrado")  
-
-        }
-        else
-        {
-         
+      else{
         this.UserService.getPlayer(this.loginService.team_id).subscribe((data)=>
         {
           this.dataBase = data;
         })
-        }
-        
-      })
-    }
+      }
+    })
+  }
   ngOnInit(): void {
     this.UserService.getPlayer(this.loginService.team_id).subscribe((data)=>
       {
