@@ -10,8 +10,11 @@ export class MatchServiceService {
   constructor(private http: HttpClient) { }
 
 
-  getMatches(id){
-    return this.http.get(this.url +"/" +id)
+  getMatches(team_id:number){
+    return this.http.get(this.url +"/" + team_id)
+  }
+  getPlayerMatches(player_id:number){
+    return this.http.get(this.url +"/player/" +player_id)
   }
 
   postMatch(newMatch: Match){
