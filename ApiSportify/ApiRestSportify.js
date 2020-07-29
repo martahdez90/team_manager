@@ -24,18 +24,28 @@ app.use(cors());
 // END POINTS USERS
 
 app.post("/users/register", function(request, response) {
-    let params = [request.body.name, request.body.lastName, request.body.password, request.body.rol, request.body.email, request.body.phone];
-    let sql = "INSERT INTO users(`user_id`, `name`, `lastName`, `password`, `rol`,`email`, `phone`) " +
-        "VALUES (NULL, ?, ?, ?, ?, ?, ?)";
-    connection.query(sql, params, function(err, resultado) {
-        if (err) {
-            console.log(err);
-            response.send(err);
+    let params1 = [request.body.email]
+    let sql1 = `SELECT email FROM users WHERE email = ?`
+    connection.query(sql1, params1, function (err, res) {  
+        if(err){
+            response.send(err)
+        } else if (res.length === 0){
+            let params = [request.body.name, request.body.lastName, request.body.password, request.body.rol, request.body.email, request.body.phone];
+            let sql = "INSERT INTO users(`user_id`, `name`, `lastName`, `password`, `rol`,`email`, `phone`) " +
+                "VALUES (NULL, ?, ?, ?, ?, ?, ?) ";
+            connection.query(sql, params, function(err, resultado) {
+                if (err) {
+                    console.log(err);
+                    response.send(err);
+                } else {
+                    console.log("nuevo usuario");
+                    response.send(resultado);
+                }
+            });
         } else {
-            console.log("nuevo usuario");
-            response.send(resultado);
+            response.send(res)
         }
-    });
+    })  
 });
 
 app.get("/users/:user_id", function(request, response) {
