@@ -41,12 +41,9 @@
                         <i class="far fa-edit" id="edit" (click)="getTeam(dataBase[i])" data-toggle="modal" data-target="#putTeam"></i>
                         <i class="fas fa-trash-alt" (click)="deleteTeam(dataBase[i].team_id)"></i>
                     </div>
-                    <div class="card-body row">
-                        <div class="col-4">
-                            <i class="fa fa-soccer-ball-o ball"></i>
-                        </div>
-                        <div class="col-7 infoTeam">
-                            <p class="cursor" (click)="saveTeam(dataBase[i].team_id)" routerLink="/coach/myPlayers">Jugadores <mat-icon class="eye" routerLink="/coach/myPlayers" (click)="saveTeam(dataBase[i].team_id)">remove_red_eye</mat-icon></p>
+                    <div class="card-body">
+                        <div class="infoTeam">
+                            <p class="cursor" (click)="saveTeam(dataBase[i].team_id)" routerLink="/coach/myPlayers">Jugadores </p>
                             <p class="cursor" (click)="saveTeam(dataBase[i].team_id)" routerLink="/coach/myWorkouts">Entrenamientos</p>
                             <p class="cursor" (click)="saveTeam(dataBase[i].team_id)" routerLink="/coach/myGames">Partidos</p>
                         </div>
