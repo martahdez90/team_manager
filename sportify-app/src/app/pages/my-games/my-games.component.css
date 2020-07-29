@@ -1,5 +1,5 @@
 section {
-    height: 80vh;
+    min-height: 690px;
 }
 
 .header {
@@ -19,7 +19,7 @@ label {
 }
 
 input {
-    border:none;
+    border: none;
 }
 
 .card {
@@ -28,7 +28,12 @@ input {
     margin: auto;
 }
 
-.playerInfo{
+#training-card>div {
+    padding: 3%;
+    width: 100%;
+}
+
+.playerInfo {
     width: 300px;
 }
 
@@ -40,7 +45,6 @@ input {
 }
 
 #edit {
-    position: absolute;
     top: 20%;
     right: 10%;
 }
@@ -53,7 +57,6 @@ input {
     z-index: 1;
 }
 
-
 .fa-edit {
     color: white;
     position: absolute;
@@ -61,7 +64,6 @@ input {
     right: 15%;
     z-index: 1;
 }
-
 
 .new {
     background-color: #00bfa5;
@@ -71,12 +73,13 @@ input {
     margin-left: 45vw;
     margin-top: 10vh;
 }
+
 .newT {
     background-color: #00bfa5;
     border: #00bfa5;
     width: 20vw;
     color: white;
-   margin: auto;
+    margin: auto;
     margin-top: 5vh;
 }
 
@@ -86,40 +89,31 @@ input {
     margin-top: 20px;
 }
 
-
-
 @media (max-width: 576px) {
     section {
         padding-bottom: 10%;
         margin-top: 20px;
     }
-     body {
-         width: 100vw;
-         margin: 0;
-     }
-
+    body {
+        width: 100vw;
+        margin: 0;
+    }
     * {
         font-size: 4vw;
         color: gray
     }
-
     .header {
         margin-top: 0;
     }
-
-
     .newT {
         width: 60vw;
-        margin-left: 20vw;
+        margin: auto;
     }
-
     .new {
         width: 60vw;
         margin-left: 20vw;
     }
-
     .modalB {
         height: 10vh;
     }
-
-} 
+}
