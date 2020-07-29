@@ -5,9 +5,15 @@
     color: white;
     padding-top: 2px;
     padding-bottom: 2px;
-    margin-top: 0px;
+    margin-top: 0%;
     margin-bottom: 0%;
     font-size: x-large;
+}
+
+section {
+    height: 80vh;
+    margin-top: 50px;
+    margin-bottom: 10vh;
 }
 input{
     border: none;
@@ -88,6 +94,11 @@ div#div {
 
 
 @media(min-width:787px) {
+    section {
+        padding-bottom: 10%;
+        margin-top: 50px;
+        margin-bottom: 10vh;
+    }
     .list-group {
         position: relative;
         margin-left: 20%;

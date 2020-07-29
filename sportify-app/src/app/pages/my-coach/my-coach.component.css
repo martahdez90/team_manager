@@ -16,7 +16,6 @@ section {
     margin-bottom: 10vh;
 }
 
-
 input#url::placeholder {
     color: white;
 }
@@ -89,6 +88,7 @@ div#div {
     section {
         padding-bottom: 10%;
         margin-top: 50px;
+        margin-bottom: 10vh;
     }
     div#div {
         margin-bottom: 23vh;
