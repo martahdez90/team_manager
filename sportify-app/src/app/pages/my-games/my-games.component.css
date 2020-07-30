@@ -83,6 +83,7 @@ input {
     width: 20vw;
     color: white;
     margin: auto;
+    margin-left:  40vw;
     margin-top: 5vh;
 }
 
@@ -111,6 +112,7 @@ input {
     .newT {
         width: 60vw;
         margin: auto;
+        margin-left:  20vw;
     }
     .new {
         width: 60vw;

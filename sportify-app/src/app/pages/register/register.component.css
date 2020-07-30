@@ -32,7 +32,7 @@ footer{
     background-image: url(../../../assets/register.jpg);
     background-size: cover;
     color: #00BFA5;
-    height: 100vh;
+    height: 85vh;
     margin-top: 50px;
     font-size: small;
 }
@@ -40,9 +40,9 @@ footer{
 .formulario {
     background-color: white;
     border-style: solid;
-    border-color: #00bfa5;
     border-width: thin;
     border-radius: 5%;
+    border-color: transparent;
     text-align: center;
     padding: 20px;
 }
@@ -100,7 +100,6 @@ footer{
         margin-left: 10px;
         margin-right: 10px;
         border-style: solid;
-        border-color: #00bfa5;
         border-width: thin;
         border-radius: 5%;
         text-align: center;
