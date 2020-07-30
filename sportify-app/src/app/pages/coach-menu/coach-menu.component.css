@@ -2,17 +2,18 @@
     font-size: medium;
 }
 
-a:hover, a:active {
+a:hover,
+a:active {
     border-top: 3px solid #ffffff;
-  border-bottom: 3px solid #ffffff;
-  padding: 4px 0; 
+    border-bottom: 3px solid #ffffff;
+    padding: 4px 0;
 }
 
 .active-link {
     border-top: 3px solid #ffffff;
     border-bottom: 3px solid #ffffff;
-    padding: 4px 0; 
-  }
+    padding: 4px 0;
+}
 
 .lyrics {
     background-color: #00BFA5;
@@ -36,4 +37,3 @@ a:hover, a:active {
 #whiteLink {
     color: white;
 }
-

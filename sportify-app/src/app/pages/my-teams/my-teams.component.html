@@ -32,28 +32,26 @@
             </div>
         </div>
     </div>
-    <div class="container">
-        <div class="cardDiv">
-            <div class="card-color d-flex align-content-center flex-wrap mx-auto pb-4">
-                <div *ngFor="let team of dataBase; let i = index" class="card playerInfo mt-4 mb-1 p-1 pb-1 team" id="team2">
-                    <div class="card-header">
-                        {{team.name}}
-                        <i class="far fa-edit" id="edit" (click)="getTeam(dataBase[i])" data-toggle="modal" data-target="#putTeam"></i>
-                        <i class="fas fa-trash-alt" (click)="deleteTeam(dataBase[i].team_id)"></i>
-                    </div>
-                    <div class="card-body">
-                        <div class="infoTeam">
-                            <p class="cursor" (click)="saveTeam(dataBase[i].team_id)" routerLink="/coach/myPlayers">Jugadores </p>
-                            <p class="cursor" (click)="saveTeam(dataBase[i].team_id)" routerLink="/coach/myWorkouts">Entrenamientos</p>
-                            <p class="cursor" (click)="saveTeam(dataBase[i].team_id)" routerLink="/coach/myGames">Partidos</p>
-                        </div>
-                    </div>
-                    <div class="card-footer">
-                        <p class="card-text">{{team.category}}</p>
-                    </div>
+    <div id="training-card">
+        <div *ngFor="let team of dataBase; let i = index" class="card mb-3" id="team2">
+            <div class="card-header">
+                {{team.name}}
+                <i class="far fa-edit" id="edit" (click)="getTeam(dataBase[i])" data-toggle="modal" data-target="#putTeam"></i>
+                <i class="fas fa-trash-alt" (click)="deleteTeam(dataBase[i].team_id)"></i>
+            </div>
+            <div class="card-body">
+                <div class="infoTeam">
+                    <p class="cursor" (click)="saveTeam(dataBase[i].team_id)" routerLink="/coach/myPlayers">Jugadores </p>
+                    <p class="cursor" (click)="saveTeam(dataBase[i].team_id)" routerLink="/coach/myWorkouts">Entrenamientos</p>
+                    <p class="cursor" (click)="saveTeam(dataBase[i].team_id)" routerLink="/coach/myGames">Partidos</p>
                 </div>
             </div>
+            <div class="card-footer">
+                <p class="card-text">{{team.category}}</p>
+            </div>
         </div>
+
+
     </div>
 
     <div class="newTeam">

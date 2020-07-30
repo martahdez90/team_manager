@@ -42,7 +42,7 @@
         </div>
     </div>
     <!-- contenido -->
-    <div>
+    <div id="training-card">
         <div class="card-color d-flex align-content-center flex-wrap mx-auto pb-4">
             <div class="card playerInfo mr-4 ml-5 mt-4 mb-1 p-1 pb-1" *ngFor="let training of dataBase; let i = index">
                 <div class="card-header" id="date">
@@ -63,8 +63,9 @@
             </div>
         </div>
     </div>
-    <div class="card mb-3" id="new-ex">
-        <button class="btn newJ mb-5" id="card-bg2" data-toggle="modal" data-target="#postTraining">
+
+    <div class="newJ mb-3" id="new-ex">
+        <button class="btn" id="card-bg2" data-toggle="modal" data-target="#postTraining">
             Nuevo entrenamiento
         </button>
     </div>

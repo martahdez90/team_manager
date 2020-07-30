@@ -1,5 +1,5 @@
 section {
-    min-height: 690px;
+    min-height: 800px;
 }
 
 .header {
@@ -25,11 +25,11 @@ input {
 .card {
     border: #00BFA5;
     width: 300px;
-    margin: auto;
+    margin: 3%;
 }
 
 #training-card>div {
-    padding: 3%;
+    padding: 2%;
     width: 100%;
 }
 
@@ -81,6 +81,10 @@ input {
     color: white;
     margin: auto;
     margin-top: 5vh;
+}
+
+#new-ex {
+    width: 80%;
 }
 
 .team {
