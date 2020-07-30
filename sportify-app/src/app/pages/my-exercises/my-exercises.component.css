@@ -2,6 +2,11 @@
     font-size: medium;
 }
 
+section {
+    height: 80vh;
+    margin-top: 50px;
+    margin-bottom: 10vh;
+}
 
 .header {
     text-align: center;
@@ -15,11 +20,7 @@
     font-size: x-large;
 }
 
-section{
-    min-height: 100vh;
-    position: relative;
-    padding: 3%;
-}
+
 input{
     border: none;
     background: transparent;
@@ -93,9 +94,6 @@ input#url::placeholder {
     }
 }
 @media(min-width: 769px){
-    section{
-        display: flex;
-    }
     .card{
         margin: 1%
     }
