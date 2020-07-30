@@ -1,107 +1,112 @@
 <app-coach-menu></app-coach-menu>
 
 <section>
-<div class="header row">
-    <h2 class="col-12 header">Mis ejercicios</h2>
-</div>
-<!-- Modal post ejercicio -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Crea tu nuevo ejercicio</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-            </div>
-            <div class="modal-body">
-                <div class="cardModal mb-3">
-                    <div class="card-header" id="date">
-                        Tipo:
-                        <select #type id="cars" name="cars" id="dropdown">
-                        <option *ngFor="let option of options" value = "{{option.value}}">{{option.name}}</option>
-                    </select>
-                    </div>
 
-                    <div class="card-header bg-transparent">
-                        <input type="text" #name placeholder="Titulo del ejercicio">
-                    </div>
-                    <div class="card-body">
-                        <input #description class="card-text" placeholder="Describe el ejercicio">
-                    </div>
-                    <div class="card-footer">
-                        <input type="text" #url id="url" placeholder="Añade una url si la tienes">
+    <div class="header row">
+        <h2 class="col-12 header">Mis ejercicios</h2>
+    </div>
+    <!-- Modal post ejercicio -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Crea tu nuevo ejercicio</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+                </div>
+                <div class="modal-body">
+                    <div class="cardModal mb-3">
+                        <div class="card-header" id="date">
+                            Tipo:
+                            <select #type id="cars" name="cars" id="dropdown">
+                            <option *ngFor="let option of options" value = "{{option.value}}">{{option.name}}</option>
+                        </select>
+                        </div>
+
+                        <div class="card-header bg-transparent">
+                            <input type="text" #name placeholder="Titulo del ejercicio">
+                        </div>
+                        <div class="card-body">
+                            <input #description class="card-text" placeholder="Describe el ejercicio">
+                        </div>
+                        <div class="card-footer">
+                            <input type="text" #url id="url" placeholder="Añade una url si la tienes">
+                        </div>
+
+
                     </div>
                 </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                <button class="btn" id="card-bg2" (click)="postEx(type, description, url, name)" data-dismiss="modal" aria-label="Close">Guardar cambios</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div id="training-card">
-    <div *ngFor="let ex of dataBase; let i = index" class="card mb-3">
-        <div class="card-header" id="date">
-            Tipo: {{ex.type}}
-            <i class="far fa-edit" id="edit" data-toggle="modal" data-target="#editExercise" (click)="getExData(ex)"></i>
-            <i class='far fa-trash-alt' id="trash" (click)="deleteEx(dataBase[i].exercise_id)"></i>
-        </div>
-        <div class="card-header bg-transparent">
-            {{ex.name}}
-        </div>
-        <div class="card-body">
-            <p class="card-text">{{ex.description}}</p>
-        </div>
-        <div class="card-footer">
-            <a class="link" href="{{ex.url}}" target="_blank">Ver video</a>
-        </div>
-    </div>
-</div>
-
-<div class="card mb-3" id="new-ex">
-    <button class="btn" id="card-bg2" data-toggle="modal" data-target="#exampleModalCenter">
-        Nuevo ejercicio
-    </button>
-</div>
-<!-- Modal put ejercicio -->
-<div class="modal fade" id="editExercise" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Edicion ejercicio</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-            </button>
-            </div>
-            <div class="modal-body">
-                <div class="card mb-3">
-                    <div class="card-header" id="date">
-                        Tipo:
-                        <select #type1 id="cars" name="cars" id="dropdown">
-                        <option *ngFor="let option of options" value = "{{option.value}}">{{option.name}}</option>
-                    </select>
-                    </div>
-                    <div class="card-header bg-transparent">
-                        <input #name1 type="text" placeholder="{{exercise.name}}">
-                    </div>
-                    <div class="card-body">
-                        <input #description1 class="card-text" placeholder="{{exercise.description}}">
-                    </div>
-                    <div class="card-footer">
-                        <input #url1 type="text" placeholder="{{exercise.url}}">
-                    </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    <button class="btn" id="card-bg2" (click)="postEx(type, description, url, name)" data-dismiss="modal" aria-label="Close">Guardar cambios</button>
                 </div>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                <button class="btn" id="card-bg2" (click)="putEx(type1, description1, url1, name1)" data-dismiss="modal">Guardar cambios</button>
+        </div>
+    </div>
+
+    <div id="training-card">
+        <div *ngFor="let ex of dataBase; let i = index" class="card mb-3">
+            <div class="card-header" id="date">
+                Tipo: {{ex.type}}
+                <i class="far fa-edit" id="edit" data-toggle="modal" data-target="#editExercise" (click)="getExData(ex)"></i>
+                <i class='far fa-trash-alt' id="trash" (click)="deleteEx(dataBase[i].exercise_id)"></i>
+            </div>
+            <div class="card-header bg-transparent">
+                {{ex.name}}
+            </div>
+            <div class="card-body">
+                <p class="card-text">{{ex.description}}</p>
+            </div>
+            <div class="card-footer">
+                <a class="link" href="{{ex.url}}" target="_blank">Ver video</a>
             </div>
         </div>
     </div>
-</div>
+
+    <div class="newT mb-3" id="new-ex">
+        <button class="btn" id="card-bg2" data-toggle="modal" data-target="#exampleModalCenter">
+            Nuevo ejercicio
+        </button>
+    </div>
+    <!-- Modal put ejercicio -->
+    <div class="modal fade" id="editExercise" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Edicion ejercicio</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                    <div class="card mb-3">
+                        <div class="card-header" id="date">
+                            Tipo:
+                            <select #type1 id="cars" name="cars" id="dropdown">
+                            <option *ngFor="let option of options" value = "{{option.value}}">{{option.name}}</option>
+                        </select>
+                        </div>
+                        <div class="card-header bg-transparent">
+                            <input #name1 type="text" placeholder="{{exercise.name}}">
+                        </div>
+                        <div class="card-body">
+                            <input #description1 class="card-text" placeholder="{{exercise.description}}">
+                        </div>
+                        <div class="card-footer">
+                            <input #url1 type="text" placeholder="{{exercise.url}}">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    <button class="btn" id="card-bg2" (click)="putEx(type1, description1, url1, name1)" data-dismiss="modal">Guardar cambios</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
 
 
 </section>

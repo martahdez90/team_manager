@@ -1,7 +1,10 @@
+
 section{
     margin-top: 50px;
     min-height: 100vh;
+
 }
+
 .header {
     text-align: center;
     margin: auto;
@@ -20,13 +23,15 @@ section{
 }
 
 input {
-    border:none;
+    border: none;
 }
-.cursor{
+
+.cursor {
     cursor: pointer;
 }
-.cursor:hover{
-    color:#00bfa5
+
+.cursor:hover {
+    color: #00bfa5
 }
 
 .new {
@@ -37,6 +42,18 @@ input {
     margin-left: 45vw;
 }
 
+.card {
+    display: inline-block;
+    border: #00BFA5;
+    width: 300px;
+    margin: 3%;
+}
+
+#training-card {
+    padding: 2%;
+    width: 100%;
+}
+
 .newT {
     background-color: #00bfa5;
     border: #00bfa5;
@@ -45,7 +62,8 @@ input {
     margin-left: 40vw;
 }
 
-.new:active, .new:hover {
+.new:active,
+.new:hover {
     background-color: #126e62;
     border: #126e62;
 }
@@ -56,7 +74,8 @@ input {
     font-size: medium;
 }
 
-.card-header, .card {
+.card-header,
+.card {
     border-color: transparent;
 }
 
@@ -67,7 +86,7 @@ label {
     padding-top: 5px;
 }
 
-.playerInfo{
+.playerInfo {
     width: 300px;
 }
 
@@ -83,7 +102,8 @@ label {
     font-size: 18px;
 }
 
-.card-footer, .card-header {
+.card-footer,
+.card-header {
     background-color: #00bfa5;
     max-width: 100%;
     padding-top: 20px;
@@ -92,7 +112,7 @@ label {
 }
 
 .close {
-    color:  #00bfa5;
+    color: #00bfa5;
     font-weight: bold;
     position: absolute;
     top: 2%;
@@ -116,13 +136,13 @@ label {
     z-index: 1;
 }
 
-
-.btn-down{
+.btn-down {
     position: relative;
     margin: auto;
     padding: 12px;
 }
-.btn-down .material-icons{
+
+.btn-down .material-icons {
     position: fixed;
     bottom: 10%;
     right: 15px;
@@ -141,58 +161,48 @@ label {
     margin-right: 10%;
 }
 
-.cursor{
+.cursor {
     cursor: pointer;
 }
-.cursor:hover{
-    color:#00bfa5
-}
 
+.cursor:hover {
+    color: #00bfa5
+}
 
 @media (max-width: 570px) {
     * {
         font-size: small;
         color: gray
     }
-
     .ball {
         color: #00bfa5;
-        font-size: 10vw;  
-    
+        font-size: 10vw;
     }
-    
     .fa-eye {
         color: #00bfa5;
         font-size: vw;
     }
-    
     .fa-eye:hover {
         font-size: 4vw;
     }
- 
-    
+
     section {
         padding-bottom: 20vh;
     }
     .playerInfo {
         margin:auto;
     }
-    .newT{
+    .newT {
         width: 50vw;
         margin-left: 25vw;
     }
+}
 
-}  
-
-
-@media(min-width: 769px){
-    
+@media(min-width: 769px) {
     .newTeam {
         margin-top: 20vh;
     }
-
-    section {
-    height: 80vh;
-
-}
+    /* section {
+        height: 80vh;
+    } */
 }

@@ -1,12 +1,14 @@
-*{
+* {
     font-size: medium;
 }
+
 
 section {
     height: 80vh;
     margin-top: 50px;
     margin-bottom: 10vh;
 }
+
 
 .header {
     text-align: center;
@@ -20,39 +22,68 @@ section {
     font-size: x-large;
 }
 
+/* 
+section {
+    min-height: 850px;
+}
+*/
+
+
 
 input{
+
     border: none;
     background: transparent;
     width: 100%;
 }
+
 input#url::placeholder {
     color: white;
 }
-.card{
+
+.card {
+    display: inline-block;
     border: #00BFA5;
     width: 300px;
-    margin: auto;
+    margin: 3%;
 }
 
-.card-footer, #date{
+#training-card {
+    padding: 2%;
+    width: 100%;
+}
+
+.card-footer,
+#date {
     background-color: #00BFA5;
     color: white;
     position: relative;
 }
-#dropdown{
-    border-radius: 30px;
-    border:none;
+
+.newT {
+    text-align: center;
+    background-color: #00bfa5;
+    border: #00bfa5;
+    width: 300px;
     color: white;
-    background: none
+    margin: auto;
+    margin-top: 5vh;
 }
+
+#dropdown {
+    border-radius: 30px;
+    border: none;
+    color: white;
+    background-color: #00bfa5;
+}
+
 .fa-trash-alt {
     color: white;
     position: absolute;
     top: 20%;
     right: 4%;
     z-index: 1;
-    cursor:pointer;
+    cursor: pointer;
 }
 
 .fa-edit {
@@ -61,7 +92,7 @@ input#url::placeholder {
     top: 20%;
     right: 10%;
     z-index: 1;
-    cursor:pointer;
+    cursor: pointer;
 }
 
 .link {
@@ -73,11 +104,12 @@ input#url::placeholder {
     color: gray;
 }
 
-#new-ex{
+#new-ex {
     max-width: 50%;
     margin: auto;
- }
-#card-bg2{
+}
+
+#card-bg2 {
     border: none;
     background-color: #00BFA5;
     color: white;
@@ -87,14 +119,18 @@ input#url::placeholder {
     background-color: white;
 }
 
-
-@media(max-width: 769px){
-    *{
+@media(max-width: 576px) {
+    * {
         font-size: small;
     }
+
+    #training-card {
+        padding: 3%;
+
 }
 @media(min-width: 769px){
     .card{
         margin: 1%
+
     }
 }
