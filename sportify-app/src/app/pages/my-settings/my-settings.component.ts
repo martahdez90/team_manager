@@ -48,6 +48,13 @@ export class MySettingsComponent implements OnInit {
     })
   }
 
+    public putPassword(password: HTMLInputElement){
+    this.userLoged.password = password.value
+    this.userService.putUser(this.userLoged).subscribe((data) =>{
+      console.log(data)
+    })
+  }
+
   public logOut() {
     this.loginService.logOut().subscribe(data => {
       console.log(data)

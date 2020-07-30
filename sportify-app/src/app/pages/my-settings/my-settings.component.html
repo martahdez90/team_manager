@@ -38,6 +38,33 @@
   </div>
 </div>
 
+<div class="modal fade" id="Password" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Nueva contraseña</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <div class="card mb-3">
+                <div class="card-header" id="date">
+                    <input type="text" id="url" #name placeholder="Nueva contraseña">
+                </div>
+                <div class="card-header bg-transparent">
+                    <input type="text" #lastName placeholder="Confirmar contraseña">
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+          <button class="btn" id="card-bg2" (click)="putPassword(name)" data-dismiss="modal" aria-label="Close">Guardar cambios</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
 <section>
     <div id="profile">
         <i class="fa fa-user-circle" id="user"></i>
@@ -60,7 +87,7 @@
         <li class="list-group-item">Telefono
             <p contenteditable="true" id="info">{{userLoged.phone}}</p>
         </li>
-        <li class="list-group-item">Cambiar contraseña</li>
+        <li class="list-group-item" data-toggle="modal" data-target="#Password" style="cursor: pointer; ">Cambiar contraseña</li>
         <li class="list-group-item">Cerrar sesion <i class="fas fa-power-off" (click)="logOut()"></i></li>
         <li class="list-group-item" >Eliminar mi cuenta <i class="fas fa-user-slash" (click)="deleteUser()"></i></li>
     </ul>

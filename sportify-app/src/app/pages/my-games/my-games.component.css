@@ -1,9 +1,6 @@
-section {
-
-
-    height: 80vh;
+section{
     margin-top: 50px;
-    margin-bottom: 10vh;
+    min-height: 100vh;
 
 }
 
@@ -14,9 +11,11 @@ section {
     color: white;
     padding-top: 2px;
     padding-bottom: 2px;
-    margin-top: 0%;
     margin-bottom: 0%;
     font-size: x-large;
+}
+#header{
+    margin-top: 10%;
 }
 
 label {

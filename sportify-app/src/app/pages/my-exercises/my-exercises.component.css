@@ -127,6 +127,7 @@ input#url::placeholder {
     #training-card {
         padding: 3%;
 
+    }
 }
 @media(min-width: 769px){
     .card{
