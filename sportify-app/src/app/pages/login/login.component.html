@@ -1,30 +1,36 @@
 <app-landing-menu></app-landing-menu>
 
-<div class="text-center lyrics">
-    <div class="white"></div>
-    <div class="text-center register">
-        <form class="form-signin">
-        
-            <h1 class="h3 mb-3 font-weight-normal">Iniciar sesión</h1>
-            <br>
+<section>
+    <div class="text-center lyrics">
+        <div class="white"></div>
+        <div class="text-center register">
+            <form class="form-signin">
 
-            <input #email type="email" id="inputEmail" class="form-control " placeholder="Email" required autofocus>
-            <br>
-            <br>
+                <h1 class="h3 mb-3 font-weight-normal">Iniciar sesión</h1>
+                <br>
 
-            <input #password type="password" id="inputPassword" class="form-control " placeholder="Contraseña" required>
-            <br>
-            <div class="checkbox mb-3">
-                <label>
-                    <input type="checkbox" value="remember-me"> Recordarme
-                </label>
+                <input #email type="email" id="inputEmail" class="form-control " placeholder="Email" required autofocus>
                 <br>
                 <br>
-            </div>
-            <!-- <button type="button" class="btn buttonR" (click)="logIn(email, password)" routerLink="/user/welcome" >Entrar</button> <br><br> -->
-            <button type="button" class="btn buttonR" (click)="logIn(email, password)" >Entrar</button>
-            <br><br>
-        </form>
+
+                <input #password type="password" id="inputPassword" class="form-control " placeholder="Contraseña"
+                    required>
+                <br>
+                <div class="checkbox mb-3">
+                    <label>
+                        <input type="checkbox" value="remember-me"> Recordarme
+                    </label>
+                    <br>
+                    <br>
+                </div>
+                <!-- <button type="button" class="btn buttonR" (click)="logIn(email, password)" routerLink="/user/welcome" >Entrar</button> <br><br> -->
+                <button type="button" class="btn buttonR" (click)="logIn(email, password)">Entrar</button>
+                <br><br>
+            </form>
+        </div>
     </div>
-</div>
+
+</section>
+
+
 <app-green-footer></app-green-footer>

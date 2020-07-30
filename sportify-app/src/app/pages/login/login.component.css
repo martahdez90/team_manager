@@ -1,3 +1,9 @@
+section {
+    height: 80vh;
+    margin-top: 50px;
+    margin-bottom: 10vh;
+}
+
 #sportify{
     color: white;
     font-weight: 900;
@@ -7,8 +13,7 @@
     background-image: url(../../../assets/login.jpg);
     background-size: cover;
     color: #00BFA5;
-    height: 83vh;
-    margin-top: 73px;
+    height: 90vh;
 }
 
 .white {
@@ -71,11 +76,6 @@
         margin-left: 10vw;
         width: 80vw;
     }
-
-    .lyrics {
-        margin-top: 55px;
-        height: 93vh;
-    }
 }
 
 @media(max-width:650px) {
@@ -84,10 +84,5 @@
         border-radius: 5%;
         margin-left: 5vw;
         width: 90vw;
-    }
-
-    .lyrics {
-        margin-top: 55px;
-        height: 93vh;
     }
 }

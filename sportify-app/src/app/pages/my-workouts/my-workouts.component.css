@@ -1,6 +1,9 @@
-section{
-    min-height: 100vh;
+section {
+    height: 80vh;
+    margin-top: 50px;
+    margin-bottom: 10vh;
 }
+
 .header {
     text-align: center;
     margin: auto;
@@ -14,6 +17,9 @@ section{
     width: 100vw;
 }
 
+.card {
+    margin: 5%
+}
 
 .card-footer, .card-header{
     background-color: #00bfa5;

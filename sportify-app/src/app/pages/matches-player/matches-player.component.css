@@ -12,12 +12,32 @@
 
 section{
     margin-top: 50px;
-    min-height: 100vh;
+    min-height: 100%;
 }
 
-#entrenamientos {
-    margin-top: 20px;
+/* sin registro */
+
+#sinRegistro {
+    size: 100%;
+    /* background-image: url("../../../assets/fondoMatches.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%; */
 }
+
+.container {
+    text-align: center;
+    height: 100vh;
+    color: #00BFA5;
+    margin: auto;
+    margin-top: 25vh;
+}
+
+#centro {
+    height: 50vh;
+}
+
+/*  */
+
 .card{
     border: #00BFA5;
     width: 300px;
@@ -72,11 +92,6 @@ section{
     }
 }
 @media(min-width: 769px){
-    section {
-        padding-bottom: 10%;
-        margin-top: 50px;
-        margin-bottom: 10vh;
-    }
     .card{
         margin: 1%
     }
