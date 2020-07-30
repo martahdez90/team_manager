@@ -1,5 +1,8 @@
-section {
-    min-height: 850px;
+
+section{
+    margin-top: 50px;
+    min-height: 100vh;
+
 }
 
 .header {
@@ -182,14 +185,12 @@ label {
     .fa-eye:hover {
         font-size: 4vw;
     }
-    .btn-down .material-icons {
-        font-size: 40px;
-    }
+
     section {
         padding-bottom: 20vh;
     }
     .playerInfo {
-        margin-left: 5vw;
+        margin:auto;
     }
     .newT {
         width: 50vw;

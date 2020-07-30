@@ -1,10 +1,13 @@
 <app-coach-menu></app-coach-menu>
-<div class="header row">
-    <h2 class="col-12 header">Mis equipos</h2>
-</div>
+
 <!-- Modal post ejercicio -->
 <section>
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    
+    <div class="header row">
+        <h2 class="col-12 header">Mis equipos</h2>
+    </div>
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -27,11 +30,13 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button data-dismiss="modal" aria-label="Close" class="btn new" id="card-bg2" (click)="addTeams( name,category)">Añadir</button>
+                    <button data-dismiss="modal" aria-label="Close" class="btn new" id="card-bg2"
+                        (click)="addTeams( name,category)">Añadir</button>
                 </div>
             </div>
         </div>
     </div>
+
     <div id="training-card">
         <div *ngFor="let team of dataBase; let i = index" class="card mb-3" id="team2">
             <div class="card-header">
@@ -44,6 +49,32 @@
                     <p class="cursor" (click)="saveTeam(dataBase[i].team_id)" routerLink="/coach/myPlayers">Jugadores </p>
                     <p class="cursor" (click)="saveTeam(dataBase[i].team_id)" routerLink="/coach/myWorkouts">Entrenamientos</p>
                     <p class="cursor" (click)="saveTeam(dataBase[i].team_id)" routerLink="/coach/myGames">Partidos</p>
+
+<!--     <div class="container">
+        <div class="cardDiv">
+            <div class="card-color d-flex align-content-center flex-wrap mx-auto pb-4">
+                <div *ngFor="let team of dataBase; let i = index" class="card playerInfo mt-4 mb-1 p-1 pb-1 team"
+                    id="team2">
+                    <div class="card-header">
+                        {{team.name}}
+                        <i class="far fa-edit" id="edit" (click)="getTeam(dataBase[i])" data-toggle="modal"
+                            data-target="#putTeam"></i>
+                        <i class="fas fa-trash-alt" (click)="deleteTeam(dataBase[i].team_id)"></i>
+                    </div>
+                    <div class="card-body">
+                        <div class="infoTeam">
+                            <p class="cursor" (click)="saveTeam(dataBase[i].team_id)" routerLink="/coach/myPlayers">
+                                Jugadores </p>
+                            <p class="cursor" (click)="saveTeam(dataBase[i].team_id)" routerLink="/coach/myWorkouts">
+                                Entrenamientos</p>
+                            <p class="cursor" (click)="saveTeam(dataBase[i].team_id)" routerLink="/coach/myGames">
+                                Partidos</p>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <p class="card-text">{{team.category}}</p>
+                    </div> -->
+
                 </div>
             </div>
             <div class="card-footer">
@@ -64,14 +95,15 @@
 <!-- Modal  actualizar ejercicio -->
 
 
-<div class="modal fade" id="putTeam" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade" id="putTeam" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Actualizar equipo</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
             <div class="modal-body">
                 <div class="card mb-3">
@@ -87,10 +119,11 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button data-dismiss="modal" aria-label="Close" class="btn new" id="card-bg2" (click)="UpdateTeam( name1,category1)">Actualizar</button>
+                <button data-dismiss="modal" aria-label="Close" class="btn new" id="card-bg2"
+                    (click)="UpdateTeam( name1,category1)">Actualizar</button>
             </div>
         </div>
     </div>
 </div>
 
-<app-green-footer></app-green-footer>
+ <app-green-footer></app-green-footer> 

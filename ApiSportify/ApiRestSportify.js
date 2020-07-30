@@ -39,7 +39,10 @@ app.post("/users/register", function(request, response) {
                     response.send(err);
                 } else {
                     console.log("nuevo usuario");
-                    response.send(resultado);
+                    response.send({
+                        resultado: resultado,
+                        alerta: "1"
+                    });
                 }
             });
         } else {

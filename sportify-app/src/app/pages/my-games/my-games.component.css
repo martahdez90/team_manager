@@ -1,5 +1,10 @@
 section {
-    min-height: 800px;
+
+
+    height: 80vh;
+    margin-top: 50px;
+    margin-bottom: 10vh;
+
 }
 
 .header {
@@ -25,8 +30,13 @@ input {
 .card {
     border: #00BFA5;
     width: 300px;
+
     margin: 3%;
+
+   
+
 }
+
 
 #training-card>div {
     padding: 2%;
@@ -80,6 +90,7 @@ input {
     width: 20vw;
     color: white;
     margin: auto;
+    margin-left:  40vw;
     margin-top: 5vh;
 }
 
@@ -112,6 +123,7 @@ input {
     .newT {
         width: 60vw;
         margin: auto;
+        margin-left:  20vw;
     }
     .new {
         width: 60vw;

@@ -10,10 +10,9 @@
     font-size: x-large;
 }
 
-section {
-    min-height: 100vh;
+section{
     margin-top: 50px;
-    margin-bottom: 10vh;
+    min-height: 100vh;
 }
 
 input#url::placeholder {

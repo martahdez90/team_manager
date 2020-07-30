@@ -3,6 +3,7 @@ import { LoginService } from 'src/app/shared/login.service';
 import { Router, ActivatedRoute } from '@angular/router'
 import { UserService } from 'src/app/shared/user-service.service';
 import { User } from 'src/app/models/user';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-player-settings',
@@ -56,12 +57,30 @@ export class PlayerSettingsComponent implements OnInit {
       })
   }
 
-  public deleteUser(){
-    this.userService.deleteUser(this.loginService.userLoged.user_id).subscribe(data=>{
-      console.log(data)
-      this.loginService.userLoged = null
-      this.router.navigate(['/login']);
-      console.log("redirigiendo al login");
+ 
+  public deleteUser() {
+    Swal.fire({
+      title: '¿Estás seguro?',
+      text: "¡No podrás recuperarlo!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#00bfa5',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Eliminar'
+    }).then((result) => {
+      if (result.value) {
+        this.userService.deleteUser(this.loginService.userLoged.user_id).subscribe(data => {
+          console.log(data)
+          this.loginService.userLoged = null
+          Swal.fire({
+            title: '¡Eliminado!',
+            text: 'Tu cuenta ha sido eliminada',
+            icon: 'success',
+            confirmButtonColor: '#00bfa5'
+          })
+          this.router.navigate(['/login']);
+        })
+      }
     })
   }
 

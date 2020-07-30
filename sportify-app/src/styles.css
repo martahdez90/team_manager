@@ -5,7 +5,7 @@ body {
     /* background-color: rgb(213, 213, 213); */
     background-color: #E0F2F1;
     margin: 0;
-    min-height: 100vh;
+    /* min-height: 100vh; */
     font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 #container{

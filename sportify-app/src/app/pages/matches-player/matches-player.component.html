@@ -4,9 +4,19 @@
     <div class="header">
         <h2>Próximos partidos</h2>
     </div>
-    <div id="entrenamientos">
-        <div id="training-card" class="card-color d-flex align-content-center flex-wrap mx-auto pb-4">
-            <div class="card mb-3 mt-3" *ngFor="let m of dataBase;">
+    <div *ngIf="sinRegistro; else registrado" id=sinRegistro>
+        <div class="container">
+            <div id="centro">
+               <h1>¡Bienvenido!</h1>
+            <p class="psr">Tu entrenador aún no te ha añadido a su equipo. <br>
+            Contacta con tu entrenador para visualizar tus partidos</p> 
+            </div>
+            
+        </div> 
+    </div>
+    <div id="entrenamientos" #registrado>
+        <div id="training-card" class="card-color d-flex align-content-center flex-wrap mx-auto">
+            <div class="card" *ngFor="let m of dataBase;">
                 <div class="card-header" id="date">
                     <strong>{{m.date | date}}</strong> <br>
                     <i class="fas fa-trophy"></i>

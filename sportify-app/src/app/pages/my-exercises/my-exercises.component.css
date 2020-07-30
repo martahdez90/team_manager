@@ -2,6 +2,14 @@
     font-size: medium;
 }
 
+
+section {
+    height: 80vh;
+    margin-top: 50px;
+    margin-bottom: 10vh;
+}
+
+
 .header {
     text-align: center;
     margin: auto;
@@ -14,11 +22,16 @@
     font-size: x-large;
 }
 
+/* 
 section {
     min-height: 850px;
 }
+*/
 
-input {
+
+
+input{
+
     border: none;
     background: transparent;
     width: 100%;
@@ -110,7 +123,14 @@ input#url::placeholder {
     * {
         font-size: small;
     }
+
     #training-card {
         padding: 3%;
+
+}
+@media(min-width: 769px){
+    .card{
+        margin: 1%
+
     }
 }

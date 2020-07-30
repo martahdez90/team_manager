@@ -84,7 +84,7 @@ export class MyExercisesComponent implements OnInit {
       showCancelButton: true,
       confirmButtonColor: '#00bfa5',
       cancelButtonColor: '#d33',
-      confirmButtonText: 'borrar'
+      confirmButtonText: 'Eliminar'
     }).then((result) => {
       if (result.value) {
         console.log(ex_id)
@@ -94,7 +94,7 @@ export class MyExercisesComponent implements OnInit {
             this.dataBase = data
             Swal.fire({
               title: '¡Eliminado!',
-              text: 'Tu equipo ha sido borrado',
+              text: 'Tu ejercicio ha sido eliminado',
               icon: 'success',
               confirmButtonColor: '#00bfa5'
             })
