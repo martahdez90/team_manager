@@ -32,7 +32,7 @@ footer{
     background-image: url(../../../assets/register.jpg);
     background-size: cover;
     color: #00BFA5;
-    height: 85vh;
+    height: 95vh;
     margin-top: 50px;
     font-size: small;
 }
@@ -109,9 +109,6 @@ footer{
         height: 130vh;
     }
 }
-
-
-    
 
 .bd-placeholder-img {
     font-size: 1.125rem;

@@ -12,10 +12,6 @@ export class AppComponent {
   public coach = false;
   public player = true;
 
-  task: string[] = [
-    'Clearning out my closet', 'Take out trash bins', 'Wash car', 'Tank up the motorcycles', 'Go for flight training'
-  ]
-
   userChange() {
     this.coach = true;
     this.player = false;

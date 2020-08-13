@@ -1,7 +1,6 @@
 section{
     margin-top: 50px;
     min-height: 100vh;
-
 }
 
 .header {
@@ -13,9 +12,6 @@ section{
     padding-bottom: 2px;
     margin-bottom: 0%;
     font-size: x-large;
-}
-#header{
-    margin-top: 10%;
 }
 
 label {

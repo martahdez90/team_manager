@@ -488,6 +488,8 @@ app.post("/users/teamPlayers", function(request, response) {
         if (err) {
             response.send(err)
         } else if (res.length === 0) {
+            console.log('primer caso')
+            res.length = 1
             response.send(res)
         } else {
             let id = res[0].user_id;
@@ -497,6 +499,8 @@ app.post("/users/teamPlayers", function(request, response) {
                 if (err) {
                     response.send(err)
                 } else {
+                    console.log('segundo caso');
+                    console.log(res.affectedRows)
                     response.send(res)
                 }
             })

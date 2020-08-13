@@ -34,7 +34,6 @@ export class MyGamesComponent implements OnInit {
     this.matchService.putMatch(newMatch).subscribe(data => {
       this.matchService.getMatches(this.loginService.team_id).subscribe(data => {
         this.dataBase = data
-
       })
     })
   }

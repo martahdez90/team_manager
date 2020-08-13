@@ -53,8 +53,8 @@ export class MyPlayersComponent implements OnInit {
     }
 
     this.UserService.postNewPlayer(playerData).subscribe((data) => {
-      console.log(data)
-      if (data[0] === undefined) {
+      console.log(data[0])
+      if (data[0] === null) {
         Swal.fire({
           icon: 'error',
           title: 'Oops...',
