@@ -2,13 +2,11 @@
     font-size: medium;
 }
 
-
 section {
     height: 80vh;
     margin-top: 50px;
     margin-bottom: 10vh;
 }
-
 
 .header {
     text-align: center;
@@ -22,13 +20,10 @@ section {
     font-size: x-large;
 }
 
-/* 
-section {
-    min-height: 850px;
+.fa-chevron-left{
+    position: absolute;
+    left: 10px;
 }
-*/
-
-
 
 input{
 

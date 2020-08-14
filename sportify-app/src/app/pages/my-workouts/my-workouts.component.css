@@ -19,6 +19,10 @@ section {
     width: 100vw;
 }
 
+.fa-chevron-left{
+    position: absolute;
+    left: 10px;
+}
 
 .card {
     margin: 5%
@@ -89,13 +93,6 @@ section {
     margin: auto;
     margin-top: 5vh;
 }
-
-
-/* .new:active,
-.new:hover {
-    background-color: #126e62;
-    border: #126e62;
-} */
 
 .modal-title,
 label {
