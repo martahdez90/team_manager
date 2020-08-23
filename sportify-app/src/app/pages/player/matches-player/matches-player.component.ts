@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from 'src/app/shared/login.service';
-import { MatchServiceService } from "../../shared/match.service";
+import { MatchServiceService } from "../../../shared/match.service";
 
 
 @Component({

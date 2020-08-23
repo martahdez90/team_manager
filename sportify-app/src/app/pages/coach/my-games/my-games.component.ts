@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { MatchServiceService } from "../../shared/match.service";
-import { Match } from "../../models/match";
+import { MatchServiceService } from "../../../shared/match.service";
+import { Match } from "../../../models/match";
 import { LoginService } from 'src/app/shared/login.service';
 import { TeamService } from 'src/app/shared/team.service';
 import Swal from 'sweetalert2';
