@@ -5,12 +5,7 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from "@angular/common/http";
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
-//páginas
-import { LandingPageComponent } from './pages/landing-page/landing-page.component';
-import { LoginComponent } from './pages/login/login.component';
-import { RegisterComponent } from './pages/register/register.component';
-
-//otros
+//Others
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import {MatListModule} from '@angular/material/list';
@@ -24,6 +19,11 @@ import { GreenFooterComponent } from './menus/green-footer/green-footer.componen
 import { LandingMenuComponent } from './menus/landing-menu/landing-menu.component';
 import { PlayerMenuComponent } from './menus/player-menu/player-menu.component';
 import { WhiteFooterComponent } from './menus/white-footer/white-footer.component';
+
+//Landing
+import { LandingPageComponent } from './pages/landing-page/landing-page.component';
+import { LoginComponent } from './auth/login/login.component';
+import { RegisterComponent } from './auth/register/register.component';
 
 //Coach
 import { MyGamesComponent } from './pages/coach/my-games/my-games.component';
@@ -41,6 +41,7 @@ import { MatchesPlayerComponent } from './pages/player/matches-player/matches-pl
 
 //validadores npm i ng-validate-equal
 import { ValidateEqualModule } from 'ng-validate-equal';
+
 
 
 @NgModule({

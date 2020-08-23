@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
-import { RegisterComponent } from './pages/register/register.component';
-import { LoginComponent } from './pages/login/login.component';
+import { RegisterComponent } from './auth/register/register.component';
+import { LoginComponent } from './auth/login/login.component';
 import { MyTeamsComponent } from './pages/coach/my-teams/my-teams.component';
 import { MyWorkoutsComponent } from './pages/coach/my-workouts/my-workouts.component';
 import { MyExercisesComponent } from './pages/coach/my-exercises/my-exercises.component';
