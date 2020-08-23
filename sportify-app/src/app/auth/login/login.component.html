@@ -16,7 +16,7 @@
                 <input #password type="password" id="inputPassword" class="form-control " placeholder="Contraseña"
                     required>
                 <br>
-                <div class="checkbox mb-3">
+                <div class="checkbox mb-2">
                     <label>
                         <input type="checkbox" value="remember-me"> Recordarme
                     </label>
@@ -26,6 +26,9 @@
                 <!-- <button type="button" class="btn buttonR" (click)="logIn(email, password)" routerLink="/user/welcome" >Entrar</button> <br><br> -->
                 <button type="button" class="btn buttonR" (click)="logIn(email, password)">Entrar</button>
                 <br><br>
+                <div class="col-sm-12 text-center pb-5">
+                    ¿No tienes cuenta? <a routerLink="/register">Registro</a>
+                </div>
             </form>
         </div>
     </div>
