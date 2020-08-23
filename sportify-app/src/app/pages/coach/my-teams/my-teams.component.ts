@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Team } from "../../models/team"
+import { Team } from "../../../models/team"
 import { TeamService } from 'src/app/shared/team.service';
 import { LoginService } from 'src/app/shared/login.service';
 import Swal from 'sweetalert2';

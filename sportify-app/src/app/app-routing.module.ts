@@ -3,17 +3,16 @@ import { Routes, RouterModule } from '@angular/router';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { LoginComponent } from './pages/login/login.component';
-import { MyTeamsComponent } from './pages/my-teams/my-teams.component';
-import { MyWorkoutsComponent } from './pages/my-workouts/my-workouts.component';
-import { MyExercisesComponent } from './pages/my-exercises/my-exercises.component';
-import { MySettingsComponent } from './pages/my-settings/my-settings.component';
-import { MyPlayersComponent } from './pages/my-players/my-players.component';
-import { MyCoachComponent } from './pages/my-coach/my-coach.component';
-import { MyGamesComponent } from './pages/my-games/my-games.component';
-import { TrainingsPlayerComponent } from "./pages/trainings-player/trainings-player.component";
-import { MatchesPlayerComponent } from "./pages/matches-player/matches-player.component";
-import { HomeComponent } from './pages/home/home.component';
-import { PlayerSettingsComponent } from './pages/player-settings/player-settings.component';
+import { MyTeamsComponent } from './pages/coach/my-teams/my-teams.component';
+import { MyWorkoutsComponent } from './pages/coach/my-workouts/my-workouts.component';
+import { MyExercisesComponent } from './pages/coach/my-exercises/my-exercises.component';
+import { MySettingsComponent } from './pages/coach/my-settings/my-settings.component';
+import { MyPlayersComponent } from './pages/coach/my-players/my-players.component';
+import { MyCoachComponent } from './pages/player/my-coach/my-coach.component';
+import { MyGamesComponent } from './pages/coach/my-games/my-games.component';
+import { TrainingsPlayerComponent } from "./pages/player/trainings-player/trainings-player.component";
+import { MatchesPlayerComponent } from "./pages/player/matches-player/matches-player.component";
+import { PlayerSettingsComponent } from './pages/player/player-settings/player-settings.component';
 
 
 const routes: Routes = [
@@ -33,7 +32,6 @@ const routes: Routes = [
   {path: 'player/myMatches', component: MatchesPlayerComponent},
   {path: 'player/myCoach', component: MyCoachComponent},
   {path: 'player/settings', component: PlayerSettingsComponent},
-  {path: 'user/welcome', component: HomeComponent},
   {path: '**',redirectTo: 'home'}
 ];
 
