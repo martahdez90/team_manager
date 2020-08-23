@@ -7,6 +7,9 @@ export class User {
     public phone: number;
     public user_id: number;
     public password2: string;
+    //new
+    public img?: string;
+    public google?: boolean;
 
     constructor() {}
     

@@ -3,13 +3,17 @@ import { Routes, RouterModule } from '@angular/router';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { LoginComponent } from './auth/login/login.component';
+
+//coach
 import { MyTeamsComponent } from './pages/coach/my-teams/my-teams.component';
 import { MyWorkoutsComponent } from './pages/coach/my-workouts/my-workouts.component';
 import { MyExercisesComponent } from './pages/coach/my-exercises/my-exercises.component';
 import { MySettingsComponent } from './pages/coach/my-settings/my-settings.component';
 import { MyPlayersComponent } from './pages/coach/my-players/my-players.component';
-import { MyCoachComponent } from './pages/player/my-coach/my-coach.component';
 import { MyGamesComponent } from './pages/coach/my-games/my-games.component';
+
+//player
+import { MyCoachComponent } from './pages/player/my-coach/my-coach.component';
 import { TrainingsPlayerComponent } from "./pages/player/trainings-player/trainings-player.component";
 import { MatchesPlayerComponent } from "./pages/player/matches-player/matches-player.component";
 import { PlayerSettingsComponent } from './pages/player/player-settings/player-settings.component';
@@ -31,7 +35,7 @@ const routes: Routes = [
   {path: 'player/myTrainings', component: TrainingsPlayerComponent },
   {path: 'player/myMatches', component: MatchesPlayerComponent},
   {path: 'player/myCoach', component: MyCoachComponent},
-  {path: 'player/settings', component: PlayerSettingsComponent},
+  { path: 'player/settings', component: PlayerSettingsComponent },
   {path: '**',redirectTo: 'home'}
 ];
 
