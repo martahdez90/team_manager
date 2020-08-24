@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders  } from '@angular/common/http';
 import { User } from '../models/user';
+import { tap } from "rxjs/operators";
+
+
 @Injectable({
   providedIn: 'root'
 })
@@ -8,6 +11,7 @@ export class UserService {
   private url = "http://localhost:3025/users";
   public user: User;
   constructor(private http: HttpClient) { }
+  
   
   public getUser(id: number) {
     return this.http.get(this.url + "/" + id)
@@ -17,6 +21,12 @@ export class UserService {
   } */
   public postUser(newUser: User) {
     return this.http.post(this.url + "/register", newUser)
+      //guardar en localstorage
+    // .pipe(
+    //   tap(resp => {
+    //     localStorage.setItem('email', resp[0].email)
+    //   })
+    // )
   }
 
   public putUser(newUser: User) {

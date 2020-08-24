@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { User } from '../models/user';
+import { tap } from "rxjs/operators";
 
 @Injectable({
   providedIn: 'root'
@@ -16,6 +17,12 @@ export class LoginService {
 
   login(data: object){
     return this.http.post(this.url, data)
+      //guardar en el localstorage para el rememberme
+      // .pipe(
+      //   tap(resp => {
+      //     localStorage.setItem('email', resp[0].emal)
+      //   })
+      // )
   }
 
   logOut(){

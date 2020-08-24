@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from 'src/app/shared/login.service';
 import { Router, ActivatedRoute } from '@angular/router'
+import { FormBuilder } from '@angular/forms';
+
+
 
 
 @Component({
@@ -9,18 +12,33 @@ import { Router, ActivatedRoute } from '@angular/router'
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  public rememberme: any = { checked: false }
+  public emailsaved = ''
 
-  constructor(private loginService: LoginService, private route: ActivatedRoute, private router: Router) { }
+    
+  constructor(private loginService: LoginService, private route: ActivatedRoute, private router: Router, private fb: FormBuilder) {}
 
-  logIn(email: HTMLInputElement, password: HTMLInputElement) {
+  
+
+  logIn(email: string, password: string) {
     let form = {
-      email: email.value,
-      password: password.value
+      email: email,
+      password: password,   
     }
-   
+
+  
     this.loginService.login(form).subscribe(data => {
       this.loginService.userLoged = data[0]
-      console.log(this.loginService.userLoged);
+      //console.log(this.loginService.userLoged);
+      //recordar usuario
+      if (this.rememberme.checked == true) {
+        localStorage.setItem('email', form.email);
+      } else {
+        //eliminar usuario del localstorage
+        localStorage.removeItem('email');
+      }
+      
+
       //Redirigir a jugador o entrenador
       switch (this.loginService.userLoged.rol) {
         case 'player':
@@ -37,6 +55,9 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    console.log(this.emailsaved)
+    this.emailsaved = localStorage.getItem('email')
+    console.log(this.emailsaved)
   }
 
 }

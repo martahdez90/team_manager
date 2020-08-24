@@ -40,9 +40,14 @@ export class RegisterComponent implements OnInit {
           text: 'Este email ya existe',
           footer: 'Regístrese con otro email'
         })
-      }
+        // this.refresh()
+      } 
     })
   }
+
+  // refresh() {
+  //   window.location.reload();
+  // }
 
   ngOnInit(): void {
 
