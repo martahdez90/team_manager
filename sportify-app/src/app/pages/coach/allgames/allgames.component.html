@@ -7,24 +7,25 @@
             Mis partidos
         </h2>
     </div>
-    
+
     <!--modal nuevo partido-->
-    <div class="modal fade" id="newGame" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal fade" id="newGame" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLongTitle">Nuevo partido</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
                 <div class="modal-body">
                     <div class="card mb-3">
                         <select #team class="team">
-                        <option  *ngFor=" let team of teams" value="{{team.team_id}}">
-                            {{team.name}}
-                        </option>
-                    </select>
+                            <option *ngFor=" let team of teams" value="{{team.team_id}}">
+                                {{team.name}}
+                            </option>
+                        </select>
                         <div class="card-body bg-transparent modalB">
                             <label for="date">Fecha:</label><br>
                             <input type="date" #date>
@@ -45,7 +46,8 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button data-dismiss="modal" aria-label="Close" class="btn new" id="card-bg2" (click)="newGame(date,comments,rival, location, team)">Guardar</button>
+                    <button data-dismiss="modal" aria-label="Close" class="btn new" id="card-bg2"
+                        (click)="newGame(date,comments,rival, location, team)">Guardar</button>
                 </div>
             </div>
         </div>
@@ -56,7 +58,8 @@
             <div class="card mt-4 mb-1 pb-1" *ngFor="let e of dataBase; let i= index">
                 <div class="card-header" id="date">
                     {{e.date | date}}
-                    <i class="far fa-edit" id="edit" (click)="getGame(dataBase[i])" data-toggle="modal" data-target="#putGame"></i>
+                    <i class="far fa-edit" id="edit" (click)="getGame(dataBase[i])" data-toggle="modal"
+                        data-target="#putGame"></i>
                     <i class='fas fa-trash-alt' (click)="deleteGame(dataBase[i].match_id)" id="trash"></i>
                 </div>
                 <div class="card-body bg-transparent">
@@ -68,35 +71,36 @@
                 <div class="card-body bg-transparent">
                     Comentarios: {{e.comments}}
                 </div>
-                
+
                 <div class="card-footer">
                     Lugar: {{e.location}}
                 </div>
             </div>
         </div>
     </div>
-    <div >
+    <div>
         <button class="btn newT" data-toggle="modal" data-target="#newGame">
-        Nuevo partido
-    </button>
+            Nuevo partido
+        </button>
     </div>
 
-    <div class="modal fade" id="putGame" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal fade" id="putGame" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLongTitle">actualizar partido</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
                 <div class="modal-body">
                     <div class="card mb-3">
                         <select #team2>
-                        <option  *ngFor=" let team of teams" value="{{team.team_id}}">
-                            {{team.name}}
-                        </option>
-                    </select>
+                            <option *ngFor=" let team of teams" value="{{team.team_id}}">
+                                {{team.name}}
+                            </option>
+                        </select>
 
                         <div class="card-header bg-transparent">
                             <input type="date" #date2 placeholder="{{game.date}}">
@@ -115,7 +119,8 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button data-dismiss="modal" aria-label="Close" class="btn new" id="card-bg2" (click)="putGame(date2,comments2,rival2, location2, team2)">Actualizar</button>
+                    <button data-dismiss="modal" aria-label="Close" class="btn new" id="card-bg2"
+                        (click)="putGame(date2,comments2,rival2, location2, team2)">Actualizar</button>
                 </div>
             </div>
         </div>
