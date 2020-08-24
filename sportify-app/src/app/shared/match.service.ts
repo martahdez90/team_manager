@@ -14,7 +14,7 @@ export class MatchServiceService {
     return this.http.get(this.url +"/" + team_id)
   }
   getPlayerMatches(player_id:number){
-    return this.http.get(this.url +"/player/" +player_id)
+    return this.http.get(this.url +"/player/" + player_id)
   }
 
   postMatch(newMatch: Match){

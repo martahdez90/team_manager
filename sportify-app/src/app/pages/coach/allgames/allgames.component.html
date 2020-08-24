@@ -7,7 +7,6 @@
             Mis partidos
         </h2>
     </div>
-    <h1 class="text-center">Equipo: {{team_name}}</h1>
     
     <!--modal nuevo partido-->
     <div class="modal fade" id="newGame" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -51,7 +50,6 @@
             </div>
         </div>
     </div>
-    
     <!-- section my games -->
     <div id="training-card">
         <div class="card-color d-flex align-content-center flex-wrap mx-auto pb-4 playerInfo">
@@ -62,13 +60,17 @@
                     <i class='fas fa-trash-alt' (click)="deleteGame(dataBase[i].match_id)" id="trash"></i>
                 </div>
                 <div class="card-body bg-transparent">
-                    {{e.comments}}
+                    Equipo: {{e.name}}
                 </div>
                 <div class="card-body">
-                    <p class="card-text">{{e.rival}}</p>
+                    <p class="card-text">Rival: {{e.rival}}</p>
                 </div>
+                <div class="card-body bg-transparent">
+                    Comentarios: {{e.comments}}
+                </div>
+                
                 <div class="card-footer">
-                    {{e.location}}
+                    Lugar: {{e.location}}
                 </div>
             </div>
         </div>

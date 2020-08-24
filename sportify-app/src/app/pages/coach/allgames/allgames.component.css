@@ -1,0 +1,135 @@
+section{
+    margin-top: 50px;
+    min-height: 100vh;
+}
+
+.header {
+    text-align: center;
+    margin: auto;
+    background-color: #00BFA5;
+    color: white;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    margin-bottom: 0%;
+    font-size: x-large;
+}
+
+.fa-chevron-left{
+    position: absolute;
+    left: 10px;
+}
+
+label {
+    color: #00BFA5;
+}
+
+input {
+    border: none;
+}
+
+.card {
+    border: #00BFA5;
+    width: 300px;
+
+    margin: 3%;
+
+   
+
+}
+
+
+#training-card>div {
+    padding: 2%;
+    width: 100%;
+}
+
+.playerInfo {
+    width: 300px;
+}
+
+.card-footer,
+#date {
+    background-color: #00BFA5;
+    color: white;
+    position: relative;
+}
+
+#edit {
+    top: 20%;
+    right: 10%;
+}
+
+.fa-trash-alt {
+    color: white;
+    position: absolute;
+    top: 20%;
+    right: 4%;
+    z-index: 1;
+}
+
+.fa-edit {
+    color: white;
+    position: absolute;
+    top: 20%;
+    right: 15%;
+    z-index: 1;
+}
+
+.new {
+    background-color: #00bfa5;
+    border: #00bfa5;
+    width: 20vw;
+    color: white;
+    margin-left: 45vw;
+    margin-top: 10vh;
+}
+
+.newT {
+    background-color: #00bfa5;
+    border: #00bfa5;
+    width: 20vw;
+    color: white;
+    margin: auto;
+    margin-left:  40vw;
+    margin-top: 5vh;
+}
+
+#new-ex {
+    width: 80%;
+}
+
+.team {
+    margin-left: 10vw;
+    margin-right: 10vw;
+    margin-top: 20px;
+}
+
+@media (max-width: 576px) {
+    section {
+        padding-bottom: 10%;
+        margin-top: 20px;
+    }
+    body {
+        width: 100vw;
+        margin: 0;
+    }
+    * {
+        font-size: 4vw;
+        color: gray
+    }
+    .header {
+        margin-top: 0;
+    }
+    .newT {
+        width: 60vw;
+        margin: auto;
+        margin-left:  20vw;
+    }
+    .new {
+        width: 60vw;
+        margin-left: 20vw;
+    }
+    .modalB {
+        height: 10vh;
+    }
+}

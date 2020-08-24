@@ -46,9 +46,9 @@
             </div>
             <div class="card-body">
                 <div class="infoTeam">
-                    <p class="cursor" (click)="saveTeam(dataBase[i].team_id)" routerLink="/coach/myPlayers">Jugadores </p>
-                    <p class="cursor" (click)="saveTeam(dataBase[i].team_id)" routerLink="/coach/myWorkouts">Entrenamientos</p>
-                    <p class="cursor" (click)="saveTeam(dataBase[i].team_id)" routerLink="/coach/myGames">Partidos</p>
+                    <p class="cursor" (click)="saveTeam(dataBase[i].team_id, dataBase[i].name)" routerLink="/coach/myPlayers">Jugadores </p>
+                    <p class="cursor" (click)="saveTeam(dataBase[i].team_id, dataBase[i].name)" routerLink="/coach/myWorkouts">Entrenamientos</p>
+                    <p class="cursor" (click)="saveTeam(dataBase[i].team_id, dataBase[i].name)" routerLink="/coach/myGames">Partidos</p>
 
 <!--     <div class="container">
         <div class="cardDiv">

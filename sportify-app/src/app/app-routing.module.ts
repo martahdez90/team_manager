@@ -11,6 +11,7 @@ import { MyExercisesComponent } from './pages/coach/my-exercises/my-exercises.co
 import { MySettingsComponent } from './pages/coach/my-settings/my-settings.component';
 import { MyPlayersComponent } from './pages/coach/my-players/my-players.component';
 import { MyGamesComponent } from './pages/coach/my-games/my-games.component';
+import { AllGamesComponent } from './pages/coach/allgames/allgames.component'
 
 //player
 import { MyCoachComponent } from './pages/player/my-coach/my-coach.component';
@@ -30,7 +31,8 @@ const routes: Routes = [
   {path: 'coach/myWorkouts', component: MyWorkoutsComponent },
   {path: 'coach/myExercises', component: MyExercisesComponent},
   {path: 'coach/settings', component: MySettingsComponent},
-  {path: 'coach/myGames', component: MyGamesComponent},
+  { path: 'coach/myGames', component: MyGamesComponent },
+  { path: 'coach/allGames', component: AllGamesComponent },
   // player
   {path: 'player/myTrainings', component: TrainingsPlayerComponent },
   {path: 'player/myMatches', component: MatchesPlayerComponent},

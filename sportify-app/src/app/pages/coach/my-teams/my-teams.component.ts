@@ -94,9 +94,11 @@ export class MyTeamsComponent implements OnInit {
 
   // })
 
-  saveTeam(id: number) {
+  saveTeam(id: number, name: string) {
     this.loginService.team_id = id
     console.log(this.loginService.team_id);
+    this.loginService.team_name = name;
+    
   }
   ngOnInit(): void {
     this.teamService.getTeams(this.loginService.userLoged.user_id).subscribe(data => {

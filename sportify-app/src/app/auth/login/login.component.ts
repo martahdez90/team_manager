@@ -26,7 +26,6 @@ export class LoginComponent implements OnInit {
       password: password,   
     }
 
-  
     this.loginService.login(form).subscribe(data => {
       this.loginService.userLoged = data[0]
       //console.log(this.loginService.userLoged);
@@ -37,7 +36,6 @@ export class LoginComponent implements OnInit {
         //eliminar usuario del localstorage
         localStorage.removeItem('email');
       }
-      
 
       //Redirigir a jugador o entrenador
       switch (this.loginService.userLoged.rol) {
@@ -55,9 +53,9 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(this.emailsaved)
+    //rellenar email con el guardado en local
     this.emailsaved = localStorage.getItem('email')
-    console.log(this.emailsaved)
+    
   }
 
 }

@@ -6,17 +6,14 @@ import { TeamService } from 'src/app/shared/team.service';
 import Swal from 'sweetalert2';
 
 @Component({
-  selector: 'app-my-games',
-  templateUrl: './my-games.component.html',
-  styleUrls: ['./my-games.component.css']
+  selector: 'app-allgames',
+  templateUrl: './allgames.component.html',
+  styleUrls: ['./allgames.component.css']
 })
-export class MyGamesComponent implements OnInit {
-
+export class AllGamesComponent implements OnInit {
   public teams: object
   public dataBase: object
   public game: Match
-  public team_name: string = this.loginService.team_name;
-
   constructor(private matchService: MatchServiceService, private loginService: LoginService, private teamService: TeamService) {
     this.game = new Match("", "", "", "");
   }
@@ -84,13 +81,16 @@ export class MyGamesComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.matchService.getMatches(this.loginService.team_id).subscribe(data => {
-      this.dataBase = data
-    })
-    this.teamService.getTeams(this.loginService.userLoged.user_id).subscribe((data) => {
-      console.log(data);
-      this.teams = data;
+    console.log(this.loginService.userLoged.user_id)
+    this.matchService.getPlayerMatches(this.loginService.userLoged.user_id).subscribe(data => {
+      console.log(data)
+      this.dataBase = data 
+      if (data[0].lenght != 0) {
+      
+      }
+      
     })
   }
-}
 
+
+}
