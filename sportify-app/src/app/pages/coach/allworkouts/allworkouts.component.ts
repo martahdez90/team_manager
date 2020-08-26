@@ -103,9 +103,13 @@ export class AllworkoutsComponent implements OnInit {
     })
   }
 
- 
+  public buscar(termino: string) {
+    alert("aun no lo hemos implementado")
+    //SELECT * FROM users WHERE name LIKE '%marta%'
+  }
 
   ngOnInit(): void {
+    
     this.trainingService.getTraining(this.loginService.userLoged.user_id).subscribe(data => {
       this.dataBase = data
       console.log(this.dataBase)

@@ -1,88 +1,196 @@
-section {
-    height: 80vh;
-    margin-top: 50px;
-    margin-bottom: 10vh;
-}
+/* Global Styles */
 
-#sportify{
+ section {
+      color:  grey;
+  }
+
+  h1, p, input, label, button {
+    font-size: 1rem;
+  }
+  h2 {
+      font-size: 2rem;
+  }
+
+  a {
+    color: #00bfa5;
+  }
+  a:hover {
+     color: #0c534a;
+  }
+
+  .button {
+    padding: 2rem 6rem;
+    background: #00bfa5;
+    border: none;
     color: white;
-    font-weight: 900;
-}
-
-.lyrics {
-    background-image: url(../../../assets/login.jpg);
+    font-size: 1.8rem;
+    cursor: pointer;
+    border-radius: 2rem;
+  }
+ 
+  /* Contact Section */
+  #contact {
+    position: relative;
+    min-height: 93vh;
+    background: linear-gradient(#00bfa5, transparent);
     background-size: cover;
-    color: #00BFA5;
-    height: 90vh;
-}
-
-.white {
-    padding: 20px;
-    background-color: transparent;
-}
-
-.register {
-    background-color: white;
-    border-radius: 5%;
-    margin: auto;
-    width: 30vw;
-}
-
-
-.header {
-    background-color: #00BFA5;
-    text-align: center;
-}
-#whiteLink {
-    color: white;
-}
-
-.buttonR {
-    background-color: #00BFA5;
-
-    color: #ffffff;
-}
-
-.form-signin {
-    padding: 5%;
-    margin: 2%;
-}
-
-.ng-valid[required], .ng-valid.required  {
-    border-left: 5px solid #00BFA5; /* green */
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   
-  .ng-invalid:not(form)  {
-    border-left: 5px solid #a94442; /* red */
+  .form-wrapper {
+    background: white;
+    width: 60%;
+    border-radius: 20px;
+    padding: 2rem;
+  }
+  .form-head {
+    text-align: center;
+    padding: 1rem;
   }
 
-  .invalid-feedback {
-    color: red
-}
+  img {
+      width: 18%;
+  }
 
-.wrong {
-    color: #a94442;
-    font-size: small;
-}
+  h2 {
+      color: grey;
+  }
 
-.correcto {
+
+  /* Formulario */
+
+  form {
+      /* Centrar elementos */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .fas {
+    font-size: 24px;
+  }
+  
+  .form-wrapper label {
+    width: 100%;
+  } 
+
+   .email-form,
+  .password-form,
+  .remember-form,
+  .agree-form {
+    text-align: left;
+    padding: 0.5rem;
+    width: 80%;
+  }
+
+  .email-form label,
+  .password-form label {
+    margin-left: 3.5rem;
+  }
+
+  .remember-form{
     text-align: center;
-}
+  }
 
-@media(max-width:1030px) {
-    .register {
-        background-color: white;
-        border-radius: 5%;
-        margin-left: 10vw;
-        width: 80vw;
+
+  .input-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .input-div i {
+    margin: 1rem;
+    color: #00bfa5;
+  }
+
+ .register a, .register p {
+      text-decoration: underline;
+      color: var(--sp-color);
+      display: inline-block;
+      font-size: 0.7rem;
+  }
+
+  .form-wrapper button {
+    width: 40%;
+    padding: 0.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    background: #00bfa5;
+    border: none;
+    color: white;
+    font-size: var(--text);
+    cursor: pointer;
+  }
+  
+  .form-wrapper button:hover {
+    background: #047c6c;
+  } 
+
+  /* Versión movil */
+  @media screen and (max-width: 932px) {
+    section {
+        color: white;
     }
-}
 
-@media(max-width:650px) {
-    .register {
-        background-color: white;
-        border-radius: 5%;
-        margin-left: 5vw;
+    .form-wrapper {
+      width: 100%;
+      background-color: transparent;
+      padding:0;
+    }
+
+    img {
+        width: 25%;
+        border-radius: 50%;
+        box-shadow: 1px 1px #02a08b;
+    }
+    
+    .email-form,
+    .password-form {
         width: 90vw;
+        padding-left: 0px;
+        padding-right: 0px;
     }
-}
+
+.email-form label,
+  .password-form label {
+    text-shadow: 0px 0.5px 0.5px #0acab1;
+    margin-bottom: 0px;
+  }
+  /* iconos */
+  .fas {
+    text-shadow: 0px 1px 1px #017a6a; 
+    font-size: 24px;
+  }
+
+  .email-form label,
+  .password-form label {
+    margin-left: 0.5rem;
+  }
+
+  .email-form input,
+  .password-form input,
+   button {
+      border-color: transparent;
+    }
+
+    .register {
+        color: grey;
+        text-shadow: none;
+    }
+
+    .input-div {
+        background-color: white;
+        border-radius: 0.5rem;
+        box-shadow: 0px 1px 1px #00bfa5;
+    }
+    button {
+        box-shadow: 0px 1px 1px #017a6a;
+    }
+
+
+  }

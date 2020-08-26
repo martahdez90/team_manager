@@ -2,7 +2,9 @@
     transition: all 300ms;
   } */
 
-
+ body {
+  position: fixed;
+ }
   .header-link:hover, .header.link:active {
     border-top: 3px solid #ffffff;
   border-bottom: 3px solid #ffffff;
@@ -17,6 +19,7 @@
     background-color: #3BB899;
     color: #FFFFFF;
     text-align: center;
+    max-height: 7vh;
 }
 
 .nav-item {
@@ -39,3 +42,4 @@
   border-top: 3px solid #ffffff;
   border-bottom: 3px solid #ffffff; 
 }
+

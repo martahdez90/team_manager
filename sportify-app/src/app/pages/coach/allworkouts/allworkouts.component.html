@@ -51,12 +51,12 @@
         </div>
     </div>
     <!-- contenido -->
-    <div class="row animated fadeIn fast">
+    <div class="row animated fadeIn fast mx-auto">
         <div class="col-12">
             <div class="card">
                 <input type="text" class="form-control" placeholder="Buscar entrenamiento..."
                 #txtTermino
-                (keyup)="">
+                (keyup)="buscar(txtTermino.value)">
             </div>
         </div>
     </div>
