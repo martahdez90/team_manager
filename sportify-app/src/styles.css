@@ -1,18 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
 body {
-    position: relative;
-    /* background-color: rgb(213, 213, 213); */
+    position: absolute;
     background-color: #E0F2F1;
+    padding-top: 7vh;
     margin: 0;
-    /* min-height: 100vh; */
+    width: 100vw;
+    min-height: 100vh;
     font-family: Roboto, "Helvetica Neue", sans-serif;
+    overflow: hidden;
 }
-#container{
-    padding-bottom: 6vh;
-}
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .fa-trash-alt {
     cursor:pointer;

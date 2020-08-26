@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef } from '@angular/core';
 import { LoginService } from 'src/app/shared/login.service';
 import { Router, ActivatedRoute } from '@angular/router'
 import { FormBuilder } from '@angular/forms';
@@ -11,19 +11,21 @@ import { FormBuilder } from '@angular/forms';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
+  
+  
+  
 export class LoginComponent implements OnInit {
   public rememberme: any = { checked: false }
   public emailsaved = ''
+  public inputs = document.querySelectorAll(".input")
 
     
-  constructor(private loginService: LoginService, private route: ActivatedRoute, private router: Router, private fb: FormBuilder) {}
-
-  
+  constructor(private loginService: LoginService, private route: ActivatedRoute, private router: Router, private fb: FormBuilder) { }
 
   logIn(email: string, password: string) {
     let form = {
       email: email,
-      password: password,   
+      password: password,
     }
 
     this.loginService.login(form).subscribe(data => {
@@ -43,19 +45,18 @@ export class LoginComponent implements OnInit {
           this.router.navigate(['/player/myMatches']);
           break;
         case 'coach':
-          this.router.navigate(['/coach/myTeams'])  
-              break;
+          this.router.navigate(['/coach/myTeams'])
+          break;
         default:
           alert("inicio de sesión incorrecto")
-              break;
-          }
-      })
+          break;
+      }
+    })
   }
 
   ngOnInit(): void {
     //rellenar email con el guardado en local
     this.emailsaved = localStorage.getItem('email')
-    
-  }
 
+  }
 }

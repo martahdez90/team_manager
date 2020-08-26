@@ -1,42 +1,40 @@
 <app-landing-menu></app-landing-menu>
 
-<section>
-    <div class="text-center lyrics">
-        <div class="white"></div>
-        <div class="text-center register">
-            <form class="form-signin" >
-                <h1 class="h3 mb-3 font-weight-normal">Iniciar sesión</h1>
-                <br>
+<section id="contact">
+    <div class="form-wrapper">
+        <header class="form-head">
+            <img src="../../../assets/login/avatar.svg" class="mobil">
+        </header>
+        <form>
+            <div class="email-form">
+                <label for="email">Email:</label>
+                <div class="input-div">
+                    <i class="fas fa-user"></i>
+                    <input id="email" #email type="email" id="inputEmail" class="form-control " required autofocus
+                        value="{{emailsaved}}" />
+                </div>
 
-                <input #email type="email" id="inputEmail" class="form-control " placeholder="email" required autofocus value="{{emailsaved}}">
-                <br>
-                <br>
+            </div>
+            <div class="password-form">
+                <label for="password">Contraseña:</label>
+                <div class="input-div">
+                    <i class="fas fa-lock"></i>
+                    <input id="password" #password type="password" id="inputPassword" class="form-control " required />
+                </div>
 
-                <input #password type="password" id="inputPassword" class="form-control " placeholder="Contraseña"
-                    required>
-                <br>
-                <div class="checkbox mb-2">
-                    <label>
-                        <input type="checkbox"  
-                        [(ngModel)]="rememberme.checked"
-                        [ngModelOptions]="{standalone: true}"> Recordarme
-                    </label>
-                    <br>
-                    <br>
-                </div>
-                <button type="button" class="btn buttonR" (click)="logIn(email.value, password.value)">Entrar</button>
-                <br><br>
-                <div class="col-sm-12 text-center pb-5">
-                    ¿No tienes cuenta? <a routerLink="/register">Registro</a>
-                </div>
-                <div>
-                    <div class="g-signin2" data-onsuccess="onSignIn"></div>
-                </div>
-            </form>
-        </div>
+            </div>
+            <div class="remember-form" required>
+                <label for="checkbox">
+                   <input type="checkbox" [(ngModel)]="rememberme.checked" [ngModelOptions]="{standalone: true}" id="checkbox"> Remember me
+                     
+                </label>
+               
+            </div>
+            <button class="btn" type="button" class="btn buttonR"
+                (click)="logIn(email.value, password.value)">Ingresar</button>
+            <div class="register">
+                <p>¿No tienes cuenta? </p><a routerLink="/register"> Regístrate</a>
+            </div>
+        </form>
     </div>
-
 </section>
-
-
-<app-green-footer></app-green-footer>

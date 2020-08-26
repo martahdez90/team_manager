@@ -1,6 +1,6 @@
 footer {
-    padding-top: 0.4%;
-    height: 7vh;
+    padding-top: 0.5%;
+    height: 8vh;
     position: absolute bottom;
     width: 100%;
     margin-bottom: 0;
@@ -9,6 +9,6 @@ footer {
     text-align: center;
     background-color: #00bfa5;
     color: white;
-    text-shadow: 2px;
+    text-shadow: 2px 2px #02695c;
     padding-bottom: 0;
 }
