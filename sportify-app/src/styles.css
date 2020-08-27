@@ -6,14 +6,12 @@
   }
 
 body {
-    position: absolute;
+    position: relative;
     background-color: #E0F2F1;
-    padding-top: 7vh;
     margin: 0;
     width: 100vw;
     min-height: 100vh;
     font-family: Roboto, "Helvetica Neue", sans-serif;
-    overflow: hidden;
 }
 
 .fa-trash-alt {

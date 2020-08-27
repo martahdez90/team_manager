@@ -1,4 +1,45 @@
 
+/* Global Styles */
+// Variables Sass
+$myColor: #00bfa5;
+$darker: #0c534a;
+$small: 1rem;
+$medium: 1.8rem;
+$colorin: white;
+$color: grey;
+
+ section {
+      color: $color;
+      padding-top: 7vh;
+  }
+
+  h1, p, input, label, button {
+    font-size: 1rem;
+  }
+  h2 {
+      font-size: 2rem;
+  }
+
+  a {
+    color: $myColor;
+  }
+  a:hover {
+     color: $darker;
+  }
+
+  button {
+    padding: 2rem 6rem;
+    background: $myColor;
+    border: none;
+    color: $color;
+    font-size: $medium;
+    cursor: pointer;
+    font-size: $small;
+    border-radius: 0.5rem;
+  }
+ 
+
+/* 
 section{
     margin-top: 50px;
     min-height: 100vh;
@@ -202,7 +243,7 @@ label {
     .newTeam {
         margin-top: 20vh;
     }
-    /* section {
+     section {
         height: 80vh;
-    } */
-}
+    } 
+} */
