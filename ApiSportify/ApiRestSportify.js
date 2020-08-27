@@ -27,6 +27,8 @@ app.use(cors());
 
 // END POINTS USERS
 
+//Registro
+
 app.post("/users/register", function (request, response) {
     let params1 = [request.body.email]
     let sql1 = `SELECT email FROM users WHERE email = ?`
@@ -55,6 +57,8 @@ app.post("/users/register", function (request, response) {
     })
 });
 
+
+//datos usuario login
 app.get("/users/:user_id", function (request, response) {
     let params = [request.params.user_id];
     let sql = "SELECT * FROM users WHERE user_id = ?";
@@ -68,6 +72,7 @@ app.get("/users/:user_id", function (request, response) {
     });
 });
 
+//actualizar usuario
 app.put("/users", function (request, response) {
     let params = [request.body.name, request.body.lastName, request.body.password, request.body.rol, request.body.email, request.body.phone, request.body.user_id];
     let sql = "UPDATE users SET name =?, lastName = ?, password =?, rol =?, email = ?, phone = ?  WHERE user_id = ?";
@@ -82,6 +87,7 @@ app.put("/users", function (request, response) {
     });
 });
 
+//eliminar usuario
 app.delete("/users", function (request, response) {
     let params = [request.body.user_id];
     let sql = "DELETE FROM users WHERE user_id = ?;"
@@ -98,6 +104,7 @@ app.delete("/users", function (request, response) {
 
 // END POINTS TEAMS
 
+//obtener equipos del usuario
 app.get("/teams/:user_id", function (request, response) {
     let params = [request.params.user_id];
     let sql = "SELECT t3.* FROM users AS t1" +
@@ -115,6 +122,7 @@ app.get("/teams/:user_id", function (request, response) {
     });
 });
 
+//publicar nuevo equipo
 app.post("/teams", function (request, response) {
     let params = [request.body.name, request.body.category]
     // let params1 = [request.body.user_id, resultado.insertId]
@@ -138,6 +146,7 @@ app.post("/teams", function (request, response) {
     });
 });
 
+//actualizar equipo
 app.put("/teams", function (request, response) {
     let params = [request.body.name, request.body.category, request.body.team_id];
     let sql = "UPDATE team SET name = ?, category = ?  " +
@@ -152,6 +161,7 @@ app.put("/teams", function (request, response) {
     });
 });
 
+//eliminar equipo
 app.delete("/teams", function (request, response) {
     let params = [request.body.team_id]
     let sql = "DELETE FROM team WHERE team_id = ?"
@@ -165,8 +175,9 @@ app.delete("/teams", function (request, response) {
     });
 });
 
-// END POINTS  TRAINING 
+// END POINTS TRAINING 
 
+//obtener entrenamiento de un usuario
 app.get("/training/players/:user_id", function (request, response) {
     let params = [request.params.user_id]
     let sql = ` SELECT training_team.team_id, training.date, training.name as name, team.name AS team, training.location AS location, training.description AS description FROM training AS training INNER JOIN training_team AS training_team ON ( training.training_id = training_team.training_id ) INNER JOIN team AS team ON ( training_team.team_id = team.team_id ) INNER JOIN user_teams AS user_teams ON ( team.team_id = user_teams.team_id ) INNER JOIN users AS users ON ( user_teams.user_id = users.user_id ) WHERE users.user_id = ?`;
@@ -182,6 +193,7 @@ app.get("/training/players/:user_id", function (request, response) {
 
 });
 
+//obtener entrenamientos del equipo
 app.get("/training/coach/:team_id", function (request, response) {
     let params = [request.params.team_id]
     let sql = "SELECT training.* FROM `training` " +
@@ -200,6 +212,7 @@ app.get("/training/coach/:team_id", function (request, response) {
 
 });
 
+//publicar nuevo entrenamiento
 app.post("/training", function (request, response) {
     let params = [request.body.name, request.body.date, request.body.location, request.body.description];
     let sql = "INSERT INTO training(`training_id`, `name`, `date`, `location`, `description`)  " +
@@ -222,6 +235,7 @@ app.post("/training", function (request, response) {
     });
 });
 
+//actualizar entrenamiento
 app.put("/training", function (request, response) {
     let params = [request.body.name, request.body.date, request.body.location, request.body.description, request.body.training_id]
     let sql = "UPDATE training SET name = ?, date = ?, location = ?, description = ? " +
@@ -236,6 +250,7 @@ app.put("/training", function (request, response) {
     });
 });
 
+//eliminar entrenamiento
 app.delete("/training", function (request, response) {
     let params = [request.body.training_id];
     let sql = "DELETE FROM training WHERE training_id = ?";
@@ -252,6 +267,7 @@ app.delete("/training", function (request, response) {
 
 //END POINT  MATCHES
 
+//obtener partidos del equipo
 app.get("/match/:team_id", function (request, response) {
     let params = [request.params.team_id];
     let sql = "SELECT t3.* FROM matches AS t3 " +
@@ -269,6 +285,7 @@ app.get("/match/:team_id", function (request, response) {
     });
 });
 
+//obtener partidos del jugador
 app.get("/match/player/:user_id", function (request, response) {
     let params = [request.params.user_id];
     let sql = "SELECT matches_teams.team_id, team.name, matches.date, matches.rival, matches.location, matches.comments FROM matches AS matches INNER JOIN matches_teams AS matches_teams ON (matches.match_id = matches_teams.match_id) INNER JOIN team AS team ON (matches_teams.team_id = team.team_id) INNER JOIN user_teams AS user_teams ON (team.team_id = user_teams.team_id) INNER JOIN users AS users ON (user_teams.user_id = users.user_id) WHERE users.user_id = ?";
@@ -288,6 +305,7 @@ app.get("/match/player/:user_id", function (request, response) {
     });
 });
 
+//nuevo partido
 app.post("/match", function (request, response) {
     let params = [request.body.date, request.body.comments, request.body.rival, request.body.location];
     let sql = "INSERT INTO matches( `match_id`, `date`,`comments`,`rival`,`location`)  " +
@@ -310,6 +328,7 @@ app.post("/match", function (request, response) {
     });
 });
 
+//actualizar partido
 app.put("/match", function (request, response) {
     let params = [request.body.date, request.body.comments, request.body.rival, request.body.location, request.body.match_id];
     let sql = "UPDATE matches SET  date = ?, comments = ?, rival = ?, location = ? WHERE match_id = ?";
@@ -324,6 +343,7 @@ app.put("/match", function (request, response) {
 
 });
 
+//eliminar partido
 app.delete("/match", function (request, response) {
     let params = [request.body.match_id];
     let sql = "DELETE FROM matches WHERE match_id = ?";
@@ -341,6 +361,7 @@ app.delete("/match", function (request, response) {
 
 // END POINT   EXERCISE
 
+//obtener ejercicio
 app.get("/exercise/:training_id", function (request, response) {
     let params = [request.params.training_id]
     let sql = "SELECT exercise.* FROM exercise " +
@@ -359,6 +380,7 @@ app.get("/exercise/:training_id", function (request, response) {
     });
 });
 
+//nuevo ejercicio
 app.post("/exercise", function (request, response) {
     let params = [request.body.name, request.body.description, request.body.url, request.body.type];
     let sql = "INSERT INTO exercise( `exercise_id`, `name`, `description`, `url`, `type`)  " +
@@ -380,6 +402,7 @@ app.post("/exercise", function (request, response) {
     });
 });
 
+//actualizar ejercicio
 app.put("/exercise", function (request, response) {
     let params = [request.body.name, request.body.description, request.body.url, request.body.type, request.body.exercise_id]
     let sql = "UPDATE exercise SET name = ?, description = ?, url = ?, type = ? WHERE exercise_id = ?";
@@ -392,6 +415,7 @@ app.put("/exercise", function (request, response) {
     });
 });
 
+//eliminar ejercicio
 app.delete("/exercise", function (request, response) {
     let params = [request.body.exercise_id];
     let sql = "DELETE FROM exercise WHERE exercise_id = ?";
@@ -409,6 +433,7 @@ app.delete("/exercise", function (request, response) {
 
 // end point players
 
+//obtener jugadores equipo
 app.get("/users/teamPlayers/:team_id", function (request, response) {
     let params = [request.params.team_id];
     let sql = "SELECT users.name, users.lastName, users.email, users.phone, users.user_id FROM users " +
@@ -424,6 +449,8 @@ app.get("/users/teamPlayers/:team_id", function (request, response) {
     });
 });
 
+
+//eliminar jugador equipo
 app.delete("/users/teamPlayers/", function (request, response) {
     let params = [request.body.user_id];
     let sql = "DELETE FROM user_teams  WHERE user_id = ?";
@@ -437,6 +464,7 @@ app.delete("/users/teamPlayers/", function (request, response) {
     });
 });
 
+//login jugador
 app.post("/users/login", function (request, response) {
     let params = [request.body.password, request.body.email]
     let sql = "SELECT * FROM users WHERE password = ? AND email = ?"
@@ -450,6 +478,7 @@ app.post("/users/login", function (request, response) {
     });
 })
 
+//obtener entrenador equipo
 app.get("/users/coach/:user_id", function (request, response) {
     let params = [request.params.user_id]
     let sql = `SELECT user_teams.team_id FROM user_teams
@@ -507,6 +536,28 @@ app.post("/users/teamPlayers", function (request, response) {
         }
     })
 });
+
+
+//TORNEO
+
+//obtener torneo por equipo
+
+//eliminar torneo por id
+
+//inscribirse en un torneo (POST)
+
+//BUSQUEDAS
+
+//buscar un jugador por nombre
+
+//buscar entrenamiento por tipo
+
+
+//buscar ejercicio por tipo
+
+
+
+
 
 app.listen("3025", () => {
     console.log("Server started on port 3025");
