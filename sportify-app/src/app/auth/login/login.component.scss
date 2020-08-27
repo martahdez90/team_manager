@@ -32,7 +32,8 @@ $color: grey;
     color: $color;
     font-size: $medium;
     cursor: pointer;
-    border-radius: 2rem;
+    font-size: $small;
+    border-radius: 0.5rem;
   }
  
   /* Contact Section */
@@ -52,6 +53,7 @@ $color: grey;
     width: 60%;
     border-radius: 20px;
     padding: 2rem;
+    padding-bottom: 1rem;
   }
   .form-head {
     text-align: center;
@@ -125,7 +127,7 @@ $color: grey;
 
  .register a, .register p {
       text-decoration: underline;
-      color: var(--sp-color);
+      color: $myColor;
       display: inline-block;
       font-size: 0.7rem;
   }
@@ -136,7 +138,7 @@ $color: grey;
     margin-top: 1rem;
     margin-bottom: 1rem;
     color: white;
-    font-size: var(--text);
+    
   }
   
   .form-wrapper button:hover {
@@ -195,14 +197,16 @@ $color: grey;
         text-shadow: none;
     }
 
-    /* .input-div {
+    .input-div {
         background-color: white;
         border-radius: 0.5rem;
         box-shadow: 0px 1px 1px #00bfa5;
-    } */
+    } 
+    
     button {
         box-shadow: 0px 1px 1px #017a6a;
+        font-size: $small;
+        border-radius: 0.5rem;
     }
-
 
   }
