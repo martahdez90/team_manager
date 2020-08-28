@@ -10,9 +10,9 @@ $color: grey;
 
  section {
       background: linear-gradient($myColor, #e6f8f6);
-      height: 93vh;
+      padding-top: 15vh;
+      min-height: 93vh;
       color: $color;
-      padding-top: 7vh;
       padding-bottom: 80px;
   }
 
@@ -47,4 +47,37 @@ $color: grey;
       justify-content: center;
       align-items: center;
   }
+
+  .header {
+    width: 100vw;
+    height: 70px;
+    position: fixed;
+    top: 0;
+    color: white;
+    text-align: center;
+    padding: 2px;
+
+    h2 {
+      margin-top: 5px;
+    }
+
+    #avatar {
+      position: absolute;
+      top: 10%;
+      right: 5%;
+      background: white;
+      border-radius: 50%;
+    }
+
+
+  }
+
+
+
+
+
+  @media screen and (min-width: 932px) {
+
+  }
+  
  
