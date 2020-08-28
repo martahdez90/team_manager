@@ -12,3 +12,12 @@ footer {
     text-shadow: 2px 2px #02695c;
     padding-bottom: 0;
 }
+
+
+@media screen and (max-width: 932px) {
+
+    footer {
+        display: none;
+    }
+
+}
