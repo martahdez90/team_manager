@@ -65,13 +65,15 @@ a:active {
 .bottom-menu {
     position: fixed;
     bottom: 0;
+    overflow: hidden;
+    background-color: white;
     margin-bottom: 0px;
     height: 70px;
     width: 100vw; 
     display: flex;
     justify-content: center;
     flex-direction: column;
-    z-index: 2;
+    z-index: 40;
 }
 .menu-icons, .menu-text {
     color: gray;

@@ -9,8 +9,11 @@ $colorin: white;
 $color: grey;
 
  section {
+      background: linear-gradient($myColor, #e6f8f6);
+      height: 93vh;
       color: $color;
       padding-top: 7vh;
+      padding-bottom: 80px;
   }
 
   h1, p, input, label, button {
@@ -28,14 +31,15 @@ $color: grey;
   }
 
   button {
-    padding: 2rem 6rem;
+    // padding: 2rem 6rem;
+    padding: 2rem 2rem;
     background: $myColor;
-    border: none;
-    color: $color;
-    font-size: $medium;
-    cursor: pointer;
-    font-size: $small;
-    border-radius: 0.5rem;
+    // border: none;
+    // color: $color;
+    // font-size: $medium;
+    // cursor: pointer;
+    // font-size: $small;
+    // border-radius: 0.5rem;
   }
 
   .flex {

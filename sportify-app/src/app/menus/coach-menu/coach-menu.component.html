@@ -15,6 +15,9 @@
                     <a class="nav-link" id="whiteLink" routerLink="/coach/allGames" routerLinkActive="active-link">Partidos</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" id="whiteLink" routerLink="/coach/myTournaments" routerLinkActive="active-link">torneos</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" id="whiteLink" routerLink="/coach/settings" routerLinkActive="active-link">Ajustes</a>
                 </li>
             </ul>
@@ -27,16 +30,26 @@
 <header class="bottom-menu">
   <div class="menu-icons">
     <div class="boton">
-      <img src="../../../assets/menus/myteams.svg" alt="myteams">
+      <a routerLink="/coach/myTeams">
+        <img src="../../../assets/menus/myteams.svg" alt="myteams">
+      </a>
     </div>
     <div class="boton">
-      <img src="../../../assets/menus/trainings.svg" alt="trainings">
+      <a routerLink="/coach/allWorkouts" >
+        <img src="../../../assets/menus/trainings.svg" alt="trainings">
+      </a>
     </div>
     <div class="boton">
-      <img src="../../../assets/menus/mygames.svg" alt="mygames">
+      <a routerLink="/coach/allGames" >
+        <img src="../../../assets/menus/mygames.svg" alt="mygames">
+      </a>
+      
     </div>
     <div class="boton">
-      <img src="../../../assets/menus/mytourn.svg" alt="">
+      <a routerLink="/coach/mytournaments" >
+        <img src="../../../assets/menus/mytourn.svg" alt="">
+      </a>
+      
     </div>
   </div>
   <div class="menu-text">
