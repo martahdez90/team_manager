@@ -46,7 +46,6 @@ import { AllworkoutsComponent } from './pages/coach/allworkouts/allworkouts.comp
 
 
 
-
 @NgModule({
   declarations: [
     AppComponent,

@@ -1,83 +1,88 @@
+//se mportan los estilos generales de base.scss
+section {
+  color: black;
+}
 
-/* Global Styles */
-// Variables Sass
-$myColor: #00bfa5;
-$darker: #0c534a;
-$small: 1rem;
-$medium: 1.8rem;
-$colorin: white;
-$color: grey;
 
- section {
-      background: linear-gradient($myColor, #e6f8f6);
-      padding-top: 15vh;
-      min-height: 93vh;
-      color: $color;
-      padding-bottom: 80px;
+
+.delete {
+  text-align: right;
+  padding-right: 10px;
+  margin-top:5px;
+  #delete {
+  cursor: pointer;
   }
+}
 
-  h1, p, input, label, button {
-    font-size: 1rem;
+.team-info {
+  h1 {
+    cursor: pointer;
   }
   h2 {
-      font-size: 2rem;
+    color: gray;
   }
+}
 
-  a {
-    color: $myColor;
-  }
-  a:hover {
-     color: $darker;
-  }
+//links my player, trainings and games
+.div-links {
+  width: 100%;
+  height: 125px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 10px;
+}
 
-  button {
-    // padding: 2rem 6rem;
-    padding: 2rem 2rem;
-    background: $myColor;
-    // border: none;
-    // color: $color;
-    // font-size: $medium;
-    // cursor: pointer;
-    // font-size: $small;
-    // border-radius: 0.5rem;
-  }
-
-  .flex {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-  }
-
-  .header {
-    width: 100vw;
-    height: 70px;
-    position: fixed;
-    top: 0;
-    color: white;
-    text-align: center;
-    padding: 2px;
-
-    h2 {
-      margin-top: 5px;
-    }
-
-    #avatar {
-      position: absolute;
-      top: 10%;
-      right: 5%;
-      background: white;
-      border-radius: 50%;
-    }
-
-
-  }
-
-
-
-
-
-  @media screen and (min-width: 932px) {
-
-  }
+.links {
+  margin-top: 5px;
+  margin: 0 5px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
   
- 
+  .link2 {
+    margin-left: 10px;
+  }
+
+  img {
+    width: 30px;
+  }
+
+}
+
+.links-text {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  div  {
+    padding-top: 5px;
+  }
+
+  p {
+    color: black;
+  }
+}
+
+.newTeam {
+  margin: 20px;
+}
+
+//Modales
+
+@media screen and (min-width: 932px) {
+  #prueba {
+  width: 332px;
+  margin:2rem;
+  }
+
+  .links {
+    img{
+      width: 100%;
+    }
+  }
+
+  p {
+    font-size: 14px;
+  }
+}
