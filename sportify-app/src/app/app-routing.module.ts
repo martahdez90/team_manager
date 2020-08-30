@@ -41,7 +41,9 @@ const routes: Routes = [
   {path: 'player/myMatches', component: MatchesPlayerComponent},
   {path: 'player/myCoach', component: MyCoachComponent},
   { path: 'player/settings', component: PlayerSettingsComponent },
-  {path: '**',redirectTo: 'home'}
+  {path: '**',redirectTo: 'home'},
+
+
 ];
 
 @NgModule({

@@ -7,7 +7,7 @@ import Swal from 'sweetalert2';
 @Component({
   selector: 'app-my-teams',
   templateUrl: './my-teams.component.html',
-  styleUrls: ['./my-teams.component.scss']
+  styleUrls: ['../../../base.scss', './my-teams.component.scss']
 })
 export class MyTeamsComponent implements OnInit {
   public dataBase: object;
@@ -61,7 +61,8 @@ export class MyTeamsComponent implements OnInit {
       showCancelButton: true,
       confirmButtonColor: '#00bfa5',
       cancelButtonColor: '#d33',
-      confirmButtonText: 'borrar'
+      confirmButtonText: 'Eliminar',
+      cancelButtonText: 'Cancelar'
     }).then((result) => {
       if (result.value) {
         console.log(id)

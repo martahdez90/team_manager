@@ -1,161 +1,125 @@
 <app-coach-menu></app-coach-menu>
 
 
-<section>
-    
-    <div class="header row">
-        <h2 class="col-12 header">Mis equipos</h2>
+<section id="myTeams">
+    <div class="header">
+        <h1 class="header-title">Mis equipos</h1>
+        <a routerLink="/coach/settings">
+            <img src="../../../../assets/menus/avataaars.svg" alt="avatar" id="avatar">
+        </a>
     </div>
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
-        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Nuevo equipo</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+    <div>
+        <div class="cards-container">
+            <div *ngFor="let team of dataBase; let i = index" id="team-card">
+                <div class="delete">
+                    <img src="../../../../assets/pages/close.svg" alt="" id="delete" (click)="deleteTeam(dataBase[i].team_id)">
                 </div>
-                <div class="modal-body">
-                    <div class="card mb-3">
-                        <div class="card-header bg-transparent">
-                            <label for="name">Nombre de equipo</label><br>
-                            <input type="text" #name placeholder="ej: Real Madrid">
+                <div class="team-info">
+                    <h1 (click)="getTeam(dataBase[i])" data-toggle="modal"
+                    data-target="#putTeam">
+                        {{team.name | uppercase}}
+                    </h1>
+                    <h2>
+                        {{team.category}}
+                    </h2>
+                </div>
+                <div class="div-links">
+                    <div class="links">
+                        <div class="link">
+                            <a (click)="saveTeam(dataBase[i].team_id, dataBase[i].name)"
+                            routerLink="/coach/myPlayers">
+                                 <img src="../../../../assets/pages/myteams/myplayers.svg" alt="myplayers">
+                            </a>
                         </div>
-                        <div class="card-body">
-                            <label for="category">Categoría</label><br>
-                            <input #category class="card-text" placeholder="ej: Alevines">
+                        <div class="link">
+                            <a (click)="saveTeam(dataBase[i].team_id, dataBase[i].name)"
+                            routerLink="/coach/myWorkouts">
+                                <img src="../../../../assets/pages/myteams/mytrainings.svg" alt="mytrainings">
+                            </a>
                         </div>
-
+                        <div class="link">
+                            <a (click)="saveTeam(dataBase[i].team_id, dataBase[i].name)"
+                            routerLink="/coach/myGames">
+                                <img src="../../../../assets/pages/myteams/mygames.svg" alt="">
+                            </a>
+                        </div>
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <button data-dismiss="modal" aria-label="Close" class="btn new" id="card-bg2"
-                        (click)="addTeams( name,category)">Añadir</button>
+                    <div class="links-text">
+                        <p>Jugadores</p>
+                        <p>Entrenos</p>
+                        <p>Partidos</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-
-    <div id="training-card">
-        <div *ngFor="let team of dataBase; let i = index" class="card mb-3" id="team2">
-            <div class="card-header">
-                {{team.name}}
-                <i class="far fa-edit" id="edit" (click)="getTeam(dataBase[i])" data-toggle="modal" data-target="#putTeam"></i>
-                <i class="fas fa-trash-alt" (click)="deleteTeam(dataBase[i].team_id)"></i>
-            </div>
-            <div class="card-body">
-                <div class="infoTeam">
-                    <p class="cursor" (click)="saveTeam(dataBase[i].team_id, dataBase[i].name)" routerLink="/coach/myPlayers">Jugadores </p>
-                    <p class="cursor" (click)="saveTeam(dataBase[i].team_id, dataBase[i].name)" routerLink="/coach/myWorkouts">Entrenamientos</p>
-                    <p class="cursor" (click)="saveTeam(dataBase[i].team_id, dataBase[i].name)" routerLink="/coach/myGames">Partidos</p>
-
-<!--     <div class="container">
-        <div class="cardDiv">
-            <div class="card-color d-flex align-content-center flex-wrap mx-auto pb-4">
-                <div *ngFor="let team of dataBase; let i = index" class="card playerInfo mt-4 mb-1 p-1 pb-1 team"
-                    id="team2">
-                    <div class="card-header">
-                        {{team.name}}
-                        <i class="far fa-edit" id="edit" (click)="getTeam(dataBase[i])" data-toggle="modal"
-                            data-target="#putTeam"></i>
-                        <i class="fas fa-trash-alt" (click)="deleteTeam(dataBase[i].team_id)"></i>
-                    </div>
-                    <div class="card-body">
-                        <div class="infoTeam">
-                            <p class="cursor" (click)="saveTeam(dataBase[i].team_id)" routerLink="/coach/myPlayers">
-                                Jugadores </p>
-                            <p class="cursor" (click)="saveTeam(dataBase[i].team_id)" routerLink="/coach/myWorkouts">
-                                Entrenamientos</p>
-                            <p class="cursor" (click)="saveTeam(dataBase[i].team_id)" routerLink="/coach/myGames">
-                                Partidos</p>
-                        </div>
-                    </div>
-                    <div class="card-footer">
-                        <p class="card-text">{{team.category}}</p>
-                    </div> -->
-
-                </div>
-            </div>
-            <div class="card-footer">
-                <p class="card-text">{{team.category}}</p>
-            </div>
-        </div>
-
-
     </div>
 
     <div class="newTeam">
-        <button class="btn newT mb-5" id="card-bg2" data-toggle="modal" data-target="#exampleModalCenter">
+        <button data-toggle="modal" data-target="#exampleModalCenter">
             Nuevo equipo
         </button>
     </div>
-
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+    <!-- Modal post ejercicio -->
+    <div class="modal fade border-0" id="exampleModalCenter" tabindex="-1" role="dialog"
         aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
+        <div class="modal-dialog border-0" role="document">
+            <div class="modal-content border-0">
+                <div class="modal-header border-0">
                     <h5 class="modal-title">Nuevo equipo</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body border-0">
                     <div class="card mb-3">
-                        <div class="card-header bg-transparent">
+                        <div class="card-header bg-transparent border-0">
                             <label for="name">Nombre de equipo</label><br>
                             <input type="text" #name placeholder="ej: Real Madrid">
                         </div>
-                        <div class="card-body">
+                        <div class="card-body border-0">
                             <label for="category">Categoría</label><br>
                             <input #category class="card-text" placeholder="ej: Alevines">
                         </div>
 
                     </div>
                 </div>
-                <div class="modal-footer">
+                <div class="modal-footer border-0">
                     <button data-dismiss="modal" aria-label="Close" class="btn new" id="card-bg2"
                         (click)="addTeams( name,category)">Añadir</button>
                 </div>
             </div>
         </div>
     </div>
-<!-- Modal  actualizar ejercicio -->
-
-
-<div class="modal fade" id="putTeam" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Actualizar equipo</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="card mb-3">
-                    <div class="card-header bg-transparent">
-                        <label for="name">Nombre de equipo</label><br>
-                        <input type="text" #name1 placeholder="{{team1.name}}">
-                    </div>
-                    <div class="card-body">
-                        <label for="category">Categoría</label><br>
-                        <input #category1 class="card-text" placeholder="{{team1.category}}">
-                    </div>
-
+    <!-- Modal  actualizar ejercicio -->
+    <div class="modal fade" id="putTeam" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content border-0">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title">Actualizar equipo</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
-            </div>
-            <div class="modal-footer">
-                <button data-dismiss="modal" aria-label="Close" class="btn new" id="card-bg2"
-                    (click)="UpdateTeam( name1,category1)">Actualizar</button>
+                <div class="modal-body border-0">
+                    <div class="card mb-3 border-0">
+                        <div class="card-header bg-transparent border-0">
+                            <label for="name">Nombre de equipo</label><br>
+                            <input type="text" #name1 placeholder="{{team1.name}}">
+                        </div>
+                        <div class="card-body">
+                            <label for="category">Categoría</label><br>
+                            <input #category1 class="card-text" placeholder="{{team1.category}}">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer border-0">
+                    <button data-dismiss="modal" aria-label="Close" class="btn new" id="card-bg2"
+                        (click)="UpdateTeam( name1,category1)">Actualizar</button>
+                </div>
             </div>
         </div>
     </div>
-</div>
- <app-green-footer></app-green-footer> 
+
 </section>
-<!-- Modal post ejercicio -->
-
-
+<app-green-footer></app-green-footer>
