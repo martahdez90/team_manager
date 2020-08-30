@@ -29,23 +29,18 @@ section {
   justify-content: center;
   flex-direction: column;
   margin-top: 10px;
-  background: orange;
 }
 
 .links {
-  margin-top: 5px;
   margin: 0 5px;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-around;
   
-  .link2 {
-    margin-left: 10px;
-  }
 
   img {
-    width: 30px;
+    width: 42px;
   }
 
 }
@@ -54,9 +49,7 @@ section {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  div  {
-    padding-top: 5px;
-  }
+  padding-top: 5px;
 
   p {
     color: black;
