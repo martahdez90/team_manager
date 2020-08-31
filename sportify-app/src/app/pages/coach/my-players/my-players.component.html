@@ -10,13 +10,13 @@
     <!-- My players cards -->
     <div>
         <div class="cards-container">
-            <div *ngFor="let player of dataBase; let i = index"
-                class="player-card">
+            <div *ngFor="let player of dataBase; let i = index" class="player-card">
                 <div class="delete">
-                    <img src="../../../../assets/pages/close.svg" alt="" id="delete" (click)="deletePlayers(dataBase[i].user_id)">
+                    <img src="../../../../assets/pages/close.svg" alt="" id="delete"
+                        (click)="deletePlayers(dataBase[i].user_id)">
                 </div>
                 <div class="player-info">
-                    <h1 >
+                    <h1>
                         {{player.name}} {{player.lastName}}
                     </h1>
                     <h2>
@@ -30,7 +30,26 @@
                     <img src="../../../../assets/pages/close.svg" alt="" id="delete">
                 </div>
                 <div class="player-info">
-                    <h1 >
+                    <h1>
+                        CARLOS GARCÍA
+                    </h1>
+                    <div class="contact-info">
+                        <h2>
+                            <strong>Email: </strong> carlossgarcia95@email.com
+                        </h2>
+                        <h2>
+                            <strong>Mvl: </strong> 658965624
+                        </h2>
+                    </div>
+
+                </div>
+            </div>
+            <div id="player-card">
+                <div class="delete">
+                    <img src="../../../../assets/pages/close.svg" alt="" id="delete">
+                </div>
+                <div class="player-info">
+                    <h1>
                         CARLOS GARCÍA
                     </h1>
                     <h2>
@@ -44,21 +63,7 @@
                     <img src="../../../../assets/pages/close.svg" alt="" id="delete">
                 </div>
                 <div class="player-info">
-                    <h1 >
-                        CARLOS GARCÍA
-                    </h1>
-                    <h2>
-                        <strong>Email: </strong>  carlossgarcia95@email.com <br>
-                        <strong>Mvl: </strong> 658965624
-                    </h2>
-                </div>
-            </div>
-            <div id="player-card">
-                <div class="delete">
-                    <img src="../../../../assets/pages/close.svg" alt="" id="delete">
-                </div>
-                <div class="player-info">
-                    <h1 >
+                    <h1>
                         CARLOS GARCÍA
                     </h1>
                     <h2>
@@ -72,11 +77,11 @@
                     <img src="../../../../assets/pages/close.svg" alt="" id="delete">
                 </div>
                 <div class="player-info">
-                    <h1 >
+                    <h1>
                         CARLOS GARCÍA
                     </h1>
                     <h2>
-                        <strong>Email: </strong>  carlossgarcia95@email.com <br>
+                        <strong>Email: </strong> carlossgarcia95@email.com <br>
                         <strong>Mvl: </strong> 658965624
                     </h2>
                 </div>
@@ -88,9 +93,9 @@
             Nuevo jugador
         </button>
     </div>
-     <!-- modal new player -->
+    <!-- modal new player -->
     <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
-    aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
