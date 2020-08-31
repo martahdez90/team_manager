@@ -1,7 +1,8 @@
 footer {
     padding-top: 0.5%;
     height: 8vh;
-    position: absolute bottom;
+    position: fixed;
+    bottom: 0;
     width: 100%;
     margin-bottom: 0;
     font-size: 3.3vh;
@@ -11,4 +12,13 @@ footer {
     color: white;
     text-shadow: 2px 2px #02695c;
     padding-bottom: 0;
+}
+
+
+@media screen and (max-width: 932px) {
+
+    footer {
+        display: none;
+    }
+
 }

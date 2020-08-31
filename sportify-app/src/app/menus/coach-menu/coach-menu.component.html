@@ -1,9 +1,9 @@
 <header class="lyrics">
-    <nav class="navbar fixed-top navbar-expand-lg navbar-light">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light mx-auto">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
+        <div class="collapse navbar-collapse " id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link" id="whiteLink" routerLink="/coach/myTeams" routerLinkActive="active-link"> Equipos <span class="sr-only">(current)</span></a>
@@ -15,7 +15,9 @@
                     <a class="nav-link" id="whiteLink" routerLink="/coach/allGames" routerLinkActive="active-link">Partidos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" id="whiteLink" routerLink="/coach/tournament" routerLinkActive="active-link">Torneos</a>
+
+                    <a class="nav-link" id="whiteLink" routerLink="/coach/myTournaments" routerLinkActive="active-link">torneos</a>
+
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" id="whiteLink" routerLink="/coach/settings" routerLinkActive="active-link">Ajustes</a>
@@ -27,69 +29,44 @@
 </header>
 
 
-<!-- 
-<mat-toolbar id="mainToolbar" color="primary">
-  <mat-icon
-    (click)="onToolbarMenuToggle()"
-    id="toolbarMenu">menu</mat-icon>
-  <h1 class="header">Mis equipos</h1>
-  <span class="toolbar-spacer"></span>
-  <mat-icon
-    class="toolbar-icon">
-  notifications</mat-icon>
-</mat-toolbar>
+<header class="bottom-menu">
+  <div class="menu-icons">
+    <div class="boton">
+      <a routerLink="/coach/myTeams">
+        <img src="../../../assets/menus/myteams.svg" alt="myteams">
+      </a>
+    </div>
+    <div class="boton">
+      <a routerLink="/coach/allWorkouts" >
+        <img src="../../../assets/menus/trainings.svg" alt="trainings">
+      </a>
+    </div>
+    <div class="boton">
+      <a routerLink="/coach/allGames" >
+        <img src="../../../assets/menus/mygames.svg" alt="mygames">
+      </a>
+      
+    </div>
+    <div class="boton">
+      <a routerLink="/coach/mytournaments" >
+        <img src="../../../assets/menus/mytourn.svg" alt="">
+      </a>
+      
+    </div>
+  </div>
+  <div class="menu-text">
+    <div class="boton-text">
+      <p>equipos</p>
+    </div>
+    <div class="boton-text">
+      <p>entrenos</p>
+    </div>
+    <div class="boton-text">
+      <p>partidos</p>
+    </div>
+    <div class="boton-text">
+      <p>torneos</p>
+    </div>
+  </div>
+</header> 
 
-<mat-sidenav-container
-  id="sidenavContainer"
- fullscreen>
-  <mat-sidenav
-    mode="side"
-    #sidenav
-    id="sidenav"
-    [class.menu-open]="isMenuOpen"
-    [class.menu-close]="!isMenuOpen"
-    opened>
-    
-    <mat-list id="menus">
-      <mat-card>
-        <mat-card-header>
-          <div 
-            mat-card-avatar 
-            class="avatar"></div>
-
-          <mat-card-title>John Doe</mat-card-title>
-          <mat-card-subtitle>Internal</mat-card-subtitle>
-        </mat-card-header>
-      </mat-card>
-      <mat-list-item>
-        <button 
-        class="menu-item"
-          mat-flat-button>
-          <mat-icon>dashboard</mat-icon>
-        Dashboard</button>
-      </mat-list-item>
-
-      <mat-list-item>
-          <button 
-          class="menu-item"
-            mat-flat-button>
-            <mat-icon>work</mat-icon>
-          Project</button>
-        </mat-list-item>
-
-        <mat-list-item>
-            <button 
-            class="menu-item"
-              mat-flat-button>
-              <mat-icon>settings_application</mat-icon>
-            Settings</button>
-          </mat-list-item>
-
-    </mat-list>
-  </mat-sidenav>
-
-  <mat-sidenav-content></mat-sidenav-content>
-
-</mat-sidenav-container>
-
- -->

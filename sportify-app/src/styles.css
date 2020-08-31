@@ -7,11 +7,12 @@
 
 body {
     position: relative;
-    background-color: #E0F2F1;
     margin: 0;
     width: 100vw;
     min-height: 100vh;
     font-family: Roboto, "Helvetica Neue", sans-serif;
+    justify-content: center;
+    align-items: center;
 }
 
 .fa-trash-alt {

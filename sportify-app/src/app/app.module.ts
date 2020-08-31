@@ -47,7 +47,6 @@ import { CoachTournamentComponent } from './pages/coach/coach-tournament/coach-t
 
 
 
-
 @NgModule({
   declarations: [
     AppComponent,
