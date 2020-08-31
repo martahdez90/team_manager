@@ -8,11 +8,12 @@
         </a>
     </div>
     <!-- My players cards -->
-    <div>
+    
         <div class="cards-container">
             <div *ngFor="let player of dataBase; let i = index" id="player-card">
                 <div class="delete">
-                    <img src="../../../../assets/pages/close.svg" alt="delete user" id="delete">
+                    <img src="../../../../assets/pages/close.svg" alt="delete user" id="delete"
+                        (click)="deletePlayers(dataBase[i].user_id)">
                 </div>
                 <div class="player-div">
                     <img src="../../../../assets/pages/myplayers/myplayer.svg" alt="user-image" id="user-img">
@@ -35,9 +36,28 @@
                     </div>
                 </div>
             </div>
-           
+            <div *ngFor="let player of dataBase; let i = index" id="player-card-phone">
+                <div class="player-name">
+                    <h1>
+                        {{player.name | uppercase}} {{player.lastName | uppercase}}
+                    </h1>
+                    <img src="../../../../assets/pages/close.svg" alt="delete user" id="delete" (click)="deletePlayers(dataBase[i].user_id)">
+                </div>
+                <div class="contact-info">
+                    <h2>
+                        <strong>Email: </strong> 
+                        {{player.email}}
+                    </h2>
+                    <h2>
+                        <strong>Mvl: </strong> 
+                        {{player.phone}}
+                    </h2>
+                </div>
+                
+
+            </div>
+            
         </div>
-    </div>
     <div class="newTeam">
         <button data-toggle="modal" data-target="#exampleModalCenter">
             Nuevo jugador

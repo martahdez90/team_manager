@@ -19,13 +19,12 @@ export class MyPlayersComponent implements OnInit {
 
   public deletePlayers(index: number) {
     Swal.fire({
-      title: '¿Estás seguro?',
-      text: "¡No podrás recuperarlo!",
+      title: '¿Eliminar jugador del equipo?',
       icon: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#00bfa5',
       cancelButtonColor: '#d33',
-      confirmButtonText: 'borrar'
+      confirmButtonText: 'Eliminar'
     }).then((result) => {
       if (result.value) {
         console.log(index)
@@ -35,7 +34,7 @@ export class MyPlayersComponent implements OnInit {
             this.dataBase = data;
             Swal.fire({
               title: '¡Eliminado!',
-              text: 'Tu jugador ha sido borrado',
+              text: 'Tu jugador ha sido eliminado',
               icon: 'success',
               confirmButtonColor: '#00bfa5'
             })
