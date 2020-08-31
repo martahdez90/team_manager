@@ -7,7 +7,7 @@ import Swal from 'sweetalert2';
 @Component({
   selector: 'app-my-players',
   templateUrl: './my-players.component.html',
-  styleUrls: ['./my-players.component.css']
+  styleUrls: ['../../../base.scss', './my-players.component.scss']
 })
 export class MyPlayersComponent implements OnInit {
   public dataBase: object;

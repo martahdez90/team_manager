@@ -80,7 +80,7 @@ button:hover {
     }
   }
   //my teams section
-    #myTeams {
+    #myTeams, #myPlayers {
       min-width: 100vw;
       min-height: 90vh;
       @extend %centerflex;
@@ -97,7 +97,7 @@ button:hover {
       flex-wrap: wrap;
     }
 
-    #team-card {
+    #team-card, #player-card {
       width: 346px;
       margin: 0.5rem;
       text-align: center;

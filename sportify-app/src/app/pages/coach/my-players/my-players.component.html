@@ -1,6 +1,94 @@
 <app-coach-menu></app-coach-menu>
 
-<section>
+<section id="myPlayers">
+    <div class="header">
+        <h1 class="header-title">Mis jugadores</h1>
+        <a routerLink="/coach/settings">
+            <img src="../../../../assets/menus/avataaars.svg" alt="avatar" id="avatar">
+        </a>
+    </div>
+    <!-- My players cards -->
+    <div>
+        <div class="cards-container">
+            <div *ngFor="let player of dataBase; let i = index"
+                class="player-card">
+                <div class="delete">
+                    <img src="../../../../assets/pages/close.svg" alt="" id="delete" (click)="deletePlayers(dataBase[i].user_id)">
+                </div>
+                <div class="player-info">
+                    <h1 >
+                        {{player.name}} {{player.lastName}}
+                    </h1>
+                    <h2>
+                        <strong>Email: </strong> <br> {{player.email}} <br>
+                        <strong>Mvl: </strong> {{player.phone}}
+                    </h2>
+                </div>
+            </div>
+            <div id="player-card">
+                <div class="delete">
+                    <img src="../../../../assets/pages/close.svg" alt="" id="delete">
+                </div>
+                <div class="player-info">
+                    <h1 >
+                        CARLOS GARCÍA
+                    </h1>
+                    <h2>
+                        <strong>Email: </strong> carlossgarcia95@email.com <br>
+                        <strong>Mvl: </strong> 658965624
+                    </h2>
+                </div>
+            </div>
+            <div id="player-card">
+                <div class="delete">
+                    <img src="../../../../assets/pages/close.svg" alt="" id="delete">
+                </div>
+                <div class="player-info">
+                    <h1 >
+                        CARLOS GARCÍA
+                    </h1>
+                    <h2>
+                        <strong>Email: </strong>  carlossgarcia95@email.com <br>
+                        <strong>Mvl: </strong> 658965624
+                    </h2>
+                </div>
+            </div>
+            <div id="player-card">
+                <div class="delete">
+                    <img src="../../../../assets/pages/close.svg" alt="" id="delete">
+                </div>
+                <div class="player-info">
+                    <h1 >
+                        CARLOS GARCÍA
+                    </h1>
+                    <h2>
+                        <strong>Email: </strong> carlossgarcia95@email.com <br>
+                        <strong>Mvl: </strong> 658965624
+                    </h2>
+                </div>
+            </div>
+            <div id="player-card">
+                <div class="delete">
+                    <img src="../../../../assets/pages/close.svg" alt="" id="delete">
+                </div>
+                <div class="player-info">
+                    <h1 >
+                        CARLOS GARCÍA
+                    </h1>
+                    <h2>
+                        <strong>Email: </strong>  carlossgarcia95@email.com <br>
+                        <strong>Mvl: </strong> 658965624
+                    </h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="newTeam">
+        <button data-toggle="modal" data-target="#exampleModalCenter">
+            Nuevo jugador
+        </button>
+    </div>
+     <!-- modal new player -->
     <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
     aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -30,38 +118,6 @@
                 </div>
             </div>
         </div>
-    </div>
-
-    <div class="header row">
-        <h2 class="col-12 header">Mis jugadores</h2>
-    </div>
-
-    <div>
-        <div class="card-color d-flex align-content-center flex-wrap mx-auto pb-4">
-            <div *ngFor="let player of dataBase; let i = index"
-                class="card playerInfo mr-4 ml-5 mt-4 mb-1 mb-1 p-1 pb-1 team" id="team2">
-                <div class="card-header" id="date">
-                    {{player.name}} {{player.lastName}}
-                    <i class='fas fa-trash-alt'(click)="deletePlayers(dataBase[i].user_id)"></i>
-                </div>
-                <div class="card-body row">
-                    <!-- <div class="col-3">
-                        <i class='fas fa-user'></i>
-                    </div> -->
-                    <div class="col-12 infoPlayer">
-                        <p class="card-text"> <strong>Email: </strong> <br> {{player.email}}</p>
-                        <label for="email"><strong>Mvl: </strong> <br></label>
-                        <p class="card-text"> {{player.phone}}</p>
-                    </div>
-                </div>
-                <div class="card-footer"></div>
-            </div>
-        </div>
-    </div>
-    <div class="newTeam">
-        <button class="btn newJ mb-5" id="card-bg2" data-toggle="modal" data-target="#exampleModalCenter">
-            Nuevo jugador
-        </button>
     </div>
 </section>
 
