@@ -43,6 +43,7 @@ import { MatchesPlayerComponent } from './pages/player/matches-player/matches-pl
 //validadores npm i ng-validate-equal
 import { ValidateEqualModule } from 'ng-validate-equal';
 import { AllworkoutsComponent } from './pages/coach/allworkouts/allworkouts.component';
+import { CoachTournamentComponent } from './pages/coach/coach-tournament/coach-tournament.component';
 
 
 
@@ -68,7 +69,8 @@ import { AllworkoutsComponent } from './pages/coach/allworkouts/allworkouts.comp
     LandingMenuComponent,
     PlayerSettingsComponent,
     AllGamesComponent,
-    AllworkoutsComponent
+    AllworkoutsComponent,
+    CoachTournamentComponent
   ],
   imports: [
     BrowserModule,

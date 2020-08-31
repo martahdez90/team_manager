@@ -1,0 +1,134 @@
+<app-coach-menu></app-coach-menu>
+<section>
+    <div class="header row">
+        <h2 class="col-12 header">
+            <i class="fas fa-chevron-left" routerLink="/coach/myTeams"></i> Torneos
+        </h2>
+    </div>
+
+    <!--modal nuevo torneo-->
+    <div class="modal fade" id="newTournament" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Nuevo Torneo</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+                </div>
+                <div class="modal-body">
+                    <div class="card mb-3">
+                        <select #team class="team">
+                        <option  *ngFor=" let team of teams" value="{{team.team_id}}">
+                            {{team.name}}
+                        </option>
+                    </select>
+
+                        <div class="card-body bg-transparent modalB">
+                            <label for="date">Fecha:</label><br>
+                            <input type="date" #date>
+                        </div>
+                        <div class="card-body bg-transparent modalB">
+                            <label for="sport">deporte</label><br>
+                            <input #sport class="card-text" placeholder="futboll,baloncesto">
+                        </div>
+                        <div class="card-body bg-transparent modalB">
+                            <label for="category">categoria</label><br>
+                            <input #category class="card-text" placeholder="cadete">
+                        </div>
+                        <div class="card-body modalB">
+                            <label for="description">descripcion</label><br>
+                            <textarea #description class="card-text" placeholder="precio,caracteristicas,premios, etc..."></textarea>
+                        </div>
+                        <br>
+                        <div class="card-body modalB">
+                            <label for="location">Lugar:</label><br>
+                            <input #location class="card-text" placeholder="lugar">
+                        </div>
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button data-dismiss="modal" aria-label="Close" class="btn new" id="card-bg2" (click)="newTournament(sport, date, location, category, description, team)">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- section my tournament -->
+    <div id="training-card">
+        <div class="card-color d-flex align-content-center flex-wrap mx-auto pb-4 playerInfo">
+            <div class="card mt-4 mb-1 pb-1" *ngFor="let e of dataBase; let i= index">
+                <div class="card-header" id="date">
+                    {{e.date | date}}
+                    <i class="far fa-edit" id="edit" (click)="getTournament(dataBase[i])" data-toggle="modal" data-target="#putTournament"></i>
+                    <i class='fas fa-trash-alt' (click)="deleteTournament(dataBase[i].tournament_id)" id="trash"></i>
+                </div>
+                <div class="card-body bg-transparent">
+                    {{e.sport}}
+                </div>
+                <div class="card-body bg-transparent">
+                    {{e.category}}
+                </div>
+                <div class="card-body">
+                    <p class="card-text">{{e.description}}</p>
+                </div>
+                <div class="card-footer">
+                    {{e.location}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <button class="btn newT" data-toggle="modal" data-target="#newTournament">
+        Nuevo Torneo
+    </button>
+    </div>
+<!-- modal putTournament -->
+    <div class="modal fade" id="putTournament" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">actualizar Torneo</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+                </div>
+                <div class="modal-body">
+                    <div class="card mb-3">
+                        <select #team2>
+                        <option  *ngFor=" let team of teams" value="{{team.team_id}}">
+                            {{team.name}}
+                        </option>
+                    </select>
+                        <div class="card-header bg-transparent">
+                            <input type="text" #sport2 placeholder="{{tournament.sport}}">
+                        </div>
+
+                        <div class="card-header bg-transparent">
+                            <p style="color: red;">Obligatorio</p>
+                            <input type="date" #date2 value="{{tournament.date | date}}">
+                        </div>
+                        <div class="card-body">
+                            <input #category2 class="card-text" placeholder="{{tournament.category}}">
+
+                        </div>
+                        <div class="card-body">
+                            <input #description2 class="card-text" placeholder="{{tournament.description}}">
+                        </div>
+                        <div class="card-body">
+                            <input #location2 class="card-text" placeholder="{{tournament.location}}">
+                        </div>
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button data-dismiss="modal" aria-label="Close" class="btn new" id="card-bg2" (click)="putTournament(sport2, date2, location2, category2, description2, team2)">Actualizar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<app-green-footer></app-green-footer>

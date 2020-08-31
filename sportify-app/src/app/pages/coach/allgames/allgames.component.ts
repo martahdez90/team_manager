@@ -81,14 +81,17 @@ export class AllGamesComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(this.loginService.userLoged.user_id)
     this.matchService.getPlayerMatches(this.loginService.userLoged.user_id).subscribe(data => {
       console.log(data)
       this.dataBase = data 
-      if (data[0].lenght != 0) {
-      
-      }
-      
+      if (data[0].lenght != 0) { 
+          // preuntar a marta
+      } 
+    })
+    this.teamService.getTeams(this.loginService.userLoged.user_id).subscribe((data) => {
+      console.log('Eqipos')
+      console.log(data);
+      this.teams = data;
     })
   }
 
