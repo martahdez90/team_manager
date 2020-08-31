@@ -19,6 +19,7 @@ import { MyCoachComponent } from './pages/player/my-coach/my-coach.component';
 import { TrainingsPlayerComponent } from "./pages/player/trainings-player/trainings-player.component";
 import { MatchesPlayerComponent } from "./pages/player/matches-player/matches-player.component";
 import { PlayerSettingsComponent } from './pages/player/player-settings/player-settings.component';
+import { CoachTournamentComponent } from './pages/coach/coach-tournament/coach-tournament.component';
 
 
 const routes: Routes = [
@@ -35,6 +36,7 @@ const routes: Routes = [
   { path: 'coach/myGames', component: MyGamesComponent },
   { path: 'coach/allGames', component: AllGamesComponent },
   { path: 'coach/allWorkouts', component: AllworkoutsComponent },
+  {path:'coach/tournament', component:CoachTournamentComponent},
 
   // player
   {path: 'player/myTrainings', component: TrainingsPlayerComponent },
