@@ -12,13 +12,48 @@ section {
   }
 
   #player-card{
-   
-    
       margin: 1.5rem;
-  }
+      justify-content: start;
+      text-align: left;
+      #user-img {
+        flex-grow: 1;
+      }
+      .player-div {
+        display: flex;
+        margin-left: 10px;
 
-  .player-info {
-    text-align: left;
-    justify-content: center;
-    align-items: space;
-  }
+        .player-info {
+          width: 75%;
+          .player-name {
+          height: 80%;
+          display: flex;
+          flex-direction: column;
+    
+          padding: 1rem;
+              h1 {
+              font-size: 20px;
+                  }
+              .contact-info {
+              display: flex;
+              flex-direction: column;
+              justify-content: space-around;
+              height: 80%;
+              padding-top: 10px;
+              color: gray;
+              h2 {
+                font-size: 16px;
+              }
+            }
+          }
+        }
+      }
+ }
+
+
+
+ @media screen and (max-width: 932px) {
+
+ #user-img {
+   display: none;
+ }
+}

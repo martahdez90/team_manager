@@ -10,82 +10,32 @@
     <!-- My players cards -->
     <div>
         <div class="cards-container">
-            <div *ngFor="let player of dataBase; let i = index" class="player-card">
+            <div *ngFor="let player of dataBase; let i = index" id="player-card">
                 <div class="delete">
-                    <img src="../../../../assets/pages/close.svg" alt="" id="delete"
-                        (click)="deletePlayers(dataBase[i].user_id)">
+                    <img src="../../../../assets/pages/close.svg" alt="delete user" id="delete">
                 </div>
-                <div class="player-info">
-                    <h1>
-                        {{player.name}} {{player.lastName}}
-                    </h1>
-                    <h2>
-                        <strong>Email: </strong> <br> {{player.email}} <br>
-                        <strong>Mvl: </strong> {{player.phone}}
-                    </h2>
-                </div>
-            </div>
-            <div id="player-card">
-                <div class="delete">
-                    <img src="../../../../assets/pages/close.svg" alt="" id="delete">
-                </div>
-                <div class="player-info">
-                    <h1>
-                        CARLOS GARCÍA
-                    </h1>
-                    <div class="contact-info">
-                        <h2>
-                            <strong>Email: </strong> carlossgarcia95@email.com
-                        </h2>
-                        <h2>
-                            <strong>Mvl: </strong> 658965624
-                        </h2>
+                <div class="player-div">
+                    <img src="../../../../assets/pages/myplayers/myplayer.svg" alt="user-image" id="user-img">
+                    <div class="player-info">
+                        <div class="player-name">
+                            <h1>
+                                {{player.name | uppercase}} {{player.lastName | uppercase}}
+                            </h1>
+                            <div class="contact-info">
+                                <h2>
+                                    <strong>Email: </strong> <br>
+                                    {{player.email}}
+                                </h2>
+                                <h2>
+                                    <strong>Mvl: </strong> <br>
+                                    {{player.phone}}
+                                </h2>
+                            </div>
+                        </div>
                     </div>
-
                 </div>
             </div>
-            <div id="player-card">
-                <div class="delete">
-                    <img src="../../../../assets/pages/close.svg" alt="" id="delete">
-                </div>
-                <div class="player-info">
-                    <h1>
-                        CARLOS GARCÍA
-                    </h1>
-                    <h2>
-                        <strong>Email: </strong> carlossgarcia95@email.com <br>
-                        <strong>Mvl: </strong> 658965624
-                    </h2>
-                </div>
-            </div>
-            <div id="player-card">
-                <div class="delete">
-                    <img src="../../../../assets/pages/close.svg" alt="" id="delete">
-                </div>
-                <div class="player-info">
-                    <h1>
-                        CARLOS GARCÍA
-                    </h1>
-                    <h2>
-                        <strong>Email: </strong> carlossgarcia95@email.com <br>
-                        <strong>Mvl: </strong> 658965624
-                    </h2>
-                </div>
-            </div>
-            <div id="player-card">
-                <div class="delete">
-                    <img src="../../../../assets/pages/close.svg" alt="" id="delete">
-                </div>
-                <div class="player-info">
-                    <h1>
-                        CARLOS GARCÍA
-                    </h1>
-                    <h2>
-                        <strong>Email: </strong> carlossgarcia95@email.com <br>
-                        <strong>Mvl: </strong> 658965624
-                    </h2>
-                </div>
-            </div>
+           
         </div>
     </div>
     <div class="newTeam">
