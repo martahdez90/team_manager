@@ -12,10 +12,11 @@ export class TournamentService {
   constructor(private http: HttpClient) { }
 
 
-  getTournament(team_id:number){
-    return this.http.get(this.url +"/" + team_id)
+  getTournament(user_id: number){
+    return this.http.get(this.url +"/" + user_id)
   }
-  getPlayerTournament(user_id:number){
+
+  getPlayerTournament(user_id: number){
     return this.http.get(this.url +"/player/" + user_id)
   }
 
@@ -34,7 +35,7 @@ export class TournamentService {
         'Content-Type': 'application/json',
       }),
       body: {
-       tournamnet_id: id,
+       tournament_id: id,
       },
     };
     return this.http.delete(this.url, options)

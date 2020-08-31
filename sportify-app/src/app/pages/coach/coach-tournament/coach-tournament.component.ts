@@ -21,26 +21,51 @@ export class CoachTournamentComponent implements OnInit {
     this.tournament = new Tournament("", "", "", "","");
   }
 
-  getTournament(tournament: Tournament) {
+  public getTournament(tournament: Tournament) {
     this.tournament = tournament
     console.log(this.tournament)
   }
 
-  putTournament( sport:HTMLInputElement,date: HTMLInputElement, location: HTMLInputElement, category: HTMLInputElement, description:HTMLInputElement, team_id: HTMLInputElement) {
-    console.log(this.tournament)
-    let newTournament = new Tournament(sport.value,date.value, category.value, description.value, location.value)
+  public putTournament( sport:HTMLInputElement,date: HTMLInputElement, location: HTMLInputElement, category: HTMLInputElement, description:HTMLInputElement, team_id: HTMLInputElement) {
+    console.log(this.tournament.date)
+    let newTournament = new Tournament(sport.value, date.value, category.value, description.value, location.value)
     newTournament.team_id = Number(team_id.value);
     newTournament.tournament_id = this.tournament.tournament_id
+    if (sport.value === "") {
+      newTournament.sport = this.tournament.sport
+    } else {
+      newTournament.sport = sport.value
+    }
+    if (date.value === "") {
+      newTournament.date = this.tournament.date
+    } else {
+      newTournament.date = date.value
+    }
+    if (location.value === "") {
+      newTournament.location = this.tournament.location
+    } else {
+      newTournament.location = location.value
+    }
+    if (category.value === "") {
+      newTournament.category = this.tournament.category
+    } else {
+      newTournament.category = category.value
+    }
+    if (description.value === "") {
+      newTournament.description = this.tournament.description
+    } else {
+      newTournament.description = description.value
+    }
     console.log(newTournament)
-
     this.tournamentService.putTournament(newTournament).subscribe(data => {
-      this.tournamentService.getTournament(this.loginService.team_id).subscribe(data => {
+      console.log(data)
+      this.tournamentService.getPlayerTournament(this.loginService.userLoged.user_id).subscribe(data => {
         this.dataBase = data
       })
     })
   }
 
-  newTournament( sport:HTMLInputElement, date: HTMLInputElement, location: HTMLInputElement, category: HTMLInputElement, description: HTMLInputElement, team_id: HTMLInputElement) {
+  public newTournament( sport:HTMLInputElement, date: HTMLInputElement, location: HTMLInputElement, category: HTMLInputElement, description: HTMLInputElement, team_id: HTMLInputElement) {
 
     let newTournament = new Tournament(sport.value,date.value, category.value, description.value, location.value)
     newTournament.team_id = Number(team_id.value);
@@ -48,14 +73,15 @@ export class CoachTournamentComponent implements OnInit {
 
     this.tournamentService.postTournamnet(newTournament).subscribe(data => {
       console.log(data)
-      this.tournamentService.getTournament(this.loginService.team_id).subscribe(data => {
+      this.tournamentService.getPlayerTournament(this.loginService.userLoged.user_id).subscribe(data => {
         this.dataBase = data
 
       })
     })
   }
 
-  deleteTournament(id: number) {
+  public deleteTournament(id: number) {
+    console.log(this.dataBase)
     Swal.fire({
       title: '¿Estás seguro?',
       text: "¡No podrás recuperarlo!",
@@ -69,7 +95,7 @@ export class CoachTournamentComponent implements OnInit {
         console.log(id)
         this.tournamentService.deleteTournament(id).subscribe((data) => {
           console.log(data)
-          this.tournamentService.getTournament(this.loginService.team_id).subscribe(data => {
+          this.tournamentService.getPlayerTournament(this.loginService.userLoged.user_id).subscribe(data => {
             this.dataBase = data
             Swal.fire({
               title: '¡Eliminado!',
@@ -84,10 +110,11 @@ export class CoachTournamentComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.tournamentService.getTournament(this.loginService.team_id).subscribe(data => {
+    this.tournamentService.getPlayerTournament(this.loginService.userLoged.user_id).subscribe(data => {
       this.dataBase = data
     })
     this.teamService.getTeams(this.loginService.userLoged.user_id).subscribe((data) => {
+      console.log('Equipos');
       console.log(data);
       this.teams = data;
     })

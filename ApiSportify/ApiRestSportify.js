@@ -560,13 +560,13 @@ app.get("/tournament/:team_id", function(request, response) {
 //obtener torneos del jugador
 app.get("/tournament/player/:user_id", function(request, response) {
     let params = [request.params.user_id];
-    let sql = "SELECT tournament_teams.team_id, tournament.sport, tournament.date, tournament.category, tournament.location, tournament.description FROM tournament  INNER JOIN tournament_teams  ON (tournament.tournament_id = tournament_teams.tournament_id) INNER JOIN team AS team ON (matches_teams.team_id = team.team_id) INNER JOIN user_teams AS user_teams ON (team.team_id = user_teams.team_id) INNER JOIN users AS users ON (user_teams.user_id = users.user_id) WHERE users.user_id = ?";
-    // let sql = "SELECT t5.* FROM matches AS t5 "+  
-    // "INNER JOIN matches_teams AS t4 ON (t5.match_id = t4.match_id) "+
-    // "INNER JOIN team AS t3 ON (t4.team_id = t3.team_id) "+
-    // "INNER JOIN user_teams t2 ON (t3.team_id = t2.team_id) "+
-    // "INNER JOIN users AS t1 ON (t2.user_id = t1.user_id) "+
-    // "WHERE t1.user_id = ?";
+    let sql = "SELECT tournament.tournament_id, tournament.sport, tournament.date, tournament.category, tournament.location, tournament.description "+
+    "FROM tournament  "+
+    "INNER JOIN tournament_teams  ON (tournament.tournament_id = tournament_teams.tournament_id)"+
+    "INNER JOIN team ON (tournament_teams.team_id = team.team_id) "+
+    "INNER JOIN user_teams ON (team.team_id = user_teams.team_id) "+
+    "INNER JOIN users ON (user_teams.user_id = users.user_id) WHERE users.user_id = ?"
+
     connection.query(sql, params, function(err, resultado) {
         if (err) {
             console.log(err);
@@ -581,7 +581,7 @@ app.get("/tournament/player/:user_id", function(request, response) {
 app.post("/tournament", function(request, response) {
     let params = [request.body.sport, request.body.date, request.body.category, request.body.description, request.body.location];
     let sql = "INSERT INTO tournament ( `tournament_id`,`sport`, `date`,`category`,`description`,`location`)  " +
-        "VALUES(NULL, ?, ?, ?, ?) "
+        "VALUES(NULL, ?, ?, ?, ?, ?) "
 
     connection.query(sql, params, function(err, resultado) {
         if (err) {
@@ -616,9 +616,9 @@ app.put("/tournament", function(request, response) {
 });
 
 //eliminar torneo
-app.delete("/tournamnet", function(request, response) {
+app.delete("/tournament", function(request, response) {
     let params = [request.body.tournament_id];
-    let sql = "DELETE FROM tournament WHERE tournamnet_id = ?";
+    let sql = "DELETE FROM tournament WHERE tournament_id = ?";
 
     connection.query(sql, params, function(err, resultado) {
         if (err) {

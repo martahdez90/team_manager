@@ -21,12 +21,12 @@ export class MyGamesComponent implements OnInit {
     this.game = new Match("", "", "", "");
   }
 
-  getGame(game: Match) {
+  public getGame(game: Match) {
     this.game = game
     console.log(this.game)
   }
 
-  putGame(date: HTMLInputElement, location: HTMLInputElement, comments: HTMLInputElement, rival: HTMLInputElement, team_id: HTMLInputElement) {
+  public putGame(date: HTMLInputElement, location: HTMLInputElement, comments: HTMLInputElement, rival: HTMLInputElement, team_id: HTMLInputElement) {
     console.log(this.game)
     let newMatch = new Match(date.value, comments.value, rival.value, location.value)
     newMatch.team_id = Number(team_id.value);
@@ -40,7 +40,7 @@ export class MyGamesComponent implements OnInit {
     })
   }
 
-  newGame(date: HTMLInputElement, location: HTMLInputElement, comments: HTMLInputElement, rival: HTMLInputElement, team_id: HTMLInputElement) {
+  public newGame(date: HTMLInputElement, location: HTMLInputElement, comments: HTMLInputElement, rival: HTMLInputElement, team_id: HTMLInputElement) {
 
     let newMatch = new Match(date.value, comments.value, rival.value, location.value)
     newMatch.team_id = Number(team_id.value);
@@ -55,7 +55,7 @@ export class MyGamesComponent implements OnInit {
     })
   }
 
-  deleteGame(id: number) {
+  public deleteGame(id: number) {
     Swal.fire({
       title: '¿Estás seguro?',
       text: "¡No podrás recuperarlo!",
@@ -88,6 +88,7 @@ export class MyGamesComponent implements OnInit {
       this.dataBase = data
     })
     this.teamService.getTeams(this.loginService.userLoged.user_id).subscribe((data) => {
+      console.log('Eqipos')
       console.log(data);
       this.teams = data;
     })

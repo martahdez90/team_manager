@@ -36,7 +36,7 @@ const routes: Routes = [
   { path: 'coach/myGames', component: MyGamesComponent },
   { path: 'coach/allGames', component: AllGamesComponent },
   { path: 'coach/allWorkouts', component: AllworkoutsComponent },
-  {path:'coach/tournament', component:CoachTournamentComponent},
+  {path:'coach/myTournaments', component:CoachTournamentComponent},
 
   // player
   {path: 'player/myTrainings', component: TrainingsPlayerComponent },
