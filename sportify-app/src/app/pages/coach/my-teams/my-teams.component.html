@@ -75,7 +75,7 @@
                             <label for="name">Nombre de equipo</label><br>
                             <input type="text" #name placeholder="ej: Real Madrid" maxlength="15" >
                         </div>
-                        <div class="card-body border-0">
+                        <div class="card-header bg-transparent border-0">
                             <label for="category">Categoría</label><br>
                             <input #category class="card-text" placeholder="ej: Alevines">
                         </div>
@@ -83,42 +83,43 @@
                     </div>
                 </div>
                 <div class="modal-footer border-0 ">
-                    <button data-dismiss="modal" aria-label="Close" class="addNew"
+                    <button data-dismiss="modal" aria-label="Close" class="btnModal"
                         (click)="addTeams( name,category)">Añadir equipo</button>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Modal  actualizar ejercicio -->
+
+    <!-- Modal  put team -->
     <div class="modal fade" id="putTeam" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content border-0">
-                <div class="modal-header border-0">
-                    <h5 class="modal-title">Actualizar equipo</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
+                <div class="modal-content border-0" id="modalNew">
+                    <div class="modal-header border-0">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" >
+                           <img src="../../../../assets/modals/close.svg" alt="close-modal" >
+                        </button>
+                    </div>
                 <div class="modal-body border-0">
-                    <div class="card mb-3 border-0">
+                    <div class="card mb-1 border-0">
                         <div class="card-header bg-transparent border-0">
                             <label for="name">Nombre de equipo</label><br>
                             <input type="text" #name1 placeholder="{{team1.name}}">
                         </div>
-                        <div class="card-body">
+                        <div class="card-body border-0">
                             <label for="category">Categoría</label><br>
                             <input #category1 class="card-text" placeholder="{{team1.category}}">
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer border-0">
-                    <button data-dismiss="modal" aria-label="Close" class="btn new" id="card-bg2"
+                    <button data-dismiss="modal" aria-label="Close" class="btnModal" id="card-bg2"
                         (click)="UpdateTeam( name1,category1)">Actualizar</button>
                 </div>
             </div>
         </div>
     </div>
-
+</div>
 </section>
 <app-green-footer></app-green-footer>
