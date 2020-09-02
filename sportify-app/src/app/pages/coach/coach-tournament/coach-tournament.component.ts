@@ -12,9 +12,9 @@ import{TournamentService} from '../../../shared/tournament.service'
 })
 export class CoachTournamentComponent implements OnInit {
 
-  public teams: object
-  public dataBase: object
-  public tournament: Tournament
+  public teams: object;
+  public dataBase: object;
+  public tournament: Tournament;
   public team_name: string = this.loginService.team_name;
 
   constructor(private tournamentService:TournamentService, private loginService: LoginService, private teamService: TeamService) {
@@ -26,7 +26,7 @@ export class CoachTournamentComponent implements OnInit {
     console.log(this.tournament)
   }
 
-  public putTournament( sport:HTMLInputElement,date: HTMLInputElement, location: HTMLInputElement, category: HTMLInputElement, description:HTMLInputElement, team_id: HTMLInputElement) {
+  public putTournament( sport:HTMLInputElement, date: HTMLInputElement, location: HTMLInputElement, category: HTMLInputElement, description:HTMLInputElement, team_id: HTMLInputElement) {
     console.log(this.tournament.date)
     let newTournament = new Tournament(sport.value, date.value, category.value, description.value, location.value)
     newTournament.team_id = Number(team_id.value);

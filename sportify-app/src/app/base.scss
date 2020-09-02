@@ -2,7 +2,7 @@
 /* Global Styles */
 // Variables Sass
 $myColor: #00bfa5;
-$darker: #16796b;
+$darker: #158a7a;
 $small: 1rem;
 $medium: 1.8rem;
 $colorin: white;
@@ -67,9 +67,13 @@ button:hover {
     text-align: center;
     padding: 2px;
     h1 {
-      margin-top: 15px;
+      margin-top: 20px;
     }
-
+    #back {
+      position: absolute;
+      top: 35%;
+      left: 5%;
+    }
 
     #avatar {
       position: absolute;
@@ -113,12 +117,55 @@ button:hover {
 
     //close icon
     .close {
-      background: white;
+      background: transparent;
       color: $red;
+      
     }
     .close:hover {
-      background: white;
+      background: transparent;
       color: $red;
+    }
+
+    //modal 
+
+    #modalNew {
+        
+        label {
+        color: $darker;
+        margin-left: 8px;
+        }
+        input {
+        // padding: 0.5rem;
+        // width: 240px;
+        // border:1px solid $darker;
+        padding:8px;
+        border:none;
+        border-bottom:1px solid #ccc;
+        width:100%;
+        }
+         input:focus, .form-line-active textarea:focus {
+          border: 1px solid $darker !important;
+          box-shadow: 0 0 3px $darker !important;
+          -moz-box-shadow: 0 0 3px $darker !important;
+          -webkit-box-shadow: 0 0 3px $darker !important;
+          }
+          
+          input:focus, textarea:focus, select:focus {
+          outline-offset: 0px !important;
+          outline: none !important;
+          }
+      } 
+    
+    
+    
+
+    //btn addNew
+
+    .addNew {
+      padding: 0.5rem;
+      width: 240px;
+      margin: auto;
+      margin-bottom: 1.3rem;
     }
 
    

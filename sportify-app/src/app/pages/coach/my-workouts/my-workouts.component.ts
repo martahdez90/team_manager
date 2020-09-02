@@ -8,7 +8,7 @@ import Swal from 'sweetalert2';
 @Component({
   selector: 'app-my-workouts',
   templateUrl: './my-workouts.component.html',
-  styleUrls: ['./my-workouts.component.css']
+  styleUrls: ['../../../base.scss', './my-workouts.component.scss']
 })
 
 export class MyWorkoutsComponent implements OnInit {
