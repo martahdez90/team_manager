@@ -31,39 +31,12 @@
                             <p>
                                 {{training.description}}
                             </p>
+                            <p id="place"><strong>Lugar:</strong></p>
                             <p>
-                                <strong>Lugar</strong> <br>
+                            <p>
                                 {{training.location}}
                             </p>
                             <a  id="view" routerLink="/coach/myExercises" (click)="saveTraining(dataBase[i].training_id)">Info</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="train-card" >
-            <div class="delete">
-                <img src="../../../../assets/pages/close.svg" alt="delete user" id="delete" >
-            </div>
-            <div class="train-div">
-                <div class="date">
-                    <p id="month">Jul</p>
-                    <p id="day">22</p>
-                </div>
-                <div class="train-info">
-                    <div class="train-name">
-                        <h1 data-toggle="modal" data-target="#putTraining" >
-                            La fuerza máxima
-                        </h1>
-                        <div class="contact-info">
-                            <p>
-                                Aumento de fuerza con tiros desde centro del campo
-                            </p>
-                            <p >
-                                <strong>Lugar</strong> <br>
-                                Polideportivo Maravilla
-                            </p>
-                            <a  id="view" routerLink="/coach/myExercises" >Info</a>
                         </div>
                     </div>
                 </div>
