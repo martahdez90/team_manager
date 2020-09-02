@@ -41,8 +41,36 @@
                 </div>
             </div>
         </div>
+        <div id="train-card" >
+            <div class="delete">
+                <img src="../../../../assets/pages/close.svg" alt="delete user" id="delete" >
+            </div>
+            <div class="train-div">
+                <div class="date">
+                    <p id="month">Jul</p>
+                    <p id="day">22</p>
+                </div>
+                <div class="train-info">
+                    <div class="train-name">
+                        <h1 data-toggle="modal" data-target="#putTraining" >
+                            La fuerza máxima
+                        </h1>
+                        <div class="contact-info">
+                            <p>
+                                Aumento de fuerza con tiros desde centro del campo
+                            </p>
+                            <p >
+                                <strong>Lugar</strong> <br>
+                                Polideportivo Maravilla
+                            </p>
+                            <a  id="view" routerLink="/coach/myExercises" >Info</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div> 
- 
+    
     <div class="newTeam">
         <button class="btn" id="card-bg2" data-toggle="modal" data-target="#postTraining">
             Nuevo entrenamiento
@@ -64,7 +92,7 @@
                     <div class="mb-3">
                         <div class="card-body bg-transparent" id="email">
                             <label for="nombre">Título:</label><br>
-                            <input type="text" id="nombre" #name placeholder="título" maxlength="30">
+                            <input type="text" id="nombre" #name placeholder="título" maxlength="25">
                         </div>
                         <div class="card-body bg-transparent">
                             <label for="date">Fecha:</label><br>
@@ -103,7 +131,7 @@
                     <div class="mb-3">
                         <div class="card-body bg-transparent" id="email">
                             <label for="nombre">Título:</label><br>
-                            <input type="text" id="nombre" #name1 placeholder="{{edit.name}}" maxlength="30">
+                            <input type="text" id="nombre" #name1 placeholder="{{edit.name}}" maxlength="25">
                         </div>
                         <div class="card-body bg-transparent">
                             <label for="date">Fecha:</label><br>
