@@ -84,7 +84,7 @@ button:hover {
     }
   }
   //my teams section
-    #myTeams, #myPlayers {
+    #myTeams, #myPlayers, #myTrainings {
       min-width: 100vw;
       min-height: 90vh;
       @extend %centerflex;
@@ -101,7 +101,7 @@ button:hover {
       flex-wrap: wrap;
     }
 
-    #team-card, #player-card, #player-card-phone {
+    #team-card, #player-card, #player-card-phone, #train-card {
       width: 346px;
       margin: 0.5rem;
       text-align: center;

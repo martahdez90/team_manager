@@ -1,0 +1,123 @@
+$myColor: #00bfa5;
+
+section {
+    color: black;
+  }
+
+.delete {
+    text-align: right;
+    padding-right: 10px;
+    margin-top:5px;
+    #delete {
+    cursor: pointer;
+    }
+  }
+  
+
+  #train-card{
+    margin: 1.5rem;
+    justify-content: start;
+    text-align: left;
+    
+    .train-div {
+      display: flex;
+      margin-left: 10px;
+      
+        .date {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            height: 70%;
+            p {
+                display: block;
+                font-size: 18px;
+                font-weight: bold;
+                margin-bottom: 0px;
+            }
+        }
+      .train-info {
+        flex-grow: 2;
+        margin-right: 0.5rem;
+        .train-name {
+        height: 90%;
+        display: flex;
+        flex-direction: column;
+  
+        padding: 1rem;
+            h1 {
+            font-size: 18px;
+                }
+            .contact-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            color: gray;
+           
+            p {
+              font-size: 12px;
+            }
+            #view {
+                text-align: right;
+                font-weight:bold;
+                cursor: pointer;
+                font-size: 16px;
+                color: $myColor;
+             
+                }
+          }
+        }
+      }
+    }
+}
+
+
+//version movil
+@media screen and (max-width: 932px) {
+
+    #train-card {
+        margin: 2vw;
+    }
+          .train-name {
+          height: 100%;
+          display: flex;
+          align-items: center;
+          background: white;
+          padding: 1rem;
+          padding-bottom: 0.3rem;
+          #delete {
+            position: absolute;
+            right: 4%;
+          }
+              h1 {
+              font-size: 18px;
+              
+                  }
+          }
+          .contact-info {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            padding-bottom: 0.5rem;;
+            color: gray;
+          
+            a {
+              font-size: 16px;
+              text-align: left;
+              margin-left: 1rem;
+            }
+
+            a:hover {
+                font-size: 22px;
+                text-decoration: underline;
+            }
+          }
+
+        }
+        
+       
+    
