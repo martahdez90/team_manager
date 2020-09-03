@@ -539,6 +539,17 @@ app.post("/users/teamPlayers", function(request, response) {
 
 
 //TORNEO
+app.get("/tournament",function (request, response) {
+    let sql = "SELECT * FROM tournament"
+    connection.query(sql, function(err, res){
+        if(err){
+            console.log(err);
+        } else {
+            console.log("toos los torneos");
+            response.send(res);
+        }
+    })
+})
 
 app.get("/tournament/:team_id", function(request, response) {
     let params = [request.params.team_id];
@@ -560,7 +571,7 @@ app.get("/tournament/:team_id", function(request, response) {
 //obtener torneos del jugador
 app.get("/tournament/player/:user_id", function(request, response) {
     let params = [request.params.user_id];
-    let sql = "SELECT tournament.tournament_id, tournament.sport, tournament.date, tournament.category, tournament.location, tournament.description "+
+    let sql = "SELECT tournament.tournament_id, tournament.name, tournament.sport, tournament.date, tournament.category, tournament.location, tournament.description "+
     "FROM tournament  "+
     "INNER JOIN tournament_teams  ON (tournament.tournament_id = tournament_teams.tournament_id)"+
     "INNER JOIN team ON (tournament_teams.team_id = team.team_id) "+
@@ -577,59 +588,73 @@ app.get("/tournament/player/:user_id", function(request, response) {
     });
 });
 
+//subscripcion a torneo
+app.post("/tournament", function(request, response){
+    let params = [request.body.team_id, request.body.tournament_id]
+    let sql = "INSERT INTO tournament_teams (`team_id`, `tournament_id`) VALUES (?, ?)"
+    connection.query(sql, params, function(err, resultado) {
+        if (err) {
+            console.log(err);
+        } else {
+            console.log("torneo agregado");
+            response.send(resultado);
+        }
+    });
+})
+
 //nuevo torneo
-app.post("/tournament", function(request, response) {
-    let params = [request.body.sport, request.body.date, request.body.category, request.body.description, request.body.location];
-    let sql = "INSERT INTO tournament ( `tournament_id`,`sport`, `date`,`category`,`description`,`location`)  " +
-        "VALUES(NULL, ?, ?, ?, ?, ?) "
+// app.post("/tournament", function(request, response) {
+//     let params = [request.body.sport, request.body.date, request.body.category, request.body.description, request.body.location];
+//     let sql = "INSERT INTO tournament ( `tournament_id`,`sport`, `date`,`category`,`description`,`location`)  " +
+//         "VALUES(NULL, ?, ?, ?, ?, ?) "
 
-    connection.query(sql, params, function(err, resultado) {
-        if (err) {
-            console.log(err);
-        } else {
-            let param1 = [resultado.insertId, request.body.team_id]
-            let sql1 = "INSERT INTO tournament_teams(tournament_id, team_id) VALUES(?, ?)";
-            connection.query(sql1, param1, function(err, res) {
-                if (err) {
-                    response.send(err)
-                } else {
-                    response.send(res)
-                }
-            })
-        }
-    });
-});
+//     connection.query(sql, params, function(err, resultado) {
+//         if (err) {
+//             console.log(err);
+//         } else {
+//             let param1 = [resultado.insertId, request.body.team_id]
+//             let sql1 = "INSERT INTO tournament_teams(tournament_id, team_id) VALUES(?, ?)";
+//             connection.query(sql1, param1, function(err, res) {
+//                 if (err) {
+//                     response.send(err)
+//                 } else {
+//                     response.send(res)
+//                 }
+//             })
+//         }
+//     });
+// });
 
-//actualizar torneo
-app.put("/tournament", function(request, response) {
-    let params = [request.body.sport, request.body.date, request.body.category, request.body.description, request.body.location, request.body.tournament_id];
-    let sql = "UPDATE tournament SET   sport = ?, date = ?, category= ?, description = ?, location = ? WHERE tournament_id = ?";
-    connection.query(sql, params, function(err, resultado) {
-        if (err) {
-            console.log(err);
-        } else {
-            console.log("actualñizar torneo");
-            response.send(resultado);
-        }
-    });
+// //actualizar torneo
+// app.put("/tournament", function(request, response) {
+//     let params = [request.body.sport, request.body.date, request.body.category, request.body.description, request.body.location, request.body.tournament_id];
+//     let sql = "UPDATE tournament SET   sport = ?, date = ?, category= ?, description = ?, location = ? WHERE tournament_id = ?";
+//     connection.query(sql, params, function(err, resultado) {
+//         if (err) {
+//             console.log(err);
+//         } else {
+//             console.log("actualñizar torneo");
+//             response.send(resultado);
+//         }
+//     });
 
-});
+// });
 
-//eliminar torneo
-app.delete("/tournament", function(request, response) {
-    let params = [request.body.tournament_id];
-    let sql = "DELETE FROM tournament WHERE tournament_id = ?";
+// //eliminar torneo
+// app.delete("/tournament", function(request, response) {
+//     let params = [request.body.tournament_id];
+//     let sql = "DELETE FROM tournament WHERE tournament_id = ?";
 
-    connection.query(sql, params, function(err, resultado) {
-        if (err) {
-            console.log(err);
-        } else {
-            console.log("eliminar torneo");
-            response.send(resultado);
-        }
-    });
+//     connection.query(sql, params, function(err, resultado) {
+//         if (err) {
+//             console.log(err);
+//         } else {
+//             console.log("eliminar torneo");
+//             response.send(resultado);
+//         }
+//     });
 
-});
+// });
 
 
 //BUSQUEDAS
