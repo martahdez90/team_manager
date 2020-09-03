@@ -1,0 +1,107 @@
+.header {
+    text-align: center;
+    margin: auto;
+    background-color: #00BFA5;
+    color: white;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    margin-top: 0%;
+    margin-bottom: 3%;
+    font-size: x-large;
+}
+
+section {
+    margin-top: 50px;
+    min-height: 100vh;
+}
+
+#sinRegistro {
+    size: 100%;
+    /* background-image: url("../../../assets/fondoMatches.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%; */
+}
+
+.container {
+    text-align: center;
+    height: 100vh;
+    color: #00BFA5;
+    margin: auto;
+    margin-top: 25vh;
+}
+
+#centro {
+    height: 50vh;
+}
+
+.card {
+    border: #00BFA5;
+    width: 300px;
+    margin: auto;
+}
+
+.card-footer,
+#date {
+    background-color: #00BFA5;
+    color: white;
+    position: relative;
+}
+
+#dropdown {
+    border-radius: 30px;
+    border: none;
+    color: white;
+    background: none
+}
+
+#shirt {
+    position: absolute;
+    top: 20%;
+    right: 5%;
+    color: white;
+}
+
+.fa-trophy {
+    position: absolute;
+    top: 20%;
+    right: 5%;
+    color: white;
+}
+
+#new-ex {
+    max-width: 50%;
+    margin: auto;
+}
+
+#card-bg2 {
+    border: none;
+    background-color: #00BFA5;
+    color: white;
+}
+
+@media(max-width: 769px) {
+    * {
+        font-size: medium;
+    }
+    h2 {
+        font-size: medium;
+    }
+    .header {
+        font-size: large;
+    }
+}
+
+@media(min-width: 769px) {
+    section {
+        padding-bottom: 10%;
+        margin-top: 50px;
+        margin-bottom: 10vh;
+    }
+    .card {
+        margin: 1%
+    }
+    .header {
+        margin-top: 2%;
+        margin-bottom: 2%;
+    }
+}

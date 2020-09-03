@@ -1,0 +1,34 @@
+<app-player-menu></app-player-menu>
+<section>
+    <div class="header">
+        <h2>Próximos torneos</h2>
+    </div>
+    <div *ngIf="sinRegistro; else registrado" id=sinRegistro>
+        <div class="container">
+            <div id="centro">
+                <h1>¡Bienvenido!</h1>
+                <p class="psr">Tu entrenador aún no te ha añadido a su equipo. <br> Contacta con tu entrenador para visualizar tus torneos</p>
+            </div>
+        </div>
+    </div>
+    <div id="entrenamientos" #registrado>
+        <div id="training-card" class="card-color d-flex align-content-center flex-wrap mx-auto pb-4">
+            <div class="card mb-3" *ngFor="let t of dataBase;">
+                <div class="card-header" id="date">
+                    <strong>{{t.date | date}}</strong> <br>
+                    <i class="fas fa-tshirt" id="shirt"></i>
+                </div>
+                <div class="card-body">
+                    <p class="card-text"><strong>{{t.sport}}</strong></p>
+                    <p class="card-text">{{t.category}}</p>
+                    <p class="card-text">{{t.description}}</p>
+                </div>
+                <div class="card-footer">
+                    {{t.location}}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<app-green-footer></app-green-footer>
