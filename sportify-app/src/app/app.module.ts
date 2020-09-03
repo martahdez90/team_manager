@@ -44,6 +44,7 @@ import { MatchesPlayerComponent } from './pages/player/matches-player/matches-pl
 import { ValidateEqualModule } from 'ng-validate-equal';
 import { AllworkoutsComponent } from './pages/coach/allworkouts/allworkouts.component';
 import { CoachTournamentComponent } from './pages/coach/coach-tournament/coach-tournament.component';
+import { PlayerTournamentComponent } from './pages/player/player-tournament/player-tournament.component';
 
 
 
@@ -70,7 +71,8 @@ import { CoachTournamentComponent } from './pages/coach/coach-tournament/coach-t
     PlayerSettingsComponent,
     AllGamesComponent,
     AllworkoutsComponent,
-    CoachTournamentComponent
+    CoachTournamentComponent,
+    PlayerTournamentComponent
   ],
   imports: [
     BrowserModule,
