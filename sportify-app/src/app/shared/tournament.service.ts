@@ -12,8 +12,8 @@ export class TournamentService {
   constructor(private http: HttpClient) { }
 
 
-  getTournament(user_id: number){
-    return this.http.get(this.url +"/" + user_id)
+  getTournament(){
+    return this.http.get(this.url)
   }
 
   getPlayerTournament(user_id: number){
@@ -21,12 +21,15 @@ export class TournamentService {
   }
 
   postTournamnet(newTournament: Tournament){
-    
     return this.http.post(this.url, newTournament)
   }
 
   putTournament(changes: Tournament){
     return this.http.put(this.url, changes)
+  }
+
+  subscriptionTournament(data: object){
+    return this.http.post(this.url, data)
   }
 
   deleteTournament(id: number){
