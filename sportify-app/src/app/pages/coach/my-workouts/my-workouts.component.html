@@ -11,6 +11,7 @@
     </div>
 
     <!-- contenido -->
+    
     <div class="cards-container"> 
         <div id="train-card" *ngFor="let training of dataBase; let i = index">
             <div class="delete">
@@ -33,7 +34,6 @@
                             </p>
                             <p id="place"><strong>Lugar:</strong></p>
                             <p>
-                            <p>
                                 {{training.location}}
                             </p>
                             <a  id="view" routerLink="/coach/myExercises" (click)="saveTraining(dataBase[i].training_id)">Info</a>
@@ -53,16 +53,15 @@
     <div class="modal fade" id="postTraining" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
         aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Nuevo entrenamiento</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
+            <div class="modal-content" id="modalNew">
+                <div class="modal-header border-0">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" >
+                       <img src="../../../../assets/modals/close.svg" alt="close-modal" >
                     </button>
                 </div>
 
                 <div class="modal-body">
-                    <div class="mb-3">
+                    <div class="mb-1">
                         <div class="card-body bg-transparent" id="email">
                             <label for="nombre">Título:</label><br>
                             <input type="text" id="nombre" #name placeholder="título" maxlength="25">
@@ -81,8 +80,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="modal-footer">
-                    <button class="btn new" id="card-bg2" (click)="addTraining(name, date, location, description)"
+                <div class="modal-footer border-0">
+                    <button class="btnModal" (click)="addTraining(name, date, location, description)"
                         data-dismiss="modal" aria-label="Close">Guardar</button>
                 </div>
             </div>
@@ -92,16 +91,15 @@
     <div class="modal fade" id="putTraining" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
         aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Editar entrenamiento</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
+            <div class="modal-content" id="modalNew">
+                <div class="modal-header border-0">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" >
+                       <img src="../../../../assets/modals/close.svg" alt="close-modal" >
                     </button>
                 </div>
 
                 <div class="modal-body">
-                    <div class="mb-3">
+                    <div class="mb-1">
                         <div class="card-body bg-transparent" id="email">
                             <label for="nombre">Título:</label><br>
                             <input type="text" id="nombre" #name1 placeholder="{{edit.name}}" maxlength="25">
@@ -120,8 +118,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="modal-footer">
-                    <button class="btn new" id="card-bg2" (click)="putTraining(name1, date1, location1, description1)"
+                <div class="modal-footer border-0">
+                    <button class="btnModal"  (click)="putTraining(name1, date1, location1, description1)"
                         data-dismiss="modal" aria-label="Close">Actualizar</button>
                 </div>
             </div>

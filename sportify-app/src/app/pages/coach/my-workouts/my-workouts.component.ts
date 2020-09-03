@@ -66,7 +66,7 @@ export class MyWorkoutsComponent implements OnInit {
     this.trainingService.putTraining(newTraining).subscribe((data) => {
 
       console.log(data);
-      this.trainingService.getTeamTraining(this.loginService.userLoged.user_id).subscribe((data) => {
+      this.trainingService.getTeamTraining(this.loginService.team_id).subscribe((data) => {
         console.log(data);
         this.dataBase = data;
       });
@@ -81,18 +81,19 @@ export class MyWorkoutsComponent implements OnInit {
       showCancelButton: true,
       confirmButtonColor: '#00bfa5',
       cancelButtonColor: '#d33',
-      confirmButtonText: 'borrar'
+      confirmButtonText: 'Eliminar',
+      cancelButtonText: 'Cancelar'
     }).then((result) => {
       if (result.value) {
         console.log(id)
         this.trainingService.deleteTraining(id).subscribe((data) => {
           console.log(data)
-          this.trainingService.getTeamTraining(this.loginService.userLoged.user_id).subscribe((data) => {
+          this.trainingService.getTeamTraining(this.loginService.team_id).subscribe((data) => {
             console.log(data);
             this.dataBase = data;
             Swal.fire({
               title: '¡Eliminado!',
-              text: 'Tu equipo ha sido borrado',
+              text: 'Tu entrenamiento ha sido borrado',
               icon: 'success',
               confirmButtonColor: '#00bfa5'
             })
