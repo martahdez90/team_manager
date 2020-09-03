@@ -12,10 +12,12 @@ import{TournamentService} from '../../../shared/tournament.service'
 })
 export class CoachTournamentComponent implements OnInit {
 
+
   public teams: object
   public allTournaments: object
   public tournament: Tournament
   public tournaments: object
+
   public team_name: string = this.loginService.team_name;
 
   constructor(private tournamentService:TournamentService, private loginService: LoginService, private teamService: TeamService) {
@@ -26,6 +28,7 @@ export class CoachTournamentComponent implements OnInit {
   //   this.tournament = tournament
   //   console.log(this.tournament)
   // }
+
 
   // public putTournament(name: HTMLInputElement, sport:HTMLInputElement,date: HTMLInputElement, location: HTMLInputElement, category: HTMLInputElement, description:HTMLInputElement, team_id: HTMLInputElement) {
   //   console.log(this.tournament.date)
@@ -81,6 +84,7 @@ export class CoachTournamentComponent implements OnInit {
   //     console.log(data)
   //     this.tournamentService.getPlayerTournament(this.loginService.userLoged.user_id).subscribe(data => {
   //       this.allTournaments = data
+
 
   //     })
   //   })

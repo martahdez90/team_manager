@@ -1,29 +1,70 @@
 <app-coach-menu></app-coach-menu>
 
 
-<section>
-    <div class="header row">
-        <h2 class="col-12 header">
-            <i class="fas fa-chevron-left" routerLink="/coach/myTeams"></i>
-            Mis entrenamientos
-        </h2>
+<section #myTrainings>
+    <div class="header">
+        <img src="../../../../assets/menus/back.svg" alt="go back" id="back" routerLink="/coach/myTeams">
+        <h1 class="header-title">Mis entrenos</h1>
+        <a routerLink="/coach/settings">
+            <img src="../../../../assets/menus/avataaars.svg" alt="avatar" id="avatar">
+        </a>
+    </div>
+
+    <!-- contenido -->
+    
+    <div class="cards-container"> 
+        <div id="train-card" *ngFor="let training of dataBase; let i = index">
+            <div class="delete">
+                <img src="../../../../assets/pages/close.svg" alt="delete user" id="delete" (click)="
+                    deleteTraining(dataBase[i].training_id)">
+            </div>
+            <div class="train-div">
+                <div class="date">
+                    <p id="month">{{training.date | date:'MMM'}}</p>
+                    <p id="day">{{training.date | date:'d'}}</p>
+                </div>
+                <div class="train-info">
+                    <div class="train-name">
+                        <h1 data-toggle="modal" data-target="#putTraining" (click)="getTraining(training)">
+                            {{training.name}}
+                        </h1>
+                        <div class="contact-info">
+                            <p>
+                                {{training.description}}
+                            </p>
+                            <p id="place"><strong>Lugar:</strong></p>
+                            <p>
+                                {{training.location}}
+                            </p>
+                            <a  id="view" routerLink="/coach/myExercises" (click)="saveTraining(dataBase[i].training_id)">Info</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+    
+    <div class="newTeam">
+        <button class="btn" id="card-bg2" data-toggle="modal" data-target="#postTraining">
+            Nuevo entrenamiento
+        </button>
     </div>
     <!-- post workouts -->
-    <div class="modal fade" id="postTraining" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal fade" id="postTraining" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Nuevo entrenamiento</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
+            <div class="modal-content" id="modalNew">
+                <div class="modal-header border-0">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" >
+                       <img src="../../../../assets/modals/close.svg" alt="close-modal" >
                     </button>
                 </div>
 
                 <div class="modal-body">
-                    <div class="mb-3">
+                    <div class="mb-1">
                         <div class="card-body bg-transparent" id="email">
                             <label for="nombre">Título:</label><br>
-                            <input type="text" id="nombre" #name placeholder="título">
+                            <input type="text" id="nombre" #name placeholder="título" maxlength="25">
                         </div>
                         <div class="card-body bg-transparent">
                             <label for="date">Fecha:</label><br>
@@ -34,62 +75,34 @@
                             <input #location class="card-text" placeholder="ej:Polideportivo">
                         </div>
                         <div class="card-body bg-transparent">
-                            <label for="description">Descripción:</label><br>
-                            <input type="text" id="description" #description placeholder="ej:traer camisetas">
+                            <label for="description">Recordatorio:</label><br>
+                            <input type="text" id="description" #description placeholder="ej:traer camisetas" maxlength="75">
                         </div>
                     </div>
                 </div>
-                <div class="modal-footer">
-                    <button class="btn new" id="card-bg2" (click)="addTraining(name, date, location, description)" data-dismiss="modal" aria-label="Close">Guardar</button>
+                <div class="modal-footer border-0">
+                    <button class="btnModal" (click)="addTraining(name, date, location, description)"
+                        data-dismiss="modal" aria-label="Close">Guardar</button>
                 </div>
             </div>
         </div>
     </div>
-    <!-- contenido -->
-    <div id="training-card">
-        <div class="card-color d-flex align-content-center flex-wrap mx-auto pb-4">
-            <div class="card playerInfo mr-4 ml-5 mt-4 mb-1 p-1 pb-1" *ngFor="let training of dataBase; let i = index">
-                <div class="card-header" id="date">
-                    {{training.date | date}}
-                    <i class="far fa-edit" id="edit" data-toggle="modal" data-target="#putTraining" (click)="getTraining(training)"></i>
-                    <i class='fas fa-trash-alt' id="trash" (click)="deleteTraining(dataBase[i].training_id)"></i>
-                </div>
-                <div class="card-body bg-transparent">
-                    {{training.name}}
-                </div>
-                <div class="card-body">
-                    <p class="card-text">{{training.description}}</p>
-                </div>
-                <div class="card-footer">
-                    {{training.location}}
-                    <a class="badge badge-pill text-right" routerLink="/coach/myExercises" (click)="saveTraining(dataBase[i].training_id)">Ver</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="newJ mb-3" id="new-ex">
-        <button class="btn" id="card-bg2" data-toggle="modal" data-target="#postTraining">
-            Nuevo entrenamiento
-        </button>
-    </div>
-
     <!-- modal editar entrenamiento -->
-    <div class="modal fade" id="putTraining" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal fade" id="putTraining" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Editar entrenamiento</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
+            <div class="modal-content" id="modalNew">
+                <div class="modal-header border-0">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" >
+                       <img src="../../../../assets/modals/close.svg" alt="close-modal" >
                     </button>
                 </div>
 
                 <div class="modal-body">
-                    <div class="mb-3">
+                    <div class="mb-1">
                         <div class="card-body bg-transparent" id="email">
                             <label for="nombre">Título:</label><br>
-                            <input type="text" id="nombre" #name1 placeholder="{{edit.name}}">
+                            <input type="text" id="nombre" #name1 placeholder="{{edit.name}}" maxlength="25">
                         </div>
                         <div class="card-body bg-transparent">
                             <label for="date">Fecha:</label><br>
@@ -100,13 +113,14 @@
                             <input #location1 class="card-text" placeholder="{{edit.location}}">
                         </div>
                         <div class="card-body bg-transparent">
-                            <label for="description">Descripción:</label><br>
-                            <input type="text" id="description" #description1 placeholder="{{edit.description}}">
+                            <label for="description">Recordatorio:</label><br>
+                            <input type="text" id="description" #description1 placeholder="{{edit.description}}" maxlength="75">
                         </div>
                     </div>
                 </div>
-                <div class="modal-footer">
-                    <button class="btn new" id="card-bg2" (click)="putTraining(name1, date1, location1, description1)" data-dismiss="modal" aria-label="Close">Actualizar</button>
+                <div class="modal-footer border-0">
+                    <button class="btnModal"  (click)="putTraining(name1, date1, location1, description1)"
+                        data-dismiss="modal" aria-label="Close">Actualizar</button>
                 </div>
             </div>
         </div>

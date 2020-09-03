@@ -2,7 +2,7 @@
 /* Global Styles */
 // Variables Sass
 $myColor: #00bfa5;
-$darker: #16796b;
+$darker: #158a7a;
 $small: 1rem;
 $medium: 1.8rem;
 $colorin: white;
@@ -33,6 +33,8 @@ $red: #E2574C;
 
   button {
     padding: 1rem 2rem;
+    width: 250px;
+    box-sizing: border-box;
     background: $myColor;
     border: none;
     color: white;
@@ -67,9 +69,13 @@ button:hover {
     text-align: center;
     padding: 2px;
     h1 {
-      margin-top: 15px;
+      margin-top: 20px;
     }
-
+    #back {
+      position: absolute;
+      top: 35%;
+      left: 5%;
+    }
 
     #avatar {
       position: absolute;
@@ -80,7 +86,7 @@ button:hover {
     }
   }
   //my teams section
-    #myTeams, #myPlayers {
+    #myTeams, #myPlayers, #myTrainings {
       min-width: 100vw;
       min-height: 90vh;
       @extend %centerflex;
@@ -97,7 +103,7 @@ button:hover {
       flex-wrap: wrap;
     }
 
-    #team-card, #player-card, #player-card-phone {
+    #team-card, #player-card, #player-card-phone, #train-card {
       width: 346px;
       margin: 0.5rem;
       text-align: center;
@@ -113,12 +119,66 @@ button:hover {
 
     //close icon
     .close {
-      background: white;
+      background: transparent;
       color: $red;
+        margin: auto;
+        width: 95vw;
+        text-align: right;
     }
     .close:hover {
-      background: white;
+      background: transparent;
       color: $red;
+    }
+
+    .newTeam {
+      display: flex;
+      align-items: center;
+      margin-top: 1rem;
+      button {
+         margin: auto;
+      }
+           
+        }
+
+    //modal 
+
+    #modalNew {
+        background: white;
+        label {
+        color: $darker;
+        margin-left: 8px;
+        }
+        input {
+        // padding: 0.5rem;
+        // width: 240px;
+        // border:1px solid $darker;
+        padding:8px;
+        border:none;
+        border-bottom:1px solid #ccc;
+        width:100%;
+        }
+         input:focus, .form-line-active textarea:focus {
+          border: 1px solid $darker !important;
+          box-shadow: 0 0 3px $darker !important;
+          -moz-box-shadow: 0 0 3px $darker !important;
+          -webkit-box-shadow: 0 0 3px $darker !important;
+          }
+          
+          input:focus, textarea:focus, select:focus {
+          outline-offset: 0px !important;
+          outline: none !important;
+          }
+      } 
+    
+    
+
+    //btn addNew
+
+    .btnModal {
+      padding: 0.5rem;
+      width: 240px;
+      margin: auto;
+      margin-bottom: 1.3rem;
     }
 
    
