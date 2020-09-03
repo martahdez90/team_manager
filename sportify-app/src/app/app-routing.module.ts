@@ -20,6 +20,7 @@ import { TrainingsPlayerComponent } from "./pages/player/trainings-player/traini
 import { MatchesPlayerComponent } from "./pages/player/matches-player/matches-player.component";
 import { PlayerSettingsComponent } from './pages/player/player-settings/player-settings.component';
 import { CoachTournamentComponent } from './pages/coach/coach-tournament/coach-tournament.component';
+import { PlayerTournamentComponent } from './pages/player/player-tournament/player-tournament.component';
 
 
 const routes: Routes = [
@@ -43,6 +44,7 @@ const routes: Routes = [
   {path: 'player/myMatches', component: MatchesPlayerComponent},
   {path: 'player/myCoach', component: MyCoachComponent},
   { path: 'player/settings', component: PlayerSettingsComponent },
+  {path:'player/tournament', component: PlayerTournamentComponent},
   {path: '**',redirectTo: 'home'},
 
 
