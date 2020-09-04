@@ -67,10 +67,13 @@ export class AllworkoutsComponent implements OnInit {
     this.trainingService.putTraining(newTraining).subscribe((data) => {
 
       console.log(data);
-      this.trainingService.getTeamTraining(this.loginService.userLoged.user_id).subscribe((data) => {
-        console.log(data);
-        this.dataBase = data;
-      });
+      this.trainingService.getTraining(this.loginService.userLoged.user_id).subscribe(data => {
+        this.dataBase = data
+        console.log(this.dataBase)
+        if (data[0].lenght != 0) {
+         
+        }
+      })
     });
   };
 
