@@ -31,8 +31,12 @@ export class AllGamesComponent implements OnInit {
     console.log(newMatch)
 
     this.matchService.putMatch(newMatch).subscribe(data => {
-      this.matchService.getMatches(this.loginService.team_id).subscribe(data => {
-        this.dataBase = data
+      this.matchService.getPlayerMatches(this.loginService.userLoged.user_id).subscribe(data => {
+        console.log(data)
+        this.dataBase = data 
+        if (data[0].lenght != 0) { 
+            // preuntar a marta
+        } 
       })
     })
   }
