@@ -6,6 +6,7 @@ section {
       color: white;
       text-align: center;
     }
+
   }
 
 .delete {
@@ -17,7 +18,7 @@ section {
     }
   }
   
-
+//tarjetas
   #train-card{
     margin: 1.5rem;
     justify-content: start;
@@ -26,7 +27,11 @@ section {
     .train-div {
       display: flex;
       margin-left: 10px;
-      
+      .team-name {
+        color: $myColor;
+        text-align: left;
+        margin: 7px;
+      }
         .date {
             display: flex;
             flex-direction: column;
@@ -75,7 +80,7 @@ section {
                 cursor: pointer;
                 font-size: 16px;
                 color: $myColor;
-                padding-top: 50px;
+                padding-top: 20px;
                 margin-top: 5px;
               margin-bottom: 5px;
                 }
@@ -85,11 +90,6 @@ section {
     }   
 }
 
-@media screen and (min-width: 932px) {
-  .header {
-    display: none;
-  }
-}
 
 //version movil
 @media screen and (max-width: 932px) {
@@ -103,7 +103,7 @@ section {
         margin-bottom: 10px;
         padding: 0;
        width: 356px;
-       height: 124px;
+       height: 144px;
 
        .delete {
         padding-right: 5px;
@@ -117,6 +117,7 @@ section {
        .train-div {
            width: 100%;
            height: 100%;
+
            .date {
                padding-top: 0px;
                margin: 0;

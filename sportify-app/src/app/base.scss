@@ -15,6 +15,10 @@ $red: #E2574C;
       min-height: 93vh;
       color: $color;
       padding-bottom: 80px;
+      //titulo seccinon
+    //   .title {
+    //    display: none;
+    // }
   }
 
   h2, p, input, label, button {
@@ -181,9 +185,46 @@ button:hover {
       margin-bottom: 1.3rem;
     }
 
+    //search container
+
+    .search-container {
+      @extend %centerflex;
+      margin-top: 5px;
+      width: 100vw;
+     
+      .search {
+        @extend %centerflex;
+      
+      margin-bottom: 3vh;
+      }
+      input[type=text] {
+        padding: 6px 6px;
+        margin-top: 8px;
+        font-size: 17px;
+        border: none;
+        border-radius: 0.5rem;
+        min-width: 40vw;
+      }
+    button {
+      margin-left: 2vw;
+      padding: 2px;
+      width: 8vw;
+      background: white;
+      color: $myColor;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #ccc;
+    }
+    
+  }
+
    
   //desktop version
   @media screen and (min-width: 932px) {
+   
   h1 {
       font-size: 1.8vw;
   }
@@ -193,12 +234,20 @@ button:hover {
   }
 
     .header {
-      display: none;
+      top: 7vh;
+      #avatar {
+        display: none;
+      }
     }
     #team-card {
     width: 332px;
     margin:2rem;
     }
+
+    .search-container {
+      margin-top: 5vh;
+    }
+
   }
   
  
