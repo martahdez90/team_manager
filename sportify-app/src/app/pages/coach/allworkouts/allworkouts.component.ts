@@ -8,15 +8,15 @@ import Swal from 'sweetalert2';
 @Component({
   selector: 'app-allworkouts',
   templateUrl: './allworkouts.component.html',
-  styleUrls: ['./allworkouts.component.css']
+  styleUrls: ['../../../base.scss', './allworkouts.component.scss']
 })
 export class AllworkoutsComponent implements OnInit {
 
   public edit: Training;
   public dataBase: object;
   public user_id: number = this.loginService.userLoged.user_id;
-  public teams = this.teamService.getTeams(this.user_id)
-
+  public teams: object;
+  public team_name: string = this.loginService.team_name;
  
 
   constructor(private loginService: LoginService, private trainingService: TrainingService, private teamService: TeamService) {
@@ -34,9 +34,9 @@ export class AllworkoutsComponent implements OnInit {
     this.loginService.training_id = training_id;
   }
 
-  public addTraining(name: HTMLInputElement, date: HTMLInputElement, location: HTMLInputElement, description: HTMLInputElement, team_id:HTMLInputElement) {
+  public addTraining(name: HTMLInputElement, date: HTMLInputElement, location: HTMLInputElement, description: HTMLInputElement, team:HTMLInputElement) {
     let newTraining = new Training(name.value, date.value, location.value, description.value);
-    newTraining.team_id = Number(team_id.value)
+    newTraining.team_id = Number(team.value)
     console.log(newTraining);
     this.trainingService.postTraining(newTraining).subscribe((data) => {
       console.log(data)
@@ -109,7 +109,11 @@ export class AllworkoutsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    
+    this.teamService.getTeams(this.loginService.userLoged.user_id).subscribe((data) => {
+      console.log(data);
+      this.teams = data;
+    })
+
     this.trainingService.getTraining(this.loginService.userLoged.user_id).subscribe(data => {
       this.dataBase = data
       console.log(this.dataBase)

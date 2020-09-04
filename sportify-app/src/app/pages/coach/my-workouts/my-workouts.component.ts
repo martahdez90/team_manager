@@ -16,7 +16,8 @@ export class MyWorkoutsComponent implements OnInit {
   public edit: Training;
   public dataBase: object;
   public teams: object;
-
+  public team_name: string = this.loginService.team_name;
+  
 
   constructor(private loginService: LoginService, private trainingService: TrainingService, private teamService: TeamService) {
     this.edit = new Training("", "", "", "")
