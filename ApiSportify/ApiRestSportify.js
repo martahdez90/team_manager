@@ -288,7 +288,7 @@ app.get("/match/:team_id", function(request, response) {
 //obtener partidos del jugador
 app.get("/match/player/:user_id", function(request, response) {
     let params = [request.params.user_id];
-    let sql = "SELECT matches_teams.team_id, team.name, matches.date, matches.rival, matches.location, matches.comments FROM matches AS matches INNER JOIN matches_teams AS matches_teams ON (matches.match_id = matches_teams.match_id) INNER JOIN team AS team ON (matches_teams.team_id = team.team_id) INNER JOIN user_teams AS user_teams ON (team.team_id = user_teams.team_id) INNER JOIN users AS users ON (user_teams.user_id = users.user_id) WHERE users.user_id = ?";
+    let sql = "SELECT matches_teams.team_id,  matches_teams.match_id, team.name, matches.date, matches.rival, matches.location, matches.comments FROM matches AS matches INNER JOIN matches_teams AS matches_teams ON (matches.match_id = matches_teams.match_id) INNER JOIN team AS team ON (matches_teams.team_id = team.team_id) INNER JOIN user_teams AS user_teams ON (team.team_id = user_teams.team_id) INNER JOIN users AS users ON (user_teams.user_id = users.user_id) WHERE users.user_id = ?";
     // let sql = "SELECT t5.* FROM matches AS t5 "+  
     // "INNER JOIN matches_teams AS t4 ON (t5.match_id = t4.match_id) "+
     // "INNER JOIN team AS t3 ON (t4.team_id = t3.team_id) "+
