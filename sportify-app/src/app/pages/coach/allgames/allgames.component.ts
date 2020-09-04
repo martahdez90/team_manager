@@ -43,15 +43,16 @@ export class AllGamesComponent implements OnInit {
 
   newGame(date: HTMLInputElement, location: HTMLInputElement, comments: HTMLInputElement, rival: HTMLInputElement, team_id: HTMLInputElement) {
 
-    let newMatch = new Match(date.value, comments.value, rival.value, location.value)
+    let newMatch = new Match(date.value, comments.value, rival.value, location.value);
     newMatch.team_id = Number(team_id.value);
-    console.log(newMatch)
+    console.log(newMatch);
 
     this.matchService.postMatch(newMatch).subscribe(data => {
       console.log(data)
-      this.matchService.getMatches(this.loginService.team_id).subscribe(data => {
+      this.matchService.getPlayerMatches(this.loginService.userLoged.user_id).subscribe(data => {
+        console.log(data)
         this.dataBase = data
-
+    
       })
     })
   }
@@ -64,14 +65,16 @@ export class AllGamesComponent implements OnInit {
       showCancelButton: true,
       confirmButtonColor: '#00bfa5',
       cancelButtonColor: '#d33',
-      confirmButtonText: 'borrar'
+      confirmButtonText: 'Eliminar',
+      cancelButtonText: 'Cancelar'
     }).then((result) => {
       if (result.value) {
         console.log(id)
         this.matchService.detelMatch(id).subscribe((data) => {
           console.log(data)
-          this.matchService.getMatches(this.loginService.team_id).subscribe(data => {
-            this.dataBase = data
+          this.matchService.getPlayerMatches(this.loginService.userLoged.user_id).subscribe(data => {
+            console.log(data)
+            this.dataBase = data 
             Swal.fire({
               title: '¡Eliminado!',
               text: 'Tu partido ha sido borrado',

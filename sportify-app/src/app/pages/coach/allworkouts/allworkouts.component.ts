@@ -40,9 +40,10 @@ export class AllworkoutsComponent implements OnInit {
     console.log(newTraining);
     this.trainingService.postTraining(newTraining).subscribe((data) => {
       console.log(data)
-      this.trainingService.getTeamTraining(this.loginService.team_id).subscribe((data) => {
-        console.log(data);
+      this.trainingService.getTraining(this.loginService.userLoged.user_id).subscribe(data => {
         this.dataBase = data
+        console.log(this.dataBase)
+        
       })
 
     });
@@ -70,9 +71,7 @@ export class AllworkoutsComponent implements OnInit {
       this.trainingService.getTraining(this.loginService.userLoged.user_id).subscribe(data => {
         this.dataBase = data
         console.log(this.dataBase)
-        if (data[0].lenght != 0) {
-         
-        }
+        
       })
     });
   };
@@ -85,18 +84,18 @@ export class AllworkoutsComponent implements OnInit {
       showCancelButton: true,
       confirmButtonColor: '#00bfa5',
       cancelButtonColor: '#d33',
-      confirmButtonText: 'borrar'
+      confirmButtonText: 'Eliminar',
+      cancelButtonText: 'Cancelar'
     }).then((result) => {
       if (result.value) {
         console.log(id)
         this.trainingService.deleteTraining(id).subscribe((data) => {
           console.log(data)
-          this.trainingService.getTeamTraining(this.loginService.userLoged.user_id).subscribe((data) => {
-            console.log(data);
-            this.dataBase = data;
+          this.trainingService.getTraining(this.loginService.userLoged.user_id).subscribe(data => {
+            this.dataBase = data
             Swal.fire({
               title: '¡Eliminado!',
-              text: 'Tu equipo ha sido borrado',
+              text: 'Tu entrenamiento ha sido borrado',
               icon: 'success',
               confirmButtonColor: '#00bfa5'
             })
@@ -106,10 +105,6 @@ export class AllworkoutsComponent implements OnInit {
     })
   }
 
-  public buscar(termino: string) {
-    alert("aun no lo hemos implementado")
-    //SELECT * FROM users WHERE name LIKE '%marta%'
-  }
 
   ngOnInit(): void {
     this.teamService.getTeams(this.loginService.userLoged.user_id).subscribe((data) => {
