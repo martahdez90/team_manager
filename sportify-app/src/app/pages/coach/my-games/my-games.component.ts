@@ -8,10 +8,10 @@ import Swal from 'sweetalert2';
 @Component({
   selector: 'app-my-games',
   templateUrl: './my-games.component.html',
-  styleUrls: ['./my-games.component.css']
+  styleUrls: ['../../../base.scss', './my-games.component.scss']
 })
 export class MyGamesComponent implements OnInit {
-
+ 
   public teams: object
   public dataBase: object
   public game: Match
@@ -26,13 +26,24 @@ export class MyGamesComponent implements OnInit {
     console.log(this.game)
   }
 
-  public putGame(date: HTMLInputElement, location: HTMLInputElement, comments: HTMLInputElement, rival: HTMLInputElement, team_id: HTMLInputElement) {
+  public putGame(date: HTMLInputElement, location: HTMLInputElement, comments: HTMLInputElement, rival: HTMLInputElement) {
     console.log(this.game)
     let newMatch = new Match(date.value, comments.value, rival.value, location.value)
-    newMatch.team_id = Number(team_id.value);
     newMatch.match_id = this.game.match_id
     console.log(newMatch)
-
+    
+    if (date.value === "") {
+      newMatch.date = this.game.date;
+    }
+    if (rival.value === "") {
+      newMatch.rival = this.game.rival;
+    }
+    if (location.value === "") {
+      newMatch.location = this.game.location;
+    }
+    if (comments.value === "") {
+      newMatch.comments = this.game.comments;
+    }
     this.matchService.putMatch(newMatch).subscribe(data => {
       this.matchService.getMatches(this.loginService.team_id).subscribe(data => {
         this.dataBase = data
@@ -40,10 +51,10 @@ export class MyGamesComponent implements OnInit {
     })
   }
 
-  public newGame(date: HTMLInputElement, location: HTMLInputElement, comments: HTMLInputElement, rival: HTMLInputElement, team_id: HTMLInputElement) {
+  public newGame(date: HTMLInputElement, comments: HTMLInputElement, rival: HTMLInputElement,  location: HTMLInputElement) {
 
     let newMatch = new Match(date.value, comments.value, rival.value, location.value)
-    newMatch.team_id = Number(team_id.value);
+    newMatch.team_id = this.loginService.team_id;
     console.log(newMatch)
 
     this.matchService.postMatch(newMatch).subscribe(data => {
@@ -63,7 +74,8 @@ export class MyGamesComponent implements OnInit {
       showCancelButton: true,
       confirmButtonColor: '#00bfa5',
       cancelButtonColor: '#d33',
-      confirmButtonText: 'borrar'
+      confirmButtonText: 'Eliminar',
+      cancelButtonText: 'Cancelar'
     }).then((result) => {
       if (result.value) {
         console.log(id)
@@ -86,6 +98,7 @@ export class MyGamesComponent implements OnInit {
   ngOnInit(): void {
     this.matchService.getMatches(this.loginService.team_id).subscribe(data => {
       this.dataBase = data
+      console.log(data)
     })
     this.teamService.getTeams(this.loginService.userLoged.user_id).subscribe((data) => {
       console.log('Eqipos')

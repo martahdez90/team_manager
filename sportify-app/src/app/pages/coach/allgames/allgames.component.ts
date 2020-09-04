@@ -8,7 +8,7 @@ import Swal from 'sweetalert2';
 @Component({
   selector: 'app-allgames',
   templateUrl: './allgames.component.html',
-  styleUrls: ['./allgames.component.css']
+  styleUrls: ['../../../base.scss', './allgames.component.scss']
 })
 export class AllGamesComponent implements OnInit {
   public teams: object
