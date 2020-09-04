@@ -93,6 +93,7 @@ export class AllworkoutsComponent implements OnInit {
           console.log(data)
           this.trainingService.getTraining(this.loginService.userLoged.user_id).subscribe(data => {
             this.dataBase = data
+            console.log(this.dataBase)
             Swal.fire({
               title: '¡Eliminado!',
               text: 'Tu entrenamiento ha sido borrado',
