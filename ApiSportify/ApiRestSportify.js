@@ -180,7 +180,7 @@ app.delete("/teams", function(request, response) {
 //obtener entrenamiento de un usuario
 app.get("/training/players/:user_id", function(request, response) {
     let params = [request.params.user_id]
-    let sql = ` SELECT training_team.team_id, training.date, training.name as name, team.name AS team, training.location AS location, training.description AS description FROM training AS training INNER JOIN training_team AS training_team ON ( training.training_id = training_team.training_id ) INNER JOIN team AS team ON ( training_team.team_id = team.team_id ) INNER JOIN user_teams AS user_teams ON ( team.team_id = user_teams.team_id ) INNER JOIN users AS users ON ( user_teams.user_id = users.user_id ) WHERE users.user_id = ?`;
+    let sql = ` SELECT training_team.team_id, training.*, team.name AS team FROM training AS training INNER JOIN training_team AS training_team ON ( training.training_id = training_team.training_id ) INNER JOIN team AS team ON ( training_team.team_id = team.team_id ) INNER JOIN user_teams AS user_teams ON ( team.team_id = user_teams.team_id ) INNER JOIN users AS users ON ( user_teams.user_id = users.user_id ) WHERE users.user_id = ?`;
 
     connection.query(sql, params, function(err, resultado) {
         if (err) {
