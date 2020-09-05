@@ -1,21 +1,22 @@
 <header class="lyrics">
-    <nav class="navbar fixed-top navbar-expand-lg navbar-light">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light mx-auto">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+        <div class="collapse navbar-collapse " id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" id="whiteLink" routerLink="/player/myMatches" routerLinkActive="active-link">Mis partidos<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" id="whiteLink" routerLink="/player/myTrainings" routerLinkActive="active-link">Entrenos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" id="whiteLink" routerLink="/player/myTrainings" routerLinkActive="active-link">Mis entrenamientos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="whiteLink" routerLink="/player/myCoach" routerLinkActive="active-link">Mi entrenador</a>
+                    <a class="nav-link" id="whiteLink" routerLink="/player/myMatches" routerLinkActive="active-link">Partidos</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" id="whiteLink" routerLink="/player/tournament" routerLinkActive="active-link">Torneos</a>
+
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="whiteLink" routerLink="/player/myCoach" routerLinkActive="active-link"> Entrenador <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" id="whiteLink" routerLink="/player/settings" routerLinkActive="active-link">Ajustes</a>
@@ -27,30 +28,43 @@
 </header>
 
 
-
-<!-- <header>
-    <div class="pos-f-t">
-        <div class="collapse" id="navbarToggleExternalContent">
-            <div class="p-4">
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item"><a routerLink="/player/myCalendar" class="nav-item">Mi calendario</a></li>
-                    <li class="list-group-item"><a routerLink="/player/myCoach" class="nav-item">Mi entrenador</a></li>
-                    
-                    <li class="list-group-item"><a routerLink="/coach/settings" class="nav-item">Ajustes</a></li>
-                </ul>
-            </div>
-        </div>
-        <nav class="navbar navbar-dark">
-            <button class="navbar-toggler" type="button" data-toggle="collapse"
-                data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
-                aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <button mat-button routerLink="/coach/myTeams" class="nav-item"><mat-icon >donut_large</mat-icon></button>
-                  </li>
-            </ul>
-        </nav>
+<header class="bottom-menu">
+  <div class="menu-icons">
+    <div class="boton">
+      <a routerLink="/player/myTrainings" >
+        <img src="../../../assets/menus/trainings.svg" alt="trainings">
+      </a>
     </div>
-  </header> -->
+    <div class="boton">
+      <a routerLink="/player/myMatches" >
+        <img src="../../../assets/menus/mygames.svg" alt="mygames">
+      </a>
+    </div>
+    <div class="boton">
+      <a routerLink="/player/tournament" >
+        <img src="../../../assets/menus/mytourn.svg" alt="">
+      </a>
+    </div>
+    <div class="boton">
+        <a routerLink="/player/myCoach">
+          <img src="../../../assets/menus/coach.svg" alt="myteams">
+        </a>
+      </div>
+  </div>
+  <div class="menu-text">
+    <div class="boton-text">
+      <p>entrenos</p>
+    </div>
+    <div class="boton-text">
+      <p>partidos</p>
+    </div>
+    <div class="boton-text">
+      <p>torneos</p>
+    </div>
+    <div class="boton-text">
+        <p>entrenador</p>
+      </div>
+  </div>
+</header> 
+
+
