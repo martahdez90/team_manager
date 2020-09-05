@@ -91,7 +91,7 @@ button:hover {
     }
   }
   //my teams section
-    #myTeams, #myPlayers, #myTrainings, #myGames {
+    #myTeams, #myPlayers, #myTrainings, #myGames, #myExercises {
       min-width: 100vw;
       min-height: 90vh;
       @extend %centerflex;
@@ -108,7 +108,7 @@ button:hover {
       flex-wrap: wrap;
     }
 
-    #team-card, #player-card, #player-card-phone, #train-card {
+    #team-card, #player-card, #player-card-phone, #train-card, #ex-card {
       width: 346px;
       margin: 0.5rem;
       text-align: center;
@@ -153,10 +153,11 @@ button:hover {
         color: $darker;
         margin-left: 8px;
         }
+        #type {
+          color: $darker;
+          text-align: center;
+        }
         input {
-        // padding: 0.5rem;
-        // width: 240px;
-        // border:1px solid $darker;
         padding:8px;
         border:none;
         border-bottom:1px solid #ccc;
@@ -175,7 +176,11 @@ button:hover {
           }
       } 
     
-    
+      select {
+        padding: 0.5rem;
+        display: block;
+        margin: auto;
+      }
 
     //btn addNew
 

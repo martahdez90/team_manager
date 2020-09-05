@@ -1,109 +1,115 @@
 <app-coach-menu></app-coach-menu>
 
-<section>
+<section #myExercises>
 
-    <div class="header row">
-        <h2 class="col-12 header">
-            <i class="fas fa-chevron-left" routerLink="/coach/myWorkouts"></i>
-             Mis ejercicios
-        </h2>
+    <div class="header">
+        <img src="../../../../assets/menus/back.svg" alt="go back" id="back" routerLink="/coach/myTeams">
+        <h1 class="header-title">Mis ejercicios</h1>
+        <a routerLink="/coach/settings">
+            <img src="../../../../assets/menus/avataaars.svg" alt="avatar" id="avatar">
+        </a>
+    </div>
+    <!-- My exercises -->
+    <div class="cards-container">
+        <div *ngFor="let ex of dataBase; let i = index" id="ex-card">
+            <div class="delete">
+                <img src="../../../../assets/pages/close.svg" alt="delete user" id="delete" (click)="deleteEx(dataBase[i].exercise_id)">
+            </div>
+            <div id="ex-title" data-toggle="modal" data-target="#editExercise" (click)="getExData(ex)">
+               <h1>{{ex.name}}</h1> 
+               <p>{{ex.type}}</p>
+            </div>
+            <div *ngIf="ex.url != ''; else video">
+                
+               <iframe width="320" height="200" [src]="getVideoIframe(ex.url)" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+                
+            </div>
+            <ng-template #video>
+                <img width="320" height="200" src="../../../../assets/pages/myexercises/exercisesvideo.svg" frameborder="0">
+            </ng-template>
+            <div id="ex-description">
+                <p >{{ex.description}}</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="newTeam">
+        <button class="btn" id="card-bg2" data-toggle="modal" data-target="#exampleModalCenter">
+            Nuevo ejercicio
+        </button>
     </div>
     <!-- Modal post ejercicio -->
     <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Crea tu nuevo ejercicio</h5>
+            <div class="modal-content" id="modalNew">
+                <div class="modal-header border-0">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
+                        <img src="../../../../assets/modals/close.svg" alt="close-modal">
+                    </button>
                 </div>
                 <div class="modal-body">
-                    <div class="cardModal mb-3">
-                        <div class="card-header" id="date">
-                            Tipo:
+                    <div class="mb-1">
+                        <div class="card-body bg-transparent">
+                            <p id="type">Tipo de ejercicio </p>
                             <select #type id="cars" name="cars" id="dropdown">
                             <option *ngFor="let option of options" value = "{{option.value}}">{{option.name}}</option>
                         </select>
                         </div>
 
-                        <div class="card-header bg-transparent">
-                            <input type="text" #name placeholder="Titulo del ejercicio">
+                        <div class="card-body bg-transparent">
+                            <label for="name">Título del ejercicio</label>
+                            <input type="text" #name placeholder="Titulo del ejercicio" id="name">
                         </div>
-                        <div class="card-body">
-                            <input #description class="card-text" placeholder="Describe el ejercicio">
+                        <div class="card-body bg-transparent">
+                            <label for="description">Descripción</label>
+                            <input #description class="card-text" placeholder="Describe el ejercicio" id="description" maxlength="85">
                         </div>
-                        <div class="card-footer">
-                            <input type="text" #url id="url" placeholder="Añade una url si la tienes">
+                        <div class="card-body bg-transparent">
+                            <label for="url">Enlace del vídeo</label>
+                            <input type="text" #url id="url" placeholder="Añade una url si la tienes" id="url" >
                         </div>
-
-
                     </div>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                    <button class="btn" id="card-bg2" (click)="postEx(type, description, url, name)" data-dismiss="modal" aria-label="Close">Guardar cambios</button>
+                <div class="modal-footer border-0">
+                    <button class="btnModal"(click)="postEx(type, description, url, name)" data-dismiss="modal" aria-label="Close">Guardar cambios</button>
                 </div>
             </div>
         </div>
     </div>
 
-    <div id="training-card">
-        <div *ngFor="let ex of dataBase; let i = index" class="card mb-3">
-            <div class="card-header" id="date">
-                Tipo: {{ex.type}}
-                <i class="far fa-edit" id="edit" data-toggle="modal" data-target="#editExercise" (click)="getExData(ex)"></i>
-                <i class='far fa-trash-alt' id="trash" (click)="deleteEx(dataBase[i].exercise_id)"></i>
-            </div>
-            <div class="card-header bg-transparent">
-                {{ex.name}}
-            </div>
-            <div class="card-body">
-                <p class="card-text">{{ex.description}}</p>
-            </div>
-            <div class="card-footer">
-                <a class="link" href="{{ex.url}}" target="_blank">Ver video</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="newT mb-3" id="new-ex">
-        <button class="btn" id="card-bg2" data-toggle="modal" data-target="#exampleModalCenter">
-            Nuevo ejercicio
-        </button>
-    </div>
     <!-- Modal put ejercicio -->
     <div class="modal fade" id="editExercise" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Edicion ejercicio</h5>
+            <div class="modal-content" id="modalNew">
+                <div class="modal-header border-0">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-                </button>
+                        <img src="../../../../assets/modals/close.svg" alt="close-modal">
+                    </button>
                 </div>
-                <div class="modal-body">
-                    <div class="card mb-3">
+                <div class="modal-body bg-transparent">
+                    <div class="mb-1">
                         <div class="card-header" id="date">
                             Tipo:
                             <select #type1 id="cars" name="cars" id="dropdown">
                             <option *ngFor="let option of options" value = "{{option.value}}">{{option.name}}</option>
                         </select>
                         </div>
-                        <div class="card-header bg-transparent">
-                            <input #name1 type="text" placeholder="{{exercise.name}}">
+                        <div class="card-body bg-transparent">
+                            <label for="name1">Título del entrenamiento</label>
+                            <input #name1 type="text" placeholder="{{exercise.name}}" id="name1">
                         </div>
-                        <div class="card-body">
-                            <input #description1 class="card-text" placeholder="{{exercise.description}}">
+                        <div class="card-body bg-transparent">
+                            <label for="description1">Descripción</label>
+                            <input #description1 class="card-text" placeholder="{{exercise.description}}" id="description1">
                         </div>
-                        <div class="card-footer">
-                            <input #url1 type="text" placeholder="{{exercise.url}}">
+                        <div class="card-body bg-transparent">
+                            <label for="url1">Url del vídeo</label>
+                            <input #url1 type="text" placeholder="{{exercise.url}}" id="url1">
                         </div>
                     </div>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                    <button class="btn" id="card-bg2" (click)="putEx(type1, description1, url1, name1)" data-dismiss="modal">Guardar cambios</button>
+                <div class="modal-footer border-0">
+                    <button class="btnModal" (click)="putEx(type1, description1, url1, name1)" data-dismiss="modal">Guardar cambios</button>
                 </div>
             </div>
         </div>
