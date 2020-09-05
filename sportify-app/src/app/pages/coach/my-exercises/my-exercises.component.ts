@@ -4,11 +4,15 @@ import { ExerciseService } from 'src/app/shared/exercise-service.service';
 import { Exercise } from 'src/app/models/exercise';
 import { TrainingService } from 'src/app/shared/training-service.service';
 import Swal from 'sweetalert2';
+//video de youtube
+
+import { DomSanitizer } from '@angular/platform-browser';
+
 
 @Component({
   selector: 'app-my-exercises',
   templateUrl: './my-exercises.component.html',
-  styleUrls: ['./my-exercises.component.css']
+  styleUrls: ['../../../base.scss', './my-exercises.component.scss']
 })
 export class MyExercisesComponent implements OnInit {
 
@@ -16,14 +20,28 @@ export class MyExercisesComponent implements OnInit {
   public exercise: Exercise
   public options = [
     { name: 'Selecciona uno', value: 'null' },
-    { name: 'Calentamiento', value: 'warmUp' },
-    { name: 'Parte principal', value: 'main' },
-    { name: 'Vuelta a la calma', value: 'coolDown' }
+    { name: 'Calentamiento', value: 'calentamiento' },
+    { name: 'Parte principal', value: 'principal' },
+    { name: 'Vuelta a la calma', value: 'estiramientos' }
   ]
 
-  constructor(private loginService: LoginService, private exService: ExerciseService, private trainingService: TrainingService) {
+  constructor(private loginService: LoginService, private exService: ExerciseService, private trainingService: TrainingService, private sanitizer: DomSanitizer
+    ) {
     this.exercise = new Exercise("", "", "", "")
   }
+
+  //generar url video youtube para incrustarlo
+  public getVideoIframe(url) {
+    let video, results;
+ 
+    if (url === null) {
+        return '';
+    }
+    results = url.match('[\\?&]v=([^&#]*)');
+    video   = (results === null) ? url : results[1];
+ 
+    return this.sanitizer.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/' + video);   
+}
 
   public getExData(exercise: Exercise) {
     this.exercise = exercise

@@ -1,0 +1,50 @@
+$myColor: #00bfa5;
+$darker: #158a7a;
+
+#ex-card {
+    height: 346px;
+    justify-content: start;
+    .delete {
+        
+        #delete {
+        position: relative; 
+        top: 5px;
+        left: 150px; 
+        cursor: pointer;
+        }
+      }
+    #ex-title {
+        font-size: 20px;
+        font-weight: bold;
+        color: black;
+        h1 {
+        margin-bottom: 2px;
+        cursor: pointer;
+        }
+        p {
+            font-size: 14px;
+            font-weight: normal;
+            color: gray;
+            margin-bottom: 5px;
+        }
+    }
+    #ex-description {
+        padding-top: 5px;
+        padding-bottom: 10px;
+        margin-right: 5px;
+        margin-left: 5px;
+        p {
+          font-size: 14px;  
+        }
+        
+    }
+
+    // #iframe {
+    //     // width: 320px;
+    //     //  height: 200px;
+    //     background-image: url(../../../../assets/pages/myexercises/exercisesvideo.svg);
+    //     background-repeat: no-repeat;
+    //     background-position: center;
+        
+    // }
+}
