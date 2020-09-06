@@ -57,7 +57,7 @@ a:active {
 /* bottom menu */
 
 /* versión movil */
-@media screen and (max-width: 932px) {
+@media screen and (max-width: 760px) {
 
 .lyrics {
     display: none;
@@ -107,4 +107,8 @@ a:active {
 p {
     color: black;
     font-size: 12px;
+}
+
+a, li {
+    cursor: pointer;
 }

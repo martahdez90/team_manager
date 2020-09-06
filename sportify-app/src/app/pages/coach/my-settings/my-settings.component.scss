@@ -2,7 +2,7 @@ $myColor: #00bfa5;
 
 section {
     background: white;
-    padding-top: 10vh;
+
 }
 .user {
     margin-top: 0px;
@@ -76,10 +76,16 @@ div#div {
     }
 
 
-@media(min-width:787px) {
+@media(min-width:760px) {
     .list-group {
         position: relative;
         margin-left: 20%;
         margin-right: 20%;
+    }
+}
+
+@media(max-width: 760px) {
+    section {
+        padding-top: 10vh;
     }
 }
