@@ -8,7 +8,7 @@ import{TournamentService} from '../../../shared/tournament.service'
 @Component({
   selector: 'app-coach-tournament',
   templateUrl: './coach-tournament.component.html',
-  styleUrls: ['./coach-tournament.component.css']
+  styleUrls: ['../../../base.scss','./coach-tournament.component.scss']
 })
 export class CoachTournamentComponent implements OnInit {
 

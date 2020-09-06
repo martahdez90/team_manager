@@ -1,11 +1,60 @@
 <app-coach-menu></app-coach-menu>
-<section>
-    <div class="header row">
-        <h2 class="col-12 header">
-            <i class="fas fa-chevron-left" routerLink="/coach/myTeams"></i> Torneos
-        </h2>
+<section #myTournaments>
+    <div class="header">
+        <img src="../../../../assets/menus/back.svg" alt="go back" id="back" routerLink="/coach/myTeams">
+        <h1 class="header-title">Mis torneos</h1>
+        <a routerLink="/coach/settings">
+            <img src="../../../../assets/menus/avataaars.svg" alt="avatar" id="avatar">
+        </a>
     </div>
 
+    <!-- section my tournament -->
+    <div class="cards-container">
+         <!-- <div id="train-card" *ngFor="let torneo of tournaments">
+                <div class="card-header" id="date">
+                    {{torneo.date | date}}
+                </div>
+                <div class="card-body bg-transparent">
+                    {{torneo.name}}
+                </div>
+                <div class="card-body bg-transparent">
+                    {{torneo.sport}}
+                </div>
+                <div class="card-body bg-transparent">
+                    {{torneo.category}}
+                </div>
+                <div class="card-body">
+                    <p class="card-text">{{torneo.description}}</p>
+                </div>
+                <div class="card-footer">
+                    {{torneo.location}}
+                </div>
+            </div> -->
+            <div id="train-card" >
+                <div class="t-info">
+                    <div id="date">27 junio</div>
+                    <div id="sport">Fútbol</div>
+                    <div id="category">Senior-mix</div>
+                </div>
+                
+                <div class="card-body bg-transparent">
+                    <h1 id="name">TORNEO CODENOTCH</h1>
+                 </div>
+                <div class="card-body">
+                    ¡Gran torneo Codenotch 5x5!
+                </div>
+                <div class="card-body" id="location">
+                    localización
+                </div>
+            </div>
+        </div>
+   
+    <div>
+        <button class="newTeam" data-toggle="modal" data-target="#newTournament">
+        Inscríbete
+    </button>
+    </div>
+    
     <!--modal inscribete-->
     <div class="modal fade" id="newTournament" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
@@ -30,37 +79,6 @@
                 </div>
             </div>
         </div>
-    </div>
-
-    <!-- section my tournament -->
-    <div id="training-card">
-        <div class="card-color d-flex align-content-center flex-wrap mx-auto pb-4 playerInfo">
-            <div class="card mt-4 mb-1 pb-1" *ngFor="let torneo of tournaments">
-                <div class="card-header" id="date">
-                    {{torneo.date | date}}
-                </div>
-                <div class="card-body bg-transparent">
-                    {{torneo.name}}
-                </div>
-                <div class="card-body bg-transparent">
-                    {{torneo.sport}}
-                </div>
-                <div class="card-body bg-transparent">
-                    {{torneo.category}}
-                </div>
-                <div class="card-body">
-                    <p class="card-text">{{torneo.description}}</p>
-                </div>
-                <div class="card-footer">
-                    {{torneo.location}}
-                </div>
-            </div>
-        </div>
-    </div>
-    <div>
-        <button class="btn newT" data-toggle="modal" data-target="#newTournament">
-        Inscríbete
-    </button>
     </div>
 </section>
 
