@@ -10,45 +10,24 @@
 
     <!-- section my tournament -->
     <div class="cards-container">
-         <!-- <div id="train-card" *ngFor="let torneo of tournaments">
-                <div class="card-header" id="date">
-                    {{torneo.date | date}}
-                </div>
-                <div class="card-body bg-transparent">
-                    {{torneo.name}}
-                </div>
-                <div class="card-body bg-transparent">
-                    {{torneo.sport}}
-                </div>
-                <div class="card-body bg-transparent">
-                    {{torneo.category}}
-                </div>
-                <div class="card-body">
-                    <p class="card-text">{{torneo.description}}</p>
-                </div>
-                <div class="card-footer">
-                    {{torneo.location}}
-                </div>
-            </div> -->
-            <div id="train-card" >
-                <div class="t-info">
-                    <div id="date">27 junio</div>
-                    <div id="sport">Fútbol</div>
-                    <div id="category">Senior-mix</div>
-                </div>
-                
-                <div class="card-body bg-transparent">
-                    <h1 id="name">TORNEO CODENOTCH</h1>
-                 </div>
-                <div class="card-body">
-                    ¡Gran torneo Codenotch 5x5!
-                </div>
-                <div class="card-body" id="location">
-                    localización
-                </div>
+         <div id="train-card" *ngFor="let torneo of tournaments" [ngClass]="{'basket': torneo.sport === 'baloncesto'}">
+            <div class="t-info">
+                <div id="date"> {{torneo.date | date}}</div>
+                <div id="sport">{{torneo.sport}}</div>
+                <div id="category">{{torneo.category}}</div>
             </div>
+            
+            <div class="card-body bg-transparent">
+                <h1 id="name">    {{torneo.name}}</h1>
+             </div>
+            <div class="card-body">
+                {{torneo.description}}
+            </div>
+            <div class="card-body" id="location">
+                {{torneo.location}}
+            </div>
+            </div> 
         </div>
-   
     <div>
         <button class="newTeam" data-toggle="modal" data-target="#newTournament">
         Inscríbete

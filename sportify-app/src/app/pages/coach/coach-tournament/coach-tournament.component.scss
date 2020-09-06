@@ -3,7 +3,7 @@
     font-weight: bold;
     width: 350px;
     height: 235px;
-    background-image: url(../../../../assets/pages/tournaments/codenotch.jpg);
+    background: green;
     background-position: center;
     background-size: cover;
     .t-info {
@@ -23,4 +23,12 @@
         left: 100px;
     }
 
+}
+
+.soccer {
+    background-image: url(../../../../assets/pages/tournaments/codenotch.jpg);
+}
+
+.basket {
+    background-image: url(../../../../assets/pages/mytrainings.png);
 }
