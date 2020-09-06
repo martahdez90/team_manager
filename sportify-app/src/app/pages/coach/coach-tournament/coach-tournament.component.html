@@ -10,7 +10,7 @@
 
     <!-- section my tournament -->
     <div class="cards-container">
-        <div *ngFor="let torneo of tournaments" id="train-card" [ngStyle]="{'background-image': torneo.sport === 'Baloncesto' ? 'url(../../../../assets/pages/tournaments/basket.jpg)' : 'url(../../../../assets/pages/tournaments/futbol.jpg' }">
+        <div *ngFor="let torneo of tournaments" id="train-card" [ngStyle]="{'background-image': torneo.sport === 'Baloncesto' ? 'url(../../../../assets/pages/tournaments/basket.jpg)' : 'url(../../../../assets/pages/tournaments/futbol.png' }">
             <div class="t-info">
                 <div id="date"> {{torneo.date | date}}</div>
                 <div id="sport">{{torneo.sport}}</div>
@@ -23,7 +23,7 @@
             <div class="card-body">
                 {{torneo.description}}
             </div>
-            <div class="card-body" id="location">
+            <div class="card-body" id="place">
                 <a href="{{torneo.location}}">Localización</a>
                 
             </div>

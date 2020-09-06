@@ -7,9 +7,9 @@ section {
 .user {
     margin-top: 0px;
     background: $myColor;
-    padding: 1.5rem;
+    padding: 0.5rem;
     img {
-        display: block;
+        display: none;
         margin: auto;
         width: 80px;
     
@@ -88,4 +88,12 @@ div#div {
     section {
         padding-top: 10vh;
     }
+    .user { 
+        padding: 0.5rem;
+        display: block;
+        img {
+            display: block;
+        }
+    }
+
 }
