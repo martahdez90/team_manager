@@ -2,13 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { LoginService } from 'src/app/shared/login.service';
 import { TeamService } from 'src/app/shared/team.service';
 import Swal from 'sweetalert2';
-import {Tournament} from '../../../models/tournament'
-import{TournamentService} from '../../../shared/tournament.service'
+import { Tournament } from '../../../models/tournament'
+import { TournamentService } from '../../../shared/tournament.service'
 
 @Component({
   selector: 'app-coach-tournament',
   templateUrl: './coach-tournament.component.html',
-  styleUrls: ['../../../base.scss','./coach-tournament.component.scss']
+  styleUrls: ['../../../base.scss', './coach-tournament.component.scss']
 })
 export class CoachTournamentComponent implements OnInit {
 
@@ -20,9 +20,11 @@ export class CoachTournamentComponent implements OnInit {
 
   public team_name: string = this.loginService.team_name;
 
-  constructor(private tournamentService:TournamentService, private loginService: LoginService, private teamService: TeamService) {
-    this.tournament = new Tournament("","", "", "", "","");
+  constructor(private tournamentService: TournamentService, private loginService: LoginService, private teamService: TeamService) {
+    this.tournament = new Tournament("", "", "", "", "", "");
   }
+
+
 
   // public getTournament(tournament: Tournament) {
   //   this.tournament = tournament
@@ -119,10 +121,10 @@ export class CoachTournamentComponent implements OnInit {
   //   })
   // }
 
-  public subscribeTournament(team_id: HTMLInputElement, tournament_id: HTMLInputElement){
-    let subscription = {team_id: Number(team_id.value), tournament_id: Number(tournament_id.value)}
+  public subscribeTournament(team_id: HTMLInputElement, tournament_id: HTMLInputElement) {
+    let subscription = { team_id: Number(team_id.value), tournament_id: Number(tournament_id.value) }
     console.log(subscription)
-    this.tournamentService.subscriptionTournament(subscription).subscribe(data =>{
+    this.tournamentService.subscriptionTournament(subscription).subscribe(data => {
       console.log(data)
       this.tournamentService.getPlayerTournament(this.loginService.userLoged.user_id).subscribe(data => {
         this.tournaments = data

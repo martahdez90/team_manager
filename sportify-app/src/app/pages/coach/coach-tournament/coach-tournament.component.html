@@ -10,51 +10,55 @@
 
     <!-- section my tournament -->
     <div class="cards-container">
-         <div id="train-card" *ngFor="let torneo of tournaments" [ngClass]="{'basket': torneo.sport === 'baloncesto'}">
+        <div *ngFor="let torneo of tournaments" id="train-card" [ngStyle]="{'background-image': torneo.sport === 'Baloncesto' ? 'url(../../../../assets/pages/tournaments/basket.jpg)' : 'url(../../../../assets/pages/tournaments/futbol.jpg' }">
             <div class="t-info">
                 <div id="date"> {{torneo.date | date}}</div>
                 <div id="sport">{{torneo.sport}}</div>
                 <div id="category">{{torneo.category}}</div>
             </div>
-            
+
             <div class="card-body bg-transparent">
-                <h1 id="name">    {{torneo.name}}</h1>
-             </div>
+                <h1 id="name"> {{torneo.name}}</h1>
+            </div>
             <div class="card-body">
                 {{torneo.description}}
             </div>
             <div class="card-body" id="location">
-                {{torneo.location}}
+                <a href="{{torneo.location}}">Localización</a>
+                
             </div>
-            </div> 
         </div>
-    <div>
-        <button class="newTeam" data-toggle="modal" data-target="#newTournament">
-        Inscríbete
-    </button>
     </div>
-    
+    <div class="newTeam">
+        <button  data-toggle="modal" data-target="#newTournament">
+            Inscríbete
+        </button>
+    </div>
+
     <!--modal inscribete-->
-    <div class="modal fade" id="newTournament" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal fade" id="newTournament" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLongTitle">Inscribirse en un Torneo</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
                 <div class="modal-body">
                     <select #tournament>
-                        <option *ngFor="let item of allTournaments" value="{{item.tournament_id}}">{{item.name}}</option>
+                        <option *ngFor="let item of allTournaments" value="{{item.tournament_id}}">{{item.name}}
+                        </option>
                     </select>
-             
+
                     <select #team>
                         <option *ngFor="let item of teams" value="{{item.team_id}}">{{item.name}}</option>
                     </select>
                 </div>
                 <div class="modal-footer">
-                    <button data-dismiss="modal" aria-label="Close" class="btn new" id="card-bg2" (click)="subscribeTournament(team, tournament)">Guardar</button>
+                    <button data-dismiss="modal" aria-label="Close" class="btn new" id="card-bg2"
+                        (click)="subscribeTournament(team, tournament)">Guardar</button>
                 </div>
             </div>
         </div>

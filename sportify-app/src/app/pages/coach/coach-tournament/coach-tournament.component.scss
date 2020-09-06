@@ -1,11 +1,10 @@
 #train-card {
+    margin-top: 5vh;
     color: white;
     font-weight: bold;
     width: 350px;
     height: 235px;
-    background: green;
-    background-position: center;
-    background-size: cover;
+    background-position: center;background-size: cover;
     .t-info {
         margin-top: 0.5rem;
         width: 100%;
@@ -25,10 +24,20 @@
 
 }
 
-.soccer {
-    background-image: url(../../../../assets/pages/tournaments/codenotch.jpg);
+.hola {
+    background-image: url(../../../../assets/pages/tournaments/basket.jpg); 
+    background-color: violet;
+     height: 235px;
 }
 
 .basket {
-    background-image: url(../../../../assets/pages/mytrainings.png);
+    // background-image: url(../../../../assets/pages/mytrainings.png);
+    background-color: blue;
 }
+
+
+// ngClass="{basket: torneo.sport === 'Baloncesto'}" id="train-card"
+
+
+
+// [ngClass]="{'bg-primary':torneo.sport === 'Baloncesto','bg-secondary':torneo.sport === 'Fútbol'}"
