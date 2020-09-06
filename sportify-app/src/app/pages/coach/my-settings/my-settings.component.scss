@@ -1,17 +1,30 @@
-.cards-container {
-    width: 100vw;
-    height: 100vh;
+$myColor: #00bfa5;
+
+section {
+    background: white;
+    padding-top: 10vh;
 }
-input{
-    border: none;
-    background: transparent;
-    width: 100%;
+.user {
+    margin-top: 0px;
+    background: $myColor;
+    padding: 0.5rem;
+    img {
+        display: block;
+        margin: auto;
+        width: 80px;
+    
+    }
 }
+
+.label {
+    color: #158a7a;
+}
+
 input#url::placeholder {
     color: white;
 }
 #profile {
-    background-color: #00BFA5;
+    background-color: $myColor;
     font-size: 100px;
     text-align: center;
     color: white;
@@ -22,15 +35,19 @@ input#url::placeholder {
     padding-left: 5%;
     margin-top: 3%;
 }
-ul {
-    width: 100vw;
-    height: 100vh;
+ul,
+div#div {
+    margin: 0;
+    padding: 0
 }
 .fas {
     color: red;
     position: absolute;
     right: 5%;
     cursor:pointer;
+}
+.fa-edit {
+    color: $myColor;
 }
 .list-group-item {
     position: relative;
@@ -41,39 +58,19 @@ ul {
     right: 5%;
     color: grey;
 }
-.buttonR {
-    background-color: #00BFA5;
-    font-family: ‘Roboto’, sans-serif;
-    color: #FFFFFF;
-}
-#card-bg2{
-    border: none;
-    background-color: #00BFA5;
-    color: white;
-}
-.card{
-    border: #00BFA5;
-    max-width: 50rem;
-    margin: auto;
-}
 
-.card-footer, #date{
-    background-color: #00BFA5;
-    color: white;
-    position: relative;
-}
 
 
 /* modal de cerrar sesión */
 
 .modal-title {
-    color: #00bfa5;
+    color: $myColor;
     font-size: medium;
 }
 
 .btn-modal {
-        background-color: #00bfa5;
-        border: #00bfa5;
+        background-color: $myColor;
+        border: $myColor;
         width: 20vw;
         color: white;
     }

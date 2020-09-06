@@ -1,99 +1,76 @@
 <app-coach-menu></app-coach-menu>
 
-<!-- modal put settings -->
-<div class="header">
-  <h2>Ajustes</h2>
-</div> 
 
-<div class="modal fade" id="putSettings" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Crea tu nuevo ejercicio</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+<section #mySettings>
+  <div class="header">
+      <h1 class="header-title">Ajustes</h1>
+  </div>
+  <div>
+      <div class="user">
+          <img src="../../../../assets/menus/avataaars.svg" alt="">
       </div>
-      <div class="modal-body">
-          <div class="card mb-3">
-              <div class="card-header" id="date">
-                  <input type="text" id="url" #name placeholder="{{userLoged.name}}">
+      <ul class="list-group list-group-flush">
+          <li class="list-group-item">Tipo de usuario
+              <p id="info">{{userLoged.rol}}</p>
+          </li>
+          <li class="list-group-item">Nombre
+              <p contenteditable="true" id="info">{{userLoged.name}}</p>
+          </li>
+          <li class="list-group-item">Apellido
+              <p contenteditable="true" id="info">{{userLoged.lastName}}</p>
+          </li>
+          <li class="list-group-item">Mail
+              <p contenteditable="true" id="info">{{userLoged.email}}</p>
+          </li>
+          <li class="list-group-item">Telefono
+              <p contenteditable="true" id="info">{{userLoged.phone}}</p>
+          </li>
+          <li class="list-group-item">Cambiar contraseña</li>
+          <li class="list-group-item">Cerrar sesion <i class="fas fa-power-off" (click)="logOut()"></i></li>
+          <li class="list-group-item">Actualizar <i class="fas fa-edit" data-toggle="modal"
+                  data-target="#putSettings"></i></li>
+          <li class="list-group-item">Eliminar mi cuenta <i class="fas fa-user-slash" (click)="deleteUser()"></i></li>
+      </ul>
+  </div>
+  <!-- modal put settings -->
+
+  <div class="modal fade" id="putSettings" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+      aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content" id="modalNew">
+              <div class="modal-header border-0">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <img src="../../../../assets/modals/close.svg" alt="close-modal">
+                  </button>
               </div>
-              <div class="card-header bg-transparent">
-                  <input type="text" #lastName placeholder="{{userLoged.lastName}}">
+              <div class="modal-body">
+                  <div class="mb-1">
+                      <div class="card-body bg-transparent" id="date">
+                          <label for="name">Nombre:</label><br>
+                          <input type="text" id="name" #name placeholder="{{userLoged.name}}">
+                      </div>
+                      <div class="card-body bg-transparent">
+                          <label for="lastName">Apellido:</label><br>
+                          <input type="text" #lastName placeholder="{{userLoged.lastName}}" id="lastName">
+                      </div>
+                      <div class="card-body bg-transparent">
+                          <label for="email">Email:</label><br>
+                          <input #email class="card-text" placeholder="{{userLoged.email}}" id="email">
+                      </div>
+                      <div class="card-body">
+                          <label for="phone">Título:</label><br>
+                          <input type="text" id="phone" #phone placeholder="{{userLoged.phone}}">
+                      </div>
+                  </div>
               </div>
-              <div class="card-body">
-                  <input #email class="card-text" placeholder="{{userLoged.email}}">
-              </div>
-              <div class="card-footer">
-                  <input type="text" id="url" #phone placeholder="{{userLoged.phone}}">
+              <div class="modal-footer border-0">
+                  <button class="btnModal" (click)="putUser(name, lastName, email, phone)"
+                      data-dismiss="modal" aria-label="Close">Guardar cambios</button>
               </div>
           </div>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-        <button class="btn" id="card-bg2" (click)="putUser(name, lastName, email, phone)" data-dismiss="modal" aria-label="Close">Guardar cambios</button>
-      </div>
-    </div>
   </div>
-</div>
-
-<div class="modal fade" id="Password" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">Nueva contraseña</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-            <div class="card mb-3">
-                <div class="card-header" id="date">
-                    <input type="text" id="url" #name placeholder="Nueva contraseña">
-                </div>
-                <div class="card-header bg-transparent">
-                    <input type="text" #lastName placeholder="Confirmar contraseña">
-                </div>
-            </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-          <button class="btn" id="card-bg2" (click)="putPassword(name)" data-dismiss="modal" aria-label="Close">Guardar cambios</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-<section>
-    <div id="profile">
-        <i class="fa fa-user-circle" id="user"></i>
-    </div>
 </section>
-<div id="div">
-    <ul class="list-group list-group-flush">
-        <li class="list-group-item">Tipo usuario
-            <p id="info">{{userLoged.rol}}</p>
-        </li>
-        <li class="list-group-item">Nombre
-            <p contenteditable="true" id="info">{{userLoged.name}}</p>
-        </li>
-        <li class="list-group-item">Apellido
-            <p contenteditable="true" id="info">{{userLoged.lastName}}</p>
-        </li>
-        <li class="list-group-item">Mail
-            <p contenteditable="true" id="info">{{userLoged.email}}</p>
-        </li>
-        <li class="list-group-item">Telefono
-            <p contenteditable="true" id="info">{{userLoged.phone}}</p>
-        </li>
-        <li class="list-group-item" data-toggle="modal" data-target="#Password" style="cursor: pointer; ">Cambiar contraseña</li>
-        <li class="list-group-item">Cerrar sesion <i class="fas fa-power-off" (click)="logOut()"></i></li>
-        <li class="list-group-item" >Eliminar mi cuenta <i class="fas fa-user-slash" (click)="deleteUser()"></i></li>
-    </ul>
-    <div class="text-center mb-5">
-        <button type="button" class="btn buttonR" data-toggle="modal" data-target="#putSettings">Actualizar</button></div>
-</div>
 
 
 
