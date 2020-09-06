@@ -91,7 +91,7 @@ button:hover {
     }
   }
   //my teams section
-    #myTeams, #myPlayers, #myTrainings, #myGames, #myExercises {
+    #myTeams, #myPlayers, #myTrainings, #myGames, #myExercises, #mySettings {
       min-width: 100vw;
       min-height: 90vh;
       @extend %centerflex;
@@ -100,12 +100,17 @@ button:hover {
 
     .cards-container {
       min-width: 90vw;
-      min-height: 55vh;
       display:flex;
       margin: 0.5rem;
       align-items: center;
       justify-content: space-around;
       flex-wrap: wrap;
+
+      #sinRegistro {
+        margin: 5vw;
+        color: white;
+          text-align: center;
+      }
     }
 
     #team-card, #player-card, #player-card-phone, #train-card, #ex-card {

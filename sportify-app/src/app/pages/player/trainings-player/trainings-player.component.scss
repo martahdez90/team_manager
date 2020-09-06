@@ -7,15 +7,6 @@ section {
       text-align: center;
     }
   }
-
-.delete {
-    text-align: right;
-    padding-right: 10px;
-    margin-top:5px;
-    #delete {
-    cursor: pointer;
-    }
-  }
   
 
   #train-card{
@@ -29,6 +20,10 @@ section {
       align-items: center;
       margin-left: 10px;
       height: 100%;
+      img {
+        position: relative;
+        right: 25px;
+     }
       
         .date {
             display: flex;
@@ -68,8 +63,7 @@ section {
             padding-bottom: 10px;
             color: grey;
            #location-link {
-             position: relative;
-             top: 50px;
+            margin-top: 30px;
             
            }
             p {
@@ -79,7 +73,7 @@ section {
           }
         }
       }
-    }   
+    } 
 }
 
 @media screen and (min-width: 932px) {
@@ -100,7 +94,7 @@ section {
         margin-bottom: 10px;
         padding: 0;
        width: 356px;
-       height: 90px;
+       height: 100px;
 
        .delete {
         padding-right: 5px;
@@ -139,7 +133,7 @@ section {
                        font-size: 12px;
                    }
                    #location-link {
-                       top: 12px;
+                       margin-top: 12px;
                    }
                }
            }

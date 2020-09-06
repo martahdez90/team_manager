@@ -1,9 +1,7 @@
 <app-player-menu></app-player-menu>
 
 <!-- modal put settings -->
-<div class="header">
-  <h2>Ajustes</h2>
-</div> 
+
 
 <div class="modal fade" id="putSettings" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
@@ -38,12 +36,14 @@
   </div>
 </div>
 
-<section>
-    <div id="profile">
-        <i class="fa fa-user-circle" id="user"></i>
+<section #mySettings>
+    <div class="header">
+        <h1 class="header-title">Mis entrenos</h1>
+        <a routerLink="/coach/settings">
+            <img src="../../../../assets/menus/plaaayer.svg" alt="avatar" id="avatar">
+        </a>
     </div>
-</section>
-<div id="div">
+    <div class="cards-container">
     <ul class="list-group list-group-flush">
         <li class="list-group-item">Tipo usuario
             <p id="info">{{userLoged.rol}}</p>
@@ -67,6 +67,8 @@
     <div class="text-center mb-5">
         <button type="button" class="btn buttonR" data-toggle="modal" data-target="#putSettings">Actualizar</button></div>
 </div>
+</section>
+
 
 
 

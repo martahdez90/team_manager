@@ -2,19 +2,19 @@
 
 <section #myTrainings>
     <div class="header">
-        <img src="../../../../assets/menus/back.svg" alt="go back" id="back" routerLink="/coach/myTeams">
         <h1 class="header-title">Mis entrenos</h1>
-        <a routerLink="/coach/settings">
+        <a routerLink="/player/settings">
             <img src="../../../../assets/menus/plaaayer.svg" alt="avatar" id="avatar">
         </a>
     </div>
     <div class="cards-container">
        
-        <div class="container" *ngIf="sinRegistro; else registrado" id=sinRegistro>
+        <div class="sr-container" *ngIf="sinRegistro; else registrado" id=sinRegistro>
             <div id="centro">
                 <h1>¡Bienvenido!</h1>
-                <p>Tu entrenador aún no te ha añadido a su equipo. <br>
-                    Contacta con tu entrenador para visualizar tus entrenamientos</p>
+                <p>Tu entrenador aún no te ha añadido a su equipo.
+                    Contacta con tu entrenador para visualizar aquí tus entrenamientos</p>
+                <img src="../../../../assets/pages/player/noinfo.svg" alt="no trainings">
             </div>
         </div> 
         <ng-template #registrado>
@@ -39,6 +39,7 @@
                     </div>
                 </div>
             </div>
+            <img src="../../../../assets/pages/player/training.svg" alt="training">
         </div>
     </div>    
     </ng-template> 

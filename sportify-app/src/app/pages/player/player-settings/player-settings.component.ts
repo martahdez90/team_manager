@@ -8,7 +8,7 @@ import Swal from 'sweetalert2';
 @Component({
   selector: 'app-player-settings',
   templateUrl: './player-settings.component.html',
-  styleUrls: ['./player-settings.component.css']
+  styleUrls: ['../../../base.scss', './player-settings.component.css']
 })
 export class PlayerSettingsComponent implements OnInit {
   public userLoged = this.loginService.userLoged
