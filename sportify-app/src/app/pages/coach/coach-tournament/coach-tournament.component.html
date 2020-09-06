@@ -24,7 +24,7 @@
                 {{torneo.description}}
             </div>
             <div class="card-body" id="place">
-                <a href="{{torneo.location}}">Localización</a>
+                <a href="{{torneo.location}}" target="_blank">Localización</a>
                 
             </div>
         </div>
@@ -39,26 +39,28 @@
     <div class="modal fade" id="newTournament" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
         aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Inscribirse en un Torneo</h5>
+            <div class="modal-content" id="modalNew">
+                <div class="modal-header border-0">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
+                        <img src="../../../../assets/modals/close.svg" alt="close-modal">
                     </button>
                 </div>
-                <div class="modal-body">
-                    <select #tournament>
-                        <option *ngFor="let item of allTournaments" value="{{item.tournament_id}}">{{item.name}}
-                        </option>
-                    </select>
+                <div class="modal-body" class="bg-secondary">
+                    <div #tournament *ngFor="let item of allTournaments" >
+                        <div  (click)="saveTournament(item.tournament_id)">
+                            {{item.name}}
+                        </div>
+                    </div>
 
-                    <select #team>
-                        <option *ngFor="let item of teams" value="{{item.team_id}}">{{item.name}}</option>
-                    </select>
+                    <div #team *ngFor="let item of teams" class="bg-primary">
+                        <div  (click)="saveTeam(item.team_id)">
+                            {{item.name}}
+                        </div>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button data-dismiss="modal" aria-label="Close" class="btn new" id="card-bg2"
-                        (click)="subscribeTournament(team, tournament)">Guardar</button>
+                        (click)="subscribeTournament()">Guardar</button>
                 </div>
             </div>
         </div>

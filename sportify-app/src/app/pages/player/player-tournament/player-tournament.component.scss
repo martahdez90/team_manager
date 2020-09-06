@@ -1,0 +1,35 @@
+#train-card {
+    margin-top: 5vh;
+    color: white;
+    font-weight: bold;
+    width: 350px;
+    height: 235px;
+    background-position: center;background-size: cover;
+    .t-info {
+        margin-top: 0.5rem;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;  
+    }
+
+     #name {
+            font-size: 36px;
+        }
+    
+    #place {
+        position: relative;
+        left: 100px;
+        color: white;
+        text-decoration: underline;
+    }
+
+}
+
+
+
+/* ngClass="{basket: torneo.sport === 'Baloncesto'}" id="train-card"
+
+
+
+[ngClass]="{'bg-primary':torneo.sport === 'Baloncesto','bg-secondary':torneo.sport === 'Fútbol'}" */

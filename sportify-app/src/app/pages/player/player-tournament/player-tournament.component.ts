@@ -6,7 +6,7 @@ import{TournamentService} from '../../../shared/tournament.service'
 @Component({
   selector: 'app-player-tournament',
   templateUrl: './player-tournament.component.html',
-  styleUrls: ['./player-tournament.component.css']
+  styleUrls: ['../../../base.scss', './player-tournament.component.scss']
 })
 export class PlayerTournamentComponent implements OnInit {
 
