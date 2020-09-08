@@ -20,9 +20,9 @@ export class MyExercisesComponent implements OnInit {
   public exercise: Exercise
   public options = [
     { name: 'Selecciona uno', value: 'null' },
-    { name: 'Calentamiento', value: 'calentamiento' },
-    { name: 'Parte principal', value: 'principal' },
-    { name: 'Vuelta a la calma', value: 'estiramientos' }
+    { name: 'Calentamiento', value: 'Calentamiento' },
+    { name: 'Parte principal', value: 'Parte principal' },
+    { name: 'Vuelta a la calma', value: 'Vuelta a la calma' }
   ]
 
   constructor(private loginService: LoginService, private exService: ExerciseService, private trainingService: TrainingService, private sanitizer: DomSanitizer

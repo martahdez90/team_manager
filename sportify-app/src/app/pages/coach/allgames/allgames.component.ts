@@ -13,6 +13,7 @@ import Swal from 'sweetalert2';
 export class AllGamesComponent implements OnInit {
   public teams: object
   public dataBase: object
+  public Allgames: []
   public game: Match
   constructor(private matchService: MatchServiceService, private loginService: LoginService, private teamService: TeamService) {
     this.game = new Match("", "", "", "");
@@ -86,11 +87,17 @@ export class AllGamesComponent implements OnInit {
       }
     })
   }
+  public filterTeam(filter:HTMLInputElement)
+  {
+    
+    this.dataBase =this.Allgames.filter((game) => (game.name=== filter.value));
+  }
 
   ngOnInit(): void {
     this.matchService.getPlayerMatches(this.loginService.userLoged.user_id).subscribe(data => {
       console.log(data)
       this.dataBase = data 
+      this.Allgames= data
       if (data[0].lenght != 0) { 
           // preuntar a marta
       } 
