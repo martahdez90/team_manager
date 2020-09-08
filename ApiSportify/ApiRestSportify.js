@@ -180,7 +180,10 @@ app.delete("/teams", function(request, response) {
 //obtener entrenamiento de un usuario
 app.get("/training/players/:user_id", function(request, response) {
     let params = [request.params.user_id]
-    let sql = ` SELECT training_team.team_id, training.*, team.name AS team FROM training AS training INNER JOIN training_team AS training_team ON ( training.training_id = training_team.training_id ) INNER JOIN team AS team ON ( training_team.team_id = team.team_id ) INNER JOIN user_teams AS user_teams ON ( team.team_id = user_teams.team_id ) INNER JOIN users AS users ON ( user_teams.user_id = users.user_id ) WHERE users.user_id = ?`;
+    let sql = ` SELECT training_team.team_id, training.*, team.name AS team FROM training
+     AS training INNER JOIN training_team AS training_team ON ( training.training_id = training_team.training_id ) 
+     INNER JOIN team AS team ON ( training_team.team_id = team.team_id ) INNER JOIN user_teams AS user_teams ON ( team.team_id = user_teams.team_id ) 
+     INNER JOIN users AS users ON ( user_teams.user_id = users.user_id ) WHERE users.user_id = ? ORDER BY training.date ASC`;
 
     connection.query(sql, params, function(err, resultado) {
         if (err) {
@@ -288,13 +291,11 @@ app.get("/match/:team_id", function(request, response) {
 //obtener partidos del jugador
 app.get("/match/player/:user_id", function(request, response) {
     let params = [request.params.user_id];
-    let sql = "SELECT matches_teams.team_id,  matches_teams.match_id, team.name, matches.date, matches.rival, matches.location, matches.comments FROM matches AS matches INNER JOIN matches_teams AS matches_teams ON (matches.match_id = matches_teams.match_id) INNER JOIN team AS team ON (matches_teams.team_id = team.team_id) INNER JOIN user_teams AS user_teams ON (team.team_id = user_teams.team_id) INNER JOIN users AS users ON (user_teams.user_id = users.user_id) WHERE users.user_id = ?";
-    // let sql = "SELECT t5.* FROM matches AS t5 "+  
-    // "INNER JOIN matches_teams AS t4 ON (t5.match_id = t4.match_id) "+
-    // "INNER JOIN team AS t3 ON (t4.team_id = t3.team_id) "+
-    // "INNER JOIN user_teams t2 ON (t3.team_id = t2.team_id) "+
-    // "INNER JOIN users AS t1 ON (t2.user_id = t1.user_id) "+
-    // "WHERE t1.user_id = ?";
+    let sql = `SELECT matches_teams.team_id,  matches_teams.match_id, team.name, matches.date, matches.rival, matches.location, matches.comments
+     FROM matches AS matches INNER JOIN matches_teams AS matches_teams ON (matches.match_id = matches_teams.match_id) 
+     INNER JOIN team AS team ON (matches_teams.team_id = team.team_id) INNER JOIN user_teams AS user_teams ON (team.team_id = user_teams.team_id) 
+     INNER JOIN users AS users ON (user_teams.user_id = users.user_id) WHERE users.user_id = ? ORDER BY matches.date  ASC`;
+
     connection.query(sql, params, function(err, resultado) {
         if (err) {
             console.log(err);
@@ -539,10 +540,10 @@ app.post("/users/teamPlayers", function(request, response) {
 
 
 //TORNEO
-app.get("/tournament",function (request, response) {
+app.get("/tournament", function(request, response) {
     let sql = "SELECT * FROM tournament"
-    connection.query(sql, function(err, res){
-        if(err){
+    connection.query(sql, function(err, res) {
+        if (err) {
             console.log(err);
         } else {
             console.log("toos los torneos");
@@ -571,12 +572,12 @@ app.get("/tournament/:team_id", function(request, response) {
 //obtener torneos del jugador
 app.get("/tournament/player/:user_id", function(request, response) {
     let params = [request.params.user_id];
-    let sql = "SELECT tournament.tournament_id, tournament.name, tournament.sport, tournament.date, tournament.category, tournament.location, tournament.description "+
-    "FROM tournament  "+
-    "INNER JOIN tournament_teams  ON (tournament.tournament_id = tournament_teams.tournament_id)"+
-    "INNER JOIN team ON (tournament_teams.team_id = team.team_id) "+
-    "INNER JOIN user_teams ON (team.team_id = user_teams.team_id) "+
-    "INNER JOIN users ON (user_teams.user_id = users.user_id) WHERE users.user_id = ?"
+    let sql = "SELECT tournament.tournament_id, tournament.name, tournament.sport, tournament.date, tournament.category, tournament.location, tournament.description " +
+        "FROM tournament  " +
+        "INNER JOIN tournament_teams  ON (tournament.tournament_id = tournament_teams.tournament_id)" +
+        "INNER JOIN team ON (tournament_teams.team_id = team.team_id) " +
+        "INNER JOIN user_teams ON (team.team_id = user_teams.team_id) " +
+        "INNER JOIN users ON (user_teams.user_id = users.user_id) WHERE users.user_id = ?"
 
     connection.query(sql, params, function(err, resultado) {
         if (err) {
@@ -589,7 +590,7 @@ app.get("/tournament/player/:user_id", function(request, response) {
 });
 
 //subscripcion a torneo
-app.post("/tournament", function(request, response){
+app.post("/tournament", function(request, response) {
     let params = [request.body.team_id, request.body.tournament_id]
     let sql = "INSERT INTO tournament_teams (`team_id`, `tournament_id`) VALUES (?, ?)"
     connection.query(sql, params, function(err, resultado) {

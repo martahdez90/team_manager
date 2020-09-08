@@ -10,8 +10,8 @@
     </div>
     <div class="search-container">
         <form action="" class="search">
-            <input type="text" placeholder="Buscar.." name="search">
-            <button type="submit"><i class="fa fa-search"></i></button>
+            <input #filter type="text" placeholder="Buscar.." name="search">
+            <button (click)="filterTeam(filter)"><i class="fa fa-search"></i></button>
         </form>
     </div>
     <div class="cards-container">
@@ -21,7 +21,7 @@
             </div>
             <div class="train-div">
                 <div class="date">
-                    <p id="month">{{e.date  | date:'MMM'}}</p>
+                    <p id="month">{{e.date | date:'MMM'}}</p>
                     <p id="day">{{e.date | date:'d'}}</p>
                 </div>
                 <div class="train-info">
@@ -34,7 +34,7 @@
                             <p>
                                 {{e.comments}}
                             </p>
-                           
+
                             <a href="{{e.location}}" id="location-link" target="_blank"> Localización
                             </a>
                         </div>
@@ -44,53 +44,53 @@
         </div>
     </div>
     <div class="newTeam">
-        <button  data-toggle="modal" data-target="#newGame">
+        <button data-toggle="modal" data-target="#newGame">
         Nuevo partido
     </button>
     </div>
-  <!--post game-->
-  <div class="modal fade" id="newGame" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content" id="modalNew">
-            <div class="modal-header border-0">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    <!--post game-->
+    <div class="modal fade" id="newGame" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content" id="modalNew">
+                <div class="modal-header border-0">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <img src="../../../../assets/modals/close.svg" alt="close-modal">
                 </button>
-            </div>
+                </div>
 
-            <div class="modal-body">
-                <div class="mb-1">
-                    <select #team class="team">
+                <div class="modal-body">
+                    <div class="mb-1">
+                        <select #team class="team">
                         <option *ngFor=" let team of teams" value="{{team.team_id}}">
                             {{team.name}}
                         </option>
                     </select>
-                    <div class="card-body bg-transparent modalB">
-                        <label for="date">Fecha:</label><br>
-                        <input type="date" #date id="date">
-                    </div>
-                    <div class="card-body modalB">
-                        <label for="rival">Rival:</label><br>
-                        <input #rival class="card-text" placeholder="rival" id="rival">
-                    </div>
-                    <div class="card-body bg-transparent modalB">
-                        <label for="comments">Comentarios:</label><br>
-                        <input #comments class="card-text" placeholder="comentarios" id="comments">
-                    </div>
-                    <div class="card-body modalB">
-                        <label for="location">Lugar:</label><br>
-                        <input #location class="card-text" placeholder="lugar" id="location">
-                    </div>
+                        <div class="card-body bg-transparent modalB">
+                            <label for="date">Fecha:</label><br>
+                            <input type="date" #date id="date">
+                        </div>
+                        <div class="card-body modalB">
+                            <label for="rival">Rival:</label><br>
+                            <input #rival class="card-text" placeholder="rival" id="rival">
+                        </div>
+                        <div class="card-body bg-transparent modalB">
+                            <label for="comments">Comentarios:</label><br>
+                            <input #comments class="card-text" placeholder="comentarios" id="comments">
+                        </div>
+                        <div class="card-body modalB">
+                            <label for="location">Lugar:</label><br>
+                            <input #location class="card-text" placeholder="lugar" id="location">
+                        </div>
 
+                    </div>
                 </div>
-            </div>
-            <div class="modal-footer border-0">
-                <button data-dismiss="modal" aria-label="Close" class="btnModal" id="card-bg2" (click)="newGame(team, date,comments,rival, location)">Guardar</button>
+                <div class="modal-footer border-0">
+                    <button data-dismiss="modal" aria-label="Close" class="btnModal" id="card-bg2" (click)="newGame(team, date,comments,rival, location)">Guardar</button>
+                </div>
             </div>
         </div>
     </div>
-</div>
-<!-- modal editar partido -->
+    <!-- modal editar partido -->
     <div class="modal fade" id="putGame" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content" id="modalNew">
@@ -108,7 +108,7 @@
                         </select>
                         <div class="card-body bg-transparent">
                             <label for="date2">Fecha:</label><br>
-                            <input type="date" #date2 placeholder="{{game.date}}"  id="date2">
+                            <input type="date" #date2 placeholder="{{game.date}}" id="date2">
                         </div>
                         <div class="card-body">
                             <label for="rival2">Rival:</label><br>

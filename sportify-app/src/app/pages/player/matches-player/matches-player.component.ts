@@ -14,6 +14,7 @@ export class MatchesPlayerComponent implements OnInit {
   public sinRegistro = true;
     
   constructor(private loginService: LoginService, private matchService: MatchServiceService) { }
+  
 
   ngOnInit(): void {
     console.log(this.loginService.userLoged.user_id)
