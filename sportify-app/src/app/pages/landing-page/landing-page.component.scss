@@ -7,61 +7,106 @@ section {
   color: white;
 }
 
-.intro {
+//menu up and down
+#up, #down {
+  position: fixed;
+}
+
+#up {
+  top: 48%;
+  right: 2%;
+}
+#down {
+  top: 52%;
+  right: 2%;
+}
+
+//secctions
+.intro, #about {
   padding-top: 7vh;
   min-height: 100vh;
   min-width: 100vw;
   .ball {
     position: absolute;
-
+    width: 8vw;
+    opacity: 0%;
+    animation: apear 1s ease forwards 3.2s;
   }
   #logo {
-    position: absolute;
-    top: 50%;
+    position: relative;
+    top: 45vh;
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 120px;
     font-family: 'Paytone One', sans-serif;
     animation: fill 0.5s ease forwards 3.5s;
   }
+  #badminton {
+    left: 45%;
+    top: 10%;
+  }
+  #famerican {
+    top: 15%;
+   left: 20%;
+    width: 10vw;
+  }
+  #volley {
+  left: 20%;
+   top: 60%;
+  }
+  #tenis {
+    top: 75%;
+    left: 48%;
+  }
+  #basket {
+    right: 20%;
+    top: 60%;
+  }
+  #soccer {
+    top: 20%;
+    right: 23%;
+  }
+
 }
 
+
+//Sportify animation
 #logo path:nth-child(1) { 
   stroke-dasharray: 374.89px;
   stroke-dashoffset: 374.89px;
   animation: line-anim 2s ease forwards;
 }
-#logo path:nth-child(2) { //letra S
+#logo path:nth-child(2) { 
   stroke-dasharray: 387.04px;
   stroke-dashoffset: 387.04px;
   animation: line-anim 2s ease forwards 0.4s;
 }
-#logo path:nth-child(3) { //letra p
+#logo path:nth-child(3) { 
   stroke-dasharray: 286.05px;
   stroke-dashoffset: 286.05px;
   animation: line-anim 2s ease forwards 0.8s;  
 }
-#logo path:nth-child(4) { //letra o
+#logo path:nth-child(4) { 
   stroke-dasharray: 225.15px;
   stroke-dashoffset: 225.15px;
   animation: line-anim 2s ease forwards 1.2s;
 }
-#logo path:nth-child(5) {//letra r
+#logo path:nth-child(5) {
   stroke-dasharray: 266.4px;
   stroke-dashoffset: 266.4px;
   animation: line-anim 2s ease forwards 1.6s; 
 }
-#logo path:nth-child(6) { //letra t
+#logo path:nth-child(6) { 
   stroke-dasharray: 263.07px;
   stroke-dashoffset: 263.07px;
   animation: line-anim 2s ease forwards 2s; 
 }
-#logo path:nth-child(7) { //letra i
+#logo path:nth-child(7) { 
   stroke-dasharray: 304.32px;
   stroke-dashoffset: 304.31px;
   animation: line-anim 2s ease forwards 2.4s;
 }
-#logo path:nth-child(8) { //letra i
+#logo path:nth-child(8) { 
   stroke-dasharray: 422.81px;
   stroke-dashoffset: 422.81px;
   animation: line-anim 2s ease forwards 2.8s;
@@ -83,10 +128,29 @@ section {
   }
 }
 
-@media (max-width: 800px) {
-  #logo {
-      width: 280px;;
+@keyframes apear {
+  from{
+    opacity: 0%;
+  } to {
+    opacity: 100%;
   }
+}
+
+@media (max-width: 800px) {
+  .intro {
+    min-height: 20vh;
+  }
+  .ball {
+    display: none;
+  }
+  #up, #down {
+    width: 3vw;
+  }
+  #logo {
+      width: 70vw;
+  }
+  
+
 }
 
 // Anterior
