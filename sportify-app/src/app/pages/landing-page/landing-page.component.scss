@@ -1,15 +1,95 @@
+$myColor: #00bfa5;
+$darker: #158a7a;
 
+section {
+  background: linear-gradient($myColor,  #34a1af);
+  min-height: 100vh;
+  color: white;
+}
 
-.body {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
-    color: #5a5a5a;
+.intro {
+  padding-top: 7vh;
+  min-height: 100vh;
+  min-width: 100vw;
+  .ball {
+    position: absolute;
+
   }
+  #logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 120px;
+    font-family: 'Paytone One', sans-serif;
+    animation: fill 0.5s ease forwards 3.5s;
+  }
+}
 
-/*   .header.link {
-    transition: all 300ms;
-  } */
+#logo path:nth-child(1) { 
+  stroke-dasharray: 374.89px;
+  stroke-dashoffset: 374.89px;
+  animation: line-anim 2s ease forwards;
+}
+#logo path:nth-child(2) { //letra S
+  stroke-dasharray: 387.04px;
+  stroke-dashoffset: 387.04px;
+  animation: line-anim 2s ease forwards 0.4s;
+}
+#logo path:nth-child(3) { //letra p
+  stroke-dasharray: 286.05px;
+  stroke-dashoffset: 286.05px;
+  animation: line-anim 2s ease forwards 0.8s;  
+}
+#logo path:nth-child(4) { //letra o
+  stroke-dasharray: 225.15px;
+  stroke-dashoffset: 225.15px;
+  animation: line-anim 2s ease forwards 1.2s;
+}
+#logo path:nth-child(5) {//letra r
+  stroke-dasharray: 266.4px;
+  stroke-dashoffset: 266.4px;
+  animation: line-anim 2s ease forwards 1.6s; 
+}
+#logo path:nth-child(6) { //letra t
+  stroke-dasharray: 263.07px;
+  stroke-dashoffset: 263.07px;
+  animation: line-anim 2s ease forwards 2s; 
+}
+#logo path:nth-child(7) { //letra i
+  stroke-dasharray: 304.32px;
+  stroke-dashoffset: 304.31px;
+  animation: line-anim 2s ease forwards 2.4s;
+}
+#logo path:nth-child(8) { //letra i
+  stroke-dasharray: 422.81px;
+  stroke-dashoffset: 422.81px;
+  animation: line-anim 2s ease forwards 2.8s;
+}
 
+@keyframes line-anim {
+  to{
+      stroke-dashoffset: 0;
+  }
+}
+@keyframes fill {
+  from {
+      fill: transparent;
+  }
+  to {
+      /* fill: #e94e21; */
+      /* fill: #2b47b3; */
+      fill: white;
+  }
+}
+
+@media (max-width: 800px) {
+  #logo {
+      width: 280px;;
+  }
+}
+
+// Anterior
   .header-link:hover, .header.link:active {
     border-top: 3px solid #ffffff;
   border-bottom: 3px solid #ffffff;
