@@ -2,6 +2,9 @@ import { Component, OnInit, ElementRef } from '@angular/core';
 import { LoginService } from 'src/app/shared/login.service';
 import { Router, ActivatedRoute } from '@angular/router'
 import { FormBuilder } from '@angular/forms';
+import Swal from 'sweetalert2';
+
+
 
 
 
@@ -29,6 +32,18 @@ export class LoginComponent implements OnInit {
     }
 
     this.loginService.login(form).subscribe(data => {
+      if(data[0]===undefined){
+        Swal.fire({
+          title: 'UPS...',
+      text: "email o contraseña incorrecto ",
+      icon: 'warning',
+      showCancelButton: false,
+      confirmButtonColor: '#00bfa5',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'OK'
+      
+        })
+      }
       this.loginService.userLoged = data[0]
       //console.log(this.loginService.userLoged);
       //recordar usuario
