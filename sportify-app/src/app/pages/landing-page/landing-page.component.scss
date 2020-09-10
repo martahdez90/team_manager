@@ -10,6 +10,7 @@ section {
 //menu up and down
 #up, #down {
   position: fixed;
+  animation: apear ease 10s;
 }
 
 #up {
@@ -22,50 +23,62 @@ section {
 }
 
 //secctions
-.intro, #about {
+.intro, .landing1, #about {
   padding-top: 7vh;
   min-height: 100vh;
   min-width: 100vw;
-  .ball {
-    position: absolute;
-    width: 8vw;
-    opacity: 0%;
-    animation: apear 1s ease forwards 3.2s;
-  }
-  #logo {
-    position: relative;
-    top: 45vh;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 120px;
+  
+  
+.balls{
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  /* grid-template-rows: repeat(3, 1fr);  */
+  grid-template-areas: ". afootball badminton soccer ."
+  ". . logo . . "
+  ". volley tenis basket ." 
+}
+
+#logo {
+  font-size: 120px;
     font-family: 'Paytone One', sans-serif;
     animation: fill 0.5s ease forwards 3.5s;
-  }
-  #badminton {
-    left: 45%;
-    top: 10%;
-  }
-  #famerican {
-    top: 15%;
-   left: 20%;
-    width: 10vw;
-  }
-  #volley {
-  left: 20%;
-   top: 60%;
-  }
-  #tenis {
-    top: 75%;
-    left: 48%;
-  }
-  #basket {
-    right: 20%;
-    top: 60%;
-  }
-  #soccer {
-    top: 20%;
-    right: 23%;
-  }
+  grid-area: logo;
+}
+
+.ball{
+  padding: 1rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+.ball1{
+  background: blue;
+  grid-area: afootball;
+}
+.ball2{
+  background-color: red;
+  grid-area: badminton;
+}
+
+.ball3{
+  background: green;
+  grid-area: volley;
+}
+.ball4{
+  background: yellow;
+  grid-area: tenis;
+  padding-top: 15vh;
+}
+.ball5{
+  background: pink;
+  grid-area: basket;
+}
+.ball6{
+  background: orange;
+  grid-area: soccer;
+  padding-top: 10vh;
+}
+
 
 }
 
