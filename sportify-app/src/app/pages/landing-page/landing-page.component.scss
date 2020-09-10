@@ -223,6 +223,43 @@ section {
     h2{
       color: $myColor;
       font-size: 4vw; 
+      margin-bottom: 2rem;
+    }
+    a {
+      color: white;
+      background: $darker;
+      padding: 0.5rem 2rem;
+      border-radius: 0.5rem;
+      transition: all ease 0.3s;
+      &:hover {
+        background: $myColor;
+        padding: 0.7rem 2.2rem;
+        text-decoration: none;
+        
+      }
+    }
+  }
+}
+
+.landing4 {
+  display: flex;
+  color: white;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  .how {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    h2 {
+      padding: 0.5rem;
+      font-size: 2vw;
+    }
+
+    img {
+      height: 500px;
+      border-radius: 0.5rem;
     }
   }
 }
@@ -246,6 +283,7 @@ section {
 
     .ball6 {
       display: block;
+  
     }
   }
   }
@@ -268,12 +306,87 @@ section {
     }
     .mountain {
       margin-left: 3vw;
-      margin-top: 20px;
+      margin-top: 70px;
       #mountain {
         width: 100vw;
       }
     }
   }
+
+  .landing2 {
+    display: flex;
+    flex-direction: column-reverse;
+  
+    .pictureTeam {
+      padding: 14rem;
+      padding-left: 0px;
+      padding-bottom: 0px;
+      img {
+      width: 80vw;
+    }
+  }
+    .promo3 {
+      padding: 4vw;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      h2 {
+        font-size: 10vw; 
+      }
+      
+    }
+    #register {
+      background-color: $darker;
+      padding: 2rem;
+      color: white;
+  
+    }
+  
+  }
+  
+  .landing3 {
+    flex-direction: column-reverse;
+    .promo3 {
+      padding: 5vw;
+      align-self: center;
+      justify-self: start;
+      h2{
+        color: $myColor;
+        font-size: 10vw; 
+        margin-bottom: 2rem;
+      }
+      a {
+        color: white;
+        background: $darker;
+        padding: 0.5rem 2rem;
+        border-radius: 0.5rem;
+        transition: all ease 0.3s;
+        &:hover {
+          background: $myColor;
+          padding: 0.7rem 2.2rem;
+          text-decoration: none;
+          
+        }
+      }
+    }
+
+    .handsteam {
+      display: none;
+    }
+  }
+
+  .landing4 .how{
+  margin-bottom: 5vh;
+  &:first-child {
+    margin-top:5vh;
+  }
+    h2 {
+      font-size: 8vw;
+      text-align: center;
+      
+    }
+  }
+  
   
   #logo {
     width: 70vw;

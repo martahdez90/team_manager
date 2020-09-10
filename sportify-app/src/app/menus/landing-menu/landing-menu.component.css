@@ -84,4 +84,10 @@ nav ul li a {
  #logo {
    flex: none;
  }
+ .active-link {
+   border: none;
+   border-bottom: 3px solid white;
+   border-radius: 0px;
+ }
+
 }
