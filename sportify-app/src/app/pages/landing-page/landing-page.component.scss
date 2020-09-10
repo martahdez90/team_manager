@@ -1,11 +1,18 @@
 $myColor: #00bfa5;
 $darker: #158a7a;
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 section {
   background: linear-gradient($myColor,  #34a1af);
   min-height: 100vh;
   color: white;
+  font-family: 'Paytone One', sans-serif;
 }
+
+
 
 //menu up and down
 #up, #down {
@@ -23,11 +30,11 @@ section {
 }
 
 //secctions
-.intro, .landing1, #about {
+.intro, .landing1, .landing2, .landing3, #about {
   padding-top: 7vh;
-  min-height: 100vh;
+  min-height: 93vh;
   min-width: 100vw;
-  box-sizing: border-box;
+  overflow: hidden;
   
   #logo {
     font-size: 120px;
@@ -67,8 +74,6 @@ section {
     padding-top: 10vh;
   }
   
-
-
 }
 
 //Sportify animation
@@ -139,21 +144,137 @@ section {
 
 //landing1
 
+.sun {
+  grid-area: sun;
+  img {
+  width: 180px
+  }
+}
+
+.promo1{
+  grid-area: promo1;
+
+  font-size: 15vw; 
+}
+
+.promo2 {
+  grid-area: promo2;
+  font-size: 3vw;
+  justify-self: end;
+  
+}
+.mountain{
+  grid-area: mountain;
+
+  #mountain {
+    width:65vw;
+  }
+  #handshake {
+    position: relative;
+  }
+}
+
+
+//landing2
+.landing2 {
+  display: flex;
+
+  .pictureTeam {
+    padding: 14rem;
+    padding-left: 0px;
+    padding-bottom: 0px;
+    img {
+    width: 40vw;
+  }
+}
+  .promo3 {
+    padding: 4vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    h2 {
+      font-size: 5vw; 
+    }
+    
+  }
+  #register {
+    background-color: $darker;
+    padding: 2rem;
+    color: white;
+
+  }
+
+}
+
+#landing3 {
+  background: white;
+}
+.landing3 {
+  background: white;
+  display: flex;
+  align-items: flex-end;
+  justify-items: end;
+  flex-wrap: wrap;
+  .promo3 {
+    width: 50vw;
+    padding: 5vw;
+    align-self: center;
+    justify-self: center;
+    h2{
+      color: $myColor;
+      font-size: 4vw; 
+    }
+  }
+}
+
 @media (max-width: 800px) {
   .intro {
     min-height: 20vh;
     width: 100vw;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-  }
-  .balls {
+    .balls {
     display: flex;
-
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     .ball {
       display: none;
     }
+
+    .ball6 {
+      display: block;
+    }
   }
+  }
+
+  .landing1 {
+    display: flex;
+    flex-direction: column;
+    //align-items: center;
+    justify-items: flex-start;
+    .sun img {
+      width: 10vw;
+      margin-left: 10vw;
+    }
+    .promo1 {
+      margin-left: 15vw;
+    }
+    .promo2 {
+      font-size: 8vw;
+      margin-left: 3vh;
+    }
+    .mountain {
+      margin-left: 3vw;
+      margin-top: 20px;
+      #mountain {
+        width: 100vw;
+      }
+    }
+  }
+  
   #logo {
     width: 70vw;
   }
@@ -167,13 +288,35 @@ section {
 @media (min-width:801px){
   .balls{
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    /* grid-template-rows: repeat(3, 1fr);  */
+    grid-template-columns: repeat(7, 1fr);
+    //grid-template-rows: repeat(3, 1fr); 
     grid-template-areas: 
-    ". afootball badminton soccer ."
-    ". . logo . . "
-    ". volley tenis basket ." 
+    ". . afootball badminton soccer . ."
+    ". . . logo . . ."
+    ". . volley tenis basket . ." 
   }
+
+  .landing1 {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 5vh 20vh 30vh 30vh 10vh 5vh;
+    justify-items: center;
+    align-items: center;
+    grid-gap: 1rem;
+    grid-template-areas: 
+    ". . . . . ."
+    "sun sun . promo1 promo1 promo1"
+    "promo2 promo2  mountain mountain mountain mountain"
+    "promo2 promo2  mountain mountain mountain mountain"
+    ". . mountain mountain mountain mountain"
+    ". . . . . ."
+    
+  }
+  h1{
+    font-size: 5vw;
+  }
+
 }
 
 // Anterior

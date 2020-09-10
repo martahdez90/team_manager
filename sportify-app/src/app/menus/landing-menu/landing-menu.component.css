@@ -4,7 +4,7 @@
 
 
   .header-link:hover, .header-link:active {
-    animation: underlineAnimation 1s alternate ease-in-out;
+    animation: underlineAnimation 1s forwards ease;
   }
 
 header{
@@ -57,7 +57,8 @@ nav ul li a {
 }
 
 .active-link {
-  border-bottom:  3px solid white;
+  border: 3px solid white;
+    border-radius: 0.5rem;
 }
 #logo:hover {
   border: none;
@@ -66,9 +67,11 @@ nav ul li a {
 
 @keyframes underlineAnimation {
   from {
-    border-bottom:  3px solid transparent;
+    border: 3px solid transparent;
+    border-radius: 0px;
   } to {
-    border-bottom:  3px solid white;
+    border: 3px solid white;
+    border-radius: 0.5rem;
   }
 }
 
