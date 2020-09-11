@@ -19,12 +19,14 @@ export class CoachTournamentComponent implements OnInit {
   public tournament: Tournament
   public tournaments: object
   public team: Team = new Team("", "")
-
   public team_name: string = this.loginService.team_name;
+ 
 
   constructor(private tournamentService: TournamentService, private loginService: LoginService, private teamService: TeamService) {
     this.tournament = new Tournament("", "", "", "", "", "");
   }
+
+  
 
   public saveTournament(tournament_id: number) {
     console.log('torneo guardado')

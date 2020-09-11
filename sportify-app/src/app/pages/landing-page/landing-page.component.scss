@@ -335,7 +335,7 @@ section {
   }
 
 }
-
+//landing 4 - screenshots
 .landing4 {
   display: flex;
   color: white;
@@ -348,8 +348,9 @@ section {
     align-items: center;
     justify-content: center;
     h2 {
-      padding: 0.5rem;
+      padding: 1rem;
       font-size: 2vw;
+     
     }
 
     img {
@@ -359,6 +360,7 @@ section {
   }
 }
 
+//about us
 .about {
   background: white;
   display: flex;

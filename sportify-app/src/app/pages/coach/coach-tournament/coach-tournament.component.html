@@ -45,21 +45,34 @@
                         <img src="../../../../assets/modals/close.svg" alt="close-modal">
                     </button>
                 </div>
-                <div class="modal-body" class="bg-secondary">
-                    <div #tournament *ngFor="let item of allTournaments" >
-                        <div  (click)="saveTournament(item.tournament_id)">
+                <div class="modal-body">
+                    <div class="team" >
+                        <p >Elige tu equipo</p>
+                        <div #team *ngFor="let item of teams"  class="mb-3" >
+                        <div (click)="saveTeam(item.team_id)" class="selectTeam">
                             {{item.name}}
                         </div>
                     </div>
-
-                    <div #team *ngFor="let item of teams" class="bg-primary">
-                        <div  (click)="saveTeam(item.team_id)">
-                            {{item.name}}
+                    </div>
+                    <p class="team">Selecciona el torneo:</p>
+                    <div class="cards-container">
+                        <div *ngFor="let torneo of allTournaments"  id="mytournament"
+                            [ngStyle]="{'background-image': torneo.sport === 'Baloncesto' ? 'url(../../../../assets/pages/tournaments/basket.jpg)' : 'url(../../../../assets/pages/tournaments/futbol.png' }" (click)="saveTournament(torneo.tournament_id)" class="selectTournament">
+                            <div class="t-info">
+                                <div id="date"> {{torneo.date | date}}</div>
+                                <div id="sport">{{torneo.sport}}</div>
+                                <div id="category">{{torneo.category}}</div>
+                            </div>
+                
+                            <div class="card-body bg-transparent">
+                                <h1 id="name"> {{torneo.name}}</h1>
+                            </div>
                         </div>
                     </div>
+                    
                 </div>
-                <div class="modal-footer">
-                    <button data-dismiss="modal" aria-label="Close" class="btn new" id="card-bg2"
+                <div class="modal-footer border-0">
+                    <button data-dismiss="modal" aria-label="Close" class="btnModal" id="card-bg2"
                         (click)="subscribeTournament()">Guardar</button>
                 </div>
             </div>
