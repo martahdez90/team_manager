@@ -6,7 +6,7 @@ import { UserService } from 'src/app/shared/user-service.service';
 @Component({
   selector: 'app-my-coach',
   templateUrl: './my-coach.component.html',
-  styleUrls: ['./my-coach.component.css']
+  styleUrls: ['../../../base.scss', './my-coach.component.scss']
 })
 export class MyCoachComponent implements OnInit {
   public coach: User

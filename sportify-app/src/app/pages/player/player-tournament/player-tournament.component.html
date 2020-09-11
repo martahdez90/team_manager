@@ -1,34 +1,50 @@
+
+
 <app-player-menu></app-player-menu>
-<section>
+<section #myTournaments>
     <div class="header">
-        <h2>Próximos torneos</h2>
+        <img src="../../../../assets/menus/back.svg" alt="go back" id="back" routerLink="/coach/myTeams">
+        <h1 class="header-title">Mis torneos</h1>
+        <a routerLink="/coach/settings">
+            <img src="../../../../assets/menus/avataaars.svg" alt="avatar" id="avatar">
+        </a>
     </div>
-    <div *ngIf="sinRegistro; else registrado" id=sinRegistro>
-        <div class="container">
+
+    <!-- section my tournament -->
+    <div class="cards-container">
+        <div class="sr-container" *ngIf="sinRegistro; else registrado" id=sinRegistro>
             <div id="centro">
                 <h1>¡Bienvenido!</h1>
-                <p class="psr">Tu entrenador aún no te ha añadido a su equipo. <br> Contacta con tu entrenador para visualizar tus torneos</p>
+                <p>Tu entrenador aún no te ha añadido a su equipo.
+                    Contacta con tu entrenador para visualizar aquí tus torneos</p>
+                <img src="../../../../assets/pages/player/noinfo.svg" alt="no trainings">
             </div>
-        </div>
-    </div>
-    <div id="entrenamientos" #registrado>
-        <div id="training-card" class="card-color d-flex align-content-center flex-wrap mx-auto pb-4">
-            <div class="card mb-3" *ngFor="let t of dataBase;">
-                <div class="card-header" id="date">
-                    <strong>{{t.date | date}}</strong> <br>
-                    <i class="fas fa-tshirt" id="shirt"></i>
-                </div>
-                <div class="card-body">
-                    <p class="card-text"><strong>{{t.sport}}</strong></p>
-                    <p class="card-text">{{t.category}}</p>
-                    <p class="card-text">{{t.description}}</p>
-                </div>
-                <div class="card-footer">
-                    {{t.location}}
-                </div>
+        </div> 
+        <ng-template #registrado>
+           <div *ngFor="let torneo of dataBase" id="train-card"
+            [ngStyle]="{'background-image': torneo.sport === 'Baloncesto' ? 'url(../../../../assets/pages/tournaments/basket.jpg)' : 'url(../../../../assets/pages/tournaments/futbol.png' }"
+            #registrado>
+            <div class="t-info">
+                <div id="date"> {{torneo.date | date}}</div>
+                <div id="sport">{{torneo.sport}}</div>
+                <div id="category">{{torneo.category}}</div>
             </div>
-        </div>
+
+            <div class="card-body bg-transparent">
+                <h1 id="name"> {{torneo.name}}</h1>
+            </div>
+            <div class="card-body">
+                {{torneo.description}}
+            </div>
+            <div class="card-body" id="place">
+                <a href="{{torneo.location}}">Localización</a>
+
+            </div>
+        </div> 
+        </ng-template>
+        
     </div>
 </section>
+
 
 <app-green-footer></app-green-footer>

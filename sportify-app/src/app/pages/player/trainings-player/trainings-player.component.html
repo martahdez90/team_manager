@@ -1,34 +1,51 @@
 <app-player-menu></app-player-menu>
-<section>
+
+<section #myTrainings>
     <div class="header">
-        <h2>Próximos entrenamientos</h2>
+        <h1 class="header-title">Mis entrenos</h1>
+        <a routerLink="/player/settings">
+            <img src="../../../../assets/menus/plaaayer.svg" alt="avatar" id="avatar">
+        </a>
     </div>
-    <div *ngIf="sinRegistro; else registrado" id=sinRegistro>
-        <div class="container">
+    <div class="cards-container">
+       
+        <div class="sr-container" *ngIf="sinRegistro; else registrado" id=sinRegistro>
             <div id="centro">
-               <h1>¡Bienvenido!</h1>
-            <p class="psr">Tu entrenador aún no te ha añadido a su equipo. <br>
-            Contacta con tu entrenador para visualizar tus entrenamientos</p> 
+                <h1>¡Bienvenido!</h1>
+                <p>Tu entrenador aún no te ha añadido a su equipo.
+                    Contacta con tu entrenador para visualizar aquí tus entrenamientos</p>
+                <img src="../../../../assets/pages/player/noinfo.svg" alt="no trainings">
             </div>
         </div> 
-    </div>
-    <div id="entrenamientos" #registrado>
-        <div id="training-card" class="card-color d-flex align-content-center flex-wrap mx-auto pb-4">
-            <div class="card mb-3" *ngFor="let t of dataBase;">
-                <div class="card-header" id="date">
-                    <strong>{{t.date | date}}</strong> <br>
-                    <i class="fas fa-tshirt" id="shirt"></i>
-                </div>
-                <div class="card-body">
-                    <p class="card-text"><strong>{{t.name}}</strong></p>
-                    <p class="card-text">{{t.description}}</p>
-                </div>
-                <div class="card-footer">
-                    {{t.location}}
+        <ng-template #registrado>
+       <div id="train-card" *ngFor="let training of dataBase; let i = index">
+        <div class="train-div">
+            <div class="date">
+                <p id="month">{{training.date | date:'MMM'}}</p>
+                <p id="day">{{training.date | date:'d'}}</p>
+            </div>
+            <div class="train-info">
+                <div class="train-name">
+                    <h1>
+                        {{training.name}}
+                    </h1>
+                    <div class="contact-info">
+                        <p>
+                            {{training.description}}
+                        </p>
+
+                        <a href="{{training.location}}" id="location-link" target="_blank"> Localización
+                        </a>
+                    </div>
                 </div>
             </div>
+            <img src="../../../../assets/pages/player/training.svg" alt="training">
         </div>
+    </div>    
+    </ng-template> 
     </div>
+
+
 </section>
 
 <app-green-footer></app-green-footer>

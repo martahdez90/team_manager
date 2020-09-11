@@ -1,0 +1,97 @@
+$myColor: #00bfa5;
+
+#train-card, #mytournament {
+    margin-top: 5vh;
+    color: white;
+    font-weight: bold;
+    width: 350px;
+    height: 235px;
+    background-position: center;background-size: cover;
+    .t-info {
+        margin-top: 0.5rem;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;  
+    }
+
+     #name {
+            font-size: 36px;
+        }
+    
+    #place {
+        position: relative;
+        left: 100px;
+        color: white;
+        text-decoration: underline;
+    }
+
+}
+
+//modal inscribirse torneo
+#modalNew {
+    min-width: 50vw;
+    min-height: 100vh;
+    margin: auto;
+    .cards-container{
+        min-width: 50vw;
+        margin:0px;
+    }
+    .team{
+        color: $myColor;
+        .selectTeam {
+            margin: 0.8rem;
+            text-align: center;
+            border-radius: 0.5rem;
+            padding: 2rem;
+            background: $myColor;
+            color: white;
+            cursor: pointer;
+            &:hover {
+                background: #0e4d44;
+                border: 3px 3px $myColor;
+            }
+        }
+        
+    }
+    #mytournament {
+        padding: 0.2rem;
+        margin-top: 5vh;
+        color: white;
+        font-weight: normal;
+        width: 300px;
+        height: 150px;
+        background-position: center;
+        background-size: cover;
+        cursor: pointer;
+
+        &:hover {
+            border: 3px 3px $myColor;
+        }
+        .t-info {
+            margin-top: 0.5rem;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;  
+        }
+    
+         #name {
+                font-size: 36px;
+            }
+        
+        #place {
+            position: relative;
+            left: 100px;
+            color: white;
+            text-decoration: underline;
+        }
+    
+    }
+}
+
+// ngClass="{basket: torneo.sport === 'Baloncesto'}" id="train-card"
+
+
+
+// [ngClass]="{'bg-primary':torneo.sport === 'Baloncesto','bg-secondary':torneo.sport === 'Fútbol'}"

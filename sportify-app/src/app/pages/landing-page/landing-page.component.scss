@@ -1,0 +1,618 @@
+$myColor: #00bfa5;
+$darker: #158a7a;
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+
+.footer {
+  padding-top: 0.5%;
+  height: 8vh;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  margin-bottom: 0;
+  font-size: 3.3vh;
+  font-weight: 600;
+  text-align: center;
+  background-color: #00bfa5;
+  color: white;
+  padding-bottom: 0;
+  font-family: 'Paytone One', sans-serif;
+}
+
+section {
+  background: linear-gradient($myColor,  #34a1af);
+  min-height: 100vh;
+  color: white;
+  font-family: 'Paytone One', sans-serif;
+}
+
+
+
+//menu up and down
+#up, #down {
+  
+  position: fixed;
+  img {
+    color: $myColor;
+    box-shadow: 1px 1px $myColor;
+  }
+  
+}
+
+#up {
+  top: 48%;
+  right: 1%;
+}
+#down {
+  top: 52%;
+  right: 1%;
+}
+
+//secctions
+.intro, .landing1, .landing2, .landing3, .about {
+  padding-top: 7vh;
+  min-height: 93vh;
+  min-width: 100vw;
+  overflow: hidden;
+  
+  #logo {
+    font-size: 120px;
+    font-family: 'Paytone One', sans-serif;
+    grid-area: logo;
+    animation: fill 0.5s ease forwards 3.5s;
+  }
+  
+  .ball{
+    padding: 1rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    opacity: 0%;
+    animation: apear 3s ease forwards 3.2s;
+  }
+  .ball1{
+    grid-area: afootball;
+  }
+  .ball2{
+    grid-area: badminton;
+  }
+  
+  .ball3{
+    grid-area: volley;
+  }
+  .ball4{
+
+    grid-area: tenis;
+    padding-top: 15vh;
+  }
+  .ball5{
+    grid-area: basket;
+  }
+  .ball6{
+    grid-area: soccer;
+    padding-top: 10vh;
+  }
+  
+}
+
+//Sportify animation
+#logo path:nth-child(1) { 
+  stroke-dasharray: 374.89px;
+  stroke-dashoffset: 374.89px;
+  animation: line-anim 2s ease forwards;
+}
+#logo path:nth-child(2) { 
+  stroke-dasharray: 387.04px;
+  stroke-dashoffset: 387.04px;
+  animation: line-anim 2s ease forwards 0.4s;
+}
+#logo path:nth-child(3) { 
+  stroke-dasharray: 286.05px;
+  stroke-dashoffset: 286.05px;
+  animation: line-anim 2s ease forwards 0.8s;  
+}
+#logo path:nth-child(4) { 
+  stroke-dasharray: 225.15px;
+  stroke-dashoffset: 225.15px;
+  animation: line-anim 2s ease forwards 1.2s;
+}
+#logo path:nth-child(5) {
+  stroke-dasharray: 266.4px;
+  stroke-dashoffset: 266.4px;
+  animation: line-anim 2s ease forwards 1.6s; 
+}
+#logo path:nth-child(6) { 
+  stroke-dasharray: 263.07px;
+  stroke-dashoffset: 263.07px;
+  animation: line-anim 2s ease forwards 2s; 
+}
+#logo path:nth-child(7) { 
+  stroke-dasharray: 304.32px;
+  stroke-dashoffset: 304.31px;
+  animation: line-anim 2s ease forwards 2.4s;
+}
+#logo path:nth-child(8) { 
+  stroke-dasharray: 422.81px;
+  stroke-dashoffset: 422.81px;
+  animation: line-anim 2s ease forwards 2.8s;
+}
+
+@keyframes line-anim {
+  to{
+      stroke-dashoffset: 0;
+  }
+}
+@keyframes fill {
+  from {
+      fill: transparent;
+  }
+  to {
+      /* fill: #e94e21; */
+      /* fill: #2b47b3; */
+      fill: white;
+  }
+}
+
+@keyframes apear {
+  from{
+    opacity: 0%;
+    transform: rotate(0deg);
+  } to {
+    opacity: 100%;
+    transform: rotate(20deg);
+  }
+}
+
+//landing1
+
+.sun {
+  grid-area: sun;
+  img {
+  width: 180px;
+  animation: sunMoves 2s ease-in 3s infinite;
+  }
+}
+
+@keyframes sunMoves {
+  0% {
+    opacity: 0%;
+    transform: translateX(0%);
+    transform: rotate(0deg);
+
+  } 50% {
+    opacity: 100%;
+    transform: translateX(5%);
+    transform: rotate(20deg);
+
+  }100% {
+    opacity: 20%;
+    transform: translateX(0%);
+    transform: rotate(-20deg);
+
+  }
+}
+
+.promo1{
+  grid-area: promo1;
+
+  font-size: 15vw; 
+}
+
+.promo2 {
+  grid-area: promo2;
+  font-size: 3vw;
+  justify-self: end;
+  
+}
+.mountain{
+  grid-area: mountain;
+
+  #mountain {
+    width:65vw;
+  }
+  #handshake {
+    position: relative;
+  }
+}
+
+
+//landing2
+.landing2 {
+  display: flex;
+
+  .pictureTeam {
+    padding: 14rem;
+    padding-left: 0px;
+    padding-bottom: 0px;
+    img {
+    width: 40vw;
+  }
+}
+  .promo3 {
+    padding: 4vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    h2 {
+      font-size: 5vw; 
+    }
+    
+  }
+  #register {
+    background-color: $darker;
+    padding: 2rem;
+    color: white;
+
+  }
+
+}
+
+#landing3 {
+  background: white;
+}
+.landing3 {
+  background: white;
+  display: flex;
+  align-items: flex-end;
+  justify-items: end;
+  flex-wrap: wrap;
+
+  //stars moving
+  #star1, #star2, #star3, #star4 {
+    position: relative;
+  }
+
+  @keyframes moving {
+    0% {
+      transform: translateX(0);
+      transform: scale(0);
+    } 50% {
+      transform: translateX(20%);
+      transform: scale(1);
+    } 100% {
+      transform: translateX(0);
+      transform: scale(0);
+    }
+  }
+
+  #star1{
+    width: 5%;
+    left: 5vw;
+    animation: sunMoves 2s ease-in 3s infinite;
+    animation: moving 1.6s ease-in-out 3s infinite;
+  }
+
+  #star2 {
+  width: 8%;
+  left: 15vw;
+  animation: sunMoves 2s ease-in 3s infinite;
+    animation: moving 1.4s ease-in-out 3s infinite;
+  }
+  #star3 {
+    width: 6%;
+    left: 20vw;
+    animation: sunMoves 2s ease-in 3s infinite;
+    animation: moving 1.8s ease-in-out 3s infinite;
+  }
+
+  #star4{
+    width:3%;
+    left: 25vw;
+    animation: sunMoves 2s ease-in 3s infinite;
+    animation: moving 2s ease-in-out 3s infinite;
+  }
+  .promo3 {
+    width: 50vw;
+    padding: 5vw;
+    align-self: center;
+    justify-self: center;
+    h2{
+      color: $myColor;
+      font-size: 4vw; 
+      margin-bottom: 2rem;
+      transition: all 2s ease;
+      &:hover {
+        font-size: 4.2vw;
+        color: $darker;
+      }
+    }
+    a {
+      color: white;
+      background: $darker;
+      padding: 0.5rem 2rem;
+      border-radius: 0.5rem;
+      transition: all ease 0.3s;
+      &:hover {
+        background: $myColor;
+        padding: 0.7rem 2.2rem;
+        text-decoration: none;
+        
+      }
+    }
+  }
+
+}
+//landing 4 - screenshots
+.landing4 {
+  display: flex;
+  color: white;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  .how {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    h2 {
+      padding: 1rem;
+      font-size: 2vw;
+     
+    }
+
+    img {
+      height: 480px;
+      border-radius: 0.5rem;
+    }
+  }
+}
+
+//about us
+.about {
+  background: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: grey;
+  #about {
+    color: $myColor;
+    margin-bottom: 1rem;
+  }
+  .people {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 1rem;
+    .person {
+      text-align: center;
+      margin: 1rem;
+      padding: 0.5rem;
+      width: 28vw;
+      img {
+        width:10vw;
+        border-radius: 60%;
+        transition: all 0.5s ease-in ;
+        &:hover {
+          width: 10.5vw;
+        }
+      }
+      h2{
+        transition: all ease 2s;
+        &:hover {
+          color: $myColor;
+        }
+      }
+      p {
+        text-align: justify;
+      }
+      a {
+        color: $darker;
+        font-size: 20px;
+
+        &:hover {
+          font-size: 22px;
+          color: $myColor
+        }
+      }
+    }
+  }
+}
+
+
+
+@media (max-width: 800px) {
+  .intro {
+    min-height: 20vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .balls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .ball {
+      display: none;
+    }
+
+    .ball6 {
+      display: block;
+  
+    }
+  }
+  }
+
+  .landing1 {
+    display: flex;
+    flex-direction: column;
+    //align-items: center;
+    justify-items: flex-start;
+    .sun img {
+      width: 10vw;
+      margin-left: 10vw;
+    }
+    .promo1 {
+      margin-left: 15vw;
+    }
+    .promo2 {
+      font-size: 8vw;
+      margin-left: 3vh;
+    }
+    .mountain {
+      margin-left: 3vw;
+      margin-top: 70px;
+      #mountain {
+        width: 100vw;
+      }
+    }
+  }
+
+  .landing2 {
+    display: flex;
+    flex-direction: column-reverse;
+  
+    .pictureTeam {
+      padding: 14rem;
+      padding-left: 0px;
+      padding-bottom: 0px;
+      img {
+      width: 80vw;
+    }
+  }
+    .promo3 {
+      padding: 4vw;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      h2 {
+        font-size: 10vw; 
+      }
+      
+    }
+    #register {
+      background-color: $darker;
+      padding: 2rem;
+      color: white;
+  
+    }
+  
+  }
+  
+  .landing3 {
+    flex-direction: column-reverse;
+    .promo3 {
+      padding: 5vw;
+      align-self: center;
+      justify-self: start;
+      h2{
+        color: $myColor;
+        font-size: 10vw; 
+        margin-bottom: 2rem;
+      }
+      a {
+        color: white;
+        background: $darker;
+        padding: 0.5rem 2rem;
+        border-radius: 0.5rem;
+        transition: all ease 0.3s;
+        &:hover {
+          background: $myColor;
+          padding: 0.7rem 2.2rem;
+          text-decoration: none;
+          
+        }
+      }
+    }
+
+    #plants {
+      display: none;
+    }
+  }
+
+  .landing4 .how{
+  margin-bottom: 5vh;
+  &:first-child {
+    margin-top:5vh;
+  }
+    h2 {
+      font-size: 8vw;
+      text-align: center;
+      
+    }
+  }
+  
+  .about {
+    background: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: grey;
+    #about {
+      color: $myColor;
+      margin-bottom: 1rem;
+    }
+    .people {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 1rem;
+      .person {
+        text-align: center;
+        margin: 1rem;
+        padding: 0.5rem;
+        width: 80vw;
+        img {
+          width: 60vw;
+          border-radius: 60%;
+        }
+       
+        p {
+          text-align: justify;
+        }
+        a {
+          color: $darker;
+        }
+      }
+    }
+  }
+
+
+  
+  #logo {
+    width: 70vw;
+  }
+ 
+  #up, #down {
+    width: 3vw;
+  }
+  
+}
+
+@media (min-width:801px){
+  .balls{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    //grid-template-rows: repeat(3, 1fr); 
+    grid-template-areas: 
+    ". . afootball badminton soccer . ."
+    ". . . logo . . ."
+    ". . volley tenis basket . ." 
+  }
+
+  .landing1 {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 5vh 20vh 30vh 30vh 10vh 5vh;
+    justify-items: center;
+    align-items: center;
+    grid-gap: 1rem;
+    grid-template-areas: 
+    ". . . . . ."
+    "sun sun . promo1 promo1 promo1"
+    "promo2 promo2  mountain mountain mountain mountain"
+    "promo2 promo2  mountain mountain mountain mountain"
+    ". . mountain mountain mountain mountain"
+    ". . . . . ."
+    
+  }
+  h1{
+    font-size: 5vw;
+  }
+
+}

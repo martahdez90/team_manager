@@ -9,7 +9,7 @@ import { Training } from 'src/app/models/training';
 @Component({
   selector: 'app-trainings-player',
   templateUrl: './trainings-player.component.html',
-  styleUrls: ['./trainings-player.component.css']
+  styleUrls: ['../../../base.scss', './trainings-player.component.scss']
 })
 export class TrainingsPlayerComponent implements OnInit {
   public training: Training;

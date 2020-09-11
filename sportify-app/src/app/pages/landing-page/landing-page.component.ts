@@ -4,17 +4,19 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-landing-page',
   templateUrl: './landing-page.component.html',
-  styleUrls: ['./landing-page.component.css']
+  styleUrls: ['./landing-page.component.scss']
 })
 export class LandingPageComponent implements OnInit {
   public fondo: string;
-  //public links: NodeListOf<Element>;
+  public logo: NodeListOf<Element>;
   
   constructor() { }
+  
 
   //ejemplo de como cambiar una clase
   ngOnInit(): void {
-    //this.links = document.querySelectorAll('.linkedin');
+    this.logo = document.querySelectorAll('#logo path');
+    console.log(this.logo);
     // this.changeCLass()
   }
 
@@ -26,3 +28,5 @@ export class LandingPageComponent implements OnInit {
   //   })
   // }
 }
+
+

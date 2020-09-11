@@ -8,7 +8,7 @@ import Swal from 'sweetalert2';
 @Component({
   selector: 'app-my-settings',
   templateUrl: './my-settings.component.html',
-  styleUrls: ['./my-settings.component.css']
+  styleUrls: ['../../../base.scss', './my-settings.component.scss']
 })
 export class MySettingsComponent implements OnInit {
 
@@ -67,12 +67,13 @@ export class MySettingsComponent implements OnInit {
   public deleteUser() {
     Swal.fire({
       title: '¿Estás seguro?',
-      text: "¡No podrás recuperarlo!",
+      text: "¡No podrás recuperarla!",
       icon: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#00bfa5',
       cancelButtonColor: '#d33',
-      confirmButtonText: 'Eliminar'
+      confirmButtonText: 'Eliminar',
+      cancelButtonText: 'Cancelar'
     }).then((result) => {
       if (result.value) {
         this.userService.deleteUser(this.loginService.userLoged.user_id).subscribe(data => {

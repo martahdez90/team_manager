@@ -1,28 +1,27 @@
 <header class="lyrics">
-  <nav class="navbar fixed-top navbar-expand-lg navbar-light mb-6">
+  <nav class="navbar fixed-top navbar-expand-lg navbar-light">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
       aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav mt-2 mt-lg-0">
-        <li class="nav-item"  >
-          <a class="nav-link" id="sportify" routerLink="/home" >Sportify</a>
+        <a id="logo" routerLink="/home"></a>
+        <li class="nav-item">
+          <a class="nav-link header-link" routerLink="/home" routerLinkActive="active-link">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link header-link" href="#about" routerLinkActive="active-link">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link header-link" routerLink="/register" routerLinkActive="active-link">Register
+          </a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link header-link" id="whiteLink" routerLink="/register" routerLinkActive="active-link">Register
-            </a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link header-link" id="whiteLink" routerLink="/login" routerLinkActive="active-link">LogIn</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link header-link" id="whiteLink" href="#about" routerLinkActive="active-link">About Us</a>
+          <a class="nav-link header-link" routerLink="/login" routerLinkActive="active-link">LogIn</a>
         </li>
       </ul>
     </div>
   </nav>
-</header> 
+</header>

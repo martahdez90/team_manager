@@ -180,6 +180,7 @@ app.delete("/teams", function(request, response) {
 //obtener entrenamiento de un usuario
 app.get("/training/players/:user_id", function(request, response) {
     let params = [request.params.user_id]
+
     let sql = ` SELECT training_team.team_id, training.*, team.name AS team FROM training
      AS training INNER JOIN training_team AS training_team ON ( training.training_id = training_team.training_id ) 
      INNER JOIN team AS team ON ( training_team.team_id = team.team_id ) INNER JOIN user_teams AS user_teams ON ( team.team_id = user_teams.team_id ) 
@@ -291,10 +292,12 @@ app.get("/match/:team_id", function(request, response) {
 //obtener partidos del jugador
 app.get("/match/player/:user_id", function(request, response) {
     let params = [request.params.user_id];
+
     let sql = `SELECT matches_teams.team_id,  matches_teams.match_id, team.name, matches.date, matches.rival, matches.location, matches.comments
      FROM matches AS matches INNER JOIN matches_teams AS matches_teams ON (matches.match_id = matches_teams.match_id) 
      INNER JOIN team AS team ON (matches_teams.team_id = team.team_id) INNER JOIN user_teams AS user_teams ON (team.team_id = user_teams.team_id) 
      INNER JOIN users AS users ON (user_teams.user_id = users.user_id) WHERE users.user_id = ? ORDER BY matches.date  ASC`;
+
 
     connection.query(sql, params, function(err, resultado) {
         if (err) {

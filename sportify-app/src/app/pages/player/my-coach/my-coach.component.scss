@@ -1,18 +1,9 @@
-.header {
-    text-align: center;
-    margin: auto;
-    background-color: #00BFA5;
-    color: white;
-    padding-top: 2px;
-    padding-bottom: 2px;
-    margin-top: 0%;
-    margin-bottom: 0%;
-    font-size: x-large;
-}
+$myColor: #00bfa5;
 
-section{
-    margin-top: 50px;
-    min-height: 100vh;
+section {
+    background: white;
+    color: #158a7a;
+   
 }
 
 input#url::placeholder {
@@ -26,7 +17,7 @@ input#url::placeholder {
     color: #00BFA5;
 }
 #profile-list {
-    color: rgb(75, 75, 75);
+    color: #158a7a;
     padding: 0%;
     padding-left: 5%;
     margin-top: 3%;
@@ -37,11 +28,7 @@ div#div {
     padding: 0;
     margin-bottom: 80px;
 }
-.fas {
-    color: red;
-    position: absolute;
-    right: 5%;
-}
+
 .list-group-item {
     position: relative;
 }
@@ -51,11 +38,7 @@ div#div {
     right: 5%;
     color: grey;
 }
-.buttonR {
-    background-color: #00BFA5;
-    font-family: ‘Roboto’, sans-serif;
-    color: #FFFFFF;
-}
+
 #card-bg2{
     border: none;
     background-color: #00BFA5;
@@ -74,7 +57,7 @@ div#div {
 }
 
 
-@media(min-width:787px) {
+@media(min-width:760px) {
     .list-group {
         position: relative;
         margin-left: 20%;
@@ -83,13 +66,8 @@ div#div {
 }
 
 
-@media(max-width:576px) {
+@media(max-width: 760px) {
     section {
-        padding-bottom: 10%;
-        margin-top: 50px;
-        margin-bottom: 10vh;
-    }
-    div#div {
-        margin-bottom: 23vh;
+        padding-top: 10vh;
     }
 }

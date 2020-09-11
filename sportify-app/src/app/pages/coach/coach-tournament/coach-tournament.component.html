@@ -1,66 +1,82 @@
 <app-coach-menu></app-coach-menu>
-<section>
-    <div class="header row">
-        <h2 class="col-12 header">
-            <i class="fas fa-chevron-left" routerLink="/coach/myTeams"></i> Torneos
-        </h2>
-    </div>
-
-    <!--modal inscribete-->
-    <div class="modal fade" id="newTournament" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Inscribirse en un Torneo</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-                </div>
-                <div class="modal-body">
-                    <select #tournament>
-                        <option *ngFor="let item of allTournaments" value="{{item.tournament_id}}">{{item.name}}</option>
-                    </select>
-             
-                    <select #team>
-                        <option *ngFor="let item of teams" value="{{item.team_id}}">{{item.name}}</option>
-                    </select>
-                </div>
-                <div class="modal-footer">
-                    <button data-dismiss="modal" aria-label="Close" class="btn new" id="card-bg2" (click)="subscribeTournament(team, tournament)">Guardar</button>
-                </div>
-            </div>
-        </div>
+<section #myTournaments>
+    <div class="header">
+        <img src="../../../../assets/menus/back.svg" alt="go back" id="back" routerLink="/coach/myTeams">
+        <h1 class="header-title">Mis torneos</h1>
+        <a routerLink="/coach/settings">
+            <img src="../../../../assets/menus/avataaars.svg" alt="avatar" id="avatar">
+        </a>
     </div>
 
     <!-- section my tournament -->
-    <div id="training-card">
-        <div class="card-color d-flex align-content-center flex-wrap mx-auto pb-4 playerInfo">
-            <div class="card mt-4 mb-1 pb-1" *ngFor="let torneo of tournaments">
-                <div class="card-header" id="date">
-                    {{torneo.date | date}}
-                </div>
-                <div class="card-body bg-transparent">
-                    {{torneo.name}}
-                </div>
-                <div class="card-body bg-transparent">
-                    {{torneo.sport}}
-                </div>
-                <div class="card-body bg-transparent">
-                    {{torneo.category}}
-                </div>
-                <div class="card-body">
-                    <p class="card-text">{{torneo.description}}</p>
-                </div>
-                <div class="card-footer">
-                    {{torneo.location}}
-                </div>
+    <div class="cards-container">
+        <div *ngFor="let torneo of tournaments" id="train-card" [ngStyle]="{'background-image': torneo.sport === 'Baloncesto' ? 'url(../../../../assets/pages/tournaments/basket.jpg)' : 'url(../../../../assets/pages/tournaments/futbol.png' }">
+            <div class="t-info">
+                <div id="date"> {{torneo.date | date}}</div>
+                <div id="sport">{{torneo.sport}}</div>
+                <div id="category">{{torneo.category}}</div>
+            </div>
+
+            <div class="card-body bg-transparent">
+                <h1 id="name"> {{torneo.name}}</h1>
+            </div>
+            <div class="card-body">
+                {{torneo.description}}
+            </div>
+            <div class="card-body" id="place">
+                <a href="{{torneo.location}}" target="_blank">Localización</a>
+                
             </div>
         </div>
     </div>
-    <div>
-        <button class="btn newT" data-toggle="modal" data-target="#newTournament">
-        Inscríbete
-    </button>
+    <div class="newTeam">
+        <button  data-toggle="modal" data-target="#newTournament">
+            Inscríbete
+        </button>
+    </div>
+
+    <!--modal inscribete-->
+    <div class="modal fade" id="newTournament" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content" id="modalNew">
+                <div class="modal-header border-0">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <img src="../../../../assets/modals/close.svg" alt="close-modal">
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="team" >
+                        <p >Elige tu equipo</p>
+                        <div #team *ngFor="let item of teams"  class="mb-3" >
+                        <div (click)="saveTeam(item.team_id)" class="selectTeam">
+                            {{item.name}}
+                        </div>
+                    </div>
+                    </div>
+                    <p class="team">Selecciona el torneo:</p>
+                    <div class="cards-container">
+                        <div *ngFor="let torneo of allTournaments"  id="mytournament"
+                            [ngStyle]="{'background-image': torneo.sport === 'Baloncesto' ? 'url(../../../../assets/pages/tournaments/basket.jpg)' : 'url(../../../../assets/pages/tournaments/futbol.png' }" (click)="saveTournament(torneo.tournament_id)" class="selectTournament">
+                            <div class="t-info">
+                                <div id="date"> {{torneo.date | date}}</div>
+                                <div id="sport">{{torneo.sport}}</div>
+                                <div id="category">{{torneo.category}}</div>
+                            </div>
+                
+                            <div class="card-body bg-transparent">
+                                <h1 id="name"> {{torneo.name}}</h1>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="modal-footer border-0">
+                    <button data-dismiss="modal" aria-label="Close" class="btnModal" id="card-bg2"
+                        (click)="subscribeTournament()">Guardar</button>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 

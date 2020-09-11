@@ -2,13 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { LoginService } from 'src/app/shared/login.service';
 import { TeamService } from 'src/app/shared/team.service';
 import Swal from 'sweetalert2';
-import {Tournament} from '../../../models/tournament'
-import{TournamentService} from '../../../shared/tournament.service'
+import { Tournament } from '../../../models/tournament'
+import { TournamentService } from '../../../shared/tournament.service'
+import { Team } from 'src/app/models/team';
 
 @Component({
   selector: 'app-coach-tournament',
   templateUrl: './coach-tournament.component.html',
-  styleUrls: ['./coach-tournament.component.css']
+  styleUrls: ['../../../base.scss', './coach-tournament.component.scss']
 })
 export class CoachTournamentComponent implements OnInit {
 
@@ -17,11 +18,40 @@ export class CoachTournamentComponent implements OnInit {
   public allTournaments: object
   public tournament: Tournament
   public tournaments: object
-
+  public team: Team = new Team("", "")
   public team_name: string = this.loginService.team_name;
+ 
 
-  constructor(private tournamentService:TournamentService, private loginService: LoginService, private teamService: TeamService) {
-    this.tournament = new Tournament("","", "", "", "","");
+  constructor(private tournamentService: TournamentService, private loginService: LoginService, private teamService: TeamService) {
+    this.tournament = new Tournament("", "", "", "", "", "");
+  }
+
+  
+
+  public saveTournament(tournament_id: number) {
+    console.log('torneo guardado')
+    console.log(tournament_id)
+    this.tournament.tournament_id = tournament_id;
+  }
+
+  saveTeam(team_id: number) {
+    this.loginService.team_id = team_id
+    console.log('equipo guardado')
+    console.log(this.loginService.team_id);
+    
+  }
+
+ 
+
+  public subscribeTournament() {
+    let subscription = { team_id: this.loginService.team_id, tournament_id: this.tournament.tournament_id }
+    console.log(subscription)
+    this.tournamentService.subscriptionTournament(subscription).subscribe(data => {
+      console.log(data)
+      this.tournamentService.getPlayerTournament(this.loginService.userLoged.user_id).subscribe(data => {
+        this.tournaments = data
+      })
+    })
   }
 
   // public getTournament(tournament: Tournament) {
@@ -119,16 +149,7 @@ export class CoachTournamentComponent implements OnInit {
   //   })
   // }
 
-  public subscribeTournament(team_id: HTMLInputElement, tournament_id: HTMLInputElement){
-    let subscription = {team_id: Number(team_id.value), tournament_id: Number(tournament_id.value)}
-    console.log(subscription)
-    this.tournamentService.subscriptionTournament(subscription).subscribe(data =>{
-      console.log(data)
-      this.tournamentService.getPlayerTournament(this.loginService.userLoged.user_id).subscribe(data => {
-        this.tournaments = data
-      })
-    })
-  }
+ 
 
   ngOnInit(): void {
     this.tournamentService.getTournament().subscribe(data => {

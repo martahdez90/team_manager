@@ -1,0 +1,114 @@
+/* Global Styles */
+// Variables Sass
+$myColor: #00bfa5;
+$darker: #0c534a;
+$small: 1rem;
+$medium: 1.8rem;
+$colorin: white;
+$color: gray;
+
+
+body {
+    font-size: $medium;
+}
+
+.bottom-menu {
+    display: none;
+}
+
+a:hover,
+a:active {
+    border-top: 3px solid #ffffff;
+    border-bottom: 3px solid #ffffff;
+    padding: 4px 0;
+}
+
+.active-link {
+    border-top: 3px solid #ffffff;
+    border-bottom: 3px solid #ffffff;
+    padding: 4px 0;
+}
+
+.lyrics {
+    background-color: $myColor;
+    font-family: ‘Roboto’, sans-serif;
+    color: #FFFFFF;
+}
+
+.bodym {
+    background-color: $myColor;
+    font-family: ‘Roboto’, sans-serif;
+    text-align: center;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.navbar {
+    background-color: $myColor;
+    text-align: center;
+}
+
+#whiteLink {
+    color: white;
+}
+
+
+
+/* bottom menu */
+
+/* versión movil */
+@media screen and (max-width: 760px) {
+
+.lyrics {
+    display: none;
+}
+
+.bottom-menu {
+    position: fixed;
+    bottom: 0;
+    overflow: hidden;
+    background-color: white;
+    margin-bottom: 0px;
+    height: 70px;
+    width: 100vw; 
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 40;
+}
+.menu-icons, .menu-text {
+    color: gray;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;   
+}
+.boton, .boton-text {
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    cursor: pointer;
+}
+
+.boton-text {
+    margin-top: 8px;
+    height: 14px;
+}
+
+#boton2 {
+    width: 40px;
+}
+
+}
+
+p {
+    color: black;
+    font-size: 12px;
+}
+
+a, li {
+    cursor: pointer;
+}

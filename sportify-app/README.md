@@ -1,6 +1,6 @@
 # Sportify
 
-This app has been developed by  Pablo Canellas, Marta Hernández y Alejandro Manzanares in July 2020.
+This app has been developed by Marta Hernández, Pablo Canellas,  y Alejandro Manzanares in July 2020.
 
 
 
@@ -11,6 +11,7 @@ APIREST:
     npm install mysql
     npm install express
     npm i cors
+   ##Open XAMPP
 
 Sportify-app:
     npm udpdate
@@ -25,8 +26,5 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-#
+Iconos diseñados por www.flaticon.es
+Imágenes de freepik.com

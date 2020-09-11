@@ -1,0 +1,87 @@
+$myColor: #00bfa5;
+
+section {
+    background: white;
+
+}
+.user {
+    margin-top: 0px;
+    background: $myColor;
+    padding: 0.5rem;
+    img {
+        display: none;
+        margin: auto;
+        width: 80px;
+    
+    }
+}
+
+.label {
+    color: #158a7a;
+}
+
+input#url::placeholder {
+    color: white;
+}
+#profile {
+    background-color: $myColor;
+    font-size: 100px;
+    text-align: center;
+    color: white;
+}
+#profile-list {
+    color: rgb(75, 75, 75);
+    padding: 0%;
+    padding-left: 5%;
+    margin-top: 3%;
+}
+ul,
+div#div {
+    margin: 0;
+    padding: 0
+}
+.fas {
+    color: red;
+    position: absolute;
+    right: 5%;
+    cursor:pointer;
+}
+.fa-edit {
+    color: $myColor;
+}
+.list-group-item {
+    position: relative;
+}
+#info {
+    display: inline;
+    position: absolute;
+    right: 5%;
+    color: grey;
+}
+
+
+
+/* modal de cerrar sesión */
+
+
+@media(min-width:760px) {
+    .list-group {
+        position: relative;
+        margin-left: 20%;
+        margin-right: 20%;
+    }
+}
+
+@media(max-width: 760px) {
+    section {
+        padding-top: 10vh;
+    }
+    .user { 
+        padding: 0.5rem;
+        display: block;
+        img {
+            display: block;
+        }
+    }
+
+}
